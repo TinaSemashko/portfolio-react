@@ -1,0 +1,42 @@
+{
+  "general": {
+    "project_title": "Team Challenge",
+    "cancel": "Cancel",
+    "save": "Save",
+    "error": "Error",
+    "general_error": "Something went wrong",
+    "reload": "Reload",
+    "loading": "Loading",
+    "continue": "Continue",
+    "ok": "OK",
+    "privacy_policy": "Privacy Policy",
+    "contact_us": "Contact us",
+    "copyright": "Copyright © 2023",
+    "show_more": "Show more"
+  },
+  "main": {
+    "title": "Hi !",
+    "subtitle1": "I'm Tina, full-stack developer",
+    "subtitle2": "",
+    "projects": "This page is dedicated to my projects, you can see on it what I have already done, and this page will be constantly updated. I love my job, I work with pleasure, I am always ready to learn something new and master new technologies. If I still can’t do something, it’s temporary."
+  },
+  "auth": {
+    "login": "Log in",
+    "logout": "Log out"
+  },
+  "menu": {
+    "menu": "menu",
+    "home": "main page",
+    "team": "my projects",
+    "teams": "teams",
+    "profile": "my account",
+    "faq": "faq",
+    "close": "close",
+    "login": "log in"
+  },
+  "not_found": {
+    "title": "Oops!",
+    "description": "Hmmm ... something's wrong. Are you sure this page exists? Maybe it's only in the dreams of our developers. Please try again.",
+    "btn_go_home": "Go home"
+  }
+}

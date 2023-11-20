@@ -1,6 +1,5 @@
 import { styled } from "@mui/material/styles";
-import img from "../images/papier.png";
-import { Button } from "@mui/material";
+import img from "../images/glass-ball.png";
 
 export const MainContainer = styled("div")`
   @media (max-width: 750px) {
@@ -18,10 +17,10 @@ export const VideoAccueil = styled("video")`
 `;
 
 export const TextContainer = styled("div")`
-  background-size: 85vw;
+  /* background-size: 85vw; */
   padding: 10vw;
 
-  &::before {
+  /* &::before {
     content: "";
     background: url(${img}) no-repeat center center;
 
@@ -36,40 +35,136 @@ export const TextContainer = styled("div")`
     margin-top: 10vh;
     padding-bottom: 20vh;
     height: 100%;
-  }
+  } */
 
   @media (max-width: 750px) {
   }
 `;
 
-export const AtelieContainer = styled("div")`
-  display: flex;
-`;
+export const Title = styled("div")`
+  color: ${({ theme }) => theme.palette.primary.main};
+  -webkit-animation: swirl-in-fwd 0.6s ease-out both;
+  animation: swirl-in-fwd 0.6s ease-out both;
 
-export const ImgContainer = styled("div")`
-  width: 50vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: ${({ theme }) => theme.palette.colorDisabled.main};
-  @media (max-width: 750px) {
-    display: none;
+  @-webkit-keyframes swirl-in-fwd {
+    0% {
+      -webkit-transform: rotate(-540deg) scale(0);
+      transform: rotate(-540deg) scale(0);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotate(0) scale(1);
+      transform: rotate(0) scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes swirl-in-fwd {
+    0% {
+      -webkit-transform: rotate(-540deg) scale(0);
+      transform: rotate(-540deg) scale(0);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotate(0) scale(1);
+      transform: rotate(0) scale(1);
+      opacity: 1;
+    }
   }
 `;
 
-export const Img = styled("img")`
-  width: 500px;
-  height: 200px;
-  z-index: 10;
+export const TextRainbow = styled("div")`
+  text-align: center;
+  height: 30vh;
+  background: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet
+  );
+  background-size: 400% 400%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: rainbow 20s ease infinite;
+  animation: rainbow 20s ease infinite;
+  font-family: var(--font-satisfy);
+
+  @-webkit-keyframes rainbow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes rainbow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 `;
 
 export const LogoContainer = styled("div")`
   text-align: center;
 `;
 
-export const ButtContainer = styled("div")`
+export const TextDrawer = styled("svg")`
   text-align: center;
-  display: flex;
-  justify-content: center;
+
+  font-family: sans-serif;
+
+  stroke-dasharray: 100%;
+  stroke-dashoffset: 100%;
+
+  -webkit-animation: draw 8s forwards;
+  -moz-animation: draw 8s forwards;
+  -o-animation: draw 8s forwards;
+  -ms-animation: draw 8s forwards;
+  animation: draw 8s forwards;
+
+  @-webkit-keyframes draw {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  @-moz-keyframes draw {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  @-o-keyframes draw {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  @-ms-keyframes draw {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes draw {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+`;
+
+export const GridContainer = styled("div")`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
+  justify-items: center;
 `;

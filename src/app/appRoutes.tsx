@@ -6,11 +6,13 @@ import NotFound from "../pages/notFound";
 
 const Home = lazy(() => import("../pages/home"));
 const Profile = lazy(() => import("../pages/profile"));
+const Projects = lazy(() => import("../pages/projects"));
 
 export const AppRoutes: React.FunctionComponent = () => (
   <Router>
     <Route path={Routes.home} element={withSuspense(Home)} />
     <Route path={Routes.profile} element={withSuspense(Profile)} />
+    <Route path={Routes.projects} element={withSuspense(Projects)} />
 
     <Route path="*" element={<NotFound />} />
   </Router>

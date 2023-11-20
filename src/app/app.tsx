@@ -21,7 +21,7 @@ declare module "@mui/material/styles" {
 export let theme = createTheme({
   palette: {
     primary: {
-      main: "#161619",
+      main: "#ffe4c4",
     },
     secondary: {
       main: "#ffffff",
@@ -31,7 +31,34 @@ export let theme = createTheme({
     },
   },
   typography: {
-    fontFamily: ["Helvetica", "Arial", "sans-serif"].join(","),
+    h1: {
+      fontFamily: "Lavishly Yours, cursive",
+      fontSize: "15rem",
+    },
+    h2: {
+      fontFamily: "Fredericka the Great, serif",
+      fontSize: "8rem",
+    },
+    h3: {
+      fontFamily: "Special Elite, cursive",
+    },
+    h4: {
+      fontFamily: "Special Elite, cursive",
+      "@media (max-width:750px)": {
+        fontSize: "0.7rem",
+      },
+    },
+    h5: {
+      fontFamily: "Special Elite, cursive",
+      // fontSize: "4rem",
+    },
+    body1: {
+      fontFamily: "Glass Antiqua, cursive",
+    },
+  },
+  breakpoints: {
+    keys: ["xs", "sm", "md", "lg", "xl"],
+    values: { xs: 0, sm: 568, md: 760, lg: 960, xl: 1200 },
   },
 });
 

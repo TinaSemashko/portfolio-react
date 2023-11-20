@@ -4,6 +4,11 @@ import App from "./app/app";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 
+import { createi18n } from "./i18n";
+
+// eslint-disable-next-line @typescript-eslint/no-floating-promises
+createi18n();
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );

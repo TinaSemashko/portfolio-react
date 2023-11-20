@@ -54,13 +54,7 @@ const TopBar: React.FC = () => {
         <CloseIcon sx={{ fontSize: "2rem" }} />
       </S.CloseIconStyle>
 
-      <Typography
-        variant="h4"
-        fontSize="10vw"
-        sx={{ my: 2, color: "secondary.main" }}
-      >
-        Garage V. Parrot
-      </Typography>
+      <img src={logo} width="40vw" onClick={() => navigate(Routes.home)} />
       <Divider />
       <List
         sx={{
@@ -140,23 +134,13 @@ const TopBar: React.FC = () => {
           >
             <MenuIcon />
           </IconButton>
-          <S.FlexBox>
-            <img src={logo} width="90vw" />
-            <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <Typography
-              variant="h4"
-              component="div"
-              color="secondary.main"
-              onClick={() => navigate(Routes.home)}
-              sx={{
-                flexGrow: 1,
-                display: { xs: "none", sm: "block" },
-              }}
-            >
-              Garage V. Parrot
-            </Typography>
-          </S.FlexBox>
-          <List sx={{ display: { xs: "none", sm: "flex" }, color: "black" }}>
+          {/* <S.FlexBox> */}
+          <img src={logo} width="40vw" onClick={() => navigate(Routes.home)} />
+          <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          {/* </S.FlexBox> */}
+          <List
+            sx={{ display: { xs: "none", sm: "flex" }, color: "primary.main" }}
+          >
             {menuItemsArray.map((item, index) => (
               <ListItem key={index} disablePadding>
                 <ListItemButton

@@ -1,11 +1,16 @@
-import { styled } from '@mui/material/styles';
+import { styled } from "@mui/material/styles";
 
-export const MainContainer = styled('div')`
+export const MainContainer = styled("div")`
   width: 100%;
   height: 100vh;
+  background: linear-gradient(
+    315deg,
+    var(--primary-color-opacity),
+    var(--secondary-color-opacity)
+  );
 `;
 
-export const CloseIconStyle = styled('div')`
+export const CloseIconStyle = styled("div")`
   display: flex;
   justify-content: end;
   align-items: center;
@@ -55,7 +60,7 @@ export const CloseIconStyle = styled('div')`
   }
 `;
 
-export const FlexBox = styled('div')`
+export const FlexBox = styled("div")`
   display: flex;
   justify-content: space-between;
   align-items: center;
