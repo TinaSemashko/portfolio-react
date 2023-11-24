@@ -17,8 +17,10 @@
   "main": {
     "title": "Hi !",
     "subtitle1": "I'm Tina, full-stack developer",
-    "subtitle2": "",
-    "projects": "This page is dedicated to my projects, you can see on it what I have already done, and this page will be constantly updated. I love my job, I work with pleasure, I am always ready to learn something new and master new technologies. If I still can’t do something, it’s temporary."
+    "subtitle2": "And God created the programmer...",
+    "subtitle3": "This story began a long time ago, <br />when computers were big and programs were small",
+    "projects": "This page is dedicated to my projects, you can see on it what I have already done, and this page will be constantly updated. I love my job, I work with pleasure, I am always ready to learn something new and master new technologies. If I still can’t do something, it’s temporary.",
+    "bible": "На початку було слово, і слово було 2 байти, а більше нічого не було.\n І відокремив Бог одиницю від нуля, і побачив, що це добре.\n І сказав Бог: Нехай будуть дані, і стало так.\n І сказав Бог: так зберуться дані кожні в своє місце, і створив дискети, і вінчестери, і компакт-диски.\n І сказав Бог: Нехай будуть комп'ютери, щоб було куди пхати дискети, і вінчестери, і компакт-диски, і створив комп'ютери, і нарік їх хардом, і відокремив хард від софта.\n Софта ж ще не було, але Бог швидко виправився, і створив програми великі і маленькі, і сказав їм: Плодіться і розмножуйте, і заповнюйте всю пам'ять.\nАле набридло йому створювати програми самому, І сказав Бог: створимо програміста за образом і подобою нашим, і нехай панує над комп'ютерами, і над програмами, і над даними. І створив Бог програміста..."
   },
   "auth": {
     "login": "Log in",

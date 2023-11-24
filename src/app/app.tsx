@@ -10,11 +10,13 @@ import Footer from "../shared/footer/footer";
 
 declare module "@mui/material/styles" {
   interface Palette {
-    colorDisabled: Palette["primary"];
+    colorBlack: Palette["primary"];
+    colorRed: Palette["primary"];
   }
 
   interface PaletteOptions {
-    colorDisabled?: PaletteOptions["primary"];
+    colorBlack?: PaletteOptions["primary"];
+    colorRed?: PaletteOptions["primary"];
   }
 }
 
@@ -26,34 +28,43 @@ export let theme = createTheme({
     secondary: {
       main: "#ffffff",
     },
-    colorDisabled: {
-      main: "rgba(150, 149, 149, 0.9)",
+    colorBlack: {
+      main: "#000000",
+    },
+    colorRed: {
+      main: "#5f0101",
     },
   },
   typography: {
     h1: {
-      fontFamily: "Lavishly Yours, cursive",
-      fontSize: "15rem",
+      fontFamily: "Neucha, serif",
+      fontSize: "10rem",
     },
     h2: {
-      fontFamily: "Fredericka the Great, serif",
+      fontFamily: "Rubik Marker Hatch, serif",
       fontSize: "8rem",
     },
     h3: {
-      fontFamily: "Special Elite, cursive",
+      fontFamily: "Marck Script , cursive",
     },
     h4: {
-      fontFamily: "Special Elite, cursive",
-      "@media (max-width:750px)": {
-        fontSize: "0.7rem",
-      },
+      fontFamily: "Kurale , cursive",
+
+      // "@media (max-width:750px)": {
+      //   fontSize: "0.7rem",
+      // },
     },
     h5: {
       fontFamily: "Special Elite, cursive",
       // fontSize: "4rem",
     },
+    h6: {
+      fontFamily: "Special Elite, cursive",
+      fontSize: "0.7rem",
+    },
     body1: {
-      fontFamily: "Glass Antiqua, cursive",
+      fontFamily: "Kurale , cursive",
+      fontSize: "0.5rem",
     },
   },
   breakpoints: {

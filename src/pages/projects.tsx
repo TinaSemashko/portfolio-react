@@ -1,10 +1,14 @@
+import { Typography } from "@mui/material";
 import Carousel from "../shared/carousel/carousel";
-import * as S from "./home.styled";
+import * as S from "./projects.styled";
 
 const Projects: React.FC = () => {
   return (
     <S.MainContainer>
-      <h1>Take a look at what I've been working on!</h1>
+      <Typography variant="h1" sx={{ color: "colorBlack.main" }}>
+        Take a look at what I've been working on!
+      </Typography>
+      <br /> <br /> <br />
       <Carousel />
     </S.MainContainer>
   );

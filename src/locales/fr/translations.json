@@ -17,8 +17,10 @@
   "main": {
     "title": "Salut !",
     "subtitle1": "Je suis Tina, full-stack développeur",
-    "subtitle2": "",
-    "projects": "Cette page est dédiée à mes projets, vous pouvez y voir ce que j'ai déjà fait, et cette page sera constamment mise à jour. J'aime mon travail, je travaille avec plaisir, je suis toujours prêt à apprendre quelque chose de nouveau et à maîtriser les nouvelles technologies. Si je ne peux toujours pas faire quelque chose, c’est temporaire."
+    "subtitle2": "Et Dieu a créé le programmeur...",
+    "subtitle3": "Cette l'histoire a commencé il y a longtemps, lorsque les ordinateurs étaient grands et que les programmes étaient petits",
+    "projects": "Cette page est dédiée à mes projets, vous pouvez y voir ce que j'ai déjà fait, et cette page sera constamment mise à jour. J'aime mon travail, je travaille avec plaisir, je suis toujours prêt à apprendre quelque chose de nouveau et à maîtriser les nouvelles technologies. Si je ne peux toujours pas faire quelque chose, c’est temporaire.",
+    "bible": "Au début, il y avait un mot, et le mot faisait 2 octets, mais il n'y avait rien d'autre.\n Et Dieu sépara un de zéro et vit que c'était bon.\n Et Dieu dit : qu'il y ait des données, et il en fut ainsi.\n Et Dieu dit : que chaque donnée soit collectée à sa place et créée disquettes, disques durs et CD.\n Et Dieu a dit : qu'il y ait des ordinateurs, pour qu'il y ait un endroit où mettre les disquettes, les disques durs et les CD, et il a créé les ordinateurs, et les a appelés durs, et a séparé le dur du logiciel.\n Il n'existait pas encore de logiciel, mais Dieu s'est rapidement corrigé et a créé des programmes petits et grands, et leur a dit : soyez féconds, multipliez-vous et remplissez toute la mémoire.\n Mais Il en avait assez de créer lui-même des programmes, et Dieu a dit : créons un programmeur à notre image et à notre ressemblance, et laissons-le régner sur les ordinateurs, les programmes et les données. Et Dieu a créé un programmeur..."
   },
   "auth": {
     "login": "Log in",

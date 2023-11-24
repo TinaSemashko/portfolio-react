@@ -1,7 +1,8 @@
 import { styled } from "@mui/material/styles";
-import img from "../images/glass-ball.png";
+import imgFon from "../images/fon26.png";
 
 export const MainContainer = styled("div")`
+  position: relative;
   @media (max-width: 750px) {
   }
 `;
@@ -17,31 +18,14 @@ export const VideoAccueil = styled("video")`
 `;
 
 export const TextContainer = styled("div")`
-  /* background-size: 85vw; */
-  padding: 10vw;
-
-  /* &::before {
-    content: "";
-    background: url(${img}) no-repeat center center;
-
-    background-size: cover;
-    opacity: 0.8;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;
-    margin-top: 10vh;
-    padding-bottom: 20vh;
-    height: 100%;
-  } */
+  padding-top: 7vw;
 
   @media (max-width: 750px) {
   }
 `;
 
 export const Title = styled("div")`
+  text-align: center;
   color: ${({ theme }) => theme.palette.primary.main};
   -webkit-animation: swirl-in-fwd 0.6s ease-out both;
   animation: swirl-in-fwd 0.6s ease-out both;
@@ -159,6 +143,31 @@ export const TextDrawer = styled("svg")`
     100% {
       stroke-dashoffset: 0;
     }
+  }
+`;
+
+export const HistoryContainer = styled("div")`
+  background-size: 95vw;
+  color: ${({ theme }) => theme.palette.colorRed.main};
+  text-align: center;
+
+  &::before {
+    content: "";
+    background: url(${imgFon}) no-repeat center center;
+    background-size: cover;
+    opacity: 0.4;
+    top: 20vh;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    margin-top: 10vh;
+    padding-bottom: 20vh;
+    height: 100%;
+  }
+
+  @media (max-width: 750px) {
   }
 `;
 

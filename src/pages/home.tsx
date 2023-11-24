@@ -1,6 +1,7 @@
 import { Button, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
+import parse from "html-react-parser";
 import Video from "../images/videohome.mp4";
 import logo from "../images/logo.png";
 import flag from "../images/Nuvola_France_Ukraine_flags.svg.png";
@@ -36,25 +37,33 @@ const Home: React.FC = () => {
             {t("main.title")}
           </Typography>
         </S.Title>
-        {/* <S.TextDrawer width="1500" height="150">
-          <text
-            x="300"
-            y="80"
-            fill="none"
-            stroke="black"
-            stroke-width="1"
-            font-size="50"
-          >
-            {t("main.subtitle1")}
-          </text>
-        </S.TextDrawer> */}
         <S.TextRainbow>
-          <Typography variant="h1">{t("main.subtitle1")}</Typography>
+          <Typography variant="h1">
+            <img src={flag} width="40vw" /> {t("main.subtitle1")}
+          </Typography>
         </S.TextRainbow>
-        <S.LogoContainer>
-          <img src={flag} width="80vw" />
-        </S.LogoContainer>
       </S.TextContainer>
+      <S.HistoryContainer>
+        <Typography variant="h3"> {parse(t("main.subtitle3"))}</Typography>
+        <br />
+        <div>-------------------------</div>
+        <br />
+        <Typography variant="h3" sx={{ color: "primary.main" }}>
+          {t("main.subtitle2")}
+        </Typography>
+        <br />
+        <Typography
+          variant="h3"
+          sx={{
+            textAlign: "center",
+            pl: "20vw",
+
+            width: "76vw",
+          }}
+        >
+          {t("main.bible")}
+        </Typography>
+      </S.HistoryContainer>
       <S.GridContainer>
         <img src={imgProjects} width="500vw" />
         <Typography
@@ -66,7 +75,9 @@ const Home: React.FC = () => {
       </S.GridContainer>
       {/* <canvas id="canvas" width="150" height="150"></canvas> */}
 
-      <S.LogoContainer></S.LogoContainer>
+      <S.LogoContainer>
+        <img src={logo} width="80vw" />
+      </S.LogoContainer>
       <br />
       <br />
     </S.MainContainer>

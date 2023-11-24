@@ -1,19 +1,27 @@
+import { Button } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-export const MainContainer = styled("div")`
+export const MainContainer = styled("div")<{ carouselWith: number }>`
   position: relative;
-  width: 320px;
-  margin: 100px auto 0 auto;
+  width: ${(props) => props.carouselWith + 2}vw;
+  margin: 2vw auto 0 auto;
   perspective: 1000px;
+
+  @media (max-width: 750px) {
+    width: 210px;
+  }
 `;
 
-export const CarouselContainer = styled("div")`
+export const CarouselContainer = styled("div")<{ isAnimationPaused: boolean }>`
   position: absolute;
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  transform: rotateY(-360deg) translateZ(-412px); /* add reverse transformation from the slides */
-  animation: swirl 40s steps(10000, end) infinite;
+
+  /* transform: rotateY(-360deg) translateZ(-412px); add reverse transformation from the slides */
+
+  animation: ${({ isAnimationPaused }) =>
+    isAnimationPaused ? "none" : "swirl 40s steps(10000, end) infinite"};
 
   @keyframes swirl {
     from {
@@ -25,21 +33,136 @@ export const CarouselContainer = styled("div")`
   }
 `;
 
-export const Slide = styled("div")<{ degY: number }>`
+export const Slide = styled("div")<{
+  degY: number;
+  radius: number;
+  carouselWith: number;
+}>`
   position: absolute;
   top: 10px;
   left: 10px;
-  width: 300px;
-  height: 187px;
-  /* transform: rotateY(${(props) => props.degY}deg) translateZ(412px); */
-  transform: rotateY(${(props) => props.degY}deg) translateZ(412px);
+  width: ${(props) => props.carouselWith}vw;
+  height: ${(props) => props.carouselWith}vh;
+  transform: rotateY(${(props) => props.degY}deg)
+    translateZ(${(props) => props.radius}vw);
+
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 23% 23% 23% 10%;
+  place-items: center;
+  justify-items: center;
+
+  @media (max-width: 750px) {
+    width: 190px;
+    transform: rotateY(${(props) => props.degY}deg) translateZ(288px);
+  }
 `;
 
-export const Picture = styled("img")`
-  width: 280px;
-  height: 175px;
-  border: 3px inset rgba(47, 115, 201, 0.75);
-  box-shadow: 0 0 15px 3px rgba(110, 72, 221, 0.9);
+export const Picture = styled("img")<{ carouselWith: number }>`
+  width: ${(props) => props.carouselWith}vw;
+  height: ${(props) => props.carouselWith * 1.4}vh;
+  border: 3px inset red;
+  border-style: ridge;
+
+  /* border: 3px inset rgba(47, 115, 201, 0.75); */
+  box-shadow: 0 0 15px 3px rgba(86, 6, 6, 0.9);
+
+  grid-column: 1 / span 4;
+  grid-row: 1 / span 4;
+  position: relative;
+
+  @media (max-width: 750px) {
+    width: 180px;
+  }
+`;
+
+export const TextContainer = styled("div")`
+  position: absolute;
+  grid-column: 1 / span 3;
+  grid-row: 3/3;
+  color: red;
+  z-index: 10;
+  max-width: 80%;
+  text-align: left;
+  margin-left: -10vw;
+`;
+
+export const BorderLeft = styled("div")`
+  position: absolute;
+  top: -2vh;
+  width: 90%;
+  height: 10vh;
+  grid-column: 1 / span 4;
+  grid-row: 1 / span 3;
+  border: 2px solid red;
+  z-index: 10;
+  border-right: none;
+  border-bottom: none;
+`;
+
+export const BorderRight = styled("div")<{ carouselWith: number }>`
+  position: absolute;
+  top: -2vh;
+  width: 90%;
+  height: ${(props) => props.carouselWith / 1.43}vh;
+  grid-column: 3;
+  grid-row: 1 / span 4;
+  border: 2px solid red;
+  border-left: none;
+  border-top: none;
+  margin-right: 18%;
+  z-index: 10;
+`;
+
+export const ButtonMore = styled("button")`
+  letter-spacing: 0.06em;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  background: linear-gradient(
+    to right,
+    rgba(250, 2, 2, 0.7) 1%,
+    transparent 40%,
+    transparent 60%,
+    rgba(97, 6, 6, 0.7) 100%
+  );
+  color: #950101;
+  box-shadow: inset 0 0 10px rgba(253, 27, 27, 0.4),
+    0 0 9px 3px rgba(253, 27, 27, 0.1);
+  border: 3px inset red;
+  border-style: ridge;
+  width: 10vw;
+  grid-column: 2 / span 4;
+  z-index: 15;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: -4em;
+    width: 4em;
+    height: 100%;
+    top: 0;
+    transition: transform 0.4s ease-in-out;
+    background: linear-gradient(
+      to right,
+      transparent 1%,
+      rgba(163, 17, 17, 0.1) 40%,
+      rgba(85, 6, 6, 0.1) 60%,
+      transparent 100%
+    );
+  }
+
+  &:hover {
+    color: #f9f905;
+    box-shadow: inset 0 0 10px rgba(245, 41, 41), 0 0 9px 3px rgba(126, 21, 21);
+  }
+  &:hover:before {
+    transform: translateX(15em);
+  }
+
+  @media (max-width: 750px) {
+    width: 20vw;
+  }
 `;
 
 /*
