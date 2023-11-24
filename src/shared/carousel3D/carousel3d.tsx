@@ -1,11 +1,12 @@
 import { useState } from "react";
-import * as S from "./carousel.styled";
+import * as S from "./carousel3d.styled";
 import { Typography } from "@mui/material";
 
 type ImageMap = {
   degY: number;
   src: any;
   alt: string;
+  discription: string;
 };
 
 let imagePathes: string[] = [
@@ -81,6 +82,7 @@ const sortCarousel = (numberFirstEl: string) => {
       degY: i * degKey,
       src: images[i],
       alt: `Image ${i + 1}`,
+      discription: descriptions[i],
     });
   }
 };
@@ -132,7 +134,7 @@ const Carousel: React.FC = () => {
             <S.BorderLeft id={index.toString()} onClick={handleClick} />
             <S.TextContainer>
               <Typography variant="h3" textAlign="left">
-                {descriptions[index]}
+                {item.discription}
               </Typography>
             </S.TextContainer>
           </S.Slide>

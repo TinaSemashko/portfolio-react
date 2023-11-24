@@ -1,57 +1,130 @@
 import Slider from "react-slick";
+import { createGlobalStyle } from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import YogaCarousel from "../../images/YogaCarousel.jpg";
-import StrongWomenCarousel from "../../images/StrongWomenCarousel.jpg";
-import DetenteCarousel from "../../images/DetenteCarousel.jpg";
-import StripPlasticCarousel from "../../images/StripPlasticCarousel.jpg";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+
 import * as S from "./cartProduit.styled";
 
-const Carousel = () => {
+interface ArrowProps {
+  className?: string;
+  style?: React.CSSProperties;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
+}
+
+type ImageMap = {
+  src: any;
+  alt: string;
+  discription: string;
+};
+
+let imagePathes: string[] = [
+  "Ardoises.jpg",
+  "Bardage.jpg",
+  "Charpente.jpg",
+  "Cuivre.jpg",
+  "Inox.jpg",
+  "Plomb.jpg",
+  "Tuiles.jpg",
+  "Isolation.jpg",
+  "Zinc.jpg",
+];
+let descriptions = [
+  "Ardoises",
+  "Bardage",
+  "Charpente",
+  "Cuivre",
+  "Inox",
+  "Plomb",
+  "Tuiles",
+  "Isolation",
+  "Zinc",
+];
+
+const SLIDES_QUANTITY = imagePathes.length;
+const images: string[] = [];
+let imageMap: ImageMap[] = [];
+imagePathes.map((el) => images.push(require(`../../images/${el}`)));
+console.log(images);
+imageMap = [];
+for (let i = 0; i < SLIDES_QUANTITY; i++) {
+  imageMap.push({
+    src: images[i],
+    alt: `Image ${i + 1}`,
+    discription: descriptions[i],
+  });
+}
+
+const SampleNextArrow = (props: ArrowProps) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", color: "red", right: "55px" }}
+      onClick={onClick}
+    >
+      <ArrowForwardIosIcon sx={{ fontSize: 80 }} />
+    </div>
+  );
+};
+
+const SamplePrevArrow = (props: ArrowProps) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        display: "block",
+        color: "red",
+        left: "55px",
+        zIndex: "10",
+      }}
+      onClick={onClick}
+    >
+      <ArrowBackIosIcon sx={{ fontSize: 80 }} />
+    </div>
+  );
+};
+
+const GlobalStyles = createGlobalStyle`
+  .slick-arrow.slick-next:before,
+  .slick-arrow.slick-prev:before {
+    content: "";
+  }
+`;
+
+const Carousel: React.FC = () => {
   const settings = {
+    customPaging: function (i: number) {
+      return (
+        <a>
+          <img src={images[i]} width="25vw" height="25vh" />
+        </a>
+      );
+    },
+
     dots: true,
-    infinite: true,
-    speed: 2000,
-    slidesToShow: 2,
+    dotsClass: "slick-dots slick-thumb",
+    infinite: false,
+    lazyLoad: true,
+    speed: 500,
+    slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 1000,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
   };
+
   return (
     <S.CarouselContainer>
+      <GlobalStyles />
       <Slider {...settings}>
-        <div>
-          <img
-            src={YogaCarousel}
-            alt="YogaCarousel"
-            width="cover"
-            height="600rem"
-          />
-        </div>
-        <div>
-          <img
-            src={StrongWomenCarousel}
-            alt="StrongWomenCarousel"
-            width="800rem"
-            height="600rem"
-          />
-        </div>
-        <div>
-          <img
-            src={DetenteCarousel}
-            alt="DetenteCarousel"
-            width="800rem"
-            height="600rem"
-          />
-        </div>
-        <div>
-          <img
-            src={StripPlasticCarousel}
-            alt="StripPlasticCarousel"
-            width="800rem"
-            height="600rem"
-          />
-        </div>
+        {imageMap.map((item, index) => (
+          <S.ImgCarouselContainer>
+            <img src={item.src} alt={item.alt} width="100%" />
+          </S.ImgCarouselContainer>
+        ))}
       </Slider>
     </S.CarouselContainer>
   );
