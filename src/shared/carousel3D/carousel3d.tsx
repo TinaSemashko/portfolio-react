@@ -1,97 +1,143 @@
-import { useState } from "react";
-import * as S from "./carousel3d.styled";
-import { Typography } from "@mui/material";
+import { useEffect, useState } from "react";
+import { CircularProgress, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router";
+import { Routes } from "../../app/routes";
+import { Carousel3d } from "../../types/projects";
 
-type ImageMap = {
+import * as S from "./carousel3d.styled";
+
+type ImageMapType = {
   degY: number;
   src: any;
   alt: string;
-  discription: string;
+  description: string;
 };
 
-let imagePathes: string[] = [
-  "Ardoises.jpg",
-  "Bardage.jpg",
-  "Charpente.jpg",
-  "Cuivre.jpg",
-  "Inox.jpg",
-  "Plomb.jpg",
-  "Tuiles.jpg",
-  "Isolation.jpg",
-  "Zinc.jpg",
-  // "img1.png",
-  // "diamond.png",
-  // "img3.png",
-  // "ekea.png",
-  // "img5.png",
-  // "teamChallnge.png",
-  // "img7.png",
-  // "img8.png",
-  // "img9.png",
+interface CarouselParams {
+  sidesQuantity: number;
+  degKey: number;
+  radius: number;
+  cellsize: number;
+}
+
+let imagePathes: Carousel3d[] = [
+  {
+    imagesCarousel: "img1.png",
+    descriptions:
+      "React|Styled-components|Typecript|Mui-material|PostgreSQL|GitHub|Work in the team",
+  },
+  {
+    imagesCarousel: "img2.png",
+    descriptions: "HTML|CSS|Javascript|Local storage for Basket|GitHub",
+  },
+  {
+    imagesCarousel: "img3.png",
+    descriptions: "HTML|CSS|React|Bootstrap|API|GitHub",
+  },
+  {
+    imagesCarousel: "img4.png",
+    descriptions:
+      "HTML|CSS|Javascript|Bootstrap|JSON|Local storage for Basket|GitHub",
+  },
+  {
+    imagesCarousel: "img5.png",
+    descriptions: "HTML|CSS|Javascript|Bootstrap|GitHub",
+  },
+  {
+    imagesCarousel: "img6.png",
+    descriptions:
+      "React|Styled-components|Typecript|Mui-material|PostgreSQL|GitHub",
+  },
+  {
+    imagesCarousel: "img7.png",
+    descriptions: "HTML|CSS|Javascript|Bootstrap|API|GitHub",
+  },
+  {
+    imagesCarousel: "img8.png",
+    descriptions: "HTML|CSS|React|Bootstrap|API|GitHub",
+  },
+  {
+    imagesCarousel: "img9.png",
+    descriptions:
+      "React|Styled-components|Typecript|Mui-material|PostgreSQL|GitHub",
+  },
+  {
+    imagesCarousel: "img10.png",
+    descriptions:
+      "React|Styled-components|Typecript|Mui-material|PostgreSQL|GitHub",
+  },
+  {
+    imagesCarousel: "img11.png",
+    descriptions:
+      "React|Styled-components|Javascript|Mui-material|PostgreSQL|GitHub|Work in the team",
+  },
 ];
 
-const SLIDES_QUANTITY = imagePathes.length;
-const degKey = 360 / SLIDES_QUANTITY;
 const radius = 28;
-const CELLSIZE = Math.round(2 * radius * Math.tan(Math.PI / SLIDES_QUANTITY));
-
-let descriptions = [
-  "Ardoises",
-  "Bardage",
-  "Charpente",
-  "Cuivre",
-  "Inox",
-  "Plomb",
-  "Tuiles",
-  "Isolation",
-  "Zinc",
-  // "test",
-  // "test",
-  // "test",
-  // "test",
-  // "test",
-  // "test",
-  // "test",
-  // "test",
-  // "test",
-  // "test",
-];
-
-let imageMap: ImageMap[] = [];
-
-const sortCarousel = (numberFirstEl: string) => {
-  let indexEOnChange =
-    parseInt(numberFirstEl) >= SLIDES_QUANTITY
-      ? parseInt(numberFirstEl) - SLIDES_QUANTITY
-      : parseInt(numberFirstEl);
-
-  let tempStart = imagePathes.slice(0, indexEOnChange);
-  let tempEnd = imagePathes.slice(indexEOnChange);
-  imagePathes = tempEnd.concat(tempStart);
-  tempStart = descriptions.slice(0, indexEOnChange);
-  tempEnd = descriptions.slice(indexEOnChange);
-  descriptions = tempEnd.concat(tempStart);
-
-  const images: string[] = [];
-
-  imagePathes.map((el) => images.push(require(`../../images/${el}`)));
-
-  imageMap = [];
-  for (let i = 0; i < SLIDES_QUANTITY; i++) {
-    imageMap.push({
-      degY: i * degKey,
-      src: images[i],
-      alt: `Image ${i + 1}`,
-      discription: descriptions[i],
-    });
-  }
-};
-
-sortCarousel("0");
-
 const Carousel: React.FC = () => {
+  const navigate = useNavigate();
+  const { t } = useTranslation();
   const [animationPause, setAnimationPause] = useState(false);
   const [indexState, setIndexState] = useState("");
+  const [carouselParams, setCarouselParams] = useState<CarouselParams>();
+  const [imagesCarousel, setImagesCarousel] = useState<Carousel3d[]>([]);
+  const [imageMap, setImageMap] = useState<ImageMapType[]>([]);
+
+  const makeCarousel = (carouselParams: CarouselParams) => {
+    const images: string[] = [];
+    imagesCarousel.map((el) =>
+      images.push(require(`../../images/${el.imagesCarousel}`))
+    );
+
+    console.log(images);
+    const imageMapTemp: ImageMapType[] = [];
+    imagesCarousel.forEach((item, index) =>
+      imageMapTemp.push({
+        degY: index * (carouselParams?.degKey ?? 0),
+        src: images[index],
+        alt: `Image ${index + 1}`,
+        description: item.descriptions,
+      })
+    );
+
+    if (imageMapTemp) setImageMap(imageMapTemp);
+  };
+
+  useEffect(() => {
+    setImagesCarousel(imagePathes);
+  }, [imagePathes]);
+
+  useEffect(() => {
+    console.log(imagesCarousel);
+    if (imagesCarousel) {
+      const sidesQuantity = imagePathes.length;
+      const paramTemp = {
+        sidesQuantity: sidesQuantity,
+        degKey: 360 / sidesQuantity,
+        radius: radius,
+        cellsize: Math.round(2 * radius * Math.tan(Math.PI / sidesQuantity)),
+      };
+      setCarouselParams(paramTemp);
+      console.log(paramTemp);
+      if (paramTemp) makeCarousel(paramTemp);
+    }
+  }, [imagesCarousel]);
+
+  const sortCarousel = (numberFirstEl: string) => {
+    if (numberFirstEl !== "0") {
+      let indexEOnChange =
+        Number(numberFirstEl) >= (carouselParams?.sidesQuantity ?? 0)
+          ? Number(numberFirstEl) - (carouselParams?.sidesQuantity ?? 0)
+          : Number(numberFirstEl);
+
+      const tempStart = imagesCarousel.slice(0, indexEOnChange);
+      const tempEnd = imagesCarousel.slice(indexEOnChange);
+      tempEnd.push(...tempStart);
+      imagesCarousel.splice(0, imagesCarousel.length, ...tempEnd);
+    }
+    if (carouselParams) makeCarousel(carouselParams);
+  };
 
   const handleClick = (event: React.MouseEvent<HTMLImageElement>) => {
     setAnimationPause((prev) => !prev);
@@ -100,45 +146,49 @@ const Carousel: React.FC = () => {
     if (!animationPause) {
       indexElForChange = (event.target as HTMLTextAreaElement).id;
       setIndexState(indexElForChange);
-      sortCarousel(indexElForChange);
+      if (carouselParams) sortCarousel(indexElForChange);
     }
   };
 
   return (
-    <S.MainContainer carouselWith={CELLSIZE}>
+    <S.MainContainer carouselWith={carouselParams?.cellsize ?? 0}>
       <S.CarouselContainer isAnimationPaused={animationPause}>
-        {imageMap.map((item, index) => (
-          <S.Slide
-            key={index}
-            degY={item.degY}
-            radius={radius}
-            carouselWith={CELLSIZE}
-          >
-            <S.Picture
-              carouselWith={CELLSIZE}
-              src={item.src}
-              alt={item.alt}
-              id={index.toString()}
-              onClick={handleClick}
-            />
-            <S.ButtonMore>
-              <Typography variant="h6" textAlign="left">
-                Consulter
-              </Typography>
-            </S.ButtonMore>
-            <S.BorderRight
-              carouselWith={CELLSIZE}
-              id={index.toString()}
-              onClick={handleClick}
-            />
-            <S.BorderLeft id={index.toString()} onClick={handleClick} />
-            <S.TextContainer>
-              <Typography variant="h3" textAlign="left">
-                {item.discription}
-              </Typography>
-            </S.TextContainer>
-          </S.Slide>
-        ))}
+        {!imageMap ? (
+          <CircularProgress color="secondary" />
+        ) : (
+          imageMap.map((item, index) => (
+            <S.Slide
+              key={index}
+              degY={item.degY}
+              radius={carouselParams?.radius ?? 0}
+              carouselWith={carouselParams?.cellsize ?? 0}
+            >
+              <S.Picture
+                carouselWith={carouselParams?.cellsize ?? 0}
+                src={item.src}
+                alt={item.alt}
+                id={index.toString()}
+                onClick={handleClick}
+              />
+              <S.ButtonMore>
+                <Typography component="div" variant="h6" textAlign="left">
+                  {t("carousel3d.button")}
+                </Typography>
+              </S.ButtonMore>
+              <S.BorderRight
+                carouselWith={carouselParams?.cellsize ?? 0}
+                id={index.toString()}
+                onClick={handleClick}
+              />
+              <S.BorderLeft id={index.toString()} onClick={handleClick} />
+              <S.TextContainer>
+                <Typography variant="h6" textAlign="left">
+                  {item.description}
+                </Typography>
+              </S.TextContainer>
+            </S.Slide>
+          ))
+        )}
       </S.CarouselContainer>
     </S.MainContainer>
   );

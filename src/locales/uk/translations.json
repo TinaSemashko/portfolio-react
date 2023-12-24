@@ -38,5 +38,13 @@
     "faq": "faq",
     "close": "закрити",
     "login": "увійти"
+  },
+  "not_found": {
+    "title": "Oops!",
+    "description": "Hmmm ... something's wrong. Are you sure this page exists? Maybe it's only in the dreams of our developers. Please try again.",
+    "btn_go_home": "Go home"
+  },
+  "carousel3d": {
+    "button": "До опису"
   }
 }

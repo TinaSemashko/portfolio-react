@@ -1,4 +1,3 @@
-import { Button } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 export const MainContainer = styled("div")<{ carouselWith: number }>`
@@ -80,11 +79,11 @@ export const TextContainer = styled("div")`
   position: absolute;
   grid-column: 1 / span 3;
   grid-row: 3/3;
-  color: red;
+  color: yellow;
   z-index: 10;
   max-width: 80%;
   text-align: left;
-  margin-left: -10vw;
+  margin-left: -1vw;
 `;
 
 export const BorderLeft = styled("div")`

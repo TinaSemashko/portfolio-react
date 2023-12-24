@@ -12,9 +12,6 @@ export const VideoAccueil = styled("video")`
   text-align: center;
   position: fixed;
   z-index: -1;
-  @media (max-width: 750px) {
-    width: 100vw;
-  }
 `;
 
 export const TextContainer = styled("div")`
@@ -58,7 +55,6 @@ export const Title = styled("div")`
 
 export const TextRainbow = styled("div")`
   text-align: center;
-  height: 30vh;
   background: linear-gradient(
     to right,
     red,
@@ -99,10 +95,6 @@ export const TextRainbow = styled("div")`
       background-position: 0% 50%;
     }
   }
-`;
-
-export const LogoContainer = styled("div")`
-  text-align: center;
 `;
 
 export const TextDrawer = styled("svg")`
@@ -147,11 +139,10 @@ export const TextDrawer = styled("svg")`
 `;
 
 export const HistoryContainer = styled("div")`
-  background-size: 95vw;
-  color: ${({ theme }) => theme.palette.colorRed.main};
+  color: ${({ theme }) => theme.palette.primary.main};
   text-align: center;
 
-  &::before {
+  /* &::before {
     content: "";
     background: url(${imgFon}) no-repeat center center;
     background-size: cover;
@@ -165,7 +156,7 @@ export const HistoryContainer = styled("div")`
     margin-top: 10vh;
     padding-bottom: 20vh;
     height: 100%;
-  }
+  } */
 
   @media (max-width: 750px) {
   }
@@ -176,4 +167,19 @@ export const GridContainer = styled("div")`
   grid-template-columns: 1fr 1fr;
   align-items: center;
   justify-items: center;
+`;
+
+export const Langbt = styled("div")`
+  color: white;
+  text-align: center;
+`;
+
+export const CarouselContainer = styled("div")`
+  margin-top: 20vh;
+  margin-bottom: 40vh;
+`;
+
+export const LogoContainer = styled("div")`
+  text-align: center;
+  padding-top: 20vh;
 `;

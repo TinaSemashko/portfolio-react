@@ -9,6 +9,8 @@ import { Routes } from "../app/routes";
 import imgProjects from "../images/web-development.png";
 
 import * as S from "./home.styled";
+import Carousel3d from "../shared/carousel3D/carousel3d";
+import LangButton from "../shared/langButton";
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -28,6 +30,7 @@ const Home: React.FC = () => {
   return (
     <S.MainContainer>
       <S.VideoAccueil src={Video} autoPlay loop muted />
+
       <S.TextContainer>
         <S.Title>
           <Typography
@@ -43,12 +46,15 @@ const Home: React.FC = () => {
           </Typography>
         </S.TextRainbow>
       </S.TextContainer>
+      <S.Langbt>
+        <LangButton colorPrime={true} />
+      </S.Langbt>
       <S.HistoryContainer>
         <Typography variant="h3"> {parse(t("main.subtitle3"))}</Typography>
         <br />
         <div>-------------------------</div>
         <br />
-        <Typography variant="h3" sx={{ color: "primary.main" }}>
+        <Typography variant="h3" sx={{ color: "colorRed.main" }}>
           {t("main.subtitle2")}
         </Typography>
         <br />
@@ -56,15 +62,16 @@ const Home: React.FC = () => {
           variant="h3"
           sx={{
             textAlign: "center",
-            pl: "20vw",
-
-            width: "76vw",
+            px: "10vw",
           }}
         >
           {t("main.bible")}
         </Typography>
       </S.HistoryContainer>
-      <S.GridContainer>
+      <S.CarouselContainer>
+        <Carousel3d />
+      </S.CarouselContainer>
+      {/* <S.GridContainer>
         <img src={imgProjects} width="500vw" />
         <Typography
           variant="body1"
@@ -72,7 +79,7 @@ const Home: React.FC = () => {
         >
           {t("main.projects")}
         </Typography>
-      </S.GridContainer>
+      </S.GridContainer> */}
       {/* <canvas id="canvas" width="150" height="150"></canvas> */}
 
       <S.LogoContainer>

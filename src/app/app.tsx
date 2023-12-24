@@ -1,24 +1,8 @@
 import React from "react";
-// import logo from './logo.svg';
-import { Global as GlobalStyles, css } from "@emotion/react";
 import { createTheme, responsiveFontSizes, ThemeProvider } from "@mui/material";
-
-import * as S from "./app.styled";
 import Topbar from "../shared/topbar/topbar";
 import { AppRoutes } from "./appRoutes";
 import Footer from "../shared/footer/footer";
-
-declare module "@mui/material/styles" {
-  interface Palette {
-    colorBlack: Palette["primary"];
-    colorRed: Palette["primary"];
-  }
-
-  interface PaletteOptions {
-    colorBlack?: PaletteOptions["primary"];
-    colorRed?: PaletteOptions["primary"];
-  }
-}
 
 export let theme = createTheme({
   palette: {

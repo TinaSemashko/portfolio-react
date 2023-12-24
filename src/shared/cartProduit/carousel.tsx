@@ -93,6 +93,10 @@ const GlobalStyles = createGlobalStyle`
   .slick-arrow.slick-prev:before {
     content: "";
   }
+  .slick-dots {
+            display: flex !important;
+            justify-content: space-evenly;
+        }
 `;
 
 const Carousel: React.FC = () => {
@@ -100,7 +104,7 @@ const Carousel: React.FC = () => {
     customPaging: function (i: number) {
       return (
         <a>
-          <img src={images[i]} width="25vw" height="25vh" />
+          <img src={images[i]} width="90vw" height="70vh" />
         </a>
       );
     },
