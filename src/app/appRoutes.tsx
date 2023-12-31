@@ -2,19 +2,23 @@ import React, { lazy } from "react";
 import { Routes as Router, Route } from "react-router";
 import { Routes } from "./routes";
 import withSuspense from "../hoc/withSuspense";
-import NotFound from "../pages/notFound";
+import NotFound from "../pages/notFound/notFound";
 
 const Home = lazy(() => import("../pages/home"));
-const Profile = lazy(() => import("../pages/profile"));
+const About = lazy(() => import("../pages/about"));
 const Projects = lazy(() => import("../pages/projects"));
-const CartProduit = lazy(() => import("../shared/cartProduit/cartProduit"));
+const Resume = lazy(() => import("../pages/resume"));
+const Hobby = lazy(() => import("../pages/hobby"));
+const Contact = lazy(() => import("../pages/contact"));
 
 export const AppRoutes: React.FunctionComponent = () => (
   <Router>
     <Route path={Routes.home} element={withSuspense(Home)} />
-    <Route path={Routes.profile} element={withSuspense(Profile)} />
+    <Route path={Routes.about} element={withSuspense(About)} />
     <Route path={Routes.projects} element={withSuspense(Projects)} />
-    <Route path={Routes.cartproduit} element={withSuspense(CartProduit)} />
+    <Route path={Routes.resume} element={withSuspense(Resume)} />
+    <Route path={Routes.hobby} element={withSuspense(Hobby)} />
+    <Route path={Routes.contact} element={withSuspense(Contact)} />
 
     <Route path="*" element={<NotFound />} />
   </Router>

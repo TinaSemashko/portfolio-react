@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import imgFon from "../images/fon26.png";
+import imgFon from "../../images/fon26.png";
 
 export const MainContainer = styled("div")`
   position: relative;

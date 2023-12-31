@@ -27,14 +27,14 @@
     "logout": "Log out"
   },
   "menu": {
-    "menu": "menu",
-    "home": "main page",
-    "team": "my projects",
-    "teams": "teams",
-    "profile": "my account",
-    "faq": "faq",
+    "home": "main",
+    "about": "about me",
+    "projects": "my projects",
+    "resume": "my CV",
+    "hobby": "my hobby",
+    "contact": "contacts",
     "close": "close",
-    "login": "log in"
+    "menu": "menu"
   },
   "not_found": {
     "title": "Oops!",

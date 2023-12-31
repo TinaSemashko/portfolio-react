@@ -60,8 +60,13 @@ export const CloseIconStyle = styled("div")`
   }
 `;
 
-export const FlexBox = styled("div")`
+export const ListBox = styled("div")`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  white-space: nowrap;
+`;
+
+export const FlexBox = styled(ListBox)`
+  width: 100%;
 `;

@@ -1,6 +1,8 @@
 export enum MenuItems {
   HOME = "home",
   PROJECTS = "projects",
-  CARTPRODUIT = "cartproduit",
+  ABOUT = "about",
+  RESUME = "resume",
+  HOBBY = "hobby",
   CONTACT = "contact",
 }

@@ -6,6 +6,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useTranslation } from "react-i18next";
 import {
   AppBar,
   Toolbar,
@@ -27,6 +28,7 @@ const menuItemsArray = Object.values(MenuItems);
 const drawerWidth = "100%";
 
 const TopBar: React.FC = () => {
+  const { t } = useTranslation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const navigate = useNavigate();
   const { pathname } = useLocation();
@@ -48,8 +50,8 @@ const TopBar: React.FC = () => {
       }}
     >
       <S.CloseIconStyle>
-        <Typography variant="h6" className="close">
-          Close
+        <Typography variant="h5" color="secondary.main" className="close">
+          {t("menu.close")}
         </Typography>
         <CloseIcon sx={{ fontSize: "2rem" }} />
       </S.CloseIconStyle>
@@ -134,39 +136,50 @@ const TopBar: React.FC = () => {
           >
             <MenuIcon />
           </IconButton>
-          {/* <S.FlexBox> */}
-          <img src={logo} width="40vw" onClick={() => navigate(Routes.home)} />
-          <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-          {/* </S.FlexBox> */}
-          <List
-            sx={{ display: { xs: "none", sm: "flex" }, color: "primary.main" }}
-          >
-            {menuItemsArray.map((item, index) => (
-              <ListItem key={index} disablePadding>
-                <ListItemButton
-                  selected={isSelected(item)}
-                  onClick={() => navigate(Routes[item as keyof typeof Routes])}
-                  sx={{
-                    textTransform: "capitalize",
+          <S.FlexBox>
+            <img
+              src={logo}
+              width="40vw"
+              onClick={() => navigate(Routes.home)}
+            />
 
-                    "&.Mui-selected": {
-                      color: "primary.main",
-                      backgroundColor: "transparent",
-                      borderRadius: "10px",
-                      boxShadow: " 0px 4px 4px #4a0808 ",
-                    },
-                    "&:hover": {
-                      backgroundColor: "primary.main",
-                      borderRadius: "10px",
-                      boxShadow: " 0px 4px 4px #4a0808 ",
-                    },
-                  }}
-                >
-                  {item}
-                </ListItemButton>
-              </ListItem>
-            ))}
-          </List>
+            <S.ListBox>
+              <List
+                sx={{
+                  display: { xs: "none", sm: "flex" },
+                  color: "primary.main",
+                }}
+              >
+                {menuItemsArray.map((item, index) => (
+                  <ListItem key={index} disablePadding>
+                    <ListItemButton
+                      selected={isSelected(item)}
+                      onClick={() =>
+                        navigate(Routes[item as keyof typeof Routes])
+                      }
+                      sx={{
+                        textTransform: "uppercase",
+
+                        "&.Mui-selected": {
+                          color: "colorBlack.main",
+                          backgroundColor: "transparent",
+
+                          boxShadow: " 0px 4px 4px #4a0808 ",
+                        },
+                        "&:hover": {
+                          backgroundColor: "#4a0808",
+
+                          boxShadow: " 0px 2px 2px #4a0808 ",
+                        },
+                      }}
+                    >
+                      {t(`menu.${item}`)}
+                    </ListItemButton>
+                  </ListItem>
+                ))}
+              </List>
+            </S.ListBox>
+          </S.FlexBox>
         </Toolbar>
       </AppBar>
       <Box component="nav">

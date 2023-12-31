@@ -2,15 +2,16 @@ import { Button, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
 import parse from "html-react-parser";
-import Video from "../images/videohome.mp4";
-import logo from "../images/logo.png";
-import flag from "../images/Nuvola_France_Ukraine_flags.svg.png";
-import { Routes } from "../app/routes";
-import imgProjects from "../images/web-development.png";
+import Video from "../../images/videohome.mp4";
+import logo from "../../images/logo.png";
+import flag from "../../images/Nuvola_France_Ukraine_flags.svg.png";
+import { Routes } from "../../app/routes";
+import imgProjects from "../../images/web-development.png";
+import Carousel3d from "../../shared/carousel3D/carousel3d";
+import LangButton from "../../shared/langButton";
+import TopbarPerspective from "../../shared/topbar/topbarPerspective";
 
 import * as S from "./home.styled";
-import Carousel3d from "../shared/carousel3D/carousel3d";
-import LangButton from "../shared/langButton";
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
