@@ -1,5 +1,4 @@
 import { styled } from "@mui/material/styles";
-import imgFon from "../../images/fon26.png";
 
 export const MainContainer = styled("div")`
   position: relative;
@@ -15,8 +14,6 @@ export const VideoAccueil = styled("video")`
 `;
 
 export const TextContainer = styled("div")`
-  padding-top: 7vw;
-
   @media (max-width: 750px) {
   }
 `;
@@ -99,12 +96,8 @@ export const TextRainbow = styled("div")`
 
 export const TextDrawer = styled("svg")`
   text-align: center;
-
-  font-family: sans-serif;
-
   stroke-dasharray: 100%;
   stroke-dashoffset: 100%;
-
   -webkit-animation: draw 8s forwards;
   -moz-animation: draw 8s forwards;
   -o-animation: draw 8s forwards;
@@ -142,22 +135,6 @@ export const HistoryContainer = styled("div")`
   color: ${({ theme }) => theme.palette.primary.main};
   text-align: center;
 
-  /* &::before {
-    content: "";
-    background: url(${imgFon}) no-repeat center center;
-    background-size: cover;
-    opacity: 0.4;
-    top: 20vh;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;
-    margin-top: 10vh;
-    padding-bottom: 20vh;
-    height: 100%;
-  } */
-
   @media (max-width: 750px) {
   }
 `;
@@ -169,11 +146,6 @@ export const GridContainer = styled("div")`
   justify-items: center;
 `;
 
-export const Langbt = styled("div")`
-  color: white;
-  text-align: center;
-`;
-
 export const CarouselContainer = styled("div")`
   margin-top: 20vh;
   margin-bottom: 40vh;
@@ -182,4 +154,23 @@ export const CarouselContainer = styled("div")`
 export const LogoContainer = styled("div")`
   text-align: center;
   padding-top: 20vh;
+`;
+
+export const LampContainer = styled("div")`
+  text-align: center;
+  padding-top: 5vh;
+  grid-column: 1;
+  grid-row: 1;
+`;
+
+export const Langbt = styled("div")`
+  color: ${({ theme }) => theme.palette.colorBlack.main};
+  text-align: center;
+  grid-column: 1;
+  grid-row: 1;
+`;
+
+export const BookContainer = styled("div")`
+  /* text-align: center;
+  padding-top: 5vh; */
 `;

@@ -4,7 +4,7 @@ export const TextBox = styled("div")`
   transform: translateY(30px);
   opacity: 0;
   transition: all 0.3s ease;
-  bottom: 0;
+  top: 0;
   /* left: 5px; */
   text-align: center;
   position: absolute;
@@ -15,7 +15,7 @@ export const TextBox = styled("div")`
 
 export const MainContainer = styled("div")`
   width: 100%;
-  height: 100%;
+  height: 10px;
   display: flex;
   perspective: 10px;
   transform: perspective(300px) rotateX(20deg);
@@ -24,7 +24,7 @@ export const MainContainer = styled("div")`
   transition: all 1.3s ease-out;
   justify-content: center;
   transform-style: preserve-3d;
-  /* border: solid yellow; */
+  border: solid yellow;
 
   &:hover {
     perspective: 1000px;
@@ -46,7 +46,7 @@ export const MainContainer = styled("div")`
 
 const sharedStyles = `
   width: 200px;
-  height: 150px;
+  height: 12vh;
   transform-style: preserve-3d;
   border-radius: 10px;
   border: 1px solid #fff;
@@ -69,15 +69,13 @@ export const LefterBox = styled("div")`
   ${sharedStyles}
   text-align:center;
   transform: translateX(-60px) translateZ(-50px) rotateY(-10deg);
-  /* background-image: url(https://cdn3.iconfinder.com/data/icons/other-icons/48/organization-512.png); */
-  z-index: 1000;
+  background-image: url(https://cdn3.iconfinder.com/data/icons/other-icons/48/organization-512.png);
 `;
 
 export const LeftBox = styled("div")`
   ${sharedStyles}
   transform: translateX(-30px) translateZ(-25px) rotateY(-5deg);
   background-image: url(https://cdn3.iconfinder.com/data/icons/other-icons/48/creative_draw-512.png);
-  z-index: 1000;
 `;
 
 export const CenterBox = styled("div")`

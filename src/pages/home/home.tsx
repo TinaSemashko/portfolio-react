@@ -1,37 +1,27 @@
-import { Button, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
 import parse from "html-react-parser";
-import Video from "../../images/videohome.mp4";
+import Video from "../../images/production_id 4076130 (1080p).mp4";
 import logo from "../../images/logo.png";
 import flag from "../../images/Nuvola_France_Ukraine_flags.svg.png";
 import { Routes } from "../../app/routes";
-import imgProjects from "../../images/web-development.png";
-import Carousel3d from "../../shared/carousel3D/carousel3d";
+
 import LangButton from "../../shared/langButton";
-import TopbarPerspective from "../../shared/topbar/topbarPerspective";
 
 import * as S from "./home.styled";
+import Book from "./book";
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
-  // function draw() {
-  //   var canvas = document.getElementById("canvas");
-  //   if (canvas?.getContext) {
-  //     var ctx = canvas.getContext("2d");
-
-  //     ctx.fillRect(25, 25, 100, 100);
-  //     ctx.clearRect(45, 45, 60, 60);
-  //     ctx.strokeRect(50, 50, 50, 50);
-  //   }
-  // }
-
   return (
     <S.MainContainer>
       <S.VideoAccueil src={Video} autoPlay loop muted />
-
+      <S.Langbt>
+        <LangButton colorPrime={true} iconWithoutSlash={false} />
+      </S.Langbt>
       <S.TextContainer>
         <S.Title>
           <Typography
@@ -47,19 +37,17 @@ const Home: React.FC = () => {
           </Typography>
         </S.TextRainbow>
       </S.TextContainer>
-      <S.Langbt>
-        <LangButton colorPrime={true} />
-      </S.Langbt>
       <S.HistoryContainer>
         <Typography variant="h3"> {parse(t("main.subtitle3"))}</Typography>
         <br />
-        <div>-------------------------</div>
+        {/* <div>-------------------------</div> */}
+        <Book />
         <br />
-        <Typography variant="h3" sx={{ color: "colorRed.main" }}>
+        {/* <Typography variant="h3" sx={{ color: "colorRed.main" }}>
           {t("main.subtitle2")}
         </Typography>
-        <br />
-        <Typography
+        <br /> */}
+        {/* <Typography
           variant="h3"
           sx={{
             textAlign: "center",
@@ -67,11 +55,9 @@ const Home: React.FC = () => {
           }}
         >
           {t("main.bible")}
-        </Typography>
+        </Typography> */}
       </S.HistoryContainer>
-      <S.CarouselContainer>
-        <Carousel3d />
-      </S.CarouselContainer>
+
       {/* <S.GridContainer>
         <img src={imgProjects} width="500vw" />
         <Typography

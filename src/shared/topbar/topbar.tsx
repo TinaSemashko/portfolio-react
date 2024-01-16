@@ -44,8 +44,8 @@ const TopBar: React.FC = () => {
       onClick={handleDrawerToggle}
       sx={{
         textAlign: "center",
-        background:
-          "linear-gradient(180deg, rgba(172,168,168,1) 10%, rgba(169,11,11,1) 100%)",
+        // background:
+        //   "linear-gradient(180deg, rgba(172,168,168,1) 10%, rgba(169,11,11,1) 100%)",
         height: "100%",
       }}
     >
@@ -67,34 +67,16 @@ const TopBar: React.FC = () => {
       >
         {menuItemsArray.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton
-              selected={isSelected(item)}
-              sx={{
-                textTransform: "capitalize",
-                textAlign: "center",
-
-                "&.Mui-selected": {
-                  color: "primary.main",
-                  backgroundColor: "transparent",
-                  borderRadius: "10px",
-                  boxShadow: " 0px 4px 4px #4a0808 ",
-                },
-                "&:hover": {
-                  backgroundColor: "primary.main",
-                  borderRadius: "10px",
-                  boxShadow: " 0px 4px 4px #4a0808 ",
-                },
-              }}
-            >
+            <S.StyledListItemButton selected={isSelected(item)}>
               <ListItemText
-                primary={item === MenuItems.HOME ? "accueil" : item}
+                primary={item}
                 onClick={() => navigate(Routes[item as keyof typeof Routes])}
                 primaryTypographyProps={{
                   fontSize: "12vw",
                   textTransform: "capitalize",
                 }}
               />
-            </ListItemButton>
+            </S.StyledListItemButton>
           </ListItem>
         ))}
       </List>
@@ -114,7 +96,7 @@ const TopBar: React.FC = () => {
         position="absolute"
         sx={{
           backgroundColor: "transparent",
-          boxShadow: "none",
+          // boxShadow: "none",
         }}
       >
         <Toolbar
@@ -147,34 +129,20 @@ const TopBar: React.FC = () => {
               <List
                 sx={{
                   display: { xs: "none", sm: "flex" },
-                  color: "primary.main",
                 }}
               >
                 {menuItemsArray.map((item, index) => (
                   <ListItem key={index} disablePadding>
-                    <ListItemButton
+                    <S.StyledListItemButton
                       selected={isSelected(item)}
                       onClick={() =>
                         navigate(Routes[item as keyof typeof Routes])
                       }
-                      sx={{
-                        textTransform: "uppercase",
-
-                        "&.Mui-selected": {
-                          color: "colorBlack.main",
-                          backgroundColor: "transparent",
-
-                          boxShadow: " 0px 4px 4px #4a0808 ",
-                        },
-                        "&:hover": {
-                          backgroundColor: "#4a0808",
-
-                          boxShadow: " 0px 2px 2px #4a0808 ",
-                        },
-                      }}
                     >
-                      {t(`menu.${item}`)}
-                    </ListItemButton>
+                      <Typography variant="h4" fontWeight="900">
+                        {t(`menu.${item}`)}
+                      </Typography>
+                    </S.StyledListItemButton>
                   </ListItem>
                 ))}
               </List>

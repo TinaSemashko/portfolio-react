@@ -18,6 +18,12 @@ export let theme = createTheme({
     colorRed: {
       main: "#5f0101",
     },
+    colorOrange: {
+      main: "#ff9d00",
+    },
+    colorGreen: {
+      main: "#239705",
+    },
   },
   typography: {
     h1: {
@@ -44,11 +50,15 @@ export let theme = createTheme({
     },
     h6: {
       fontFamily: "Special Elite, cursive",
-      fontSize: "0.7rem",
+      fontSize: "1rem",
     },
     body1: {
       fontFamily: "Kurale , cursive",
       fontSize: "0.5rem",
+    },
+    body2: {
+      fontFamily: "Marck Script , cursive",
+      fontSize: "0.7rem",
     },
   },
   breakpoints: {
