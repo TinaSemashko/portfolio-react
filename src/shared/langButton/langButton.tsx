@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import lamp1 from "../../images/pngwing.com(3).png";
+import lamp1 from "../../images/lamp.png";
 
 import * as S from "./langButton.styled";
 

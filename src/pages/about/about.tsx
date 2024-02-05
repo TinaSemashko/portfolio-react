@@ -1,7 +1,13 @@
-import React from "react";
+import WalkingCat from "../components/walkingCat";
 
 import * as S from "./about.styled";
 
-const About: React.FC = () => <S.MainContainer></S.MainContainer>;
+const About: React.FC = () => {
+  return (
+    <S.MainContainer>
+      <WalkingCat />
+    </S.MainContainer>
+  );
+};
 
 export default About;

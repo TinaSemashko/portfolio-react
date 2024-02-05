@@ -94,61 +94,12 @@ export const TextRainbow = styled("div")`
   }
 `;
 
-export const TextDrawer = styled("svg")`
-  text-align: center;
-  stroke-dasharray: 100%;
-  stroke-dashoffset: 100%;
-  -webkit-animation: draw 8s forwards;
-  -moz-animation: draw 8s forwards;
-  -o-animation: draw 8s forwards;
-  -ms-animation: draw 8s forwards;
-  animation: draw 8s forwards;
-
-  @-webkit-keyframes draw {
-    100% {
-      stroke-dashoffset: 0;
-    }
-  }
-  @-moz-keyframes draw {
-    100% {
-      stroke-dashoffset: 0;
-    }
-  }
-  @-o-keyframes draw {
-    100% {
-      stroke-dashoffset: 0;
-    }
-  }
-  @-ms-keyframes draw {
-    100% {
-      stroke-dashoffset: 0;
-    }
-  }
-  @keyframes draw {
-    100% {
-      stroke-dashoffset: 0;
-    }
-  }
-`;
-
 export const HistoryContainer = styled("div")`
   color: ${({ theme }) => theme.palette.primary.main};
   text-align: center;
 
   @media (max-width: 750px) {
   }
-`;
-
-export const GridContainer = styled("div")`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  justify-items: center;
-`;
-
-export const CarouselContainer = styled("div")`
-  margin-top: 20vh;
-  margin-bottom: 40vh;
 `;
 
 export const LogoContainer = styled("div")`
