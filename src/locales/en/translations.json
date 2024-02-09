@@ -42,6 +42,7 @@
     "btn_go_home": "Go home"
   },
   "carousel3d": {
-    "button": "Learn more"
+    "button_git": "Open GIT",
+    "button_project": "Open project"
   }
 }

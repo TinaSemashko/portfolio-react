@@ -3,9 +3,9 @@ import EmailIcon from "@mui/icons-material/Email";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { Typography } from "@mui/material";
+import LangButton from "../langButton";
 
 import * as S from "./footer.styled";
-import LangButton from "../langButton";
 
 const Home: React.FC = () => {
   return (

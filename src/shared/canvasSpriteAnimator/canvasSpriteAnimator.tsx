@@ -19,7 +19,7 @@ const CanvasSpriteAnimator: React.FC<CanvasSpriteAnimatorProps> = ({
   speed,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const { width } = useWindowSize();
+  const { width } = useWindowSize(false);
   let xPos = width - frameWidth; // Начальная позиция по X
   let movingRight = false; // Начальное направление движения
 

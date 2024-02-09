@@ -1,18 +1,9 @@
 import { useEffect, useState } from "react";
-import { CircularProgress, Typography } from "@mui/material";
+import { Box, CircularProgress, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router";
-import { Routes } from "../../app/routes";
 import { Carousel3d } from "../../types/projects";
 
 import * as S from "./carousel3d.styled";
-
-type ImageMapType = {
-  degY: number;
-  src: any;
-  alt: string;
-  description: string;
-};
 
 interface CarouselParams {
   sidesQuantity: number;
@@ -21,108 +12,143 @@ interface CarouselParams {
   cellsize: number;
 }
 
-let imagePathes: Carousel3d[] = [
+let imagesCarousel: Carousel3d[] = [
   {
-    imagesCarousel: "img1.png",
+    imageName: "img1.png",
     descriptions:
       "React|Styled-components|Typecript|Mui-material|PostgreSQL|GitHub|Work in the team",
+    linkGit: "",
+    linkProject: "https://teamchallenge.io/",
+    src: "require(`../../images/${imageName}`)",
+    degY: 0,
+    alt: "",
   },
   {
-    imagesCarousel: "img2.png",
+    imageName: "img2.png",
     descriptions: "HTML|CSS|Javascript|Local storage for Basket|GitHub",
+    linkGit: "https://github.com/TinaSemashko/ProjetJavascriptAssofac",
+    linkProject: "https://loquacious-empanada-12b1c9.netlify.app/",
+    src: "",
+    degY: 0,
+    alt: "",
   },
   {
-    imagesCarousel: "img3.png",
+    imageName: "img3.png",
     descriptions: "HTML|CSS|React|Bootstrap|API|GitHub",
+    linkGit: "https://github.com/TinaSemashko/dictionary_react",
+    linkProject: "https://effortless-sunburst-a3a68f.netlify.app/",
+    src: "",
+    degY: 0,
+    alt: "",
   },
   {
-    imagesCarousel: "img4.png",
+    imageName: "img4.png",
     descriptions:
       "HTML|CSS|Javascript|Bootstrap|JSON|Local storage for Basket|GitHub",
+    linkGit: "https://github.com/Kaiju971/PROJET-NIVEAU-II",
+    linkProject: "https://magical-cocada-6863e7.netlify.app/",
+    src: "",
+    degY: 0,
+    alt: "",
   },
   {
-    imagesCarousel: "img5.png",
+    imageName: "img5.png",
     descriptions: "HTML|CSS|Javascript|Bootstrap|GitHub",
+    linkGit: "https://github.com/TinaSemashko/AssofacCasinoGame",
+    linkProject: "https://aquamarine-gnome-52ee5d.netlify.app/",
+    src: "",
+    degY: 0,
+    alt: "",
   },
   {
-    imagesCarousel: "img6.png",
+    imageName: "img6.png",
     descriptions:
       "React|Styled-components|Typecript|Mui-material|PostgreSQL|GitHub",
+    linkGit: "",
+    linkProject: "",
+    src: "",
+    degY: 0,
+    alt: "",
   },
   {
-    imagesCarousel: "img7.png",
+    imageName: "img7.png",
     descriptions: "HTML|CSS|Javascript|Bootstrap|API|GitHub",
+    linkGit: "https://github.com/TinaSemashko/Weather",
+    linkProject: "https://incandescent-cuchufli-36fc65.netlify.app/",
+    src: "",
+    degY: 0,
+    alt: "",
   },
   {
-    imagesCarousel: "img8.png",
+    imageName: "img8.png",
     descriptions: "HTML|CSS|React|Bootstrap|API|GitHub",
+    linkGit: "https://github.com/TinaSemashko/weather_react",
+    linkProject: "https://stately-sopapillas-d6d214.netlify.app/",
+    src: "",
+    degY: 0,
+    alt: "",
   },
   {
-    imagesCarousel: "img9.png",
+    imageName: "img9.png",
     descriptions:
       "React|Styled-components|Typecript|Mui-material|PostgreSQL|GitHub",
+    linkGit: "",
+    linkProject: "",
+    src: "",
+    degY: 0,
+    alt: "",
   },
   {
-    imagesCarousel: "img10.png",
+    imageName: "img10.png",
     descriptions:
       "React|Styled-components|Typecript|Mui-material|PostgreSQL|GitHub",
+    linkGit: "",
+    linkProject: "",
+    src: "",
+    degY: 0,
+    alt: "",
   },
   {
-    imagesCarousel: "img11.png",
+    imageName: "img11.png",
     descriptions:
       "React|Styled-components|Javascript|Mui-material|PostgreSQL|GitHub|Work in the team",
+    linkGit: "",
+    linkProject: "",
+    src: "",
+    degY: 0,
+    alt: "",
   },
 ];
 
 const radius = 28;
 const Carousel: React.FC = () => {
-  const navigate = useNavigate();
   const { t } = useTranslation();
   const [animationPause, setAnimationPause] = useState(false);
   const [indexState, setIndexState] = useState("");
   const [carouselParams, setCarouselParams] = useState<CarouselParams>();
-  const [imagesCarousel, setImagesCarousel] = useState<Carousel3d[]>([]);
-  const [imageMap, setImageMap] = useState<ImageMapType[]>([]);
+  const [imageMap, setImageMap] = useState<Carousel3d[]>([]);
 
   const makeCarousel = (carouselParams: CarouselParams) => {
-    const images: string[] = [];
-    imagesCarousel.map((el) =>
-      images.push(require(`../../images/${el.imagesCarousel}`))
-    );
-
-    console.log(images);
-    const imageMapTemp: ImageMapType[] = [];
-    imagesCarousel.forEach((item, index) =>
-      imageMapTemp.push({
-        degY: index * (carouselParams?.degKey ?? 0),
-        src: images[index],
-        alt: `Image ${index + 1}`,
-        description: item.descriptions,
-      })
-    );
-
-    if (imageMapTemp) setImageMap(imageMapTemp);
+    imagesCarousel.map((el, index) => {
+      el.src = require(`../../images/${el.imageName}`);
+      el.alt = `Image ${index + 1}`;
+      el.degY = index * carouselParams.degKey;
+    });
+    setImageMap(imagesCarousel);
   };
 
   useEffect(() => {
-    setImagesCarousel(imagePathes);
-  }, [imagePathes]);
+    const sidesQuantity = imagesCarousel.length;
+    const paramTemp = {
+      sidesQuantity: sidesQuantity,
+      degKey: 360 / sidesQuantity,
+      radius: radius,
+      cellsize: Math.round(2 * radius * Math.tan(Math.PI / sidesQuantity)),
+    };
+    setCarouselParams(paramTemp);
 
-  useEffect(() => {
-    console.log(imagesCarousel);
-    if (imagesCarousel) {
-      const sidesQuantity = imagePathes.length;
-      const paramTemp = {
-        sidesQuantity: sidesQuantity,
-        degKey: 360 / sidesQuantity,
-        radius: radius,
-        cellsize: Math.round(2 * radius * Math.tan(Math.PI / sidesQuantity)),
-      };
-      setCarouselParams(paramTemp);
-      console.log(paramTemp);
-      if (paramTemp) makeCarousel(paramTemp);
-    }
-  }, [imagesCarousel]);
+    if (paramTemp) makeCarousel(paramTemp);
+  }, []);
 
   const sortCarousel = (numberFirstEl: string) => {
     if (numberFirstEl !== "0") {
@@ -136,6 +162,7 @@ const Carousel: React.FC = () => {
       tempEnd.push(...tempStart);
       imagesCarousel.splice(0, imagesCarousel.length, ...tempEnd);
     }
+    setImageMap(imagesCarousel);
     if (carouselParams) makeCarousel(carouselParams);
   };
 
@@ -148,6 +175,11 @@ const Carousel: React.FC = () => {
       setIndexState(indexElForChange);
       if (carouselParams) sortCarousel(indexElForChange);
     }
+  };
+
+  const openInNewTab = (url: string): void => {
+    const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+    if (newWindow) newWindow.opener = null;
   };
 
   return (
@@ -163,6 +195,7 @@ const Carousel: React.FC = () => {
               radius={carouselParams?.radius ?? 0}
               carouselWith={carouselParams?.cellsize ?? 0}
             >
+              {/* <S.GridContainer> */}
               <S.Picture
                 carouselWith={carouselParams?.cellsize ?? 0}
                 src={item.src}
@@ -170,22 +203,56 @@ const Carousel: React.FC = () => {
                 id={index.toString()}
                 onClick={handleClick}
               />
-              <S.ButtonMore>
-                <Typography component="div" variant="h6" textAlign="left">
-                  {t("carousel3d.button")}
-                </Typography>
-              </S.ButtonMore>
+              {/* <Box sx={{ gridColumn: "1 / span 4", gridRow: "1 / span 7" }}>
+                  test1
+                </Box>
+                <Box sx={{ gridColumn: "1 / span 4", gridRow: "1 / span 4" }}>
+                  test2
+                </Box>
+                <Box sx={{ gridColumn: "3", gridRow: "2 / span 4" }}>test3</Box>
+                <Box sx={{ gridColumn: "1 / span 3", gridRow: "3" }}>test4</Box>
+                <Box sx={{ gridColumn: "2 / span 4", gridRow: "4 " }}>
+                  test5
+                </Box>
+                <Box sx={{ gridColumn: "2 / span 4", gridRow: "5" }}>test6</Box> */}
+              <S.BorderLeft id={index.toString()} onClick={handleClick} />
               <S.BorderRight
                 carouselWith={carouselParams?.cellsize ?? 0}
                 id={index.toString()}
                 onClick={handleClick}
               />
-              <S.BorderLeft id={index.toString()} onClick={handleClick} />
               <S.TextContainer>
-                <Typography variant="h6" textAlign="left">
-                  {item.description}
+                <Typography
+                  variant="body2"
+                  textAlign="left"
+                  id={index.toString()}
+                  onClick={handleClick}
+                >
+                  {item.descriptions}
                 </Typography>
               </S.TextContainer>
+              <S.ButtonMore>
+                <Typography
+                  component="div"
+                  variant="body1"
+                  textAlign="left"
+                  onClick={() => openInNewTab(item.linkProject)}
+                >
+                  {t("carousel3d.button_project")}
+                </Typography>
+              </S.ButtonMore>
+              <br />
+              <S.ButtonMore>
+                <Typography
+                  component="div"
+                  variant="body1"
+                  textAlign="left"
+                  onClick={() => openInNewTab(item.linkGit)}
+                >
+                  {t("carousel3d.button_git")}
+                </Typography>
+              </S.ButtonMore>
+              {/* </S.GridContainer> */}
             </S.Slide>
           ))
         )}

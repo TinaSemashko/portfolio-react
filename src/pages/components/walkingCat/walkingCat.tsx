@@ -8,11 +8,11 @@ const WalkingCat: React.FC = () => {
     <S.MainContainer>
       <CanvasSpriteAnimator
         spriteSheet={img} // Путь к вашему листу спрайтов
-        frameCount={8} // Количество кадров в анимации
-        frameWidth={175} // Ширина одного кадра
+        frameCount={8} // Количество кадров в анимации 8
+        frameWidth={175} // Ширина одного кадра 175
         frameHeight={150} // Высота одного кадра
         fps={4} // Частота кадров в секунду
-        speed={5} // Скорость движения кота
+        speed={6} // Скорость движения кота
       />
     </S.MainContainer>
   );

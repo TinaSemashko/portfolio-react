@@ -48,6 +48,7 @@ export const Slide = styled("div")<{
   display: grid;
   grid-template-columns: 33% 33% 33%;
   grid-template-rows: 23% 23% 23% 10%;
+  grid-gap: 1%;
   place-items: center;
   justify-items: center;
 
@@ -131,6 +132,7 @@ export const ButtonMore = styled("button")`
   border: 3px inset red;
   border-style: ridge;
   width: 10vw;
+  height: 1.95vh;
   grid-column: 2 / span 4;
   z-index: 15;
 

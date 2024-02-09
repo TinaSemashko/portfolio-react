@@ -57,8 +57,19 @@ export let theme = createTheme({
       fontSize: "0.5rem",
     },
     body2: {
-      fontFamily: "Marck Script , cursive",
-      fontSize: "0.7rem",
+      // fontFamily: "Marck Script , cursive",
+      fontFamily: "Special Elite, cursive",
+      fontSize: "0.6rem",
+    },
+    subtitle1: {
+      fontFamily: "Times New Roman, serif",
+      fontSize: "8rem",
+      "@media (max-width:750px)": {
+        fontSize: "3rem",
+      },
+      "@media (max-width:350px)": {
+        fontSize: "2rem",
+      },
     },
   },
   breakpoints: {
@@ -73,7 +84,7 @@ const App: React.FC = () => (
   <ThemeProvider theme={responsiveFontSizes(theme)}>
     <Topbar />
     <AppRoutes />
-    <Footer />
+    {/* <Footer /> */}
   </ThemeProvider>
 );
 

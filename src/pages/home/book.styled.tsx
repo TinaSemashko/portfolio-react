@@ -3,61 +3,27 @@ import paper1 from "../../images/paper.png";
 
 export const MainContainer = styled("div")`
   position: relative;
-  min-height: 24vh;
+  color: red;
   @media (max-width: 750px) {
   }
 `;
 
-export const CardContainer = styled("div")`
-  width: 220px;
-  height: 300px;
+export const CardContainer = styled("div")<{
+  windowWidth: number;
+  windowHeight: number;
+}>`
+  width: ${({ windowWidth }) => `calc(0.1px * ${windowWidth})`};
+  height: ${({ windowHeight }) => `calc(0.27px * ${windowHeight})`};
   position: absolute;
-  top: 95%;
-  left: 55%;
+  top: ${({ windowHeight }) => `calc(0.32 * ${windowHeight}px)`};
+  left: ${({ windowWidth }) => `calc(0.25 * ${windowWidth}px)`};
+
   perspective: 2000px;
   transform: rotateX(50deg) skewX(20deg) translate(-50px, -400px);
   background: url(${paper1}) no-repeat;
   background-size: cover;
   transform-style: preserve-3d;
   transition: 8s;
-  animation: one 8s forwards 2s;
-
-  .imgBox {
-    animation: open 2s forwards 1s;
-  }
-
-  @keyframes one {
-    0% {
-      -webkit-transform: translate(-50px, -300px) rotateX(50deg) skewX(20deg);
-      transform: translate(-50px, -300px) rotateX(50deg) skewX(20deg);
-    }
-    100% {
-      transform: perspective(2000px) rotate(-10deg);
-      -webkit-transform: rotateX(0) scale(1.8) translate(-50px, -200px);
-      transform: rotateX(0) scale(2) translate(30px, -150px);
-      -webkit-transform: rotateX(0) scale(1.8) translate(30px, -200px);
-    }
-  }
-
-  @-webkit-keyframes one {
-    0% {
-      -webkit-transform: translate(15px, -400px) rotateX(50deg) skewX(20deg);
-      transform: translate(15px, -400px) rotateX(50deg) skewX(20deg);
-    }
-    100% {
-      transform: perspective(2000px) rotate(-10deg);
-      -webkit-transform: rotateX(0) scale(1.8) translate(-50px, -200px);
-      transform: rotateX(0) scale(2) translate(30px, -150px);
-      -webkit-transform: rotateX(0) scale(1.8) translate(30px, -200px);
-    }
-  }
-
-  @keyframes open {
-    100% {
-      transform: rotateY(-180deg);
-      -webkit-transform: rotateY(-180deg);
-    }
-  }
 
   @media (max-width: 750px) {
   }
@@ -70,15 +36,23 @@ export const ImgContainer = styled("div")`
   transform-origin: left;
 `;
 
-export const TextContainer = styled("div")`
+export const TextContainer = styled("div")<{
+  windowWidth: number;
+  windowHeight: number;
+}>`
   position: absolute;
   top: 0;
   left: 0;
   box-sizing: border-box;
-  width: 95%;
+  width: ${({ windowWidth }) => `calc(0.095px * ${windowWidth})`};
+  height: 10vh;
   padding-top: 2vh;
   z-index: -1;
   color: ${({ theme }) => theme.palette.colorRed.main};
+
+  & .MuiTypography-root {
+    font-size: ${({ windowHeight }) => `calc(0.0006rem * ${windowHeight})`};
+  }
 `;
 
 export const ImgVert = styled("img")`

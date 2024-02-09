@@ -45,6 +45,7 @@
     "btn_go_home": "Go home"
   },
   "carousel3d": {
-    "button": "До опису"
+    "button_git": "До GIT",
+    "button_project": "До проекту"
   }
 }

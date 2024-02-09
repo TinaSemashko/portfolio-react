@@ -1,4 +1,9 @@
 export type Carousel3d = {
-  imagesCarousel: string;
+  imageName: string;
+  src: string;
   descriptions: string;
+  linkGit: string;
+  linkProject: string;
+  degY: number;
+  alt: string;
 };

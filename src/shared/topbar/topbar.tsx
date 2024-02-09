@@ -95,8 +95,7 @@ const TopBar: React.FC = () => {
         component="nav"
         position="absolute"
         sx={{
-          backgroundColor: "transparent",
-          // boxShadow: "none",
+          backgroundColor: "#ffe4c43f",
         }}
       >
         <Toolbar
