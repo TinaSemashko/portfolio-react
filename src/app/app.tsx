@@ -27,15 +27,21 @@ export let theme = createTheme({
   },
   typography: {
     h1: {
-      fontFamily: "Neucha, serif",
+      // fontFamily: "Neucha, serif",
+      // fontFamily: "Comforter, cursive";
+      // fontFamily: "Cormorant Infant, serif";
+      // fontFamily: "Rubik Marker Hatch, serif",
+      // fontFamily: "Marck Script , cursive",
+      fontFamily: "Kurale , cursive",
       fontSize: "10rem",
     },
     h2: {
-      fontFamily: "Rubik Marker Hatch, serif",
+      fontFamily: "Kurale , cursive",
       fontSize: "8rem",
     },
     h3: {
-      fontFamily: "Marck Script , cursive",
+      fontFamily: "Cormorant Infant, serif",
+      fontSize: "5rem",
     },
     h4: {
       fontFamily: "Kurale , cursive",
@@ -57,7 +63,6 @@ export let theme = createTheme({
       fontSize: "0.5rem",
     },
     body2: {
-      // fontFamily: "Marck Script , cursive",
       fontFamily: "Special Elite, cursive",
       fontSize: "0.6rem",
     },
@@ -84,7 +89,7 @@ const App: React.FC = () => (
   <ThemeProvider theme={responsiveFontSizes(theme)}>
     <Topbar />
     <AppRoutes />
-    {/* <Footer /> */}
+    <Footer />
   </ThemeProvider>
 );
 

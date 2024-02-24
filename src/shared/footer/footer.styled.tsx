@@ -1,9 +1,12 @@
 import { styled } from "@mui/material/styles";
 
 export const MainContainer = styled("div")`
+  width: 100%;
+  overflow-x: hidden;
   text-align: center;
-  background-color: black;
-  color: ${({ theme }) => theme.palette.primary.main};
+  background-color: transparent;
+  /* background-color: black; */
+  /* color: ${({ theme }) => theme.palette.primary.main}; */
   /* height: 2vh; */
 `;
 

@@ -18,15 +18,14 @@ const Hobby: React.FC = () => {
             variant="h2"
             sx={{ textAlign: "center", color: "primary.main" }}
           >
-            {t("main.title")}
+            {t("about.title")}
           </Typography>
         </S.Title>
         <S.TextRainbow>
-          <Typography variant="h1">
-            <img src={flag} width="40vw" /> {t("main.subtitle1")}
-          </Typography>
+          <Typography variant="h1">my hobby</Typography>
         </S.TextRainbow>
       </S.TextContainer>
+      <div></div>
       <S.LogoContainer>
         <img src={logo} width="80vw" />
       </S.LogoContainer>

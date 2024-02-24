@@ -10,11 +10,11 @@ import * as S from "./footer.styled";
 const Home: React.FC = () => {
   return (
     <S.MainContainer>
-      <S.ContactContainer>
-        {/* <S.VideoFooter src={ImgContact} autoPlay loop muted /> */}
-      </S.ContactContainer>
+      {/* <S.ContactContainer>
+        {/* <S.VideoFooter src={ImgContact} autoPlay loop muted /> 
+      </S.ContactContainer> */}
 
-      <LangButton colorPrime={false} iconWithoutSlash={true} />
+      {/* <LangButton colorPrime={false} iconWithoutSlash={true} /> */}
 
       <Typography variant="h4" textAlign="center">
         © 2023 Akateria Web Studio. Tous Droits Réservés.

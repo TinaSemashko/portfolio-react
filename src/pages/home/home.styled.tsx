@@ -1,46 +1,70 @@
 import { styled } from "@mui/material/styles";
+import img1 from "../../images/2ecran.png";
 
 export const MainContainer = styled("div")`
-  width: 100vw;
-  height: 100vh;
-  max-height: 100vh;
-  position: relative;
+  width: 100%;
 
   @media (max-width: 750px) {
   }
 `;
 
-export const VideoAccueil = styled("video")`
-  width: 100%;
-  object-fit: cover;
-  text-align: center;
-  position: fixed;
-  z-index: -1;
+export const GridContainer = styled("div")`
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-items: center;
+  position: relative;
+  @media (max-width: 750px) {
+  }
 `;
 
-export const Langbt = styled("div")<{
-  //top 0
-  windowWidth: number;
-  windowHeight: number;
-}>`
-  /* position: absolute;
-  top: 0; */
-  left: ${({ windowWidth }) => `calc(0.40px * ${windowWidth})`};
-  height: ${({ windowHeight }) => `calc(0.5px * ${windowHeight})`};
-  color: ${({ theme }) => theme.palette.colorBlack.main};
-  text-align: center;
+export const GridContainer2ecran = styled(GridContainer)`
+  align-items: center;
+
+  @media (max-width: 750px) {
+  }
 `;
 
-export const Title = styled("div")<{
-  //top 20%
-  windowWidth: number;
-  windowHeight: number;
-}>`
-  position: absolute;
-  top: ${({ windowHeight }) => `calc(0.20 * ${windowHeight}px)`};
-  left: ${({ windowWidth }) => `calc(0.15 * ${windowWidth}px)`};
+export const Side = styled("div")`
   text-align: center;
-  color: ${({ theme }) => theme.palette.primary.main};
+  width: 50vw;
+  height: 98vh;
+  transition: transform 0.3s ease-in-out;
+`;
+
+export const LeftSide1ecran = styled(Side)`
+  grid-row: 1 / span 2;
+  grid-column: 1;
+  left: 0;
+  text-align: center;
+  background-color: ${({ theme }) => theme.palette.secondary.main};
+  color: #dedcdca9;
+`;
+
+export const RightSide1ecran = styled(Side)`
+  grid-row: 1 / span 2;
+  grid-column: 2;
+  right: 0;
+  text-align: center;
+  background-color: #dedcdca9;
+  color: ${({ theme }) => theme.palette.secondary.main};
+`;
+
+export const Langbt = styled("div")`
+  text-align: center;
+  grid-column: 1 / span 2;
+  grid-row: 1;
+  height: 10%;
+`;
+
+export const TitleLeft1ecran = styled("div")`
+  /* height: 90%; */
+  margin-top: -14vh;
+  grid-column: 1 / span 2;
+  grid-row: 2;
+  text-align: center;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  color: #dedcdca9;
+
   -webkit-animation: swirl-in-fwd 0.6s ease-out both;
   animation: swirl-in-fwd 0.6s ease-out both;
 
@@ -69,74 +93,14 @@ export const Title = styled("div")<{
     }
   }
 `;
-
-export const TextRainbow = styled("div")`
-  width: 100%;
-  height: 100%;
+export const TitleRight1ecran = styled("div")`
+  /* height: 90%; */
+  margin-top: -14vh;
+  grid-column: 1 / span 2;
+  grid-row: 2;
   text-align: center;
-  background: linear-gradient(
-    to right,
-    red,
-    orange,
-    yellow,
-    green,
-    cyan,
-    blue,
-    violet
-  );
-  background-size: 400% 400%;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-animation: rainbow 20s ease infinite;
-  animation: rainbow 20s ease infinite;
-  font-family: var(--font-satisfy);
-
-  @-webkit-keyframes rainbow {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  @keyframes rainbow {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-`;
-
-export const CatContainer = styled("div")<{
-  //top 33%
-  windowHeight: number;
-}>`
-  position: absolute;
-  bottom: ${({ windowHeight }) => `calc(520 * ${windowHeight}px/1080)`};
-`;
-
-export const HistoryContainer = styled("div")<{
-  //top 55%
-  windowWidth: number;
-  windowHeight: number;
-}>`
-  position: absolute;
-  top: ${({ windowHeight }) => `calc(0.55px * ${windowHeight})`};
-  left: ${({ windowWidth }) => `calc(0.33px * ${windowWidth})`};
-  color: ${({ theme }) => theme.palette.primary.main};
-  text-align: center;
-
-  @media (max-width: 750px) {
-  }
+  color: ${({ theme }) => theme.palette.secondary.main};
+  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
 `;
 
 export const LogoContainer = styled("div")`
@@ -144,15 +108,55 @@ export const LogoContainer = styled("div")`
   padding-top: 20vh;
 `;
 
-export const Line = styled("hr")<{
-  windowWidth: number;
-  windowHeight: number;
-  videoWidth: number;
-  videoHeight: number;
-}>`
-  color: yellow;
-  width: 100%;
+export const CatContainer = styled("div")`
   position: absolute;
-  /* top: ${({ windowHeight }) => `calc(520 * ${windowHeight}px/1080)`}; */
-  top: ${({ videoHeight }) => `calc(520 * ${videoHeight}px/1080)`};
+  bottom: 0;
+  grid-row: 3;
+  grid-column: 1 / span 2;
+`;
+
+export const LeftSide2ecran = styled(Side)`
+  grid-row: 1;
+  grid-column: 1;
+  left: 0;
+  text-align: center;
+  background-color: ${({ theme }) => theme.palette.secondary.main};
+  color: #dedcdca9;
+`;
+
+export const RightSide2ecran = styled(Side)`
+  grid-row: 1;
+  grid-column: 2;
+  right: 0;
+  text-align: center;
+  background-color: #dedcdca9;
+  opacity: 0.7;
+  background: url(${img1}) no-repeat;
+  background-size: cover;
+  color: ${({ theme }) => theme.palette.secondary.main};
+`;
+
+export const ImgLeft2ecran = styled("img")`
+  width: 70%;
+  padding-top: 10vh;
+  padding-right: 10%;
+  opacity: 0.7;
+`;
+
+export const TitleLeft2ecran = styled("div")`
+  grid-column: 1 / span 2;
+  grid-row: 1;
+  text-align: center;
+  color: #dedcdca9;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  z-index: 10;
+`;
+
+export const TitleRight2ecran = styled("div")`
+  grid-column: 1 / span 2;
+  grid-row: 1;
+  text-align: center;
+  color: ${({ theme }) => theme.palette.secondary.main};
+  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
+  z-index: 10;
 `;

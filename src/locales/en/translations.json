@@ -15,11 +15,20 @@
     "show_more": "Show more"
   },
   "main": {
-    "title": "Hi !",
+    "title": "Welcome to the world of web development",
     "subtitle1": "Hi! I'm Tina, full-stack developer",
+    "text": "This site is designed to meet me and get in touch. Here are some pages specifically designed in different styles to showcase the different patterns and elements I use in my work.",
+    "projects": "This page is dedicated to my projects, you can see on it what I have already done, and this page will be constantly updated. I love my job, I work with pleasure, I am always ready to learn something new and master new technologies. If I still can’t do something, it’s temporary.",
+    "title2ecran": "\"Choose a job you love",
+    "subtitle2ecran": "and you will never have to work ",
+    "subtitle12ecran": "a day in your life.\"",
+    "author2ecran": "Confucius"
+  },
+  "about": {
+    "title": "Hi! I'm Tina",
+    "subtitle1": " full-stack developer",
     "subtitle2": "And God created the developer...",
     "subtitle3": "This story began a long time ago, <br />when computers were big and programs were small",
-    "projects": "This page is dedicated to my projects, you can see on it what I have already done, and this page will be constantly updated. I love my job, I work with pleasure, I am always ready to learn something new and master new technologies. If I still can’t do something, it’s temporary.",
     "bible": "In the beginning there was a word, and the word was 2 bytes, but there was nothing else. And God separated one from zero, and saw that it was good. And God said: let there be data, and it was so. And God said: let each data be collected in its own place, and created floppy disks, and hard drives, and CDs. And God said: let there be computers, so that there will be somewhere to shove floppy disks, and hard drives, and CDs, and he created computers, and called them hard, and separated the hardware from the software. There was no software yet, but God quickly corrected himself and created programs large and small, and told them: be fruitful and multiply, and fill all the memory. But He got tired of creating programs himself, and God said: let’s create a programmer in our image and likeness, and let him rule over computers, and over programs, and over data. And God created a developer..."
   },
   "auth": {
