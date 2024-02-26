@@ -36,7 +36,11 @@ const About: React.FC = () => {
         videoHeight={heightVideo}
       /> */}
       <S.Langbt windowWidth={width} windowHeight={height}>
-        <LangButton colorPrime={true} iconWithoutSlash={false} />
+        <LangButton
+          colorPrime={true}
+          iconWithoutSlash={false}
+          selectMode={false}
+        />
       </S.Langbt>
       <S.Title windowWidth={width} windowHeight={height}>
         <S.TextRainbow>

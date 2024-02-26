@@ -8,9 +8,43 @@ export const MainContainer = styled("div")`
   }
 `;
 
+export const TitreColor = styled("div")`
+  transition: 500ms;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; //dedcdca9
+  background-clip: text;
+
+  background: linear-gradient(
+    45deg,
+    #ffffff,
+    #a1a1a1,
+    #ffffff,
+    #a1a1a1,
+    #ffffff
+  );
+
+  background-size: 3200px 200px;
+  animation: gradient 15s linear infinite;
+  color: transparent;
+  background-clip: text;
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 0%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+`;
+
 export const GridContainer = styled("div")`
   display: grid;
   grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 30% 20%;
   justify-items: center;
   position: relative;
   @media (max-width: 750px) {
@@ -32,35 +66,78 @@ export const Side = styled("div")`
 `;
 
 export const LeftSide1ecran = styled(Side)`
-  grid-row: 1 / span 2;
+  grid-row: 1 / span 3;
   grid-column: 1;
-  left: 0;
   text-align: center;
   background-color: ${({ theme }) => theme.palette.secondary.main};
   color: #dedcdca9;
 `;
 
 export const RightSide1ecran = styled(Side)`
-  grid-row: 1 / span 2;
+  grid-row: 1 / span 3;
   grid-column: 2;
-  right: 0;
   text-align: center;
   background-color: #dedcdca9;
   color: ${({ theme }) => theme.palette.secondary.main};
 `;
 
 export const Langbt = styled("div")`
-  text-align: center;
+  /* text-align: center; */
   grid-column: 1 / span 2;
+  grid-row: 2;
+  padding-top: 6vh;
+  opacity: 0.5;
+  display: grid;
+  grid-template-columns: 14.286% 3.5715% 10.7145% 3.5715% 10.7145% 3.5715% 10.7145% 3.5715% 10.7145% 3.5715% 10.7145% 3.5715% 14.286%;
+  /* justify-items: center; */
+  align-items: center;
+  width: 55vw;
+  height: 18vh;
+`;
+
+export const ElImg = styled("img")`
+  width: 10vw;
+`;
+
+export const Element1 = styled("div")`
   grid-row: 1;
-  height: 10%;
+  grid-column: 1 / span 2;
+`;
+
+export const Element2 = styled("div")`
+  grid-row: 1;
+  grid-column: 2 / span 4;
+`;
+
+export const Element3 = styled("div")`
+  grid-row: 1;
+  grid-column: 4 / span 6;
+`;
+
+export const Element4 = styled("div")`
+  grid-row: 1;
+  grid-column: 6 / span 8;
+`;
+
+export const Element5 = styled("div")`
+  grid-row: 1;
+  grid-column: 8 / span 10;
+`;
+
+export const Element6 = styled("div")`
+  grid-row: 1;
+  grid-column: 10 / span 12;
+`;
+
+export const Element7 = styled("div")`
+  grid-row: 1;
+  grid-column: 12 / span 14;
 `;
 
 export const TitleLeft1ecran = styled("div")`
-  /* height: 90%; */
-  margin-top: -14vh;
+  margin-top: 24vh;
   grid-column: 1 / span 2;
-  grid-row: 2;
+  grid-row: 1;
   text-align: center;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   color: #dedcdca9;
@@ -94,10 +171,9 @@ export const TitleLeft1ecran = styled("div")`
   }
 `;
 export const TitleRight1ecran = styled("div")`
-  /* height: 90%; */
-  margin-top: -14vh;
+  margin-top: 24vh;
   grid-column: 1 / span 2;
-  grid-row: 2;
+  grid-row: 1;
   text-align: center;
   color: ${({ theme }) => theme.palette.secondary.main};
   clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);

@@ -22,14 +22,27 @@
     "title2ecran": "\"Choose a job you love",
     "subtitle2ecran": "and you will never have to work ",
     "subtitle12ecran": "a day in your life.\"",
-    "author2ecran": "Confucius"
+    "author2ecran": "Confucius",
+    "lang": "Language"
   },
   "about": {
     "title": "Hi! I'm Tina",
     "subtitle1": " full-stack developer",
     "subtitle2": "And God created the developer...",
     "subtitle3": "This story began a long time ago, <br />when computers were big and programs were small",
-    "bible": "In the beginning there was a word, and the word was 2 bytes, but there was nothing else. And God separated one from zero, and saw that it was good. And God said: let there be data, and it was so. And God said: let each data be collected in its own place, and created floppy disks, and hard drives, and CDs. And God said: let there be computers, so that there will be somewhere to shove floppy disks, and hard drives, and CDs, and he created computers, and called them hard, and separated the hardware from the software. There was no software yet, but God quickly corrected himself and created programs large and small, and told them: be fruitful and multiply, and fill all the memory. But He got tired of creating programs himself, and God said: let’s create a programmer in our image and likeness, and let him rule over computers, and over programs, and over data. And God created a developer..."
+    "bible": "In the beginning there was a word, and the word was 2 bytes, but there was nothing else. And God separated one from zero, and saw that it was good. And God said: let there be data, and it was so. And God said: let each data be collected in its own place, and created floppy disks, and hard drives, and CDs. And God said: let there be computers, so that there will be somewhere to shove floppy disks, and hard drives, and CDs, and he created computers, and called them hard, and separated the hardware from the software. There was no software yet, but God quickly corrected himself and created programs large and small, and told them: be fruitful and multiply, and fill all the memory. But He got tired of creating programs himself, and God said: let’s create a programmer in our image and likeness, and let him rule over computers, and over programs, and over data. And God created a developer...",
+    "development": "IT it's my life. I fell in love with IT at the age of 16. Since then,  I had worked as a system administrator, analyst, 1C developer, and now I has become a web-developer.",
+    "dev_short": "I develop",
+    "yoga": "My yoga is not about sunrise meditations on the seashore. It is a set of practices that allow transforming life according to one's desires. My school is the Ukrainian Yoga Federation.",
+    "yoga_short": "I do yoga",
+    "traveling": "Traveling is an opportunity to step beyond the ordinary, to discover what makes us different and what makes us the same, to be inspired by diverse ways of thinking and seeing the world, and to break down concrete principles...",
+    "traveling_short": "I travel",
+    "reading": "I love immersing myself in the world of books. It's not at all like movies, where everything is already chewed up for you, and it's the director's perspective, not even the author's. I enjoy imagining events on my own, filtering them through the prism of my own experience, associations, and vision.",
+    "reading_short": "I read",
+    "handmade": "I have always enjoyed creating beauty. Since childhood, I have been drawing, embroidering, making pictures from clay, later covering them with leather, weaving with beads... A special pleasure for me was the discovery of transparent stained glass paints with vibrant, pure colors.",
+    "handmade_short": "I make handmade",
+    "war": "On February 24, 2022, a full-scale war erupted in Ukraine. People were scattered around the world like splinters... We ran, not always understanding where, but certainly knowing where from. We were reset to zero. I had to start everything anew - language, profession, the rules of life. But I did it - I completed a web development course in France, and I am ready for new challenges in life, no matter what. I am very grateful to France for the help and support, for the opportunity to live and pursue my passion.",
+    "beauty": "I create beauty"
   },
   "auth": {
     "login": "Log in",

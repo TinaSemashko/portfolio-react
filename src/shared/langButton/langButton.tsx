@@ -1,23 +1,35 @@
-import React from "react";
-import { Button, Typography } from "@mui/material";
+import React, { useState } from "react";
+import {
+  Box,
+  Button,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+  Typography,
+} from "@mui/material";
 import { useTranslation } from "react-i18next";
 import lamp1 from "../../images/lamp.png";
 
 import * as S from "./langButton.styled";
 
 const languages: string[] = ["en", "fr", "uk"];
-const langAlias: string[] = ["Eng", "Fr", "Ukr"];
+const langAlias: string[] = ["English", "Français", "Українська"];
 
 type Props = {
   colorPrime: boolean;
   iconWithoutSlash?: boolean;
+  selectMode: boolean;
 };
 
 export const LangButton: React.FC<Props> = ({
   colorPrime,
   iconWithoutSlash = false,
+  selectMode,
 }) => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
+  const [selectedLang, setSelectedLang] = useState("");
   const changeCurrentLanguage = (language: string): void => {
     i18n.changeLanguage(language).catch((error) => {
       if (error instanceof Error) {
@@ -27,33 +39,72 @@ export const LangButton: React.FC<Props> = ({
       }
     });
   };
+
+  const handleLanguageChange = (event: SelectChangeEvent) => {
+    const newLanguage = event.target.value;
+    console.log(newLanguage);
+    setSelectedLang(event.target.value as string);
+    changeCurrentLanguage(newLanguage);
+  };
+
   return (
-    <Button
-      variant="text"
-      sx={{
-        width: "fit-content",
-        paddingLeft: "0px",
-        paddingRight: "0px",
-      }}
-    >
-      <Typography variant="h6" color={colorPrime ? "secondary" : "primary"}>
-        <S.List colorPrime={colorPrime} iconWithoutSlash={iconWithoutSlash}>
-          {languages.map((item, index) => (
-            <li key={index}>
-              <S.LangGridContainer key={index}>
-                <S.Lamp colorPrime={colorPrime} src={lamp1} alt="" />
-                <S.LanguageButton
-                  selected={i18n.language === item}
-                  onClick={() => changeCurrentLanguage(item)}
-                >
-                  {langAlias[index]}
-                </S.LanguageButton>
-              </S.LangGridContainer>
-            </li>
-          ))}
-        </S.List>
-      </Typography>
-    </Button>
+    <S.MainContainer>
+      {selectMode ? (
+        <Box sx={{ width: 120 }}>
+          <FormControl fullWidth>
+            <InputLabel id="select-label">{t("main.lang")}</InputLabel>
+            <Select
+              labelId="select-label"
+              id="select"
+              value={selectedLang}
+              label="Lang"
+              onChange={handleLanguageChange}
+            >
+              {languages.map((item, index) => (
+                <MenuItem value={item} key={item}>
+                  <Typography
+                    variant="body1"
+                    color={colorPrime ? "secondary" : "colorBlack"}
+                  >
+                    {langAlias[index]}
+                  </Typography>
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Box>
+      ) : (
+        <Button
+          variant="text"
+          sx={{
+            width: "fit-content",
+            paddingLeft: "0px",
+            paddingRight: "0px",
+          }}
+        >
+          <Typography
+            variant="h6"
+            color={colorPrime ? "secondary" : "colorBlack"}
+          >
+            <S.List colorPrime={colorPrime} iconWithoutSlash={iconWithoutSlash}>
+              {languages.map((item, index) => (
+                <li key={index}>
+                  <S.LangGridContainer key={index}>
+                    <S.Lamp colorPrime={colorPrime} src={lamp1} alt="" />
+                    <S.LanguageButton
+                      selected={i18n.language === item}
+                      onClick={() => changeCurrentLanguage(item)}
+                    >
+                      {item}
+                    </S.LanguageButton>
+                  </S.LangGridContainer>
+                </li>
+              ))}
+            </S.List>
+          </Typography>
+        </Button>
+      )}
+    </S.MainContainer>
   );
 };
 

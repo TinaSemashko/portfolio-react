@@ -22,6 +22,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { MenuItems } from "../../constants/menuItems";
 
 import * as S from "./topbar.styled";
+import LangButton from "../langButton";
 
 const menuItemsArray = Object.values(MenuItems);
 
@@ -146,6 +147,13 @@ const TopBar: React.FC = () => {
                 ))}
               </List>
             </S.ListBox>
+            {/* <S.Langbt> */}
+            <LangButton
+              colorPrime={false}
+              iconWithoutSlash={false}
+              selectMode={true}
+            />
+            {/* </S.Langbt> */}
           </S.FlexBox>
         </Toolbar>
       </AppBar>

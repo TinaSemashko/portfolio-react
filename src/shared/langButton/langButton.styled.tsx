@@ -1,5 +1,7 @@
 import { styled } from "@mui/material/styles";
 
+export const MainContainer = styled("div")``;
+
 export const List = styled("span")<{
   colorPrime: boolean;
   iconWithoutSlash: boolean;

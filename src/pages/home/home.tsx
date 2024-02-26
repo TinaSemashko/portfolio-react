@@ -2,6 +2,7 @@ import { Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import LangButton from "../../shared/langButton";
 import img1 from "../../images/crown.png";
+import img2 from "../../images/puzzl1.png";
 import WalkingCat from "../components/walkingCat";
 
 import * as S from "./home.styled";
@@ -14,21 +15,47 @@ const Home: React.FC = () => {
       <S.GridContainer>
         <S.LeftSide1ecran></S.LeftSide1ecran>
         <S.RightSide1ecran></S.RightSide1ecran>
-        <S.Langbt>
-          <LangButton colorPrime={false} iconWithoutSlash={false} />
-        </S.Langbt>
         <S.TitleLeft1ecran>
-          <Typography variant="h2">{t("main.title")}</Typography>
+          <S.TitreColor>
+            <Typography variant="h2">{t("main.title")}</Typography>
+          </S.TitreColor>
           <Typography variant="h4" sx={{ px: 20 }}>
             {t("main.text")}
           </Typography>
         </S.TitleLeft1ecran>
         <S.TitleRight1ecran>
-          <Typography variant="h2">{t("main.title")}</Typography>
+          <S.TitreColor>
+            <Typography variant="h2">{t("main.title")}</Typography>
+          </S.TitreColor>
           <Typography variant="h4" sx={{ px: 20 }}>
             {t("main.text")}
           </Typography>
         </S.TitleRight1ecran>
+        <S.Langbt>
+          <S.Element1>
+            <S.ElImg src={img2} alt="" />
+          </S.Element1>
+          <S.Element2>
+            <S.ElImg src={img2} alt="" />
+          </S.Element2>
+          <S.Element3>
+            <S.ElImg src={img2} alt="" />
+          </S.Element3>
+          <S.Element4>
+            <S.ElImg src={img2} alt="" />
+          </S.Element4>
+          <S.Element5>
+            <S.ElImg src={img2} alt="" />
+          </S.Element5>
+          <S.Element6>
+            <S.ElImg src={img2} alt="" />
+          </S.Element6>
+          <S.Element7>
+            <S.ElImg src={img2} alt="" />
+          </S.Element7>
+
+          {/* <img src={img2} alt="" width="120%" /> */}
+        </S.Langbt>
         <S.CatContainer>
           <WalkingCat />
         </S.CatContainer>
