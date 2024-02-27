@@ -23,54 +23,48 @@ const Home: React.FC = () => {
     currentPathArray[currentPathArray.length - 1] === "projects";
 
   return (
-    <S.MainContainer>
-      <S.FixedFooter isParallax={isParallax}>
-        <S.WorkInquiryBox>
-          <div>
-            <Typography variant="h4" textAlign="center">
-              {t("footer.work")}
-            </Typography>
-            <Typography
-              variant="h6"
-              textAlign="center"
-              sx={{ color: "#008388" }}
-            >
-              {t("footer.work_sub")}
-            </Typography>
-          </div>
-          <S.ButtonWork onClick={() => navigate(Routes.contact)}>
-            <Typography variant="h6" textAlign="center">
-              {t("footer.contact")}
-            </Typography>
-          </S.ButtonWork>
-        </S.WorkInquiryBox>
-
-        <S.SocialLinks>
-          <IconButton href="https://github.com/TinaSemashko" target="_blank">
-            <GitHubIcon color="primary" />
-          </IconButton>
-          <IconButton
-            href="https://www.linkedin.com/in/tina-semashko/"
-            target="_blank"
-          >
-            <LinkedInIcon color="primary" />
-          </IconButton>
-          <IconButton href="https://www.facebook.com/akateria/" target="_blank">
-            <FacebookIcon color="primary" />
-          </IconButton>
-        </S.SocialLinks>
-        <S.FlexBox>
-          <LangButton
-            colorPrime={false}
-            iconWithoutSlash={true}
-            selectMode={false}
-          />
-          <Typography variant="h6" textAlign="center" sx={{ zIndex: "100" }}>
-            {t("footer.rights")}
+    <S.MainContainer isParallax={isParallax}>
+      <S.WorkInquiryBox>
+        <div>
+          <Typography variant="h4" textAlign="center">
+            {t("footer.work")}
           </Typography>
-          <div></div>
-        </S.FlexBox>
-      </S.FixedFooter>
+          <Typography variant="h6" textAlign="center" sx={{ color: "#008388" }}>
+            {t("footer.work_sub")}
+          </Typography>
+        </div>
+        <S.ButtonWork onClick={() => navigate(Routes.contact)}>
+          <Typography variant="h6" textAlign="center">
+            {t("footer.contact")}
+          </Typography>
+        </S.ButtonWork>
+      </S.WorkInquiryBox>
+
+      <S.SocialLinks>
+        <IconButton href="https://github.com/TinaSemashko" target="_blank">
+          <GitHubIcon color="primary" />
+        </IconButton>
+        <IconButton
+          href="https://www.linkedin.com/in/tina-semashko/"
+          target="_blank"
+        >
+          <LinkedInIcon color="primary" />
+        </IconButton>
+        <IconButton href="https://www.facebook.com/akateria/" target="_blank">
+          <FacebookIcon color="primary" />
+        </IconButton>
+      </S.SocialLinks>
+      <S.FlexBox>
+        <LangButton
+          colorPrime={false}
+          iconWithoutSlash={true}
+          selectMode={false}
+        />
+        <Typography variant="h6" textAlign="center" sx={{ zIndex: "100" }}>
+          {t("footer.rights")}
+        </Typography>
+        <div></div>
+      </S.FlexBox>
     </S.MainContainer>
   );
 };
