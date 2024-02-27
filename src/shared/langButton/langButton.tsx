@@ -82,10 +82,7 @@ export const LangButton: React.FC<Props> = ({
             paddingRight: "0px",
           }}
         >
-          <Typography
-            variant="h6"
-            color={colorPrime ? "secondary" : "colorBlack"}
-          >
+          <Typography variant="h6">
             <S.List colorPrime={colorPrime} iconWithoutSlash={iconWithoutSlash}>
               {languages.map((item, index) => (
                 <li key={index}>

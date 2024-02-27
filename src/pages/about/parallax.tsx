@@ -1,7 +1,5 @@
 import { Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import LangButton from "../../shared/langButton";
-import img1 from "../../images/crown.png";
 import Video from "../../images/online-video-cutter.com.mp4";
 
 import * as S from "./parallax.styled";

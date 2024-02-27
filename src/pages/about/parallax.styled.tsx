@@ -9,7 +9,8 @@ import img7 from "../../images/paris1.jpg";
 
 export const MainContainer = styled("div")`
   width: 100%;
-
+  position: relative;
+  margin-bottom: 40vh;
   @media (max-width: 750px) {
   }
 `;

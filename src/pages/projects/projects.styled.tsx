@@ -7,6 +7,7 @@ export const MainContainer = styled("div")`
   min-height: 100vh;
   background: url(${img}) no-repeat;
   background-size: cover;
+  margin-bottom: 40vh;
 `;
 
 export const CarouselContainer = styled("div")`

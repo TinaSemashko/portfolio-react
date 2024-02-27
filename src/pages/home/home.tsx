@@ -1,14 +1,44 @@
-import { Typography } from "@mui/material";
+import { Typography, useMediaQuery } from "@mui/material";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import LangButton from "../../shared/langButton";
+import { theme } from "../../app/app";
+import WalkingCat from "../components/walkingCat";
 import img1 from "../../images/crown.png";
 import img2 from "../../images/puzzl1.png";
-import WalkingCat from "../components/walkingCat";
 
 import * as S from "./home.styled";
 
+// const mediumScreen = useMediaQuery(theme.breakpoints.down("md"));
+
+const arrayTechnologies = [
+  "react",
+  "node",
+  "git",
+  "firebase",
+  "postgres",
+  "mui",
+  "typescript",
+];
+
 const Home: React.FC = () => {
   const { t } = useTranslation();
+  const [open, setOpen] = useState(false);
+
+  const showCardText = (ind: number): void => {
+    const card = document.querySelector(`#card${ind}`);
+    const hideNode = document.querySelector(`#hide${ind}`);
+    const text = document.querySelector(`#text${ind}`);
+
+    if (!open) {
+      card?.setAttribute("style", "display:none;");
+      text?.setAttribute("style", "display:none;");
+      hideNode?.setAttribute("style", "display:block;");
+    } else {
+      card?.setAttribute("style", "display:block;");
+      text?.setAttribute("style", "display:block;");
+      hideNode?.setAttribute("style", "display:none;");
+    }
+  };
 
   return (
     <S.MainContainer>
@@ -31,31 +61,31 @@ const Home: React.FC = () => {
             {t("main.text")}
           </Typography>
         </S.TitleRight1ecran>
-        <S.Langbt>
-          <S.Element1>
-            <S.ElImg src={img2} alt="" />
-          </S.Element1>
-          <S.Element2>
-            <S.ElImg src={img2} alt="" />
-          </S.Element2>
-          <S.Element3>
-            <S.ElImg src={img2} alt="" />
-          </S.Element3>
-          <S.Element4>
-            <S.ElImg src={img2} alt="" />
-          </S.Element4>
-          <S.Element5>
-            <S.ElImg src={img2} alt="" />
-          </S.Element5>
-          <S.Element6>
-            <S.ElImg src={img2} alt="" />
-          </S.Element6>
-          <S.Element7>
-            <S.ElImg src={img2} alt="" />
-          </S.Element7>
-
-          {/* <img src={img2} alt="" width="120%" /> */}
-        </S.Langbt>
+        <S.Puzzle>
+          {arrayTechnologies.map((item, index) => (
+            <S.Element index={index + 1}>
+              <S.ElImg
+                src={img2}
+                id={`card${index + 1}`}
+                className="card"
+                onMouseOver={() => showCardText(index + 1)}
+                onMouseOut={() => setOpen(false)}
+              />
+              <S.ElImgHide
+                src={require(`../../images/${item}.png`)}
+                id={`hide${index + 1}`}
+                className="hide"
+                onMouseOver={() => showCardText(index + 1)}
+                onMouseOut={() => setOpen(true)}
+              />
+              <S.ElText index={index + 1}>
+                <Typography variant="h5" id={`text${index + 1}`}>
+                  {item}
+                </Typography>
+              </S.ElText>
+            </S.Element>
+          ))}
+        </S.Puzzle>
         <S.CatContainer>
           <WalkingCat />
         </S.CatContainer>

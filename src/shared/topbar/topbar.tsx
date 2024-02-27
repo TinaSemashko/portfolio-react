@@ -124,7 +124,6 @@ const TopBar: React.FC = () => {
               width="40vw"
               onClick={() => navigate(Routes.home)}
             />
-
             <S.ListBox>
               <List
                 sx={{
@@ -139,7 +138,7 @@ const TopBar: React.FC = () => {
                         navigate(Routes[item as keyof typeof Routes])
                       }
                     >
-                      <Typography variant="h4" fontWeight="900">
+                      <Typography variant="h6" fontWeight="900">
                         {t(`menu.${item}`)}
                       </Typography>
                     </S.StyledListItemButton>

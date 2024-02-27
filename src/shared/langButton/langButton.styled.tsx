@@ -33,10 +33,9 @@ export const LangGridContainer = styled("div")`
 `;
 
 export const LanguageButton = styled("span")<{ selected: boolean }>`
-  color: ${({ selected, theme }) =>
-    selected ? theme.palette.colorGreen.main : "inherit"};
+  color: ${({ selected, theme }) => (selected ? "#ffe4c4" : "#00f7ff")};
   &:hover {
-    color: ${({ theme }) => theme.palette.colorRed.main};
+    color: #01767a;
   }
   font-weight: 950;
   grid-column: 1;
