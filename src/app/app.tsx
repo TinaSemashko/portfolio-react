@@ -51,11 +51,11 @@ export let theme = createTheme({
       // },
     },
     h5: {
-      fontFamily: "Special Elite, cursive",
+      fontFamily: "Kurale , cursive",
       // fontSize: "4rem",
     },
     h6: {
-      fontFamily: "Special Elite, cursive",
+      fontFamily: "Kurale , cursive",
       fontSize: "1rem",
     },
     body1: {

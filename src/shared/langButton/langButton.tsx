@@ -52,18 +52,23 @@ export const LangButton: React.FC<Props> = ({
       {selectMode ? (
         <Box sx={{ width: 120 }}>
           <FormControl fullWidth>
-            <InputLabel id="select-label">{t("main.lang")}</InputLabel>
+            <InputLabel id="select-label">
+              <Typography variant="h6">{t("main.lang")} </Typography>
+            </InputLabel>
             <Select
               labelId="select-label"
               id="select"
               value={selectedLang}
               label="Lang"
               onChange={handleLanguageChange}
+              sx={{
+                "&.MuiOutlinedInput-root": { fontSize: "1rem" },
+              }}
             >
               {languages.map((item, index) => (
                 <MenuItem value={item} key={item}>
                   <Typography
-                    variant="body1"
+                    variant="h6"
                     color={colorPrime ? "secondary" : "colorBlack"}
                   >
                     {langAlias[index]}

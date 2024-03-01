@@ -1,17 +1,11 @@
-// import ImgContact from '../../images/logofooter.mp4';
-import EmailIcon from "@mui/icons-material/Email";
-import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import { Button, IconButton, Link, Typography } from "@mui/material";
+import { IconButton, Typography } from "@mui/material";
 import LangButton from "../langButton";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import { useLocation, useNavigate } from "react-router";
-
-import * as S from "./footer.styled";
 import { Routes } from "../../app/routes";
 import { useTranslation } from "react-i18next";
+import { useLocation, useNavigate } from "react-router";
+import Social from "../socialLinks";
+
+import * as S from "./footer.styled";
 
 const Home: React.FC = () => {
   const { pathname } = useLocation();
@@ -39,21 +33,7 @@ const Home: React.FC = () => {
           </Typography>
         </S.ButtonWork>
       </S.WorkInquiryBox>
-
-      <S.SocialLinks>
-        <IconButton href="https://github.com/TinaSemashko" target="_blank">
-          <GitHubIcon color="primary" />
-        </IconButton>
-        <IconButton
-          href="https://www.linkedin.com/in/tina-semashko/"
-          target="_blank"
-        >
-          <LinkedInIcon color="primary" />
-        </IconButton>
-        <IconButton href="https://www.facebook.com/akateria/" target="_blank">
-          <FacebookIcon color="primary" />
-        </IconButton>
-      </S.SocialLinks>
+      <Social />
       <S.FlexBox>
         <LangButton
           colorPrime={false}

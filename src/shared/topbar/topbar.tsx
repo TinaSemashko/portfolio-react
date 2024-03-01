@@ -146,13 +146,12 @@ const TopBar: React.FC = () => {
                 ))}
               </List>
             </S.ListBox>
-            {/* <S.Langbt> */}
+
             <LangButton
               colorPrime={false}
               iconWithoutSlash={false}
               selectMode={true}
             />
-            {/* </S.Langbt> */}
           </S.FlexBox>
         </Toolbar>
       </AppBar>

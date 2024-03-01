@@ -26,12 +26,12 @@
     "lang": "Langue"
   },
   "about": {
-    "title": "Salut !",
-    "subtitle1": "Salut ! Je suis Tina, full-stack développeur",
+    "title": "Salut ! Je suis Tina, ",
+    "subtitle1": "full-stack développeur",
     "subtitle2": "Et Dieu a créé le développeur...",
     "subtitle3": "Cette l'histoire a commencé il y a longtemps,  <br />lorsque les ordinateurs étaient grands et que les programmes étaient petits",
     "bible": "Au début, il y avait un mot, et le mot faisait 2 octets, mais il n'y avait rien d'autre.\n Et Dieu sépara un de zéro et vit que c'était bon.\n Et Dieu dit : qu'il y ait des données, et il en fut ainsi.\n Et Dieu dit : que chaque donnée soit collectée à sa place et créée disquettes, disques durs et CD.\n Et Dieu a dit : qu'il y ait des ordinateurs, pour qu'il y ait un endroit où mettre les disquettes, les disques durs et les CD, et il a créé les ordinateurs, et les a appelés durs, et a séparé le dur du logiciel.\n Il n'existait pas encore de logiciel, mais Dieu s'est rapidement corrigé et a créé des programmes petits et grands, et leur a dit : soyez féconds, multipliez-vous et remplissez toute la mémoire.\n Mais Il en avait assez de créer lui-même des programmes, et Dieu a dit : créons un programmeur à notre image et à notre ressemblance, et laissons-le régner sur les ordinateurs, les programmes et les données. Et Dieu a créé un développeur...",
-    "development": "IT it's my life. I fell in love with IT at the age of 16. Since then,  I had worked as a system administrator, analyst, 1C developer, and now I has become a web-developer.",
+    "development": "IT - c'est ma vie. J'en suis tombé amoureux à l'âge de 16 ans. Depuis, j'ai travaillé comme administrateur système, analyste, développeur de bases de données, et maintenant je suis devenu développeur Web.",
     "dev_short": "Je develop",
     "yoga": "Ma yoga ce ne sont pas à des méditations au lever du soleil au bord de la mer. Il s'agit d'un ensemble de pratiques permettant de transformer sa vie selon ses propres désirs. Mon école est la Fédération ukrainienne de yoga.",
     "yoga_short": "Je fais du yoga",
@@ -47,9 +47,22 @@
   "projects": {
     "title": "Jetez un œil à ce sur quoi j'ai travaillé !"
   },
-  "auth": {
-    "login": "Log in",
-    "logout": "Log out"
+  "resume": {
+    "name": "Tina Semashko",
+    "title": "DÉVELOPPEUR WEB",
+    "resume1": "Javascript, Typescript, PostgreSQL, Firebase, React, SQL, Node.js ",
+    "resume2": "7 ans d'expérience comme développeur de bases de données",
+    "resume3": "Expérience en développement de start up (front-end)",
+    "resume4": "Cours sur le développement front-end et back-end avec Node.js",
+    "resume5": "Bonnes connaissances de Stack Overflow et de Recherche sur Google",
+    "resume6": "Fortes capacités d'auto-apprentissage",
+    "resume7": "Expérience de travail dans une équipe interfonctionnelle",
+    "download": "Télécharger PDF",
+    "experience": "EXPÉRIENCE",
+    "education": "FORMATION",
+    "competence": "COMPÉTENCES",
+    "language": "LANGUES",
+    "hobby": "HOBBIES"
   },
   "menu": {
     "home": "accueil",
@@ -75,5 +88,69 @@
   "carousel3d": {
     "button_git": "Ouvre GIT",
     "button_project": "Ouvre projet"
+  },
+  "experience": {
+    "dataEx1": "Août 2022 - jusqu'à présent",
+    "post1": "Développeur front-end",
+    "nameOrg1": "Team Challenge, start up, en ligne",
+    "exp1": "Développement front-end avec le mentor en utilisant les technologies Typecript et React avec la bibliothèque @MUI material",
+    "dataEx2": "Mars 2020 - Mai 2022",
+    "post2": "Développeur de base de données",
+    "nameOrg2": "ROSHEN Confectionery Corporation, Kyiv, Ukraine",
+    "exp2": "- Architecture, développement, support, mise à jour et extension d'une configuration de SGBD &quot;1C&quot; &#10;\r\n - Intégration de nos bases de données dans l'application commerciale mobile R-Market",
+    "dataEx3": "Juillet 2016 - Mars 2020",
+    "post3": "Développeur de base de données",
+    "nameOrg3": "3 ours Ltd, Kyiv, Ukraine",
+    "exp3": " - Architecture, développement, support, mise à jour et extension d'une configuration de SGBD&quot;1C&quot;\n - Développement d'interface d'échange entre notre système interne et externe",
+    "dataEx4": "Août 2005 - Décembre 2019",
+    "post4": "Administrateur de système/analyste des ventes",
+    "nameOrg4": "Canditrade Ltd, Donetsk, Ukraine",
+    "exp4": "- Maintenance du système de reporting des succursales.\n - Administration d'un réseau local.\n - Administration de bases de données côté client du SGBD Oracle. Travail à distance après 2014"
+  },
+  "education": {
+    "dataEd1": "Février 2023 - Mars 2024",
+    "nameEd1": "Développeur WEB Full-stack(Node.js, react.js)",
+    "nameOrg1": "ASSOFAC, France",
+    "dataEd2": "Septembre 2006 - Août 2008",
+    "nameEd2": "Master de Systèmes d’automatisation des logiciels",
+    "nameOrg2": "Université technique nationale de Donetsk, Ukraine",
+    "dataEd3": "Septembre 1986 - Juin 1993",
+    "nameEd3": "Master de Chimie",
+    "nameOrg3": "Université nationale de Donetsk, Ukraine",
+    "courses": "Cours en ligne pour la période 2019-2022",
+    "cours1": "SheCodes Plus, Front-end",
+    "cours2": "SheCodes Responsive",
+    "cours3": "SheCodes React",
+    "cours4": "C# Beetrot Academy",
+    "cours5": "Bases de données, St.Petersburg State University",
+    "cours6": "Systèmes de bases de données relationnelles, Universidad Nacional Autónoma de México"
+  },
+  "competences": {
+    "competence1": "Aptitude à travailler en équipe",
+    "competence2": "Javascript",
+    "competence3": "Typescript",
+    "competence4": "SQL",
+    "competence5": "React.js",
+    "competence6": "Node.js",
+    "competence7": "@Bootstrap",
+    "competence8": "@MUI-material",
+    "competence9": "GIT",
+    "competence10": "PostgreSQL",
+    "competence11": "Firebase",
+    "competence12": "Connaissance de la programmation orientée objet",
+    "competence13": "Connaissance de l'algorithmie"
+  },
+  "languages": {
+    "en": "Anglais    B1",
+    "fr": "Français   B1",
+    "ukr": "Ukrainien C1",
+    "ru": "Russe      Langue maternelle"
+  },
+  "hobby": {
+    "voyages": "Voyages",
+    "yoga": "Yoga",
+    "bricolage": "Bricolage",
+    "lecture": "Lecture",
+    "guitare": "Guitare"
   }
 }

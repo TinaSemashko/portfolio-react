@@ -13,7 +13,7 @@ import * as S from "./home.styled";
 const arrayTechnologies = [
   "react",
   "node",
-  "git",
+  "sql",
   "firebase",
   "postgres",
   "mui",
