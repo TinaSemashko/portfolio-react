@@ -1,6 +1,7 @@
 import { Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import Video from "../../images/online-video-cutter.com.mp4";
+import flag from "../../images/Nuvola_France_Ukraine_flags.svg.png";
 
 import * as S from "./parallax.styled";
 
@@ -13,7 +14,11 @@ const Parallax: React.FC = () => {
         {/* <S.VideoParallax src={Video} autoPlay loop muted /> */}
         <S.TextContainerShort0>
           <S.TextRainbow>
-            <Typography variant="h1">{t("about.title")}</Typography>
+            <img src={flag} alt="" width="3%" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <Typography variant="h1" component="span">
+              {t("about.title")}
+            </Typography>
             <Typography variant="h1">{t("about.subtitle1")}</Typography>
           </S.TextRainbow>
         </S.TextContainerShort0>

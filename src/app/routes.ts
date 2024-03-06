@@ -5,4 +5,5 @@ export enum Routes {
   resume = "/resume",
   hobby = "/hobby",
   contact = "/contact",
+  galery = "/galery",
 }

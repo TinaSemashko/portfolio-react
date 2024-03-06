@@ -67,14 +67,7 @@ export const ButtonCV = styled(Button)`
   grid-column: 3;
   grid-row: 1;
 
-  /* padding: 1rem;
-  text-align: center;
-  cursor: pointer;
-  color: #9e1717;
-  box-shadow: -1px -5px 15px #41465b, 5px 5px 15px #41465b,
-    inset 5px 5px 10px #212121, inset -5px -5px 10px #212121;*/
-
-  /* &:hover::before {
+  &:hover::before {
     transform: scaleX(1);
   }
 
@@ -90,7 +83,7 @@ export const ButtonCV = styled(Button)`
     border-radius: inherit;
     background: linear-gradient(82.3deg, #05174b 10.8%, #0ca5e7 94.3%);
     transition: all 0.475s;
-  } */
+  }
 
   outline: none;
   color: #daa06d;
@@ -112,8 +105,6 @@ export const ButtonCV = styled(Button)`
     width: 7vw;
     height: 8vh;
     border-radius: 10px;
-    /* background-color: ${({ theme }) => theme.palette.colorBlack.main};
-    box-shadow: 0px 4px 4px gray inset; */
   }
 `;
 
@@ -176,7 +167,7 @@ export const ExpTitle = styled("div")`
 
 export const ExpMain = styled("div")`
   display: grid;
-  grid-template-columns: 45% 10% 45%;
+  grid-template-columns: 20% 25% 10% 45%;
   align-items: center;
   width: 100%;
 
@@ -184,16 +175,16 @@ export const ExpMain = styled("div")`
 `;
 
 export const EducMain = styled(ExpMain)`
-  grid-column: 1 / span 2;
+  grid-column: 1 / span 3;
 `;
 
 export const SectionDates = styled("div")`
-  grid-column: 1;
+  grid-column: 2;
   text-align: right;
 `;
 
 export const SectionPoint = styled("div")`
-  grid-column: 2;
+  grid-column: 3;
   height: 17vh;
   margin-top: -2vh;
   display: flex;
@@ -203,8 +194,9 @@ export const SectionPoint = styled("div")`
 `;
 
 export const SectionOrganisation = styled("div")`
-  grid-column: 3;
+  grid-column: 4;
   text-align: left;
+  white-space: pre-line;
 `;
 
 export const CoursesTitle = styled("div")`

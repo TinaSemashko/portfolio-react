@@ -2,6 +2,8 @@ import { styled } from "@mui/material/styles";
 
 export const MainContainer = styled("div")`
   position: relative;
+  height: 100vh;
+  /* margin-bottom: 40vh; */
   @media (max-width: 750px) {
   }
 `;
@@ -13,156 +15,72 @@ export const VideoAccueil = styled("video")`
   z-index: -1;
 `;
 
-export const TextContainer = styled("div")`
-  padding-top: 7vw;
-
-  @media (max-width: 750px) {
-  }
-`;
-
-export const Title = styled("div")`
-  text-align: center;
-  color: ${({ theme }) => theme.palette.primary.main};
-  -webkit-animation: swirl-in-fwd 0.6s ease-out both;
-  animation: swirl-in-fwd 0.6s ease-out both;
-
-  @-webkit-keyframes swirl-in-fwd {
-    0% {
-      -webkit-transform: rotate(-540deg) scale(0);
-      transform: rotate(-540deg) scale(0);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: rotate(0) scale(1);
-      transform: rotate(0) scale(1);
-      opacity: 1;
-    }
-  }
-  @keyframes swirl-in-fwd {
-    0% {
-      -webkit-transform: rotate(-540deg) scale(0);
-      transform: rotate(-540deg) scale(0);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: rotate(0) scale(1);
-      transform: rotate(0) scale(1);
-      opacity: 1;
-    }
-  }
-`;
-
-export const TextRainbow = styled("div")`
-  text-align: center;
-  background: linear-gradient(
-    to right,
-    red,
-    orange,
-    yellow,
-    green,
-    cyan,
-    blue,
-    violet
-  );
-  background-size: 400% 400%;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-animation: rainbow 20s ease infinite;
-  animation: rainbow 20s ease infinite;
-  font-family: var(--font-satisfy);
-
-  @-webkit-keyframes rainbow {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  @keyframes rainbow {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-`;
-
-export const TextDrawer = styled("svg")`
-  text-align: center;
-
-  font-family: sans-serif;
-
-  stroke-dasharray: 100%;
-  stroke-dashoffset: 100%;
-
-  -webkit-animation: draw 8s forwards;
-  -moz-animation: draw 8s forwards;
-  -o-animation: draw 8s forwards;
-  -ms-animation: draw 8s forwards;
-  animation: draw 8s forwards;
-
-  @-webkit-keyframes draw {
-    100% {
-      stroke-dashoffset: 0;
-    }
-  }
-  @-moz-keyframes draw {
-    100% {
-      stroke-dashoffset: 0;
-    }
-  }
-  @-o-keyframes draw {
-    100% {
-      stroke-dashoffset: 0;
-    }
-  }
-  @-ms-keyframes draw {
-    100% {
-      stroke-dashoffset: 0;
-    }
-  }
-  @keyframes draw {
-    100% {
-      stroke-dashoffset: 0;
-    }
-  }
-`;
-
-export const HistoryContainer = styled("div")`
-  color: ${({ theme }) => theme.palette.primary.main};
-  text-align: center;
-
-  @media (max-width: 750px) {
-  }
-`;
-
 export const GridContainer = styled("div")`
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  justify-items: center;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 33% 33% 33%;
+
+  @media (max-width: 750px) {
+  }
 `;
 
-export const Langbt = styled("div")`
-  color: white;
+export const StyledImg = styled("img")`
+  width: 15vw;
   text-align: center;
+  grid-row: 1;
+  grid-column: 1;
 `;
-
-export const CarouselContainer = styled("div")`
-  margin-top: 20vh;
-  margin-bottom: 40vh;
-`;
-
-export const LogoContainer = styled("div")`
+export const StyleText = styled("div")`
+  width: 15vw;
   text-align: center;
-  padding-top: 20vh;
+  grid-row: 1;
+  grid-column: 1;
+  color: red;
+`;
+
+export const StyleText1 = styled(StyleText)`
+  padding-top: 10vh;
+`;
+
+export const ImgContainer = styled("div")`
+  width: 25vw;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+
+  @keyframes floatAnimation {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(0, 40px);
+    }
+  }
+  @keyframes floatAnimation1 {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(40px, 0);
+    }
+  }
+`;
+
+export const ImgContainer1 = styled(ImgContainer)`
+  padding-top: 10vh;
+  animation: floatAnimation1 4s infinite;
+`;
+
+export const ImgContainer2 = styled(ImgContainer)`
+  animation: floatAnimation 4.5s infinite;
+`;
+
+export const ImgContainer3 = styled(ImgContainer)`
+  padding-left: 20vw;
+  margin-top: -10vh;
+  animation: floatAnimation 5.5s infinite;
 `;
