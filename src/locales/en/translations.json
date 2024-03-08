@@ -151,6 +151,18 @@
     "yoga": "Yoga",
     "bricolage": "Handmade",
     "lecture": "Reading",
-    "guitare": "Guitare"
+    "guitare": "Guitare",
+    "leather": "Leather",
+    "biser": "Seed bead",
+    "paint": "Drawings"
+  },
+  "contact": {
+    "submit": "Submit",
+    "name": "Name",
+    "message": "Message",
+    "err_name": "The name field must contain only letters",
+    "err_email": "The email field has an incorrect format",
+    "submission": "Thank you for your message !",
+    "submission2": "I have received your request and am grateful for your interest. If your message needs a response, I will send it to you as soon as possible. Have a good day :)"
   }
 }

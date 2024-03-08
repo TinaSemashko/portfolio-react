@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useForm, ValidationError } from "@formspree/react";
 import { TextareaAutosize } from "@mui/base/TextareaAutosize";
 import { Button, Typography } from "@mui/material";
+import ContactForm from "./contactForm";
 import img1 from "../../images/email.png";
 import img2 from "../../images/linkedin.png";
 import img3 from "../../images/telegram.png";
@@ -10,6 +11,7 @@ import * as S from "./contact.styled";
 
 const Contact: React.FC = () => {
   const { t } = useTranslation();
+
   const [state, handleSubmit] = useForm("mvoljqpq");
   if (state.succeeded) {
     return <p>Thanks for joining!</p>;
@@ -45,38 +47,7 @@ const Contact: React.FC = () => {
       </S.Card5>
       <S.Card6 />
       <S.LeftContainer>
-        <Typography variant="h4" sx={{ color: "rgb(4, 45, 94) " }}>
-          {t("general.contact_us")}
-        </Typography>
-        <S.StyledBox onSubmit={handleSubmit}>
-          <S.InputContainer
-            placeholder="Email Address"
-            id="email"
-            type="email"
-            name="email"
-          />
-          <ValidationError prefix="Email" field="email" errors={state.errors} />
-          <TextareaAutosize
-            id="message"
-            name="message"
-            minRows={10}
-            placeholder="Message"
-            style={{
-              width: "50%",
-              border: "4px solid",
-              borderRadius: "4px",
-              borderColor: "rgb(4, 45, 94)",
-            }}
-          />
-          <ValidationError
-            prefix="Message"
-            field="message"
-            errors={state.errors}
-          />
-          <S.BtnSubmit type="submit" disabled={state.submitting}>
-            Submit
-          </S.BtnSubmit>
-        </S.StyledBox>
+        <ContactForm />
       </S.LeftContainer>
       <S.RightContainer></S.RightContainer>
     </S.MainContainer>

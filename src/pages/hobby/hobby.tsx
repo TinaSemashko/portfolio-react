@@ -5,6 +5,7 @@ import { Routes } from "../../app/routes";
 import Video from "../../images/videohome.mp4";
 import logo from "../../images/logo.png";
 import img from "../../images/perle.png";
+import { dataLeather, dataBiser, dataPaint } from "./dataHobby";
 
 import * as S from "./hobby.styled";
 
@@ -22,12 +23,15 @@ const Hobby: React.FC = () => {
           <S.StyledImg src={img} alt="" />
           <S.StyleText1>
             <Typography
-              variant="h2"
+              variant="h3"
+              fontWeight="900"
               onClick={() => {
-                navigate(Routes.galery);
+                navigate(Routes.galery, {
+                  state: { photodata: dataLeather },
+                });
               }}
             >
-              Кожа
+              {t("hobby.leather")}
             </Typography>
           </S.StyleText1>
         </S.ImgContainer1>
@@ -38,14 +42,34 @@ const Hobby: React.FC = () => {
         <S.ImgContainer2>
           <S.StyledImg src={img} alt="" />
           <S.StyleText1>
-            <Typography variant="h2">Бисер</Typography>
+            <Typography
+              variant="h3"
+              fontWeight="900"
+              onClick={() => {
+                navigate(Routes.galery, {
+                  state: { photodata: dataBiser },
+                });
+              }}
+            >
+              {t("hobby.biser")}
+            </Typography>
           </S.StyleText1>
         </S.ImgContainer2>
         <S.ImgContainer></S.ImgContainer>
         <S.ImgContainer3>
           <S.StyledImg src={img} alt="" />
           <S.StyleText1>
-            <Typography variant="h2">Стекло</Typography>
+            <Typography
+              variant="h3"
+              fontWeight="900"
+              onClick={() => {
+                navigate(Routes.galery, {
+                  state: { photodata: dataPaint },
+                });
+              }}
+            >
+              {t("hobby.paint")}
+            </Typography>
           </S.StyleText1>
         </S.ImgContainer3>
       </S.GridContainer>

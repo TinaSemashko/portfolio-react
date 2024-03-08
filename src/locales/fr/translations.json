@@ -151,6 +151,18 @@
     "yoga": "Yoga",
     "bricolage": "Bricolage",
     "lecture": "Lecture",
-    "guitare": "Guitare"
+    "guitare": "Guitare",
+    "leather": "Cuir",
+    "biser": "Perle de rocaille",
+    "paint": "Dessins"
+  },
+  "contact": {
+    "submit": "Soumettre",
+    "name": "Nom",
+    "message": "Message",
+    "err_name": "Le champ nom doit contenir uniquement des lettres.",
+    "err_email": "Le champ email a un format incorrect",
+    "submission": "Merci pour votre soumission !",
+    "submission2": "J'ai reçu votre demande et je vous suis reconnaissante de votre intérêt. Si votre message a besoin d'une réponse, je vous l'enverrai bientôt. Bonne journée :)"
   }
 }

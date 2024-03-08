@@ -77,7 +77,7 @@ export const Card6 = styled(CardContainer)`
   border-bottom: 4px solid;
 `;
 
-export const LeftContainer = styled("form")`
+export const LeftContainer = styled("div")`
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -87,7 +87,7 @@ export const LeftContainer = styled("form")`
   background-color: ${({ theme }) => theme.palette.secondary.main};
 `;
 
-export const RightContainer = styled("form")`
+export const RightContainer = styled("div")`
   background-color: rgb(89, 134, 188);
   width: 45%;
   min-height: 100vh;

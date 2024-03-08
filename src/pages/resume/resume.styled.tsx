@@ -220,7 +220,7 @@ export const SectionCompetances = styled(BackgroundMain)`
   padding-right: 2vw;
 
   position: absolute;
-  top: 80vh;
+  top: 90vh;
   left: 5vw;
 
   display: flex;
@@ -233,7 +233,7 @@ export const SectionCompetances = styled(BackgroundMain)`
 export const SectionLangueges = styled(SectionCompetances)`
   min-height: 25vh;
   min-width: 20vw;
-  top: 210vh;
+  top: 240vh;
   left: 70vw;
   padding-bottom: 2vh;
 `;
