@@ -11,27 +11,12 @@ import {
   arrayResume,
   arrayCourses,
 } from "./dataCV";
+import CV_PDF from "../../images/resume.pdf";
 
 import * as S from "./resume.styled";
 
 const Resume: React.FC = () => {
   const { t } = useTranslation();
-
-  // const onButtonClick = () => {
-  //   // using Java Script method to get PDF file
-  //   fetch("SamplePDF.pdf").then((response) => {
-  //     response.blob().then((blob) => {
-  //       // Creating new object of PDF file
-  //       const fileURL = window.URL.createObjectURL(blob);
-
-  //       // Setting various property values
-  //       let alink = document.createElement("a");
-  //       alink.href = fileURL;
-  //       alink.download = "SamplePDF.pdf";
-  //       alink.click();
-  //     });
-  //   });
-  // };
 
   return (
     <S.MainContainer>
@@ -62,7 +47,7 @@ const Resume: React.FC = () => {
             </Typography>
           </S.Title>
           <S.ButtonCV variant="contained">
-            <a href="../../images/resume.pdf" target="_blank" download>
+            <a href={CV_PDF} target="_blank" rel="noreferrer">
               <Typography
                 variant="h6"
                 textAlign="center"
@@ -86,10 +71,7 @@ const Resume: React.FC = () => {
         <S.Line>
           <Social />
         </S.Line>
-        <S.Experience>
-          <S.ExpTitle>
-            <Typography variant="h3">{t("resume.experience")}</Typography>
-          </S.ExpTitle>
+        <S.GridExpCompetences>
           <S.SectionCompetances>
             <S.ExpTitle>
               <Typography variant="h3">{t("resume.competence")}</Typography>
@@ -100,86 +82,93 @@ const Resume: React.FC = () => {
               </Typography>
             ))}
           </S.SectionCompetances>
-          {arrayExperiences.map((item) => (
-            <S.ExpMain>
-              <S.SectionDates>
-                <Typography variant="h5" fontWeight="900">
-                  {t(item.dateEx)}
-                </Typography>
-                <br />
-                <Typography variant="h4">{t(item.post)}</Typography>
-              </S.SectionDates>
-              <S.SectionPoint>
-                <Typography variant="h1">.</Typography>
-                <Divider
-                  orientation="vertical"
-                  sx={{
-                    borderColor: "black",
-                    mt: -3,
-                  }}
-                />
-              </S.SectionPoint>
-              <S.SectionOrganisation>
-                <Typography variant="h4">{t(item.nameOrg)}</Typography>
-                <br />
-                <Typography variant="h6">{parse(t(item.exp))}</Typography>
-              </S.SectionOrganisation>
-            </S.ExpMain>
-          ))}
-        </S.Experience>
+          <S.Experience>
+            <S.ExpTitle>
+              <Typography variant="h3">{t("resume.experience")}</Typography>
+            </S.ExpTitle>
+            {arrayExperiences.map((item) => (
+              <S.ExpMain>
+                <S.SectionDates>
+                  <Typography variant="h5" fontWeight="900">
+                    {t(item.dateEx)}
+                  </Typography>
+                  <br />
+                  <Typography variant="h4">{t(item.post)}</Typography>
+                </S.SectionDates>
+                <S.SectionPoint>
+                  <Typography variant="h1">.</Typography>
+                  <Divider
+                    orientation="vertical"
+                    sx={{
+                      borderColor: "black",
+                      mt: -3,
+                    }}
+                  />
+                </S.SectionPoint>
+                <S.SectionOrganisation>
+                  <Typography variant="h4">{t(item.nameOrg)}</Typography>
+                  <br />
+                  <Typography variant="h6">{parse(t(item.exp))}</Typography>
+                </S.SectionOrganisation>
+              </S.ExpMain>
+            ))}
+          </S.Experience>
+        </S.GridExpCompetences>
       </S.GridInformationContainer>
       <S.Empty />
-      <S.SectionLangueges>
-        <S.ExpTitle>
-          <Typography variant="h3">{t("resume.language")}</Typography>
-        </S.ExpTitle>
-        <Typography variant="h5" lineHeight="1.7">
-          <li>{t("languages.en")}</li>
-          <li>{t("languages.fr")}</li>
-          <li>{t("languages.ukr")}</li>
-          <li>{t("languages.ru")}</li>
-        </Typography>
-      </S.SectionLangueges>
       <S.GridInformationContainer>
-        <S.Experience>
-          <S.ExpTitle>
-            <Typography variant="h3">{t("resume.education")}</Typography>
-          </S.ExpTitle>
-          {arrayEducations.map((item) => (
-            <S.EducMain>
-              <S.SectionDates>
-                <Typography variant="h5" fontWeight="900">
-                  {t(item.dataEd)}
-                </Typography>
-                <br />
-                <Typography variant="h4">{t(item.nameOrg)}</Typography>
-              </S.SectionDates>
-              <S.SectionPoint>
-                <Typography variant="h1">.</Typography>
-                <Divider
-                  orientation="vertical"
-                  sx={{
-                    borderColor: "black",
-                    mt: -3,
-                  }}
-                />
-              </S.SectionPoint>
-              <S.SectionOrganisation>
-                <Typography variant="h4">{t(item.nameEd)}</Typography>
-              </S.SectionOrganisation>
-            </S.EducMain>
-          ))}
-          <S.CoursesTitle>
-            <Typography variant="h3">{t("education.courses")}</Typography>
-          </S.CoursesTitle>
-          <S.Courses>
-            {arrayCourses.map((item) => (
-              <Typography variant="h4">
-                <li>{t(`education.${item}`)}</li>
-              </Typography>
+        <S.GridEducLangueges>
+          <S.Education>
+            <S.ExpTitle>
+              <Typography variant="h3">{t("resume.education")}</Typography>
+            </S.ExpTitle>
+            {arrayEducations.map((item) => (
+              <S.EducMain>
+                <S.SectionDates>
+                  <Typography variant="h5" fontWeight="900">
+                    {t(item.dataEd)}
+                  </Typography>
+                  <br />
+                  <Typography variant="h4">{t(item.nameOrg)}</Typography>
+                </S.SectionDates>
+                <S.SectionPoint>
+                  <Typography variant="h1">.</Typography>
+                  <Divider
+                    orientation="vertical"
+                    sx={{
+                      borderColor: "black",
+                      mt: -3,
+                    }}
+                  />
+                </S.SectionPoint>
+                <S.SectionOrganisation>
+                  <Typography variant="h4">{t(item.nameEd)}</Typography>
+                </S.SectionOrganisation>
+              </S.EducMain>
             ))}
-          </S.Courses>
-        </S.Experience>
+            <S.CoursesTitle>
+              <Typography variant="h3">{t("education.courses")}</Typography>
+            </S.CoursesTitle>
+            <S.Courses>
+              {arrayCourses.map((item) => (
+                <Typography variant="h4">
+                  <li>{t(`education.${item}`)}</li>
+                </Typography>
+              ))}
+            </S.Courses>
+          </S.Education>
+          <S.SectionLangueges>
+            <S.ExpTitle>
+              <Typography variant="h3">{t("resume.language")}</Typography>
+            </S.ExpTitle>
+            <Typography variant="h5" lineHeight="1.7">
+              <li>{t("languages.en")}</li>
+              <li>{t("languages.fr")}</li>
+              <li>{t("languages.ukr")}</li>
+              <li>{t("languages.ru")}</li>
+            </Typography>
+          </S.SectionLangueges>
+        </S.GridEducLangueges>
       </S.GridInformationContainer>
       <S.Empty />
       <S.Hobby>

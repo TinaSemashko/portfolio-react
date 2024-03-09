@@ -139,16 +139,65 @@ export const Empty = styled("div")`
   height: 5vh;
 `;
 
-export const Experience = styled("div")`
+export const ExperienceCommon = styled("div")`
   padding-top: 5vh;
   padding-bottom: 10vh;
   padding-right: 4vw;
   text-align: center;
   width: 100%;
+`;
 
+export const Experience = styled(ExperienceCommon)`
+  grid-column: 2;
+  grid-row: 1;
+`;
+
+export const Education = styled(ExperienceCommon)`
+  grid-column: 1;
+  grid-row: 1;
+`;
+
+export const GridExpCompetences = styled("div")`
   display: grid;
-  grid-template-columns: 20% 70% 10%;
-  align-items: center;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 100%;
+`;
+
+export const GridEducLangueges = styled("div")`
+  display: grid;
+  grid-template-columns: 80% 20%;
+  grid-template-rows: 100%;
+`;
+
+export const SectionAdditional = styled(BackgroundMain)`
+  text-align: left;
+  height: 65vh;
+  padding-left: 2vw;
+  padding-right: 2vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  white-space: normal;
+`;
+
+export const SectionCompetances = styled(SectionAdditional)`
+  margin-top: 8vh;
+  margin-left: -6vh;
+  grid-column: 1;
+  grid-row: 1;
+`;
+
+export const SectionLangueges = styled(SectionAdditional)`
+  height: 27vh;
+  min-width: 20vw;
+  padding-bottom: 2vh;
+  padding-top: 2vh;
+  margin-top: 40vh;
+
+  grid-column: 2;
+  grid-row: 1;
 `;
 
 export const ExpTitle = styled("div")`
@@ -167,11 +216,11 @@ export const ExpTitle = styled("div")`
 
 export const ExpMain = styled("div")`
   display: grid;
-  grid-template-columns: 20% 25% 10% 45%;
+  grid-template-columns: 45% 10% 45%;
   align-items: center;
   width: 100%;
 
-  grid-column: 2 / span 2;
+  grid-column: 1 / span 2;
 `;
 
 export const EducMain = styled(ExpMain)`
@@ -179,12 +228,12 @@ export const EducMain = styled(ExpMain)`
 `;
 
 export const SectionDates = styled("div")`
-  grid-column: 2;
+  grid-column: 1;
   text-align: right;
 `;
 
 export const SectionPoint = styled("div")`
-  grid-column: 3;
+  grid-column: 2;
   height: 17vh;
   margin-top: -2vh;
   display: flex;
@@ -194,7 +243,7 @@ export const SectionPoint = styled("div")`
 `;
 
 export const SectionOrganisation = styled("div")`
-  grid-column: 4;
+  grid-column: 3;
   text-align: left;
   white-space: pre-line;
 `;
@@ -210,32 +259,6 @@ export const Courses = styled("ul")`
   grid-column: 1 / span 3;
   text-align: left;
   padding-left: 10vw;
-`;
-
-export const SectionCompetances = styled(BackgroundMain)`
-  text-align: left;
-  min-height: 65vh;
-  min-width: 25vw;
-  padding-left: 2vw;
-  padding-right: 2vw;
-
-  position: absolute;
-  top: 90vh;
-  left: 5vw;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  white-space: normal;
-`;
-
-export const SectionLangueges = styled(SectionCompetances)`
-  min-height: 25vh;
-  min-width: 20vw;
-  top: 240vh;
-  left: 70vw;
-  padding-bottom: 2vh;
 `;
 
 export const Hobby = styled("div")`

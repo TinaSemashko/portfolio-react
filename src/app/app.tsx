@@ -76,7 +76,7 @@ export let theme = createTheme({
       fontFamily: "Times New Roman, serif",
       fontSize: "8rem",
       "@media (max-width:750px)": {
-        fontSize: "3rem",
+        fontSize: "2.5rem",
       },
       "@media (max-width:350px)": {
         fontSize: "2rem",

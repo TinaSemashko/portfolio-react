@@ -24,7 +24,6 @@ type ImageMap = {
   prod_description_general: string;
   general: boolean;
   produit_titre: string;
-  categorie: string;
 };
 
 const GlobalStyles = createGlobalStyle`
@@ -95,12 +94,11 @@ const Carousel: React.FC<Props> = ({
       ?.filter((item) => item.general)
       .map((item) => ({
         src: item.src,
-        alt: `Image ${item.produit}`,
+        alt: `Image ${item}`,
         prod_description: item.prod_description,
         prod_description_general: item.prod_description_general,
         general: item.general,
-        produit_titre: item.categorie + ". " + item.produit,
-        categorie: item.categorie,
+        produit_titre: item.src,
       }));
 
     setImageMapGeneral(updatedImageMap);
@@ -117,12 +115,11 @@ const Carousel: React.FC<Props> = ({
       ?.filter((item) => !item.general)
       .map((item) => ({
         src: item.src,
-        alt: `Image ${item.produit}`,
+        alt: `Image ${item}`,
         prod_description: item.prod_description,
         prod_description_general: item.prod_description_general,
         general: item.general,
-        produit_titre: item.categorie + ". " + item.produit,
-        categorie: item.categorie,
+        produit_titre: item.src,
       }));
 
     setImageMap(updatedImageMap);

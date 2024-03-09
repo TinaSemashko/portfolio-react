@@ -6,8 +6,8 @@ export const MainContainer = styled("div")<{ carouselWith: number }>`
   margin: 2vw auto 0 auto;
   perspective: 1000px;
 
-  @media (max-width: 750px) {
-    width: 210px;
+  @media (max-width: 900px) {
+    width: ${(props) => (props.carouselWith + 2) * 1.2}vw;
   }
 `;
 
@@ -52,9 +52,15 @@ export const Slide = styled("div")<{
   place-items: center;
   justify-items: center;
 
-  @media (max-width: 750px) {
-    width: 190px;
-    transform: rotateY(${(props) => props.degY}deg) translateZ(288px);
+  @media (max-width: 900px) {
+    width: ${(props) => props.carouselWith * 1.2}vw;
+    height: ${(props) => props.carouselWith * 0.7}vh;
+    transform: rotateY(${(props) => props.degY}deg)
+      translateZ(${(props) => props.radius * 1.2}vw);
+  }
+
+  @media (max-width: 550px) {
+    height: ${(props) => props.carouselWith * 0.5}vh;
   }
 `;
 
@@ -71,8 +77,13 @@ export const Picture = styled("img")<{ carouselWith: number }>`
   grid-row: 1 / span 4;
   position: relative;
 
-  @media (max-width: 750px) {
-    width: 180px;
+  @media (max-width: 900px) {
+    width: ${(props) => props.carouselWith * 1.2}vw;
+    height: ${(props) => props.carouselWith * 1.4 * 0.7}vh;
+  }
+
+  @media (max-width: 550px) {
+    height: ${(props) => props.carouselWith * 0.5}vh;
   }
 `;
 
@@ -85,6 +96,31 @@ export const TextContainer = styled("div")`
   max-width: 80%;
   text-align: left;
   margin-left: -1vw;
+
+  @media (max-width: 1400px) {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 1200px) {
+    font-size: 1.3rem;
+  }
+
+  @media (max-width: 1100px) {
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 900px) {
+    font-size: 0.9rem;
+  }
+  @media (max-width: 750px) {
+    font-size: 0.8rem;
+  }
+  @media (max-width: 550px) {
+    font-size: 0.6rem;
+  }
+  @media (max-width: 350px) {
+    font-size: 0.4rem;
+  }
 `;
 
 export const BorderLeft = styled("div")`
@@ -98,6 +134,15 @@ export const BorderLeft = styled("div")`
   z-index: 10;
   border-right: none;
   border-bottom: none;
+
+  @media (max-width: 900px) {
+    height: 7vh;
+  }
+
+  @media (max-width: 550px) {
+    top: 0;
+    height: 5vh;
+  }
 `;
 
 export const BorderRight = styled("div")<{ carouselWith: number }>`
@@ -112,6 +157,15 @@ export const BorderRight = styled("div")<{ carouselWith: number }>`
   border-top: none;
   margin-right: 18%;
   z-index: 10;
+
+  @media (max-width: 900px) {
+    height: ${(props) => (props.carouselWith / 1.43) * 0.7}vh;
+  }
+
+  @media (max-width: 550px) {
+    top: 0;
+    height: ${(props) => (props.carouselWith / 1.43) * 0.5}vh;
+  }
 `;
 
 export const ButtonMore = styled("button")`
@@ -162,7 +216,9 @@ export const ButtonMore = styled("button")`
   }
 
   @media (max-width: 750px) {
-    width: 20vw;
+    width: 12vw;
+    height: 50%;
+    top: -1vh;
   }
 `;
 

@@ -123,7 +123,6 @@ const Carousel: React.FC = () => {
               />
               <S.TextContainer>
                 <Typography
-                  variant="body2"
                   textAlign="left"
                   id={index.toString()}
                   onClick={handleClick}

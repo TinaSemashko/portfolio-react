@@ -2,6 +2,7 @@ import { Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import Carousel from "../../shared/carousel3D/carousel3d";
 import * as S from "./projects.styled";
+import WalkingCat from "../components/walkingCat";
 
 const Projects: React.FC = () => {
   const { t } = useTranslation();
@@ -21,6 +22,7 @@ const Projects: React.FC = () => {
       <S.CarouselContainer>
         <Carousel />
       </S.CarouselContainer>
+      <WalkingCat />
     </S.MainContainer>
   );
 };

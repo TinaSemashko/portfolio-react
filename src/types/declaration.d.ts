@@ -3,6 +3,7 @@ declare module "*.svg";
 declare module "*.jpeg";
 declare module "*.jpg";
 declare module "*.mp4";
+declare module "*.pdf";
 declare module "react-slick";
 declare module "react-responsive-spritesheet";
 declare module "react-helmet";
