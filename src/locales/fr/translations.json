@@ -45,7 +45,11 @@
     "beauty": "Je crée de la beauté"
   },
   "projects": {
-    "title": "Jetez un œil à ce sur quoi j'ai travaillé !"
+    "title": "Jetez un œil à ce sur quoi j'ai travaillé !",
+    "message_private": "Désolé, mais ce dépôt Git est privé",
+    "repeat": "Répéter la vidéo",
+    "description": "Aller à la Description du projet",
+    "return": "Retour à mes projets"
   },
   "resume": {
     "name": "Tina Semashko",

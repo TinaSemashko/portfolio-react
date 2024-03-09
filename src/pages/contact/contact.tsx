@@ -1,6 +1,3 @@
-import { useTranslation } from "react-i18next";
-import { useForm, ValidationError } from "@formspree/react";
-import { TextareaAutosize } from "@mui/base/TextareaAutosize";
 import { Button, Typography } from "@mui/material";
 import ContactForm from "./contactForm";
 import img1 from "../../images/email.png";
@@ -10,19 +7,12 @@ import img3 from "../../images/telegram.png";
 import * as S from "./contact.styled";
 
 const Contact: React.FC = () => {
-  const { t } = useTranslation();
-
-  const [state, handleSubmit] = useForm("mvoljqpq");
-  if (state.succeeded) {
-    return <p>Thanks for joining!</p>;
-  }
-
   return (
     <S.MainContainer>
       <S.Card1>
         <img src={img1} alt="" width="50rem" />
         <Button href="mailto:tina.semashko@gmail.com">
-          <Typography variant="h6" sx={{ color: "rgb(4, 45, 94) " }}>
+          <Typography variant="h6" sx={{ color: "colorBlue.main" }}>
             tina.semashko@gmail.com
           </Typography>
         </Button>
@@ -31,7 +21,7 @@ const Contact: React.FC = () => {
       <S.Card3>
         <img src={img2} alt="" width="50rem" />
         <Button href="https://www.linkedin.com/in/tina-semashko/">
-          <Typography variant="h6" sx={{ color: "rgb(4, 45, 94) " }}>
+          <Typography variant="h6" sx={{ color: "colorBlue.main" }}>
             @tina-semashko
           </Typography>
         </Button>
@@ -40,7 +30,7 @@ const Contact: React.FC = () => {
       <S.Card5>
         <img src={img3} alt="" width="50rem" />
         <Button href="https://t.me/SemashkoTina">
-          <Typography variant="h6" sx={{ color: "rgb(4, 45, 94) " }}>
+          <Typography variant="h6" sx={{ color: "colorBlue.main" }}>
             @SemashkoTina
           </Typography>
         </Button>

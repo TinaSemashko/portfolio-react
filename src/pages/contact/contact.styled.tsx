@@ -21,7 +21,7 @@ export const CardContainer = styled("div")`
   position: absolute;
   top: 20vh;
   border-radius: 4px;
-  border-color: rgb(4, 45, 94);
+  border-color: ${({ theme }) => theme.palette.colorBlue.main};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,7 +55,7 @@ export const Card4 = styled(CardContainer)`
   background-image: url(${img3});
   background-repeat: no-repeat;
   background-size: contain;
-  background-color: rgb(89, 134, 188);
+  background-color: ${({ theme }) => theme.palette.colorLightBlue.main};
   border-left: 4px solid;
   border-bottom: 4px solid;
 `;
@@ -88,7 +88,7 @@ export const LeftContainer = styled("div")`
 `;
 
 export const RightContainer = styled("div")`
-  background-color: rgb(89, 134, 188);
+  background-color: ${({ theme }) => theme.palette.colorLightBlue.main};
   width: 45%;
   min-height: 100vh;
 `;
@@ -107,17 +107,17 @@ export const InputContainer = styled("input")`
   height: 4vh;
   border: 4px solid;
   border-radius: 4px;
-  border-color: rgb(4, 45, 94);
+  border-color: ${({ theme }) => theme.palette.colorBlue.main};
 `;
 
 export const BtnSubmit = styled(Button)`
   padding: 20px 30px;
   margin: 20px;
   text-decoration: none;
-  background-color: rgb(89, 134, 188);
+  background-color: ${({ theme }) => theme.palette.colorLightBlue.main};
   border: 4px solid;
   border-radius: 4px;
-  border-color: rgb(4, 45, 94);
+  border-color: ${({ theme }) => theme.palette.colorBlue.main};
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   color: white;
 

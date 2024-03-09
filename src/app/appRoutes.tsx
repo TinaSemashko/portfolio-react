@@ -11,6 +11,8 @@ const Resume = lazy(() => import("../pages/resume"));
 const Hobby = lazy(() => import("../pages/hobby"));
 const Contact = lazy(() => import("../pages/contact"));
 const Galery = lazy(() => import("../pages/hobby/galery"));
+const Videopage = lazy(() => import("../pages/projects/pageVideo"));
+const CartProject = lazy(() => import("../pages/descriptionProjects"));
 
 export const AppRoutes: React.FunctionComponent = () => (
   <Router>
@@ -21,6 +23,8 @@ export const AppRoutes: React.FunctionComponent = () => (
     <Route path={Routes.hobby} element={withSuspense(Hobby)} />
     <Route path={Routes.contact} element={withSuspense(Contact)} />
     <Route path={Routes.galery} element={withSuspense(Galery)} />
+    <Route path={Routes.videopage} element={withSuspense(Videopage)} />
+    <Route path={Routes.cartproject} element={withSuspense(CartProject)} />
 
     <Route path="*" element={<NotFound />} />
   </Router>

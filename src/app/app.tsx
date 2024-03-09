@@ -24,6 +24,12 @@ export let theme = createTheme({
     colorGreen: {
       main: "#239705",
     },
+    colorLightBlue: {
+      main: "#5986BC",
+    },
+    colorBlue: {
+      main: "#042D5E",
+    },
   },
   typography: {
     h1: {

@@ -1,4 +1,4 @@
-import { useCallback, useContext, useState } from "react";
+import { useState } from "react";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
@@ -7,14 +7,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useTranslation } from "react-i18next";
-import {
-  AppBar,
-  Toolbar,
-  Drawer,
-  IconButton,
-  ListItemButton,
-  Typography,
-} from "@mui/material";
+import { AppBar, Toolbar, Drawer, IconButton, Typography } from "@mui/material";
 import logo from "../../images/logo.png";
 import { useLocation, useNavigate } from "react-router";
 import { Routes } from "../../app/routes";

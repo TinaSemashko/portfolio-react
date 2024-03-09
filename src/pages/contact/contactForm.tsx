@@ -75,7 +75,7 @@ const ContactForm: React.FC = () => {
     >
       <Typography
         variant="h3"
-        sx={{ color: "rgb(4, 45, 94) ", fontWeight: "700" }}
+        sx={{ color: "colorBlue.main ", fontWeight: "700" }}
       >
         {t("general.contact_us")}
       </Typography>
@@ -84,8 +84,9 @@ const ContactForm: React.FC = () => {
         sx={{
           width: "100%",
           marginTop: "1.5rem",
-          border: "solid rgb(4, 45, 94)",
-          backgroundColor: "rgb(89, 134, 188)",
+          border: "solid",
+          borderColor: "colorBlue.main ",
+          backgroundColor: "colorLightBlue.main",
         }}
         id="filled-size-small prenom"
         label="Email"
@@ -118,8 +119,9 @@ const ContactForm: React.FC = () => {
         sx={{
           width: "100%",
           marginTop: "1.5rem",
-          border: "solid rgb(4, 45, 94)",
-          backgroundColor: "rgb(89, 134, 188)",
+          border: "solid ",
+          borderColor: "colorBlue.main ",
+          backgroundColor: "colorLightBlue.main",
         }}
         id="filled-size-small nom"
         label={t("contact.name")}
@@ -152,14 +154,18 @@ const ContactForm: React.FC = () => {
         sx={{
           width: "100%",
           marginTop: "1.2rem",
-          border: "solid rgb(4, 45, 94)",
-          backgroundColor: "rgb(89, 134, 188)",
+          border: "solid ",
+          borderColor: "colorBlue.main ",
+          backgroundColor: "colorLightBlue.main",
+          "& .MuiInputBase-root.MuiOutlinedInput-root": {
+            fontSize: "1rem",
+          },
         }}
         id="filled-multiline-static message"
         label={t("contact.message")}
         name="message"
         multiline
-        rows={12}
+        rows={8}
         variant="outlined"
         value={formData.message}
         onChange={handleInputChange}

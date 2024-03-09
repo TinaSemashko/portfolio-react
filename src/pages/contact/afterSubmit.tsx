@@ -17,13 +17,26 @@ const AfterSubmit: React.FC = () => {
         textAlign: "center",
       }}
     >
-      <Typography variant="h4" color="red" marginTop="11.5rem">
+      <Typography
+        variant="h4"
+        marginTop="11.5rem"
+        sx={{ color: "colorBlue.main" }}
+      >
         {t("contact.submission")}
       </Typography>
       <ContactMailIcon
-        sx={{ width: "3rem", height: "3rem", color: "red", marginTop: "1rem" }}
+        sx={{
+          width: "3rem",
+          height: "3rem",
+          color: "colorBlue.main",
+          marginTop: "1rem",
+        }}
       />
-      <Typography variant="body1" color="red" marginTop="1rem">
+      <Typography
+        variant="body1"
+        marginTop="1rem"
+        sx={{ color: "colorBlue.main" }}
+      >
         {t("contact.submission2")}
       </Typography>
     </Box>

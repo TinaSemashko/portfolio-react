@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
-import { CircularProgress, Typography } from "@mui/material";
+import { CircularProgress, Modal, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Carousel3d } from "../../types/projects";
 import { imagesCarousel } from "./dataCarousel";
+import { useNavigate } from "react-router";
+import { Routes } from "../../app/routes";
+import ModalBar from "../modal/modalBar";
 
 import * as S from "./carousel3d.styled";
 
@@ -16,10 +19,14 @@ interface CarouselParams {
 const radius = 28;
 const Carousel: React.FC = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [animationPause, setAnimationPause] = useState(false);
   const [indexState, setIndexState] = useState("");
   const [carouselParams, setCarouselParams] = useState<CarouselParams>();
   const [imageMap, setImageMap] = useState<Carousel3d[]>([]);
+  const [open, setOpen] = useState(false);
+
+  const handleClose = () => setOpen(false);
 
   const makeCarousel = (carouselParams: CarouselParams) => {
     imagesCarousel.map((el, index) => {
@@ -71,8 +78,20 @@ const Carousel: React.FC = () => {
   };
 
   const openInNewTab = (url: string): void => {
-    const newWindow = window.open(url, "_blank", "noopener,noreferrer");
-    if (newWindow) newWindow.opener = null;
+    if (
+      url === "VideoAssofactory" ||
+      url === "VideoConnectify" ||
+      url === "VideoABS" ||
+      url === "VideoSeaLife"
+    )
+      navigate(Routes.videopage, {
+        state: { videoUrl: { url } },
+      });
+    else if (url === "private") setOpen(true);
+    else {
+      const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+      if (newWindow) newWindow.opener = null;
+    }
   };
 
   return (
@@ -88,7 +107,6 @@ const Carousel: React.FC = () => {
               radius={carouselParams?.radius ?? 0}
               carouselWith={carouselParams?.cellsize ?? 0}
             >
-              {/* <S.GridContainer> */}
               <S.Picture
                 carouselWith={carouselParams?.cellsize ?? 0}
                 src={item.src}
@@ -96,18 +114,7 @@ const Carousel: React.FC = () => {
                 id={index.toString()}
                 onClick={handleClick}
               />
-              {/* <Box sx={{ gridColumn: "1 / span 4", gridRow: "1 / span 7" }}>
-                  test1
-                </Box>
-                <Box sx={{ gridColumn: "1 / span 4", gridRow: "1 / span 4" }}>
-                  test2
-                </Box>
-                <Box sx={{ gridColumn: "3", gridRow: "2 / span 4" }}>test3</Box>
-                <Box sx={{ gridColumn: "1 / span 3", gridRow: "3" }}>test4</Box>
-                <Box sx={{ gridColumn: "2 / span 4", gridRow: "4 " }}>
-                  test5
-                </Box>
-                <Box sx={{ gridColumn: "2 / span 4", gridRow: "5" }}>test6</Box> */}
+
               <S.BorderLeft id={index.toString()} onClick={handleClick} />
               <S.BorderRight
                 carouselWith={carouselParams?.cellsize ?? 0}
@@ -124,6 +131,13 @@ const Carousel: React.FC = () => {
                   {item.descriptions}
                 </Typography>
               </S.TextContainer>
+              <div>
+                <ModalBar
+                  open={open}
+                  handleClose={handleClose}
+                  modalMessage={t("projects.message_private")}
+                />
+              </div>
               <S.ButtonMore>
                 <Typography
                   component="div"
@@ -145,7 +159,6 @@ const Carousel: React.FC = () => {
                   {t("carousel3d.button_git")}
                 </Typography>
               </S.ButtonMore>
-              {/* </S.GridContainer> */}
             </S.Slide>
           ))
         )}
