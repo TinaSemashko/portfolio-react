@@ -7,7 +7,7 @@ export const imagesCarousel: Carousel3d[] = [
       "React|Styled-components|Typecript|Mui-material|PostgreSQL|GitHub|Work in the team",
     linkGit: "private",
     linkProject: "https://teamchallenge.io/",
-    src: "require(`../../images/${imageName}`)",
+    src: "",
     degY: 0,
     alt: "",
   },

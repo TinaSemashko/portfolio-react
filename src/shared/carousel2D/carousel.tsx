@@ -133,13 +133,14 @@ const Carousel: React.FC<Props> = ({
   const settings = {
     customPaging: function (i: number) {
       return (
-        <a>
+        <a href="#">
           <img
             src={
               carouselGeneral
                 ? imageMapGeneral && imageMapGeneral[i]?.src
                 : imageMap && imageMap[i]?.src
             }
+            alt={imageMap && imageMap[i]?.alt}
             width="60vw"
             height="50vh"
             style={{ border: "solid #a90b0b" }}

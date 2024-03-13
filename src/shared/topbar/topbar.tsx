@@ -50,7 +50,12 @@ const TopBar: React.FC = () => {
         <CloseIcon sx={{ fontSize: "2rem" }} />
       </S.CloseIconStyle>
 
-      <img src={logo} width="40vw" onClick={() => navigate(Routes.home)} />
+      <img
+        src={logo}
+        width="40vw"
+        alt="logo"
+        onClick={() => navigate(Routes.home)}
+      />
       <Divider />
       <List
         sx={{
@@ -114,6 +119,7 @@ const TopBar: React.FC = () => {
           <S.FlexBox>
             <img
               src={logo}
+              alt="logo"
               width="40vw"
               onClick={() => navigate(Routes.home)}
             />

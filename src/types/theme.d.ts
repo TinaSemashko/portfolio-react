@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { createTheme } from "@mui/material";
 declare module "@mui/material/styles" {
   interface Palette {

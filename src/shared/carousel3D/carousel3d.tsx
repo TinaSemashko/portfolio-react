@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CircularProgress, Modal, Typography } from "@mui/material";
+import { CircularProgress, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Carousel3d } from "../../types/projects";
 import { imagesCarousel } from "./dataCarousel";
@@ -33,6 +33,7 @@ const Carousel: React.FC = () => {
       el.src = require(`../../images/${el.imageName}`);
       el.alt = `Image ${index + 1}`;
       el.degY = index * carouselParams.degKey;
+      return el;
     });
     setImageMap(imagesCarousel);
   };

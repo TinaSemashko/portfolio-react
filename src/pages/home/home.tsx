@@ -1,7 +1,6 @@
 import { Typography, useMediaQuery } from "@mui/material";
-import { FormEvent, useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { theme } from "../../app/app";
 import WalkingCat from "../components/walkingCat";
 import img1 from "../../images/crown.png";
 import img2 from "../../images/puzzl1.png";
