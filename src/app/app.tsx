@@ -48,13 +48,18 @@ export let theme = createTheme({
     h3: {
       fontFamily: "Cormorant Infant, serif",
       fontSize: "5rem",
+      "@media (max-width:750px)": {
+        fontSize: "3rem",
+      },
+      "@media (max-width:650px)": {
+        fontSize: "2.5rem",
+      },
+      "@media (max-width:550px)": {
+        fontSize: "2rem",
+      },
     },
     h4: {
       fontFamily: "Kurale , cursive",
-
-      // "@media (max-width:750px)": {
-      //   fontSize: "0.7rem",
-      // },
     },
     h5: {
       fontFamily: "Kurale , cursive",
@@ -63,6 +68,27 @@ export let theme = createTheme({
     h6: {
       fontFamily: "Kurale , cursive",
       fontSize: "1rem",
+      "@media (max-width:960px)": {
+        fontSize: "0.9rem",
+      },
+      "@media (max-width:860px)": {
+        fontSize: "0.8rem",
+      },
+      "@media (max-width:760px)": {
+        fontSize: "0.7rem",
+      },
+      "@media (max-width:660px)": {
+        fontSize: "0.6rem",
+      },
+      "@media (max-width:560px)": {
+        fontSize: "0.5rem",
+      },
+      "@media (max-width:460px)": {
+        fontSize: "0.4rem",
+      },
+      "@media (max-width:360px)": {
+        fontSize: "0.3rem",
+      },
     },
     body1: {
       fontFamily: "Kurale , cursive",
@@ -89,7 +115,7 @@ export let theme = createTheme({
   },
 });
 
-theme = responsiveFontSizes(theme);
+// theme = responsiveFontSizes(theme);
 
 const App: React.FC = () => (
   <ThemeProvider theme={responsiveFontSizes(theme)}>

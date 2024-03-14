@@ -171,10 +171,8 @@ export const GridEducLangueges = styled("div")`
 
 export const SectionAdditional = styled(BackgroundMain)`
   text-align: left;
-  height: 65vh;
   padding-left: 2vw;
   padding-right: 2vw;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -187,6 +185,7 @@ export const SectionCompetances = styled(SectionAdditional)`
   margin-left: -6vh;
   grid-column: 1;
   grid-row: 1;
+  height: 70vh;
 `;
 
 export const SectionLangueges = styled(SectionAdditional)`

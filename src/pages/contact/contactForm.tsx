@@ -26,7 +26,6 @@ const ContactForm: React.FC = () => {
   ) => {
     const { name, value } = e.target;
 
-    // Appliquer la validation ici pour le champ "prenom"
     if (name === "nom") {
       setValidationErrors((prevErrors) => ({
         ...prevErrors,
@@ -59,14 +58,14 @@ const ContactForm: React.FC = () => {
   if (state.succeeded) {
     return <AfterSubmit />;
   }
-  console.log(state);
+
   return (
     <Box
       onSubmit={handleSubmit}
       component="form"
       sx={{
-        padding: "2rem",
-        width: "70%",
+        paddingTop: { sm: "4rem", md: "2rem" },
+        width: { xs: "90%", sm: "80%" },
         height: "100%",
         justifyContent: "center",
         alignItems: "center",
@@ -74,7 +73,7 @@ const ContactForm: React.FC = () => {
       }}
     >
       <Typography
-        variant="h3"
+        variant="h4"
         sx={{ color: "colorBlue.main ", fontWeight: "700" }}
       >
         {t("general.contact_us")}
@@ -105,10 +104,10 @@ const ContactForm: React.FC = () => {
       />
       {validationErrors.email && (
         <Typography
-          color="red"
           variant="caption"
           sx={{
             marginTop: "0.5rem",
+            color: "red",
           }}
         >
           {validationErrors.email}
