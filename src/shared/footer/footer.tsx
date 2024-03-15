@@ -1,4 +1,4 @@
-import { IconButton, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import LangButton from "../langButton";
 import { Routes } from "../../app/routes";
 import { useTranslation } from "react-i18next";

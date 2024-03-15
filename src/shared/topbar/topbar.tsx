@@ -13,13 +13,26 @@ import { useLocation, useNavigate } from "react-router";
 import { Routes } from "../../app/routes";
 import CloseIcon from "@mui/icons-material/Close";
 import { MenuItems } from "../../constants/menuItems";
+import LangButton from "../langButton";
+import CottageIcon from "@mui/icons-material/Cottage";
+import LaptopChromebookIcon from "@mui/icons-material/LaptopChromebook";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import SailingIcon from "@mui/icons-material/Sailing";
+import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact";
+import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 
 import * as S from "./topbar.styled";
-import LangButton from "../langButton";
+import SocialLinks from "../socialLinks";
 
 const menuItemsArray = Object.values(MenuItems);
-
-const drawerWidth = "100%";
+const menuIconsArray = [
+  <CottageIcon />,
+  <LaptopChromebookIcon />,
+  <AccountCircleIcon />,
+  <PictureAsPdfIcon />,
+  <SailingIcon />,
+  <ConnectWithoutContactIcon />,
+];
 
 const TopBar: React.FC = () => {
   const { t } = useTranslation();
@@ -38,25 +51,19 @@ const TopBar: React.FC = () => {
       onClick={handleDrawerToggle}
       sx={{
         textAlign: "center",
-        // background:
-        //   "linear-gradient(180deg, rgba(172,168,168,1) 10%, rgba(169,11,11,1) 100%)",
+        // background: "linear-gradient(180deg, #c3afa3 10%, #bc572cc3 100%)",
+        backgroundColor: "colorBlack.main",
+        color: "primary.main",
         height: "100%",
       }}
     >
       <S.CloseIconStyle>
-        <Typography variant="h5" color="secondary.main" className="close">
+        <Typography variant="h5" className="close">
           {t("menu.close")}
         </Typography>
         <CloseIcon sx={{ fontSize: "2rem" }} />
       </S.CloseIconStyle>
 
-      <img
-        src={logo}
-        width="40vw"
-        alt="logo"
-        onClick={() => navigate(Routes.home)}
-      />
-      <Divider />
       <List
         sx={{
           display: "flex",
@@ -64,21 +71,31 @@ const TopBar: React.FC = () => {
           justifyContent: "space-around",
         }}
       >
-        {menuItemsArray.map((item) => (
+        {menuItemsArray.map((item, index) => (
           <ListItem key={item} disablePadding>
             <S.StyledListItemButton selected={isSelected(item)}>
+              <S.Dot>{menuIconsArray[index]}</S.Dot>
               <ListItemText
                 primary={item}
                 onClick={() => navigate(Routes[item as keyof typeof Routes])}
                 primaryTypographyProps={{
-                  fontSize: "12vw",
+                  fontSize: "3rem",
                   textTransform: "capitalize",
+                  pl: 4,
+                  color: "primary.main",
                 }}
               />
             </S.StyledListItemButton>
           </ListItem>
         ))}
       </List>
+      <Divider
+        variant="middle"
+        sx={{ backgroundColor: "primary.main", marginTop: "10vh" }}
+      />
+      <S.Social>
+        <SocialLinks />
+      </S.Social>
     </Box>
   );
 
@@ -111,7 +128,7 @@ const TopBar: React.FC = () => {
             onClick={handleDrawerToggle}
             sx={{
               mr: 2,
-              display: { sm: "none" },
+              display: { md: "none" },
             }}
           >
             <MenuIcon />
@@ -126,7 +143,7 @@ const TopBar: React.FC = () => {
             <S.ListBox>
               <List
                 sx={{
-                  display: { xs: "none", sm: "flex" },
+                  display: { xs: "none", sm: "none", md: "flex" },
                 }}
               >
                 {menuItemsArray.map((item, index) => (
@@ -164,10 +181,10 @@ const TopBar: React.FC = () => {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: "block", sm: "none" },
+            display: { xs: "block", sm: "block", md: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
-              width: drawerWidth,
+              width: { xs: "100%", sm: "60%" },
             },
           }}
         >

@@ -105,6 +105,7 @@ export const CardContainer = styled("div")`
   justify-content: center;
   background-repeat: no-repeat;
   background-size: contain;
+  text-align: center;
 
   @media (max-width: 1100px) {
     height: calc(var(--h) * 0.7);

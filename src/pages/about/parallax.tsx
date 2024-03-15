@@ -1,6 +1,5 @@
 import { Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import Video from "../../images/online-video-cutter.com.mp4";
 import flag from "../../images/Nuvola_France_Ukraine_flags.svg.png";
 
 import * as S from "./parallax.styled";
@@ -11,7 +10,6 @@ const Parallax: React.FC = () => {
   return (
     <S.MainContainer>
       <S.ImgMainContainer>
-        {/* <S.VideoParallax src={Video} autoPlay loop muted /> */}
         <S.TextContainerShort0>
           <S.TextRainbow>
             <img src={flag} alt="" width="3%" />
@@ -28,7 +26,7 @@ const Parallax: React.FC = () => {
       </S.TextContainer1>
       <S.ImgContainer1>
         <S.TextContainerShort1>
-          <Typography variant="h2">{t("about.dev_short")}</Typography>
+          <Typography variant="h1">{t("about.dev_short")}</Typography>
         </S.TextContainerShort1>
       </S.ImgContainer1>
       <S.TextContainer2>
@@ -36,7 +34,7 @@ const Parallax: React.FC = () => {
       </S.TextContainer2>
       <S.ImgContainer2>
         <S.TextContainerShort2>
-          <Typography variant="h2">{t("about.yoga_short")}</Typography>
+          <Typography variant="h1">{t("about.yoga_short")}</Typography>
         </S.TextContainerShort2>
       </S.ImgContainer2>
       <S.TextContainer3>
@@ -44,7 +42,7 @@ const Parallax: React.FC = () => {
       </S.TextContainer3>
       <S.ImgContainer3>
         <S.TextContainerShort3>
-          <Typography variant="h2">{t("about.traveling_short")}</Typography>
+          <Typography variant="h1">{t("about.traveling_short")}</Typography>
         </S.TextContainerShort3>
       </S.ImgContainer3>
       <S.TextContainer4>
@@ -52,7 +50,7 @@ const Parallax: React.FC = () => {
       </S.TextContainer4>
       <S.ImgContainer4>
         <S.TextContainerShort4>
-          <Typography variant="h2">{t("about.reading_short")}</Typography>
+          <Typography variant="h1">{t("about.reading_short")}</Typography>
         </S.TextContainerShort4>
       </S.ImgContainer4>
       <S.TextContainer5>
@@ -60,7 +58,7 @@ const Parallax: React.FC = () => {
       </S.TextContainer5>
       <S.ImgContainer5>
         <S.TextContainerShort5>
-          <Typography variant="h2">{t("about.handmade_short")} </Typography>
+          <Typography variant="h1">{t("about.handmade_short")} </Typography>
         </S.TextContainerShort5>
       </S.ImgContainer5>
       <S.TextContainer7>
@@ -68,7 +66,7 @@ const Parallax: React.FC = () => {
       </S.TextContainer7>
       <S.ImgContainer6>
         <S.TextContainerShort6>
-          <Typography variant="h2">{t("about.beauty")} </Typography>
+          <Typography variant="h1">{t("about.beauty")} </Typography>
         </S.TextContainerShort6>
       </S.ImgContainer6>
     </S.MainContainer>

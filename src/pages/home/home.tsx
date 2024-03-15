@@ -46,17 +46,17 @@ const Home: React.FC = () => {
         <S.RightSide1ecran></S.RightSide1ecran>
         <S.TitleLeft1ecran>
           <S.TitreColor>
-            <Typography variant="h2">{t("main.title")}</Typography>
+            <Typography variant="h1">{t("main.title")}</Typography>
           </S.TitreColor>
-          <Typography variant="h4" sx={{ px: 20 }}>
+          <Typography variant="h3" sx={{ px: 20 }}>
             {t("main.text")}
           </Typography>
         </S.TitleLeft1ecran>
         <S.TitleRight1ecran>
           <S.TitreColor>
-            <Typography variant="h2">{t("main.title")}</Typography>
+            <Typography variant="h1">{t("main.title")}</Typography>
           </S.TitreColor>
-          <Typography variant="h4" sx={{ px: 20 }}>
+          <Typography variant="h3" sx={{ px: 20 }}>
             {t("main.text")}
           </Typography>
         </S.TitleRight1ecran>
@@ -95,28 +95,28 @@ const Home: React.FC = () => {
         </S.LeftSide2ecran>
         <S.RightSide2ecran></S.RightSide2ecran>
         <S.TitleLeft2ecran>
-          <Typography variant="h3" sx={{ px: 20 }}>
+          <Typography variant="h2" sx={{ px: 20 }}>
             {t("main.title2ecran")}
           </Typography>
-          <Typography variant="h3" sx={{ px: 20 }}>
+          <Typography variant="h2" sx={{ px: 20 }}>
             {t("main.subtitle2ecran")}
           </Typography>
-          <Typography variant="h3" sx={{ px: 20 }}>
+          <Typography variant="h2" sx={{ px: 20 }}>
             {t("main.subtitle12ecran")}
-            <Typography variant="h3" sx={{ px: 20 }}></Typography>
+            <Typography variant="h2" sx={{ px: 20 }}></Typography>
             {t("main.author2ecran")}
           </Typography>
         </S.TitleLeft2ecran>
         <S.TitleRight2ecran>
-          <Typography variant="h3" sx={{ px: 20 }}>
+          <Typography variant="h2" sx={{ px: 20 }}>
             {t("main.title2ecran")}
           </Typography>
-          <Typography variant="h3" sx={{ px: 20 }}>
+          <Typography variant="h2" sx={{ px: 20 }}>
             {t("main.subtitle2ecran")}
           </Typography>
-          <Typography variant="h3" sx={{ px: 20 }}>
+          <Typography variant="h2" sx={{ px: 20 }}>
             {t("main.subtitle12ecran")}
-            <Typography variant="h3" sx={{ px: 20 }}></Typography>
+            <Typography variant="h2" sx={{ px: 20 }}></Typography>
             {t("main.author2ecran")}
           </Typography>
         </S.TitleRight2ecran>

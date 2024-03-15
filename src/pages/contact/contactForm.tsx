@@ -64,7 +64,7 @@ const ContactForm: React.FC = () => {
       onSubmit={handleSubmit}
       component="form"
       sx={{
-        paddingTop: { sm: "4rem", md: "2rem" },
+        paddingTop: { xs: "4rem", sm: "4rem", md: "2rem" },
         width: { xs: "90%", sm: "80%" },
         height: "100%",
         justifyContent: "center",

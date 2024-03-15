@@ -9,7 +9,7 @@ const Projects: React.FC = () => {
   return (
     <S.MainContainer>
       <Typography
-        variant="subtitle1"
+        variant="h1"
         sx={{
           color: "colorBlack.main",
           textShadow:

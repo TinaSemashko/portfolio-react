@@ -101,3 +101,16 @@ export const StyledListItemButton = styled(ListItemButton)`
     --_s: 0.3s;
   }
 `;
+
+export const Dot = styled(ListBox)`
+  font-size: 3rem;
+  color: ${({ theme }) => theme.palette.primary.main};
+`;
+
+export const Social = styled(ListBox)`
+  width: 100%;
+  height: 14vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;

@@ -18,6 +18,7 @@ export const MainContainer = styled("div")<{ isParallax: boolean }>`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  z-index: 1000;
 `;
 
 export const WorkInquiryBox = styled("div")`
