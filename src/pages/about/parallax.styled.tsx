@@ -32,6 +32,14 @@ export const ImgMain = styled("div")`
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+
+  @media (max-width: 1200px) {
+    min-height: 60vh;
+  }
+
+  @media (max-width: 568px) {
+    min-height: 40vh;
+  }
 `;
 
 export const TextContainerAbsolute = styled("div")`
@@ -44,11 +52,14 @@ export const TextContainerAbsolute = styled("div")`
 
 export const TextContainerBetween = styled("div")`
   position: relative;
-  height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px 80px;
+  padding: 5vh 4vw;
+
+  @media (max-width: 1200px) {
+    padding: 2vh 4vw;
+  }
 `;
 
 export const ImgMainContainer = styled(ImgMain)`
@@ -59,6 +70,14 @@ export const ImgMainContainer = styled(ImgMain)`
 export const TextContainerShort0 = styled(TextContainerAbsolute)`
   color: #000;
   margin-top: -12vh;
+
+  @media (max-width: 1200px) {
+    margin-top: -3vh;
+  }
+
+  @media (max-width: 568px) {
+    margin-top: -4vh;
+  }
 `;
 
 export const TextContainer1 = styled(TextContainerBetween)`

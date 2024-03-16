@@ -38,7 +38,7 @@ export let theme = createTheme({
       // fontFamily: "Cormorant Infant, serif";
       // fontFamily: "Rubik Marker Hatch, serif",
       // fontFamily: "Marck Script , cursive",
-      fontFamily: "Neucha, serif",
+      fontFamily: "Kurale , cursive",
       // fontSize: "10rem",
     },
     h2: {
@@ -66,7 +66,7 @@ export let theme = createTheme({
       // fontSize: "4rem",
     },
     h6: {
-      fontFamily: "Cormorant Infant, serif",
+      fontFamily: "Kurale , cursive",
       // fontSize: "1rem",
       // "@media (max-width:960px)": {
       //   fontSize: "0.9rem",

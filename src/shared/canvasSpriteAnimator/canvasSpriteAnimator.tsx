@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import useWindowSize from "../useWindowSize/useWindowSize";
+import styled from "styled-components";
 
 interface CanvasSpriteAnimatorProps {
   spriteSheet: string;
@@ -8,7 +9,14 @@ interface CanvasSpriteAnimatorProps {
   frameHeight: number;
   fps: number;
   speed: number;
+  widthPercentage?: string;
 }
+
+const ResponsiveCanvas = styled.canvas<{ widthPercentage?: string }>`
+  width: ${({ widthPercentage }) => widthPercentage || "100%"};
+  max-width: 100%;
+  object-fit: contain;
+`;
 
 const CanvasSpriteAnimator: React.FC<CanvasSpriteAnimatorProps> = ({
   spriteSheet,
@@ -17,6 +25,7 @@ const CanvasSpriteAnimator: React.FC<CanvasSpriteAnimatorProps> = ({
   frameHeight,
   fps,
   speed,
+  widthPercentage,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { width } = useWindowSize(false);
@@ -53,7 +62,7 @@ const CanvasSpriteAnimator: React.FC<CanvasSpriteAnimatorProps> = ({
           }
         } else {
           xPos -= speed;
-          if (xPos <= 0.1 * width) {
+          if (xPos <= 0.01 * width) {
             movingRight = true;
           }
         }
@@ -104,7 +113,14 @@ const CanvasSpriteAnimator: React.FC<CanvasSpriteAnimatorProps> = ({
     };
   }, [spriteSheet, frameCount, frameWidth, frameHeight, fps, speed]);
 
-  return <canvas ref={canvasRef} width={width} height={frameHeight} />;
+  return (
+    <ResponsiveCanvas
+      ref={canvasRef}
+      width={width}
+      height={frameHeight}
+      widthPercentage={widthPercentage}
+    />
+  );
 };
 
 export default CanvasSpriteAnimator;
