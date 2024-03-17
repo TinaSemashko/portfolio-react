@@ -17,6 +17,14 @@ import * as S from "./langButton.styled";
 const languages: string[] = ["en", "fr", "uk"];
 const langAlias: string[] = ["English", "Français", "Українська"];
 
+const fontSizeAlias = {
+  xs: "0.7rem",
+  sm: "1rem",
+  md: "1rem",
+  lg: "1.1rem",
+  xl: "1.2rem",
+};
+
 type Props = {
   colorPrime: boolean;
   iconWithoutSlash?: boolean;
@@ -68,7 +76,7 @@ export const LangButton: React.FC<Props> = ({
               {languages.map((item, index) => (
                 <MenuItem value={item} key={item}>
                   <Typography
-                    variant="h6"
+                    variant="body1"
                     color={colorPrime ? "secondary" : "colorBlack"}
                   >
                     {langAlias[index]}
@@ -87,7 +95,12 @@ export const LangButton: React.FC<Props> = ({
             paddingRight: "0px",
           }}
         >
-          <Typography variant="h6">
+          <Typography
+            variant="h6"
+            sx={{
+              fontSize: fontSizeAlias,
+            }}
+          >
             <S.List colorPrime={colorPrime} iconWithoutSlash={iconWithoutSlash}>
               {languages.map((item, index) => (
                 <li key={index}>

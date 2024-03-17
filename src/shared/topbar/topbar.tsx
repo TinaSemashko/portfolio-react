@@ -20,9 +20,9 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import SailingIcon from "@mui/icons-material/Sailing";
 import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
+import SocialLinks from "../socialLinks";
 
 import * as S from "./topbar.styled";
-import SocialLinks from "../socialLinks";
 
 const menuItemsArray = Object.values(MenuItems);
 const menuIconsArray = [
@@ -128,7 +128,7 @@ const TopBar: React.FC = () => {
             onClick={handleDrawerToggle}
             sx={{
               mr: 2,
-              display: { md: "none" },
+              display: { lg: "none" },
             }}
           >
             <MenuIcon />
@@ -143,7 +143,7 @@ const TopBar: React.FC = () => {
             <S.ListBox>
               <List
                 sx={{
-                  display: { xs: "none", sm: "none", md: "flex" },
+                  display: { xs: "none", sm: "none", md: "none", lg: "flex" },
                 }}
               >
                 {menuItemsArray.map((item, index) => (
@@ -181,7 +181,7 @@ const TopBar: React.FC = () => {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: "block", sm: "block", md: "none" },
+            display: { xs: "block", sm: "block", md: "block", lg: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: { xs: "100%", sm: "60%" },

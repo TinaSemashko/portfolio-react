@@ -7,6 +7,22 @@ import Social from "../socialLinks";
 
 import * as S from "./footer.styled";
 
+const fontSizeFooter = {
+  xs: "0.5rem",
+  sm: "0.8rem",
+  md: "0.9rem",
+  lg: "1rem",
+  xl: "1.2rem",
+};
+
+const fontSizeTitre = {
+  xs: "0.9rem",
+  sm: "1.2rem",
+  md: "1.3rem",
+  lg: "1.5rem",
+  xl: "1.6rem",
+};
+
 const Home: React.FC = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
@@ -20,15 +36,31 @@ const Home: React.FC = () => {
     <S.MainContainer isParallax={isParallax}>
       <S.WorkInquiryBox>
         <div>
-          <Typography variant="h4" textAlign="center">
+          <Typography
+            variant="h4"
+            textAlign="center"
+            sx={{
+              fontSize: fontSizeTitre,
+            }}
+          >
             {t("footer.work")}
           </Typography>
-          <Typography variant="h6" textAlign="center" sx={{ color: "#008388" }}>
+          <Typography
+            variant="h6"
+            textAlign="center"
+            sx={{ fontSize: fontSizeFooter, color: "#008388" }}
+          >
             {t("footer.work_sub")}
           </Typography>
         </div>
         <S.ButtonWork onClick={() => navigate(Routes.contact)}>
-          <Typography variant="h6" textAlign="center">
+          <Typography
+            variant="h6"
+            textAlign="center"
+            sx={{
+              fontSize: fontSizeFooter,
+            }}
+          >
             {t("footer.contact")}
           </Typography>
         </S.ButtonWork>
@@ -40,7 +72,11 @@ const Home: React.FC = () => {
           iconWithoutSlash={true}
           selectMode={false}
         />
-        <Typography variant="h6" textAlign="center" sx={{ zIndex: "100" }}>
+        <Typography
+          variant="h6"
+          textAlign="center"
+          sx={{ fontSize: fontSizeFooter, zIndex: "100" }}
+        >
           {t("footer.rights")}
         </Typography>
         <div></div>

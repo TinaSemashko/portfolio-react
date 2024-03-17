@@ -18,6 +18,14 @@ export const MainContainer = styled("div")<{ isParallax: boolean }>`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+
+  @media (max-width: 1200px) {
+    min-height: 30vh;
+  }
+
+  @media (max-width: 960px) {
+    min-height: 20vh;
+  }
 `;
 
 export const WorkInquiryBox = styled("div")`
@@ -28,6 +36,10 @@ export const WorkInquiryBox = styled("div")`
   border-radius: 10px;
   display: flex;
   justify-content: space-evenly;
+
+  @media (max-width: 1200px) {
+    padding: 2vh;
+  }
 `;
 
 export const SocialLinks = styled("div")`
@@ -42,7 +54,7 @@ export const ButtonWork = styled(Button)`
 export const FlexBox = styled("div")`
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: center;
   padding-left: 4vw;
   padding-right: 8vw;
   width: 100%;

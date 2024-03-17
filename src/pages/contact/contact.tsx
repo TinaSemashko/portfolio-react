@@ -7,6 +7,14 @@ import telegram from "../../images/telegram.png";
 
 import * as S from "./contact.styled";
 
+const fontSizeContact = {
+  xs: "0.5rem",
+  sm: "0.8rem",
+  md: "0.9rem",
+  lg: "1rem",
+  xl: "1.2rem",
+};
+
 const Contact: React.FC = () => {
   const mediumScreen = useMediaQuery(theme.breakpoints.down("lg"));
 
@@ -27,13 +35,7 @@ const Contact: React.FC = () => {
                 sx={{
                   color: "colorBlue.main",
                   textTransform: "none",
-                  fontSize: {
-                    xs: "0.5rem",
-                    sm: "0.8rem",
-                    md: "0.9rem",
-                    lg: "1rem",
-                    xl: "1.2rem",
-                  },
+                  fontSize: fontSizeContact,
                 }}
               >
                 tina.semashko@ {mediumScreen && <br />}gmail.com
@@ -49,13 +51,7 @@ const Contact: React.FC = () => {
                 sx={{
                   color: "colorBlue.main",
                   textTransform: "none",
-                  fontSize: {
-                    xs: "0.5rem",
-                    sm: "0.8rem",
-                    md: "0.9rem",
-                    lg: "1rem",
-                    xl: "1.2rem",
-                  },
+                  fontSize: fontSizeContact,
                 }}
               >
                 @tina-semashko

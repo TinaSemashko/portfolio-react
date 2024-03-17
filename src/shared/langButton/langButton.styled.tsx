@@ -40,7 +40,7 @@ export const LanguageButton = styled("span")<{ selected: boolean }>`
   font-weight: 950;
   grid-column: 1;
   grid-row: 1;
-  padding-top: 12vh;
+  /* padding-top: 12vh; */
 `;
 
 export const Lamp = styled("img")<{ colorPrime: boolean }>`
