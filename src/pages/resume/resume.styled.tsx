@@ -14,6 +14,10 @@ export const MainContainer = styled("div")`
   background-size: cover;
   background-attachment: fixed;
   position: relative;
+
+  @media (max-width: 1200px) {
+    padding-top: 6vh;
+  }
 `;
 
 export const BackgroundMain = styled("div")`
@@ -25,23 +29,26 @@ export const BackgroundMain = styled("div")`
 
 export const MainGridContainer = styled(BackgroundMain)`
   width: 50%;
-  display: grid;
-  grid-template-columns: 35% 65%;
   padding-top: 4vh;
   padding-bottom: 4vh;
   padding-left: 4vw;
   padding-right: 4vw;
+
+  @media (max-width: 1200px) {
+    width: 95%;
+  }
 `;
 
 export const ResumeContainer = styled("div")`
   width: 100%;
-  grid-column: 1 / span 2;
-  grid-row: 2;
   display: grid;
   grid-template-columns: 25% 60% 15%;
   grid-gap: 1%;
   align-items: center;
   justify-items: center;
+
+  @media (max-width: 1200px) {
+  }
 `;
 
 export const PhotoBox = styled("div")`
@@ -55,12 +62,21 @@ export const Photo = styled("img")`
   padding: 0.5rem;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+
+  @media (max-width: 1200px) {
+    width: 20vw;
+  }
 `;
 
 export const Title = styled("div")`
   grid-column: 2;
   grid-row: 1;
   padding-left: 6vh;
+
+  @media (max-width: 1200px) {
+    padding-left: 0;
+    grid-column: 2 / span 2;
+  }
 `;
 
 export const ButtonCV = styled(Button)`
@@ -105,6 +121,16 @@ export const ButtonCV = styled(Button)`
     width: 7vw;
     height: 8vh;
     border-radius: 10px;
+
+    @media (max-width: 1200px) {
+      width: 2vw;
+      height: 3vh;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    grid-column: 2;
+    grid-row: 2;
   }
 `;
 
@@ -112,9 +138,15 @@ export const TextBox = styled("div")`
   grid-column: 2 / span 2;
   grid-row: 2;
   padding-left: 10vh;
+
+  @media (max-width: 1200px) {
+    grid-column: 1 / span 3;
+    padding-left: 2vh;
+    grid-row: 3;
+  }
 `;
 
-export const GridInformationContainer = styled(BackgroundMain)`
+export const FlexInformationContainer = styled(BackgroundMain)`
   grid-column: 2 / span 2;
   grid-row: 3;
   width: 80%;
@@ -122,6 +154,10 @@ export const GridInformationContainer = styled(BackgroundMain)`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 1200px) {
+    width: 95%;
+  }
 `;
 
 export const Line = styled(BackgroundMain)`
@@ -132,6 +168,10 @@ export const Line = styled(BackgroundMain)`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
 `;
 
 export const Empty = styled("div")`
@@ -145,11 +185,21 @@ export const ExperienceCommon = styled("div")`
   padding-right: 4vw;
   text-align: center;
   width: 100%;
+
+  @media (max-width: 1200px) {
+    padding-right: 2vw;
+    padding-left: 2vw;
+    padding-bottom: 2vh;
+  }
 `;
 
 export const Experience = styled(ExperienceCommon)`
   grid-column: 2;
   grid-row: 1;
+
+  @media (max-width: 1200px) {
+    grid-column: 1;
+  }
 `;
 
 export const Education = styled(ExperienceCommon)`
@@ -161,12 +211,22 @@ export const GridExpCompetences = styled("div")`
   display: grid;
   grid-template-columns: 30% 70%;
   grid-template-rows: 100%;
+  justify-items: center;
+  align-items: center;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 100%;
+  }
 `;
 
 export const GridEducLangueges = styled("div")`
   display: grid;
   grid-template-columns: 80% 20%;
   grid-template-rows: 100%;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 100%;
+  }
 `;
 
 export const SectionAdditional = styled(BackgroundMain)`
@@ -181,11 +241,27 @@ export const SectionAdditional = styled(BackgroundMain)`
 `;
 
 export const SectionCompetances = styled(SectionAdditional)`
-  margin-top: 8vh;
+  margin-top: 6vh;
   margin-left: -6vh;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
   grid-column: 1;
   grid-row: 1;
-  height: 70vh;
+  height: 74vh;
+
+  @media (max-width: 1200px) {
+    width: 95%;
+    margin-left: 0;
+    margin-top: 0;
+    padding-left: 10vw;
+    height: 50vh;
+    padding-top: 2vh;
+    padding-bottom: 2vw;
+  }
+
+  @media (max-width: 760px) {
+    height: 36vh;
+  }
 `;
 
 export const SectionLangueges = styled(SectionAdditional)`
@@ -197,6 +273,14 @@ export const SectionLangueges = styled(SectionAdditional)`
 
   grid-column: 2;
   grid-row: 1;
+
+  @media (max-width: 1200px) {
+    grid-column: 1;
+    margin-top: 0;
+    width: 95%;
+    height: 20vh;
+    padding-left: 10vw;
+  }
 `;
 
 export const ExpTitle = styled("div")`
@@ -211,6 +295,10 @@ export const ExpTitle = styled("div")`
 
   grid-column: 1 / span 3;
   grid-row: 1;
+
+  @media (max-width: 1200px) {
+    margin-left: -8vw;
+  }
 `;
 
 export const ExpMain = styled("div")`
@@ -229,16 +317,25 @@ export const EducMain = styled(ExpMain)`
 export const SectionDates = styled("div")`
   grid-column: 1;
   text-align: right;
+
+  @media (max-width: 1200px) {
+    margin-left: 2vw;
+  }
 `;
 
 export const SectionPoint = styled("div")`
   grid-column: 2;
-  height: 17vh;
+  height: 30vh;
   margin-top: -2vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 1200px) {
+    height: 12vh;
+    margin-top: 0;
+  }
 `;
 
 export const SectionOrganisation = styled("div")`

@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import Avatar from "../../images/avatar.jpg";
 import Divider from "@mui/material/Divider";
-import { Typography } from "@mui/material";
+import { Typography, useMediaQuery } from "@mui/material";
 import Social from "../../shared/socialLinks";
 import parse from "html-react-parser";
 import {
@@ -12,11 +12,30 @@ import {
   arrayCourses,
 } from "./dataCV";
 import CV_PDF from "../../images/resume.pdf";
+import { theme } from "../../app/app";
 
 import * as S from "./resume.styled";
 
+const fontSizeH4 = {
+  xs: "0.8rem",
+  sm: "1.0rem",
+  md: "1.2rem",
+  lg: "1.4rem",
+  xl: "1.6rem",
+};
+
+const fontSizeH6 = {
+  xs: "0.5rem",
+  sm: "0.8rem",
+  md: "0.9rem",
+  lg: "1rem",
+  xl: "1.2rem",
+};
+
 const Resume: React.FC = () => {
   const { t } = useTranslation();
+  const mediumScreen = useMediaQuery(theme.breakpoints.down("xl"));
+  const largeScreen = useMediaQuery(theme.breakpoints.up("xl"));
 
   return (
     <S.MainContainer>
@@ -51,7 +70,13 @@ const Resume: React.FC = () => {
               <Typography
                 variant="h6"
                 textAlign="center"
-                sx={{ zIndex: "100", position: "relative", color: "#daa06d " }}
+                sx={{
+                  zIndex: "100",
+                  position: "relative",
+                  color: "#daa06d ",
+                  textTransform: "capitalize",
+                  fontSize: fontSizeH6,
+                }}
               >
                 {t("resume.download")}
               </Typography>
@@ -59,7 +84,7 @@ const Resume: React.FC = () => {
           </S.ButtonCV>
           <S.TextBox>
             {arrayResume.map((item) => (
-              <Typography variant="h6">
+              <Typography variant="h6" sx={{ fontSize: fontSizeH4 }}>
                 <li>{t(`resume.${item}`)}</li>
               </Typography>
             ))}
@@ -67,21 +92,11 @@ const Resume: React.FC = () => {
         </S.ResumeContainer>
       </S.MainGridContainer>
       <Divider />
-      <S.GridInformationContainer>
+      <S.FlexInformationContainer>
         <S.Line>
           <Social />
         </S.Line>
         <S.GridExpCompetences>
-          <S.SectionCompetances>
-            <S.ExpTitle>
-              <Typography variant="h3">{t("resume.competence")}</Typography>
-            </S.ExpTitle>
-            {arrayCompetences.map((item) => (
-              <Typography variant="h5" lineHeight="1.7">
-                <li>{t(`competences.${item}`)}</li>
-              </Typography>
-            ))}
-          </S.SectionCompetances>
           <S.Experience>
             <S.ExpTitle>
               <Typography variant="h3">{t("resume.experience")}</Typography>
@@ -89,11 +104,17 @@ const Resume: React.FC = () => {
             {arrayExperiences.map((item) => (
               <S.ExpMain>
                 <S.SectionDates>
-                  <Typography variant="h5" fontWeight="900">
+                  <Typography
+                    variant="h4"
+                    fontWeight="900"
+                    sx={{ fontSize: fontSizeH4 }}
+                  >
                     {t(item.dateEx)}
                   </Typography>
                   <br />
-                  <Typography variant="h4">{t(item.post)}</Typography>
+                  <Typography variant="h4" sx={{ fontSize: fontSizeH4 }}>
+                    {t(item.post)}
+                  </Typography>
                 </S.SectionDates>
                 <S.SectionPoint>
                   <Typography variant="h1">.</Typography>
@@ -106,17 +127,52 @@ const Resume: React.FC = () => {
                   />
                 </S.SectionPoint>
                 <S.SectionOrganisation>
-                  <Typography variant="h4">{t(item.nameOrg)}</Typography>
-                  <br />
-                  <Typography variant="h6">{parse(t(item.exp))}</Typography>
+                  <Typography
+                    variant="h4"
+                    sx={{ fontSize: fontSizeH4, fontWeight: "700" }}
+                  >
+                    {t(item.nameOrg)}
+                  </Typography>
+                  {largeScreen && <br />}
+                  <Typography variant="h6" sx={{ fontSize: fontSizeH6 }}>
+                    {parse(t(item.exp))}
+                  </Typography>
                 </S.SectionOrganisation>
               </S.ExpMain>
             ))}
           </S.Experience>
+          {largeScreen && (
+            <S.SectionCompetances>
+              <S.ExpTitle>
+                <Typography variant="h3">{t("resume.competence")}</Typography>
+              </S.ExpTitle>
+              {arrayCompetences.map((item) => (
+                <Typography variant="h5" lineHeight="1.7">
+                  <li>{t(`competences.${item}`)}</li>
+                </Typography>
+              ))}
+            </S.SectionCompetances>
+          )}
         </S.GridExpCompetences>
-      </S.GridInformationContainer>
-      <S.Empty />
-      <S.GridInformationContainer>
+      </S.FlexInformationContainer>
+      {mediumScreen && (
+        <S.SectionCompetances>
+          <S.ExpTitle>
+            <Typography variant="h3">{t("resume.competence")}</Typography>
+          </S.ExpTitle>
+          {arrayCompetences.map((item) => (
+            <Typography
+              variant="h5"
+              lineHeight="1.7"
+              sx={{ fontSize: fontSizeH4 }}
+            >
+              <li>{t(`competences.${item}`)}</li>
+            </Typography>
+          ))}
+        </S.SectionCompetances>
+      )}
+      {largeScreen && <S.Empty />}
+      <S.FlexInformationContainer>
         <S.GridEducLangueges>
           <S.Education>
             <S.ExpTitle>
@@ -125,11 +181,17 @@ const Resume: React.FC = () => {
             {arrayEducations.map((item) => (
               <S.EducMain>
                 <S.SectionDates>
-                  <Typography variant="h5" fontWeight="900">
+                  <Typography
+                    variant="h4"
+                    fontWeight="900"
+                    sx={{ fontSize: fontSizeH4 }}
+                  >
                     {t(item.dataEd)}
                   </Typography>
                   <br />
-                  <Typography variant="h4">{t(item.nameOrg)}</Typography>
+                  <Typography variant="h4" sx={{ fontSize: fontSizeH4 }}>
+                    {t(item.nameOrg)}
+                  </Typography>
                 </S.SectionDates>
                 <S.SectionPoint>
                   <Typography variant="h1">.</Typography>
@@ -142,7 +204,12 @@ const Resume: React.FC = () => {
                   />
                 </S.SectionPoint>
                 <S.SectionOrganisation>
-                  <Typography variant="h4">{t(item.nameEd)}</Typography>
+                  <Typography
+                    variant="h4"
+                    sx={{ fontSize: fontSizeH4, fontWeight: "700" }}
+                  >
+                    {t(item.nameEd)}
+                  </Typography>
                 </S.SectionOrganisation>
               </S.EducMain>
             ))}
@@ -151,25 +218,44 @@ const Resume: React.FC = () => {
             </S.CoursesTitle>
             <S.Courses>
               {arrayCourses.map((item) => (
-                <Typography variant="h4">
+                <Typography variant="h4" sx={{ fontSize: fontSizeH4 }}>
                   <li>{t(`education.${item}`)}</li>
                 </Typography>
               ))}
             </S.Courses>
           </S.Education>
-          <S.SectionLangueges>
-            <S.ExpTitle>
-              <Typography variant="h3">{t("resume.language")}</Typography>
-            </S.ExpTitle>
-            <Typography variant="h5" lineHeight="1.7">
-              <li>{t("languages.en")}</li>
-              <li>{t("languages.fr")}</li>
-              <li>{t("languages.ukr")}</li>
-              <li>{t("languages.ru")}</li>
-            </Typography>
-          </S.SectionLangueges>
+          {largeScreen && (
+            <S.SectionLangueges>
+              <S.ExpTitle>
+                <Typography variant="h3">{t("resume.language")}</Typography>
+              </S.ExpTitle>
+              <Typography variant="h5" lineHeight="1.7">
+                <li>{t("languages.en")}</li>
+                <li>{t("languages.fr")}</li>
+                <li>{t("languages.ukr")}</li>
+                <li>{t("languages.ru")}</li>
+              </Typography>
+            </S.SectionLangueges>
+          )}
         </S.GridEducLangueges>
-      </S.GridInformationContainer>
+      </S.FlexInformationContainer>
+      {mediumScreen && (
+        <S.SectionLangueges>
+          <S.ExpTitle>
+            <Typography variant="h3">{t("resume.language")}</Typography>
+          </S.ExpTitle>
+          <Typography
+            variant="h5"
+            lineHeight="1.7"
+            sx={{ fontSize: fontSizeH4 }}
+          >
+            <li>{t("languages.en")}</li>
+            <li>{t("languages.fr")}</li>
+            <li>{t("languages.ukr")}</li>
+            <li>{t("languages.ru")}</li>
+          </Typography>
+        </S.SectionLangueges>
+      )}
       <S.Empty />
       <S.Hobby>
         <S.TitleHobby>
