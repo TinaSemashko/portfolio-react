@@ -4,14 +4,27 @@ export type Carousel3d = {
   descriptions: string;
   linkGit: string;
   linkProject: string;
+  linkVideo: string;
   degY: number;
   alt: string;
+  projectName: string;
+  openProject: boolean;
+  openGit: boolean;
+  openVideo: boolean;
 };
 
 export type CarouselImg = {
-  id: number;
-  prod_description: string;
-  prod_description_general: string;
+  description: string;
   src: string;
+  alt: string;
   general: boolean;
+};
+
+export type CarouselProjectImg = {
+  imageName: string;
+  description: string;
+  general: boolean;
+  src: string;
+  alt: string;
+  projectName: string;
 };

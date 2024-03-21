@@ -102,8 +102,9 @@ export const DiscriptionCarouselCont = styled("div")<{ openABS: boolean }>`
   justify-content: space-evenly;
   align-items: center;
   padding: 1vw;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
   color: ${({ theme }) => theme.palette.secondary.main};
-  /* cursor: pointer; */
   border-left: ${({ openABS }) => (openABS ? "double white" : "solid white")};
 `;
 

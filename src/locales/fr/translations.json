@@ -46,7 +46,7 @@
     "beauty": "Je crée de la beauté"
   },
   "projects": {
-    "title": "Jetez un œil à ce sur quoi j'ai travaillé !",
+    "title": "Regardez à ce sur quoi j'ai travaillé !",
     "message_private": "Désolé, mais ce dépôt Git est privé",
     "repeat": "Répéter la vidéo",
     "description": "Aller à la Description du projet",
@@ -91,8 +91,14 @@
     "btn_go_home": "Go home"
   },
   "carousel3d": {
+    "button_project": "Consulter"
+  },
+  "carousel2d": {
     "button_git": "Ouvre GIT",
-    "button_project": "Ouvre projet"
+    "button_project": "Ouvre le projet",
+    "button_video": "Regarder la video",
+    "button_code": "Regarder le code du projet",
+    "button_front": "Regarder l'interface utilisateur du projet"
   },
   "experience": {
     "dataEx1": "Août 2022 - jusqu'à présent",

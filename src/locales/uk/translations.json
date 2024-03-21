@@ -92,8 +92,14 @@
     "btn_go_home": "Go home"
   },
   "carousel3d": {
-    "button_git": "До GIT",
     "button_project": "До проекту"
+  },
+  "carousel2d": {
+    "button_git": "До GIT",
+    "button_project": "До проекту",
+    "button_video": "Дивитися video",
+    "button_code": "Дивитися код проекту",
+    "button_front": "Дивитися user interface проекту"
   },
   "experience": {
     "dataEx1": "Серпень 2022-по теперішній час",

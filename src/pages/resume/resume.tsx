@@ -84,7 +84,7 @@ const Resume: React.FC = () => {
           </S.ButtonCV>
           <S.TextBox>
             {arrayResume.map((item) => (
-              <Typography variant="h6" sx={{ fontSize: fontSizeH4 }}>
+              <Typography sx={{ fontSize: fontSizeH6 }}>
                 <li>{t(`resume.${item}`)}</li>
               </Typography>
             ))}

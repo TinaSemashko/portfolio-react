@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
+import { Routes } from "../../app/routes";
+import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
 import { createGlobalStyle } from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Breadcrumbs, Link, Typography } from "@mui/material";
-import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
-import { useLocation } from "react-router";
-import { Routes } from "../../app/routes";
-import { CarouselImg } from "../../types/projects";
+import { Button, Typography } from "@mui/material";
+import { Carousel3d, CarouselImg } from "../../types/projects";
 
 import * as S from "./carousel.styled";
 
@@ -17,15 +17,6 @@ interface ArrowProps {
   onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
 
-type ImageMap = {
-  src: any;
-  alt: string;
-  prod_description: string;
-  prod_description_general: string;
-  general: boolean;
-  produit_titre: string;
-};
-
 const GlobalStyles = createGlobalStyle`
   .slick-arrow.slick-next:before,
   .slick-arrow.slick-prev:before {
@@ -34,40 +25,40 @@ const GlobalStyles = createGlobalStyle`
   .slick-dots {
             display: flex !important;
             justify-content: space-evenly;
-            bottom: 10vh;
+            bottom: 5vh;
             margin-left:-1.5vw;
         }
 `;
 
 type Props = {
-  carouselImages?: CarouselImg[];
-  showDescription: boolean;
+  carouselImagesProps?: CarouselImg[];
+  project: Carousel3d | null;
 };
 
-const Carousel: React.FC<Props> = ({
-  carouselImages,
-  showDescription = false,
-}) => {
-  const { state } = useLocation();
-  const [imgIndex, setImageIndex] = useState(0);
-  const [imageMapGeneral, setImageMapGeneral] = useState<ImageMap[]>();
-  const [imageMap, setImageMap] = useState<ImageMap[]>();
-  const [carouselGeneral, setCarouselGeneral] = useState(true);
-  const [openABS, setOpenABS] = useState(false);
+const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
+  const navigate = useNavigate();
+  const { t } = useTranslation();
+  const [imageMapFront, setImageMapFront] = useState<CarouselImg[]>();
+  const [imageMapBack, setImageMapBack] = useState<CarouselImg[]>();
+  const [carouselFront, setCarouselFront] = useState(true);
+  const [openFront, setOpenFront] = useState(false);
+  const [carouselImages, setCarouselImages] = useState<CarouselImg[]>([]);
+  const [linkProject, setlinkProject] = useState<string | null>("");
+  const [linkGit, setlinkGit] = useState<string | null>("");
 
   const SampleNextArrow = (props: ArrowProps) => {
     const { className, style, onClick } = props;
     return (
       <S.ArrowWrapper
         className={className}
-        showDescription={showDescription}
+        showDescription={true}
         style={{
           ...style,
           right: "4vw",
         }}
         onClick={onClick}
       >
-        <S.ArrowRightIcon showDescription={showDescription} />
+        <S.ArrowRightIcon showDescription={true} />
       </S.ArrowWrapper>
     );
   };
@@ -77,70 +68,70 @@ const Carousel: React.FC<Props> = ({
     return (
       <S.ArrowWrapper
         className={className}
-        showDescription={showDescription}
+        showDescription={true}
         style={{
           ...style,
           left: "4vw",
         }}
         onClick={onClick}
       >
-        <S.ArrowLeftIcon showDescription={showDescription} />
+        <S.ArrowLeftIcon showDescription={true} />
       </S.ArrowWrapper>
     );
   };
 
   useEffect(() => {
-    const updatedImageMap = carouselImages
-      ?.filter((item) => item.general)
-      .map((item) => ({
-        src: item.src,
-        alt: `Image ${item}`,
-        prod_description: item.prod_description,
-        prod_description_general: item.prod_description_general,
-        general: item.general,
-        produit_titre: item.src,
-      }));
-
-    setImageMapGeneral(updatedImageMap);
-  }, [carouselImages]);
+    if (carouselImagesProps) {
+      setCarouselImages(carouselImagesProps);
+      setlinkProject(project && project.linkProject);
+      setlinkGit(project && project?.linkGit);
+    }
+  }, [carouselImagesProps, project]);
 
   useEffect(() => {
-    if (state && state.hasOwnProperty("images")) {
-      showDescription = false;
-      setCarouselGeneral(false);
-      carouselImages = [...state.images];
+    if (carouselImages) {
+      const [updatedImageMapBack, updatedImageMapFront] = carouselImages.reduce(
+        (acc: [CarouselImg[], CarouselImg[]], item: CarouselImg) => {
+          const newItem: CarouselImg = {
+            src: item.src,
+            alt: `Image ${item.alt}`,
+            description: item.description,
+            general: item.general,
+          };
+
+          if (item.general) {
+            acc[1].push(newItem);
+          } else {
+            acc[0].push(newItem);
+          }
+
+          return acc;
+        },
+        [[], []]
+      );
+
+      setImageMapBack(updatedImageMapBack);
+      setImageMapFront(updatedImageMapFront);
     }
-
-    const updatedImageMap = carouselImages
-      ?.filter((item) => !item.general)
-      .map((item) => ({
-        src: item.src,
-        alt: `Image ${item}`,
-        prod_description: item.prod_description,
-        prod_description_general: item.prod_description_general,
-        general: item.general,
-        produit_titre: item.src,
-      }));
-
-    setImageMap(updatedImageMap);
-  }, [carouselImages, state]);
+  }, [carouselImages]);
 
   const changeCarousel = (status: boolean) => {
-    setCarouselGeneral(status);
-    setOpenABS(carouselGeneral !== status ? !openABS : openABS);
+    setCarouselFront(status);
+    setOpenFront(carouselFront !== status ? !openFront : openFront);
   };
 
   const settings = {
     customPaging: function (i: number) {
+      const imageMap = carouselFront ? imageMapFront : imageMapBack;
+      const selectedImage = imageMap && (imageMap[i] || imageMap[0]);
+      const src = `${require(`../../images/MyProjects/${selectedImage?.src}`)}`;
+      const alt = selectedImage?.alt;
       return (
-        <a href="#">
+        // eslint-disable-next-line jsx-a11y/anchor-is-valid
+        <a>
           <img
-            src={
-              carouselGeneral
-                ? imageMapGeneral && imageMapGeneral[i]?.src
-                : imageMap && imageMap[i]?.src
-            }
-            alt={imageMap && imageMap[i]?.alt}
+            src={src}
+            alt={alt}
             width="60vw"
             height="50vh"
             style={{ border: "solid #a90b0b" }}
@@ -149,116 +140,116 @@ const Carousel: React.FC<Props> = ({
       );
     },
 
-    dots: showDescription ? true : false,
+    dots: true,
     dotsClass: "slick-dots slick-thumb",
     infinite: false,
     lazyLoad: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    initialSlide:
-      state && state.hasOwnProperty("produitIndex") ? state.produitIndex : 0,
+    initialSlide: 0,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     beforeChange: (current: number, next: number) => {
-      setImageIndex(next);
+      // setImageIndex(next);
     },
   };
 
-  const changerABSGeneral = () => {
-    changeCarousel(openABS);
+  const changerFrontCode = () => {
+    changeCarousel(openFront);
+  };
+
+  const openLink = (link: string) => {
+    const newWindow = window.open(link, "_blank", "noopener,noreferrer");
+    if (newWindow) newWindow.opener = null;
+  };
+
+  const openVideo = () => {
+    if (project && project?.projectName === "TeamChallenge")
+      openLink(project.linkVideo);
+    else
+      navigate(Routes.videopage, {
+        state: { projectcard: { project } },
+      });
   };
 
   return (
-    <S.CarouselContainer showDescription={showDescription}>
+    <S.CarouselContainer showDescription={true}>
       <GlobalStyles />
-      <S.FlexBox showDescription={showDescription}>
-        <S.SliderBox showDescription={showDescription}>
+      <S.FlexBox showDescription={true}>
+        <S.SliderBox showDescription={true}>
           <Slider {...settings} className="Slider">
-            {(carouselGeneral ? imageMapGeneral : imageMap)?.map(
+            {(carouselFront ? imageMapFront : imageMapBack)?.map(
               (item, index) => (
                 <S.ImgCarouselContainer
                   className="ImgCarouselContainer"
                   key={index}
-                  showDescription={showDescription}
+                  showDescription={true}
                 >
-                  {showDescription ? null : (
-                    <Breadcrumbs
-                      aria-label="breadcrumb"
-                      separator={
-                        <DoubleArrowIcon fontSize="small" color="primary" />
-                      }
-                      sx={{
-                        display: "flex",
-                        width: "100%",
-                        justifyContent: "start",
-                        pl: 10,
-                        pt: 16,
-                        zIndex: 20000,
-                      }}
-                    >
-                      <Link underline="hover" color="inherit" href="/">
-                        <Typography variant="body2" color="primary.main">
-                          Accueil
-                        </Typography>
-                      </Link>
-                      <Link
-                        underline="hover"
-                        color="inherit"
-                        // href={Routes.façonnage}
-                      >
-                        <Typography variant="body2" color="primary.main">
-                          Façonnage
-                        </Typography>
-                      </Link>
-                      <Typography variant="body2" color="colorGris.main">
-                        {item.produit_titre}
-                      </Typography>
-                    </Breadcrumbs>
-                  )}
                   <img
-                    src={item.src}
+                    src={`${
+                      item.src !== ""
+                        ? require(`../../images/MyProjects/${item.src}`)
+                        : project?.src
+                    }`}
                     alt={item.alt}
-                    width={showDescription ? "100%" : ""}
-                    height={showDescription ? "100%" : ""}
+                    width={"100%"}
+                    height={"100%"}
                   />
-                  {!showDescription && (
-                    <Typography variant="h4" color="secondary">
-                      {item.produit_titre}
-                    </Typography>
-                  )}
                 </S.ImgCarouselContainer>
               )
             )}
           </Slider>
         </S.SliderBox>
-        {showDescription && (
-          <S.Description>
-            <S.DiscriptionCarouselCont openABS={openABS}>
+        <S.Description>
+          <S.DiscriptionCarouselCont openABS={openFront}>
+            {/* <Typography variant="body1">
+              {carouselFront
+                ? imageMapFront && imageMapFront[imgIndex]?.description
+                : imageMapBack && imageMapBack[imgIndex]?.description}
+            </Typography> */}
+            <Button
+              variant="text"
+              onClick={() => openLink(linkProject ?? "")}
+              disabled={!(project && project?.openProject)}
+              sx={{ cursor: "pointer" }}
+            >
               <Typography variant="h4">
-                {openABS ? "Description ABS" : "Description générale"}
+                {t("carousel2d.button_project")}
               </Typography>
-              <Typography variant="h4">
-                {carouselGeneral
-                  ? imageMapGeneral && imageMapGeneral[imgIndex]?.produit_titre
-                  : imageMap && imageMap[imgIndex]?.produit_titre}
+            </Button>
+            <Button
+              variant="text"
+              onClick={() => openLink(linkGit ?? "")}
+              disabled={!(project && project?.openGit)}
+              sx={{ cursor: "pointer" }}
+            >
+              <Typography variant="h4">{t("carousel2d.button_git")}</Typography>
+            </Button>
+            <Button
+              variant="text"
+              onClick={() => openVideo()}
+              disabled={!(project && project?.openVideo)}
+              sx={{ cursor: "pointer" }}
+            >
+              <Typography variant="h4" sx={{ cursor: "pointer" }}>
+                {t("carousel2d.button_video")}
               </Typography>
-              <Typography variant="body1">
-                {carouselGeneral
-                  ? imageMapGeneral &&
-                    imageMapGeneral[imgIndex]?.prod_description_general
-                  : imageMap && imageMap[imgIndex]?.prod_description}
-              </Typography>
-            </S.DiscriptionCarouselCont>
-            <S.ButtonSwitchABS onClick={changerABSGeneral}>
-              <Typography variant="h5">
-                {openABS
-                  ? "Regarder une description générale"
-                  : "Regarder nos realisations"}
-              </Typography>
-            </S.ButtonSwitchABS>
-          </S.Description>
-        )}
+            </Button>
+          </S.DiscriptionCarouselCont>
+          <S.ButtonSwitchABS
+            onClick={changerFrontCode}
+            disabled={carouselImagesProps?.length === 1}
+          >
+            <Typography variant="h5">
+              {carouselImagesProps?.length === 1
+                ? ""
+                : openFront
+                ? t("carousel2d.button_front")
+                : t("carousel2d.button_code")}
+            </Typography>
+          </S.ButtonSwitchABS>
+        </S.Description>
       </S.FlexBox>
     </S.CarouselContainer>
   );

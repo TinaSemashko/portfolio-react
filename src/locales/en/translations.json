@@ -92,7 +92,14 @@
   },
   "carousel3d": {
     "button_git": "Open GIT",
-    "button_project": "Open project"
+    "button_project": "More"
+  },
+  "carousel2d": {
+    "button_git": "Open GIT",
+    "button_project": "Open the project",
+    "button_video": "Watch the video",
+    "button_code": "Watch the project code",
+    "button_front": "Watch the project user interface"
   },
   "experience": {
     "dataEx1": "August 2022 - until now",

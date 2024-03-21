@@ -30,6 +30,7 @@ const Galery: React.FC = () => {
               srcSet={`${require(`../../images/Hobby/${item}`)}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
               src={`${require(`../../images/Hobby/${item}`)}?w=164&h=164&fit=crop&auto=format`}
               loading="lazy"
+              alt=""
             />
             <S.TopLeftCorner className="top-left" />
             <S.TopRightCorner className="top-right" />

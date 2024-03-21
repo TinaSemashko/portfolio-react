@@ -185,10 +185,13 @@ export const ButtonMore = styled("button")`
     0 0 9px 3px rgba(253, 27, 27, 0.1);
   border: 3px inset red;
   border-style: ridge;
-  width: 10vw;
-  height: 1.95vh;
+  width: 8vw;
+  height: 3vh;
   grid-column: 2 / span 4;
   z-index: 15;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:before {
     content: "";
@@ -215,10 +218,14 @@ export const ButtonMore = styled("button")`
     transform: translateX(15em);
   }
 
-  @media (max-width: 750px) {
-    width: 12vw;
-    height: 50%;
+  @media (max-width: 900px) {
+    width: 10vw;
     top: -1vh;
+  }
+
+  @media (max-width: 550px) {
+    top: -3vh;
+    left: -4.5vw;
   }
 `;
 

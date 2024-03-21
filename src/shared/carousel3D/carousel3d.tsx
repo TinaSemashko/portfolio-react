@@ -16,6 +16,22 @@ interface CarouselParams {
   cellsize: number;
 }
 
+const fontSizeBody1 = {
+  xs: "0.5rem",
+  sm: "0.5rem",
+  md: "0.6rem",
+  lg: "0.7rem",
+  xl: "1rem",
+};
+
+const fontSizeBody2 = {
+  xs: "0.3rem",
+  sm: "0.5rem",
+  md: "0.6rem",
+  lg: "0.7rem",
+  xl: "1rem",
+};
+
 const radius = 28;
 const Carousel: React.FC = () => {
   const { t } = useTranslation();
@@ -78,21 +94,20 @@ const Carousel: React.FC = () => {
     }
   };
 
-  const openInNewTab = (url: string): void => {
-    if (
-      url === "VideoAssofactory" ||
-      url === "VideoConnectify" ||
-      url === "VideoABS" ||
-      url === "VideoSeaLife"
-    )
-      navigate(Routes.videopage, {
-        state: { videoUrl: { url } },
-      });
-    else if (url === "private") setOpen(true);
-    else {
-      const newWindow = window.open(url, "_blank", "noopener,noreferrer");
-      if (newWindow) newWindow.opener = null;
-    }
+  const openDescription = (project: Carousel3d): void => {
+    // if (!project.openProject)
+    navigate(Routes.cartproject, {
+      state: { cartproject: { project } },
+    });
+    // else if (project.linkGit === "private") setOpen(true);
+    // else {
+    //   const newWindow = window.open(
+    //     project.linkProject,
+    //     "_blank",
+    //     "noopener,noreferrer"
+    //   );
+    //   if (newWindow) newWindow.opener = null;
+    // }
   };
 
   return (
@@ -127,6 +142,7 @@ const Carousel: React.FC = () => {
                   textAlign="left"
                   id={index.toString()}
                   onClick={handleClick}
+                  sx={{ marginTop: "-2rem", fontSize: fontSizeBody2 }}
                 >
                   {item.descriptions}
                 </Typography>
@@ -143,20 +159,10 @@ const Carousel: React.FC = () => {
                   component="div"
                   variant="body1"
                   textAlign="left"
-                  onClick={() => openInNewTab(item.linkProject)}
+                  sx={{ fontSize: fontSizeBody1 }}
+                  onClick={() => openDescription(item)}
                 >
                   {t("carousel3d.button_project")}
-                </Typography>
-              </S.ButtonMore>
-              <br />
-              <S.ButtonMore>
-                <Typography
-                  component="div"
-                  variant="body1"
-                  textAlign="left"
-                  onClick={() => openInNewTab(item.linkGit)}
-                >
-                  {t("carousel3d.button_git")}
                 </Typography>
               </S.ButtonMore>
             </S.Slide>

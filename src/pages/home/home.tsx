@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import WalkingCat from "../components/walkingCat";
 import img1 from "../../images/crown.png";
-import img2 from "../../images/puzzl1.png";
+import img2 from "../../images/puzzl.png";
 
 import * as S from "./home.styled";
 
