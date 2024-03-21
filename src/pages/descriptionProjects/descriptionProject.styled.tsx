@@ -26,6 +26,7 @@ export const FlexBoxMain = styled("div")`
   display: flex;
   flex-direction: column;
   margin-top: 1vh;
+  margin-bottom: 1vh;
   margin-left: 2vw;
   margin-right: 2vw;
   position: relative;
@@ -68,10 +69,6 @@ export const GridBox2Main = styled("div")`
   grid-template-columns: 30% 70%;
   grid-template-rows: 1fr 1fr;
   height: 80vh;
-
-  @media (max-width: 750px) {
-    /* height: 90vh; */
-  }
 `;
 
 export const GridBox2Main1 = styled("div")`

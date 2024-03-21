@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from "react-router";
 import { useEffect, useRef, useState } from "react";
-import { Button, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Routes } from "../../app/routes";
 import DescriptionIcon from "@mui/icons-material/Description";
@@ -22,6 +22,14 @@ const videoLinks: VideoLinks = {
   VideoConnectify: VideoConnectify,
   VideoSeaLife: VideoSeaLife,
   VideoABS: VideoABS,
+};
+
+const fontSizeBody2 = {
+  xs: "0.5rem",
+  sm: "0.8rem",
+  md: "0.7rem",
+  lg: "0.9rem",
+  xl: "1rem",
 };
 
 const VideoProjects: React.FC = () => {
@@ -57,7 +65,7 @@ const VideoProjects: React.FC = () => {
       <S.VideoContainer>
         <S.VideoProjects ref={videoRef} src={videoSrc} autoPlay muted />
         <S.ButtonsContainer>
-          <Button
+          <S.ButtonVideo
             color="error"
             variant="contained"
             onClick={handleRestartVideo}
@@ -65,17 +73,25 @@ const VideoProjects: React.FC = () => {
             <S.FlexBox>
               <ReplayCircleFilledIcon />
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <Typography variant="h6">{t("projects.repeat")}</Typography>
+              <Typography variant="body1" sx={{ fontSize: fontSizeBody2 }}>
+                {t("projects.repeat")}
+              </Typography>
             </S.FlexBox>
-          </Button>
-          <Button color="error" variant="contained" onClick={() => openCard()}>
+          </S.ButtonVideo>
+          <S.ButtonVideo
+            color="error"
+            variant="contained"
+            onClick={() => openCard()}
+          >
             <S.FlexBox>
               <DescriptionIcon />
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <Typography variant="h6">{t("projects.description")}</Typography>
+              <Typography variant="body1" sx={{ fontSize: fontSizeBody2 }}>
+                {t("projects.description")}
+              </Typography>
             </S.FlexBox>
-          </Button>
-          <Button
+          </S.ButtonVideo>
+          <S.ButtonVideo
             color="error"
             variant="contained"
             onClick={() => {
@@ -85,9 +101,11 @@ const VideoProjects: React.FC = () => {
             <S.FlexBox>
               <AssignmentReturnIcon />
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <Typography variant="h6">{t("projects.return")}</Typography>
+              <Typography variant="body1" sx={{ fontSize: fontSizeBody2 }}>
+                {t("projects.return")}
+              </Typography>
             </S.FlexBox>
-          </Button>
+          </S.ButtonVideo>
         </S.ButtonsContainer>
       </S.VideoContainer>
     </S.MainContainer>

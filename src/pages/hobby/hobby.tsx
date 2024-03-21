@@ -3,11 +3,11 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
 import { Routes } from "../../app/routes";
 import Video from "../../images/videohome.mp4";
+import { theme } from "../../app/app";
 import { dataLeather, dataBiser, dataPaint } from "./dataHobby";
 import img from "../../images/perle.png";
 
 import * as S from "./hobby.styled";
-import { theme } from "../../app/app";
 
 const Hobby: React.FC = () => {
   const { t } = useTranslation();

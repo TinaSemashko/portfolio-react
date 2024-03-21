@@ -29,7 +29,7 @@ export const FlexBox = styled("div")<{ showDescription: boolean }>`
     width: 100%;
     padding-right: 0;
     overflow-x: visible;
-    margin-top: ${({ showDescription }) => (showDescription ? "7vh" : "0")};
+    margin-top: ${({ showDescription }) => (showDescription ? "0" : "0")};
   }
 `;
 
@@ -82,7 +82,7 @@ export const Description = styled("div")`
 
   @media (max-width: 750px) {
     width: 100%;
-    height: 41vh;
+    height: 35vh;
   }
 `;
 
@@ -106,6 +106,10 @@ export const DiscriptionCarouselCont = styled("div")<{ openABS: boolean }>`
   padding-bottom: 10vh;
   color: ${({ theme }) => theme.palette.secondary.main};
   border-left: ${({ openABS }) => (openABS ? "double white" : "solid white")};
+
+  @media (max-width: 750px) {
+    height: 60%;
+  }
 `;
 
 export const ArrowLeftIcon = styled("div")<{ showDescription: boolean }>`

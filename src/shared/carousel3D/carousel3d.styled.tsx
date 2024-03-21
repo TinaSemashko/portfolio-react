@@ -155,7 +155,7 @@ export const BorderRight = styled("div")<{ carouselWith: number }>`
   border: 2px solid red;
   border-left: none;
   border-top: none;
-  margin-right: 18%;
+  margin-right: 10%;
   z-index: 10;
 
   @media (max-width: 900px) {

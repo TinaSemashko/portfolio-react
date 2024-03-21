@@ -16,7 +16,7 @@ export const MainContainer = styled("div")`
   position: relative;
 
   @media (max-width: 1200px) {
-    padding-top: 6vh;
+    /* padding-top: 6vh; */
   }
 `;
 
@@ -123,8 +123,18 @@ export const ButtonCV = styled(Button)`
     border-radius: 10px;
 
     @media (max-width: 1200px) {
-      width: 2vw;
-      height: 3vh;
+      width: 10vw;
+      height: 10vh;
+    }
+
+    @media (max-width: 568px) {
+      width: 4vw;
+      height: 6vh;
+    }
+
+    @media (max-width: 400px) {
+      width: 4vw;
+      height: 4vh;
     }
   }
 
@@ -247,26 +257,26 @@ export const SectionCompetances = styled(SectionAdditional)`
   padding-bottom: 2vw;
   grid-column: 1;
   grid-row: 1;
-  height: 74vh;
+  height: 80vh;
 
   @media (max-width: 1200px) {
     width: 95%;
     margin-left: 0;
     margin-top: 0;
     padding-left: 10vw;
-    height: 50vh;
+    height: 80vh;
     padding-top: 2vh;
     padding-bottom: 2vw;
   }
 
   @media (max-width: 760px) {
-    height: 36vh;
+    height: 60vh;
   }
 `;
 
 export const SectionLangueges = styled(SectionAdditional)`
-  height: 27vh;
-  min-width: 20vw;
+  height: 34vh;
+  min-width: 25vw;
   padding-bottom: 2vh;
   padding-top: 2vh;
   margin-top: 40vh;
@@ -278,8 +288,12 @@ export const SectionLangueges = styled(SectionAdditional)`
     grid-column: 1;
     margin-top: 0;
     width: 95%;
-    height: 20vh;
+    height: 40vh;
     padding-left: 10vw;
+  }
+
+  @media (max-width: 760px) {
+    height: 30vh;
   }
 `;
 
@@ -333,7 +347,7 @@ export const SectionPoint = styled("div")`
   justify-content: center;
 
   @media (max-width: 1200px) {
-    height: 12vh;
+    height: 20vh;
     margin-top: 0;
   }
 `;
@@ -372,7 +386,7 @@ export const Hobby = styled("div")`
 
 export const SectionHobby = styled("div")`
   background-color: #05174baf;
-  width: 40vh;
+  width: 20vw;
   padding-top: 1vh;
   padding-bottom: 1vh;
   color: #ff9a01;
@@ -392,6 +406,14 @@ export const SectionHobby = styled("div")`
     50% {
       transform: translateY(-10px);
     }
+  }
+
+  @media (max-width: 1200px) {
+    width: 30vw;
+  }
+
+  @media (max-width: 960px) {
+    width: 30vw;
   }
 `;
 

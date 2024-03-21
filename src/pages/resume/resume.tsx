@@ -28,8 +28,8 @@ const fontSizeH6 = {
   xs: "0.5rem",
   sm: "0.8rem",
   md: "0.9rem",
-  lg: "1rem",
-  xl: "1.2rem",
+  lg: "0.95rem",
+  xl: "1rem",
 };
 
 const Resume: React.FC = () => {

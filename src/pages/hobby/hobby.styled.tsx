@@ -8,8 +8,6 @@ export const MainContainer = styled("div")`
   grid-template-columns: 100%;
   grid-template-rows: 100%;
   /* margin-bottom: 19vh; */
-  @media (max-width: 750px) {
-  }
 `;
 
 export const BackgroundContainer = styled("div")`
@@ -24,6 +22,7 @@ export const VideoAccueil = styled("video")`
   grid-row: 1;
 
   width: 100vw;
+  padding-top: 10vh;
   text-align: center;
   background-attachment: fixed;
   background-position: center;
@@ -32,7 +31,7 @@ export const VideoAccueil = styled("video")`
   z-index: -1;
 
   @media (max-width: 750px) {
-    padding-top: 40vh;
+    padding-top: 30vh;
   }
 `;
 
@@ -45,21 +44,33 @@ export const GridContainer = styled("div")`
   grid-template-columns: 20% 20% 20% 20% 20%;
   grid-template-rows: 33% 33% 33%;
   place-items: center;
+
+  @media (max-width: 1200px) {
+    height: 60vh;
+  }
+
+  @media (max-width: 568px) {
+    height: 40vh;
+  }
 `;
 
 export const StyledImg = styled("img")`
-  width: 60%;
+  width: 40%;
   text-align: center;
   grid-row: 1;
   grid-column: 1;
   z-index: 10;
 
-  @media (max-width: 960px) {
-    width: 85%;
+  @media (max-width: 1450px) {
+    width: 50%;
   }
 
   @media (max-width: 760px) {
-    width: 100%;
+    width: 60%;
+  }
+
+  @media (max-width: 350px) {
+    width: 80%;
   }
 `;
 
@@ -104,20 +115,20 @@ export const ImgContainer = styled("div")`
 export const ImgContainer1 = styled(ImgContainer)`
   animation: floatAnimation1 4s infinite;
   place-self: center;
-  grid-column: 4;
+  grid-column: 3 / span 2;
   grid-row: 1;
 `;
 
 export const ImgContainer2 = styled(ImgContainer)`
   animation: floatAnimation 4.5s infinite;
   place-self: center;
-  grid-column: 5;
+  grid-column: 4 / span 2;
   grid-row: 2;
 `;
 
 export const ImgContainer3 = styled(ImgContainer)`
   animation: floatAnimation 5.5s infinite;
   place-self: center;
-  grid-column: 3;
+  grid-column: 2 / span 2;
   grid-row: 3;
 `;

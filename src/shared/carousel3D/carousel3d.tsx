@@ -5,7 +5,6 @@ import { Carousel3d } from "../../types/projects";
 import { imagesCarousel } from "./dataCarousel";
 import { useNavigate } from "react-router";
 import { Routes } from "../../app/routes";
-import ModalBar from "../modal/modalBar";
 
 import * as S from "./carousel3d.styled";
 
@@ -29,7 +28,7 @@ const fontSizeBody2 = {
   sm: "0.5rem",
   md: "0.6rem",
   lg: "0.7rem",
-  xl: "1rem",
+  xl: "0.9rem",
 };
 
 const radius = 28;
@@ -40,9 +39,6 @@ const Carousel: React.FC = () => {
   const [indexState, setIndexState] = useState("");
   const [carouselParams, setCarouselParams] = useState<CarouselParams>();
   const [imageMap, setImageMap] = useState<Carousel3d[]>([]);
-  const [open, setOpen] = useState(false);
-
-  const handleClose = () => setOpen(false);
 
   const makeCarousel = (carouselParams: CarouselParams) => {
     imagesCarousel.map((el, index) => {
@@ -95,19 +91,9 @@ const Carousel: React.FC = () => {
   };
 
   const openDescription = (project: Carousel3d): void => {
-    // if (!project.openProject)
     navigate(Routes.cartproject, {
       state: { cartproject: { project } },
     });
-    // else if (project.linkGit === "private") setOpen(true);
-    // else {
-    //   const newWindow = window.open(
-    //     project.linkProject,
-    //     "_blank",
-    //     "noopener,noreferrer"
-    //   );
-    //   if (newWindow) newWindow.opener = null;
-    // }
   };
 
   return (
@@ -147,13 +133,6 @@ const Carousel: React.FC = () => {
                   {item.descriptions}
                 </Typography>
               </S.TextContainer>
-              <div>
-                <ModalBar
-                  open={open}
-                  handleClose={handleClose}
-                  modalMessage={t("projects.message_private")}
-                />
-              </div>
               <S.ButtonMore>
                 <Typography
                   component="div"
