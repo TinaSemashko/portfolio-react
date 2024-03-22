@@ -10,7 +10,7 @@ import * as S from "./home.styled";
 const arrayTechnologies = [
   "React",
   "Node",
-  "SQL",
+  "Sql",
   "Firebase",
   "Postgres",
   "MaterialUI",
