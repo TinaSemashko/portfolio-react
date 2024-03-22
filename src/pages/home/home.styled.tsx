@@ -51,7 +51,15 @@ export const GridContainer = styled("div")`
   position: relative;
 
   @media (max-width: 1200px) {
-    height: 70vh;
+    height: 75vh;
+  }
+
+  @media (max-width: 760px) {
+    height: 80vh;
+  }
+
+  @media (max-width: 568px) {
+    height: 100vh;
   }
 `;
 
@@ -158,21 +166,23 @@ export const Puzzle = styled("div")`
   grid-column: 1 / span 2;
   grid-row: 2;
   display: grid;
-  /* grid-template-columns: 14.286% 3.5715% 10.7145% 3.5715% 10.7145% 3.5715% 10.7145% 3.5715% 10.7145% 3.5715% 10.7145% 3.5715% 14.286%; */
-  /* width: 55vw; */
 
   align-items: center;
   color: #dedcdca9;
   align-self: center;
 
-  width: 80vw;
+  width: 96vw;
+  margin-left: 24vw;
   grid-template-columns: 9.375% 3.125% 6.25% 3.125% 6.25% 3.125% 6.25% 3.125% 6.25% 3.125% 6.25% 3.125% 6.25% 3.125% 9.375%;
 
-  margin-left: 20vw;
-
-  @media (max-width: 960px) {
+  @media (max-width: 1200px) {
     width: 96vw;
     margin-left: 24vw;
+  }
+
+  @media (max-width: 960px) {
+    width: 112vw;
+    margin-left: 28vw;
   }
 
   @media (max-width: 760px) {
@@ -180,10 +190,16 @@ export const Puzzle = styled("div")`
     margin-left: 28vw;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 568px) {
     grid-template-columns: 9.375% 3.125% 6.25% 3.125% 6.25% 3.125% 9.375%;
     grid-template-rows: 50% 50%;
-    margin-top: 4rem;
+    margin-top: 0;
+    margin-left: 35rem;
+    width: 56rem;
+    height: 10.5rem;
+  }
+
+  @media (max-width: 400px) {
     margin-left: 25rem;
     width: 40rem;
     height: 7.5rem;
@@ -199,7 +215,7 @@ export const Element = styled(ElAnimation)<{ index: number }>`
 
   position: relative;
 
-  @media (max-width: 400px) {
+  @media (max-width: 568px) {
     grid-row: ${({ index }) => (index < 5 ? 1 : 2)};
     grid-column: ${({ index }) =>
       index < 5
@@ -214,15 +230,23 @@ export const Element = styled(ElAnimation)<{ index: number }>`
 
 export const ElImg = styled("img")`
   grid-row: 2;
-  width: 10vw;
+  width: 12vw;
   display: block;
 
-  @media (max-width: 960px) {
+  @media (max-width: 1200px) {
     width: 12vw;
+  }
+
+  @media (max-width: 960px) {
+    width: 14vw;
   }
 
   @media (max-width: 760px) {
     width: 14vw;
+  }
+
+  @media (max-width: 568px) {
+    width: 7rem;
   }
 
   @media (max-width: 400px) {
@@ -231,14 +255,23 @@ export const ElImg = styled("img")`
 `;
 
 export const ElImgHide = styled("img")`
-  width: 10vw;
+  width: 12vw;
   display: none;
-  @media (max-width: 960px) {
+
+  @media (max-width: 1200px) {
     width: 12vw;
+  }
+
+  @media (max-width: 960px) {
+    width: 14vw;
   }
 
   @media (max-width: 760px) {
     width: 14vw;
+  }
+
+  @media (max-width: 568px) {
+    width: 7rem;
   }
 
   @media (max-width: 400px) {
@@ -248,8 +281,8 @@ export const ElImgHide = styled("img")`
 
 export const ElText = styled("div")<{ index: number }>`
   position: absolute;
-  top: 0.5vh;
-  right: ${({ index }) => (index === 1 || index === 7 ? "2.8vw" : "1vw")};
+  top: 1.9vh;
+  right: ${({ index }) => (index === 1 || index === 8 ? "3.2vw" : "0.5vw")};
   color: ${({ index }) => (index > 3 ? "white" : "inherit")};
   height: 100%;
   width: 4%;
@@ -257,13 +290,25 @@ export const ElText = styled("div")<{ index: number }>`
   transform: scale(-1);
   text-align: center;
   z-index: 100;
+  cursor: pointer;
 
-  @media (max-width: 960px) {
-    width: 12vw;
+  @media (max-width: 1200px) {
+    top: 1vh;
+    right: ${({ index }) => (index === 1 || index === 8 ? "3.5vw" : "0.5vw")};
   }
 
-  @media (max-width: 760px) {
-    width: 14vw;
+  @media (max-width: 960px) {
+    top: 1.1vh;
+    right: ${({ index }) => (index === 1 || index === 8 ? "3.5vw" : "0.5vw")};
+  }
+
+  @media (max-width: 568px) {
+    width: 10rem;
+    top: 1.5rem;
+    right: ${({ index }) =>
+      index === 1 || index === 4 || index === 5 || index === 8
+        ? "2rem"
+        : "1rem"};
   }
 
   @media (max-width: 400px) {

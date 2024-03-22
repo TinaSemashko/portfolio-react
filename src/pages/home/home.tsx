@@ -8,14 +8,14 @@ import img2 from "../../images/puzzl.png";
 import * as S from "./home.styled";
 
 const arrayTechnologies = [
-  "react.js",
-  "node.js",
-  "sql",
-  "firebase",
-  "postgres",
-  "mui-material",
-  "typescript",
-  "gitHub",
+  "React.js",
+  "Node.js",
+  "SQL",
+  "Firebase",
+  "Postgres",
+  "MaterialUI",
+  "Typescript",
+  "GitHub",
 ];
 
 const Home: React.FC = () => {
@@ -50,8 +50,8 @@ const Home: React.FC = () => {
     xs: "1.6rem",
     sm: "2rem",
     md: "2.5rem",
-    lg: "2.8rem",
-    xl: "3rem",
+    lg: "3.4rem",
+    xl: "4rem",
   };
 
   const fontSizeSubTitle = {
@@ -59,7 +59,7 @@ const Home: React.FC = () => {
     sm: "1.3rem",
     md: "1.4rem",
     lg: "1.8rem",
-    xl: "2rem",
+    xl: "2.2rem",
   };
 
   return (
@@ -74,7 +74,10 @@ const Home: React.FC = () => {
               sx={{
                 px: pxValue,
                 fontSize: fontSizeTitle,
-                WebkitTextStroke: { xs: "1px rgba(0, 0, 0, .5)" },
+                WebkitTextStroke: {
+                  xs: "1px rgba(0, 0, 0, .5)",
+                  md: "0",
+                },
               }}
             >
               {t("main.title")}
@@ -124,27 +127,33 @@ const Home: React.FC = () => {
                 id={`card${index + 1}`}
                 className="card"
                 onMouseOver={() => showCardText(index + 1)}
+                onTouchStart={() => showCardText(index + 1)}
                 onMouseOut={() => setOpen(false)}
+                onTouchEnd={() => setOpen(true)}
               />
               <S.ElImgHide
                 src={require(`../../images/${item}.png`)}
                 id={`hide${index + 1}`}
                 className="hide"
                 onMouseOver={() => showCardText(index + 1)}
+                onTouchStart={() => showCardText(index + 1)}
                 onMouseOut={() => setOpen(true)}
+                onTouchEnd={() => setOpen(true)}
               />
               <S.ElText index={index + 1}>
                 <Typography
                   variant="h5"
                   id={`text${index + 1}`}
                   color="colorBlack.main"
+                  onMouseOver={() => showCardText(index + 1)}
+                  onMouseOut={() => setOpen(false)}
                   sx={{
                     fontSize: {
                       xs: "0.7rem",
                       sm: "0.8rem",
-                      md: "0.9rem",
-                      lg: "1rem",
-                      xl: "1.2rem",
+                      md: "1.1rem",
+                      lg: "1.2rem",
+                      xl: "1.4rem",
                     },
                   }}
                 >
