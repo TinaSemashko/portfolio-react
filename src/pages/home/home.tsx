@@ -8,13 +8,14 @@ import img2 from "../../images/puzzl.png";
 import * as S from "./home.styled";
 
 const arrayTechnologies = [
-  "react",
-  "node",
+  "react.js",
+  "node.js",
   "sql",
   "firebase",
   "postgres",
-  "mui",
+  "mui-material",
   "typescript",
+  "gitHub",
 ];
 
 const Home: React.FC = () => {
@@ -54,11 +55,11 @@ const Home: React.FC = () => {
   };
 
   const fontSizeSubTitle = {
-    xs: "1rem",
+    xs: "1.2rem",
     sm: "1.3rem",
     md: "1.4rem",
-    lg: "1.4rem",
-    xl: "1.5rem",
+    lg: "1.8rem",
+    xl: "2rem",
   };
 
   return (
@@ -73,6 +74,7 @@ const Home: React.FC = () => {
               sx={{
                 px: pxValue,
                 fontSize: fontSizeTitle,
+                WebkitTextStroke: { xs: "1px rgba(0, 0, 0, .5)" },
               }}
             >
               {t("main.title")}
@@ -84,6 +86,7 @@ const Home: React.FC = () => {
             sx={{
               px: pxValue,
               fontSize: fontSizeSubTitle,
+              // color: "colorBlack.main",
             }}
           >
             {t("main.text")}
@@ -107,6 +110,7 @@ const Home: React.FC = () => {
             sx={{
               px: pxValue,
               fontSize: fontSizeSubTitle,
+              // color: "colorBlack.main",
             }}
           >
             {t("main.text")}
@@ -133,9 +137,10 @@ const Home: React.FC = () => {
                 <Typography
                   variant="h5"
                   id={`text${index + 1}`}
+                  color="colorBlack.main"
                   sx={{
                     fontSize: {
-                      xs: "0.4rem",
+                      xs: "0.7rem",
                       sm: "0.8rem",
                       md: "0.9rem",
                       lg: "1rem",

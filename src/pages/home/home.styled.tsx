@@ -78,39 +78,6 @@ export const RightSide1ecran = styled(Side)`
   color: ${({ theme }) => theme.palette.secondary.main};
 `;
 
-export const Puzzle = styled("div")`
-  grid-column: 1 / span 2;
-  grid-row: 2;
-  display: grid;
-  grid-template-columns: 14.286% 3.5715% 10.7145% 3.5715% 10.7145% 3.5715% 10.7145% 3.5715% 10.7145% 3.5715% 10.7145% 3.5715% 14.286%;
-  align-items: center;
-  width: 55vw;
-  height: 18vh;
-  color: #dedcdca9;
-  align-self: center;
-
-  @media (max-width: 760px) {
-    width: 77vw;
-  }
-`;
-
-export const ElImg = styled("img")`
-  width: 10vw;
-  display: block;
-
-  @media (max-width: 760px) {
-    width: 14vw;
-  }
-`;
-
-export const ElImgHide = styled("img")`
-  width: 10vw;
-  display: none;
-  @media (max-width: 760px) {
-    width: 14vw;
-  }
-`;
-
 export const ElAnimation = styled("div")`
   &:hover .hide {
     animation: none;
@@ -187,13 +154,96 @@ export const ElAnimation = styled("div")`
   }
 `;
 
+export const Puzzle = styled("div")`
+  grid-column: 1 / span 2;
+  grid-row: 2;
+  display: grid;
+  /* grid-template-columns: 14.286% 3.5715% 10.7145% 3.5715% 10.7145% 3.5715% 10.7145% 3.5715% 10.7145% 3.5715% 10.7145% 3.5715% 14.286%; */
+  /* width: 55vw; */
+
+  align-items: center;
+  color: #dedcdca9;
+  align-self: center;
+
+  width: 80vw;
+  grid-template-columns: 9.375% 3.125% 6.25% 3.125% 6.25% 3.125% 6.25% 3.125% 6.25% 3.125% 6.25% 3.125% 6.25% 3.125% 9.375%;
+
+  margin-left: 20vw;
+
+  @media (max-width: 960px) {
+    width: 96vw;
+    margin-left: 24vw;
+  }
+
+  @media (max-width: 760px) {
+    width: 112vw;
+    margin-left: 28vw;
+  }
+
+  @media (max-width: 400px) {
+    grid-template-columns: 9.375% 3.125% 6.25% 3.125% 6.25% 3.125% 9.375%;
+    grid-template-rows: 50% 50%;
+    margin-top: 4rem;
+    margin-left: 25rem;
+    width: 40rem;
+    height: 7.5rem;
+  }
+`;
+
 export const Element = styled(ElAnimation)<{ index: number }>`
   grid-row: 1;
   grid-column: ${({ index }) =>
     index === 1 || index === 2
       ? `${index} / span 2`
       : `${index + (index - 2)} / span 2`};
+
   position: relative;
+
+  @media (max-width: 400px) {
+    grid-row: ${({ index }) => (index < 5 ? 1 : 2)};
+    grid-column: ${({ index }) =>
+      index < 5
+        ? index === 1 || index === 2
+          ? `${index} / span 2`
+          : `${index + (index - 2)} / span 2`
+        : index === 5 || index === 6
+        ? `${index - 4} / span 2`
+        : `${index - 4 + (index - 6)} / span 2`};
+  }
+`;
+
+export const ElImg = styled("img")`
+  grid-row: 2;
+  width: 10vw;
+  display: block;
+
+  @media (max-width: 960px) {
+    width: 12vw;
+  }
+
+  @media (max-width: 760px) {
+    width: 14vw;
+  }
+
+  @media (max-width: 400px) {
+    width: 5rem;
+  }
+`;
+
+export const ElImgHide = styled("img")`
+  width: 10vw;
+  display: none;
+  @media (max-width: 960px) {
+    width: 12vw;
+  }
+
+  @media (max-width: 760px) {
+    width: 14vw;
+  }
+
+  @media (max-width: 400px) {
+    width: 5rem;
+  }
 `;
 
 export const ElText = styled("div")<{ index: number }>`
@@ -207,6 +257,23 @@ export const ElText = styled("div")<{ index: number }>`
   transform: scale(-1);
   text-align: center;
   z-index: 100;
+
+  @media (max-width: 960px) {
+    width: 12vw;
+  }
+
+  @media (max-width: 760px) {
+    width: 14vw;
+  }
+
+  @media (max-width: 400px) {
+    width: 5rem;
+    top: 0.5rem;
+    right: ${({ index }) =>
+      index === 1 || index === 4 || index === 5 || index === 8
+        ? "1.5rem"
+        : "0.6rem"};
+  }
 `;
 
 export const TitleLeft1ecran = styled("div")`
@@ -316,6 +383,11 @@ export const ImgLeft2ecran = styled("img")`
   margin-top: 10vh;
   padding-right: 12%;
   opacity: 0.7;
+
+  @media (max-width: 568px) {
+    width: 80vw;
+    color: ${({ theme }) => theme.palette.colorBlack.main};
+  }
 `;
 
 export const TitleLeft2ecran = styled("div")`
@@ -325,6 +397,10 @@ export const TitleLeft2ecran = styled("div")`
   color: #dedcdca9;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   z-index: 10;
+
+  @media (max-width: 568px) {
+    color: ${({ theme }) => theme.palette.colorBlack.main};
+  }
 `;
 
 export const TitleRight2ecran = styled("div")`
@@ -334,6 +410,10 @@ export const TitleRight2ecran = styled("div")`
   color: ${({ theme }) => theme.palette.secondary.main};
   clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
   z-index: 10;
+
+  @media (max-width: 568px) {
+    color: ${({ theme }) => theme.palette.colorBlack.main};
+  }
 `;
 
 export const Text2ecran = styled("div")`
@@ -343,4 +423,8 @@ export const Text2ecran = styled("div")`
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 100%;
+
+  @media (max-width: 568px) {
+    margin-top: 20vh;
+  }
 `;
