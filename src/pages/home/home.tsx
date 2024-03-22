@@ -8,8 +8,8 @@ import img2 from "../../images/puzzl.png";
 import * as S from "./home.styled";
 
 const arrayTechnologies = [
-  "React",
-  "Node",
+  "React.js",
+  "Node.js",
   "SQL",
   "Firebase",
   "Postgres",
