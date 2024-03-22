@@ -127,18 +127,18 @@ const Home: React.FC = () => {
                 id={`card${index + 1}`}
                 className="card"
                 onMouseOver={() => showCardText(index + 1)}
-                onTouchStart={() => showCardText(index + 1)}
+                // onTouchStart={() => showCardText(index + 1)}
                 onMouseOut={() => setOpen(false)}
-                onTouchEnd={() => setOpen(true)}
+                // onTouchEnd={() => setOpen(true)}
               />
               <S.ElImgHide
                 src={require(`../../images/${item}.png`)}
                 id={`hide${index + 1}`}
                 className="hide"
                 onMouseOver={() => showCardText(index + 1)}
-                onTouchStart={() => showCardText(index + 1)}
+                // onTouchStart={() => showCardText(index + 1)}
                 onMouseOut={() => setOpen(true)}
-                onTouchEnd={() => setOpen(true)}
+                // onTouchEnd={() => setOpen(true)}
               />
               <S.ElText index={index + 1}>
                 <Typography
