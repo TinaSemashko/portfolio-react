@@ -23,6 +23,7 @@ const Home: React.FC = () => {
   const [open, setOpen] = useState(false);
 
   const showCardText = (ind: number): void => {
+    console.log("click");
     const card = document.querySelector(`#card${ind}`);
     const hideNode = document.querySelector(`#hide${ind}`);
     const text = document.querySelector(`#text${ind}`);
@@ -121,11 +122,12 @@ const Home: React.FC = () => {
         </S.TitleRight1ecran>
         <S.Puzzle>
           {arrayTechnologies.map((item, index) => (
-            <S.Element index={index + 1}>
+            <S.Element index={index + 1} key={item}>
               <S.ElImg
                 src={img2}
                 id={`card${index + 1}`}
                 className="card"
+                onClick={() => console.log(`card${index + 1}`)}
                 onMouseOver={() => showCardText(index + 1)}
                 onTouchStart={() => showCardText(index + 1)}
                 onMouseOut={() => setOpen(false)}
@@ -139,6 +141,7 @@ const Home: React.FC = () => {
                 onTouchStart={() => showCardText(index + 1)}
                 onMouseOut={() => setOpen(true)}
                 onTouchEnd={() => setOpen(true)}
+                onClick={() => console.log("onClickHidden")}
               />
               <S.ElText index={index + 1}>
                 <Typography
@@ -146,7 +149,10 @@ const Home: React.FC = () => {
                   id={`text${index + 1}`}
                   color="colorBlack.main"
                   onMouseOver={() => showCardText(index + 1)}
+                  onTouchStart={() => showCardText(index + 1)}
                   onMouseOut={() => setOpen(false)}
+                  onTouchEnd={() => setOpen(true)}
+                  onClick={() => console.log("onClickText")}
                   sx={{
                     fontSize: {
                       xs: "0.7rem",

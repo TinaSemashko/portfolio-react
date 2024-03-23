@@ -1,5 +1,6 @@
 import { styled } from "@mui/material/styles";
 import img1 from "../../images/2ecran.png";
+import img from "../../images/pont.png";
 
 export const MainContainer = styled("div")`
   width: 100%;
@@ -241,10 +242,6 @@ export const ElImg = styled("img")`
     width: 14vw;
   }
 
-  @media (max-width: 760px) {
-    width: 14vw;
-  }
-
   @media (max-width: 568px) {
     width: 7rem;
   }
@@ -266,10 +263,6 @@ export const ElImgHide = styled("img")`
     width: 14vw;
   }
 
-  @media (max-width: 760px) {
-    width: 14vw;
-  }
-
   @media (max-width: 568px) {
     width: 7rem;
   }
@@ -281,30 +274,55 @@ export const ElImgHide = styled("img")`
 
 export const ElText = styled("div")<{ index: number }>`
   position: absolute;
-  top: 1.9vh;
+  top: 10vh;
   right: ${({ index }) => (index === 1 || index === 8 ? "3.2vw" : "0.5vw")};
   color: ${({ index }) => (index > 3 ? "white" : "inherit")};
-  height: 100%;
-  width: 4%;
   writing-mode: vertical-lr;
   transform: scale(-1);
   text-align: center;
   z-index: 100;
   cursor: pointer;
 
+  @media (max-width: 1500px) {
+    top: 8vh;
+  }
+
+  @media (max-width: 1350px) {
+    top: 7vh;
+  }
+
+  @media (max-width: 1300px) {
+    top: 5.5vh;
+  }
+
   @media (max-width: 1200px) {
-    top: 1vh;
+    top: 6vh;
     right: ${({ index }) => (index === 1 || index === 8 ? "3.5vw" : "0.5vw")};
+  }
+
+  @media (max-width: 1150px) {
+    top: 5vh;
+  }
+
+  @media (max-width: 1150px) {
+    top: 4vh;
   }
 
   @media (max-width: 960px) {
-    top: 1.1vh;
+    top: 5vh;
     right: ${({ index }) => (index === 1 || index === 8 ? "3.5vw" : "0.5vw")};
   }
 
+  @media (max-width: 850px) {
+    top: 4vh;
+  }
+
+  @media (max-width: 640px) {
+    top: 3.2vh;
+  }
+
   @media (max-width: 568px) {
-    width: 10rem;
-    top: 1.5rem;
+    top: 2.5rem;
     right: ${({ index }) =>
       index === 1 || index === 4 || index === 5 || index === 8
         ? "2rem"
@@ -312,8 +330,7 @@ export const ElText = styled("div")<{ index: number }>`
   }
 
   @media (max-width: 400px) {
-    width: 5rem;
-    top: 0.5rem;
+    top: 1.5rem;
     right: ${({ index }) =>
       index === 1 || index === 4 || index === 5 || index === 8
         ? "1.5rem"
@@ -360,6 +377,8 @@ export const TitleLeft1ecran = styled("div")`
 
   @media (max-width: 568px) {
     margin-top: 14vh;
+    clip-path: none;
+    color: ${({ theme }) => theme.palette.colorBlack.main};
   }
 `;
 
@@ -374,6 +393,8 @@ export const TitleRight1ecran = styled("div")`
 
   @media (max-width: 568px) {
     margin-top: 14vh;
+    clip-path: none;
+    color: ${({ theme }) => theme.palette.colorBlack.main};
   }
 `;
 
@@ -388,6 +409,9 @@ export const CatContainer = styled("div")`
   grid-row: 3;
   grid-column: 1 / span 2;
   align-self: end;
+  background-image: url(${img});
+  background-size: cover;
+  background-repeat: no-repeat;
 
   @media (max-width: 760px) {
     height: 70%;
