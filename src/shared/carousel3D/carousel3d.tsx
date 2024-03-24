@@ -26,16 +26,6 @@ const fontSizeBody1 = {
   xxl: "1.2rem",
 };
 
-const fontSizeBody2 = {
-  xxs: "0.3rem",
-  xs: "0.4rem",
-  sm: "0.5rem",
-  md: "0.6rem",
-  lg: "0.7rem",
-  xl: "0.9rem",
-  xxl: "1.1rem",
-};
-
 const Carousel: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -124,23 +114,6 @@ const Carousel: React.FC = () => {
                 id={index.toString()}
                 onClick={handleClick}
               />
-
-              <S.BorderLeft id={index.toString()} onClick={handleClick} />
-              <S.BorderRight
-                carouselWith={carouselParams?.cellsize ?? 0}
-                id={index.toString()}
-                onClick={handleClick}
-              />
-              <S.TextContainer>
-                <Typography
-                  textAlign="left"
-                  id={index.toString()}
-                  onClick={handleClick}
-                  sx={{ marginTop: "-2rem", fontSize: fontSizeBody2 }}
-                >
-                  {item.descriptions}
-                </Typography>
-              </S.TextContainer>
               <S.ButtonMore>
                 <Typography
                   component="div"

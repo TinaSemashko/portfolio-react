@@ -143,7 +143,13 @@ const TopBar: React.FC = () => {
             <S.ListBox>
               <List
                 sx={{
-                  display: { xs: "none", sm: "none", md: "none", lg: "flex" },
+                  display: {
+                    xxs: "none",
+                    xs: "none",
+                    sm: "none",
+                    md: "none",
+                    lg: "flex",
+                  },
                 }}
               >
                 {menuItemsArray.map((item, index) => (
@@ -181,10 +187,16 @@ const TopBar: React.FC = () => {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: "block", sm: "block", md: "block", lg: "none" },
+            display: {
+              xxs: "block",
+              xs: "block",
+              sm: "block",
+              md: "block",
+              lg: "none",
+            },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
-              width: { xs: "100%", sm: "60%" },
+              width: { xxs: "100%", xs: "100%", sm: "60%" },
             },
           }}
         >

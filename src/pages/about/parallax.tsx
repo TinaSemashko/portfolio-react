@@ -5,11 +5,13 @@ import flag from "../../images/Nuvola_France_Ukraine_flags.svg.png";
 import * as S from "./parallax.styled";
 
 const fontSizeBetween = {
+  xxs: "0.8rem",
   xs: "0.9rem",
   sm: "1.2rem",
   md: "1.4rem",
   lg: "1.5rem",
   xl: "1.6rem",
+  xxl: "1.8rem",
 };
 
 const Parallax: React.FC = () => {
@@ -105,7 +107,7 @@ const Parallax: React.FC = () => {
           <Typography variant="h1">{t("about.handmade_short")} </Typography>
         </S.TextContainerShort5>
       </S.ImgContainer5>
-      <S.TextContainer7>
+      <S.TextContainer6>
         <Typography
           variant="h4"
           sx={{
@@ -114,7 +116,7 @@ const Parallax: React.FC = () => {
         >
           {t("about.war")}
         </Typography>
-      </S.TextContainer7>
+      </S.TextContainer6>
       <S.ImgContainer6>
         <S.TextContainerShort6>
           <Typography variant="h1">{t("about.beauty")} </Typography>

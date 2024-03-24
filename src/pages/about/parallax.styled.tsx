@@ -86,7 +86,7 @@ export const TextContainerShort0 = styled(TextContainerAbsolute)`
 `;
 
 export const TextContainer1 = styled(TextContainerBetween)`
-  color: #0ca5e7;
+  color: red;
   background-color: #282e34;
 `;
 
@@ -102,7 +102,7 @@ export const TextContainerShort1 = styled(TextContainerAbsolute)`
 `;
 
 export const TextContainer2 = styled(TextContainerBetween)`
-  color: #703b3b;
+  color: orange;
   background-color: #282e34;
 `;
 
@@ -116,7 +116,7 @@ export const TextContainerShort2 = styled(TextContainerAbsolute)`
 `;
 
 export const TextContainer3 = styled(TextContainerBetween)`
-  color: #666897;
+  color: yellow;
   background-color: #282e34;
 `;
 
@@ -130,7 +130,7 @@ export const TextContainerShort3 = styled(TextContainerAbsolute)`
 `;
 
 export const TextContainer4 = styled(TextContainerBetween)`
-  color: bisque;
+  color: yellowgreen;
   background-color: #282e34;
 `;
 
@@ -144,7 +144,7 @@ export const TextContainerShort4 = styled(TextContainerAbsolute)`
 `;
 
 export const TextContainer5 = styled(TextContainerBetween)`
-  color: orange;
+  color: #0ca5e7;
   background-color: #282e34;
 `;
 
@@ -154,16 +154,11 @@ export const ImgContainer5 = styled(ImgMain)`
 `;
 
 export const TextContainerShort5 = styled(TextContainerAbsolute)`
-  color: blue;
+  color: #5e01ff;
 `;
 
 export const TextContainer6 = styled(TextContainerBetween)`
-  color: #ddd;
-  background-color: #282e34;
-`;
-
-export const TextContainer7 = styled(TextContainerBetween)`
-  color: #ddd;
+  color: violet;
   background-color: #282e34;
 `;
 
@@ -173,7 +168,7 @@ export const ImgContainer6 = styled(ImgMain)`
 `;
 
 export const TextContainerShort6 = styled(TextContainerAbsolute)`
-  color: violet;
+  color: #f902b3;
 `;
 
 export const TextRainbow = styled("div")`

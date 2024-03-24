@@ -8,7 +8,7 @@ import { Button } from "@mui/material";
 export const CarouselContainer = styled("div")<{ showDescription: boolean }>`
   margin: 0;
   padding: 0;
-  width: ${({ showDescription }) => (showDescription ? "98" : "100%")};
+  width: 100%;
   overflow-x: hidden;
 
   @media (max-width: 750px) {
@@ -18,8 +18,10 @@ export const CarouselContainer = styled("div")<{ showDescription: boolean }>`
 
 export const FlexBox = styled("div")<{ showDescription: boolean }>`
   display: flex;
-  justify-content: space-between;
-  width: ${({ showDescription }) => (showDescription ? " 92vw" : "100vw")};
+  justify-content: space-evenly;
+  height: 80vh;
+  align-items: center;
+  width: 92vw;
   z-index: 9;
   padding-right: 4vh;
   overflow-x: hidden;
@@ -29,33 +31,40 @@ export const FlexBox = styled("div")<{ showDescription: boolean }>`
     width: 100%;
     padding-right: 0;
     overflow-x: visible;
-    margin-top: ${({ showDescription }) => (showDescription ? "0" : "0")};
+    margin-top: 0;
   }
 `;
 
 export const ImgCarouselContainer = styled("div")<{ showDescription: boolean }>`
-  padding-top: ${({ showDescription }) => (showDescription ? "0" : " 18vh")};
-  width: ${({ showDescription }) => (showDescription ? "50vw" : "100vw")};
-  height: ${({ showDescription }) => (showDescription ? "70vh" : "100vh")};
-  background-color: ${({ theme, showDescription }) =>
-    showDescription
-      ? theme.palette.secondary.main
-      : theme.palette.colorBlack.main};
-  border: solid ${({ theme }) => theme.palette.colorRed.main};
+  width: 50vw;
   box-shadow: 14px 14px 14px black;
+  background-color: #8e2323;
+  border: solid ${({ theme }) => theme.palette.colorRed.main};
+
   display: flex !important;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  padding-top: calc((80vh - (50vw / 1.5)) / 2);
+  padding-bottom: calc((80vh - 2vh - (50vw / 1.5)) / 2);
+  padding-left: 1vw;
+  padding-right: 1vw;
+
+  @media (max-width: 760px) {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
 `;
 
 export const SliderBox = styled("div")<{ showDescription: boolean }>`
-  width: ${({ showDescription }) => (showDescription ? "50vw" : "100vw")};
-  height: ${({ showDescription }) => (showDescription ? "70vh" : "100vh")};
+  width: 50vw;
+  box-shadow: 14px 14px 14px black;
 
   @media (max-width: 750px) {
-    height: 40vh;
-    width: ${({ showDescription }) => (showDescription ? "100%" : "100vw")};
+    width: 100%;
   }
 `;
 
@@ -78,7 +87,11 @@ export const Description = styled("div")`
   color: ${({ theme }) => theme.palette.secondary.main};
   box-shadow: 14px 14px 14px black;
   z-index: 10;
-  height: 70vh;
+  height: 77vh;
+
+  @media (max-width: 1500px) {
+    width: 100%;
+  }
 
   @media (max-width: 750px) {
     width: 100%;
@@ -93,7 +106,7 @@ export const Line = styled("hr")`
 `;
 
 export const DiscriptionCarouselCont = styled("div")<{ openABS: boolean }>`
-  background-color: ${({ theme }) => "#8E2323"};
+  background-color: #8e2323;
   width: 100%;
   height: 80%;
   box-shadow: " rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset";
