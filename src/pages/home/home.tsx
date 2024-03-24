@@ -90,7 +90,6 @@ const Home: React.FC = () => {
             sx={{
               px: pxValue,
               fontSize: fontSizeSubTitle,
-              // color: "colorBlack.main",
             }}
           >
             {t("main.text")}
@@ -114,7 +113,6 @@ const Home: React.FC = () => {
             sx={{
               px: pxValue,
               fontSize: fontSizeSubTitle,
-              // color: "colorBlack.main",
             }}
           >
             {t("main.text")}
@@ -174,6 +172,7 @@ const Home: React.FC = () => {
         </S.CatContainer>
       </S.GridContainer>
       <S.GridContainer2ecran>
+        <S.ImgCatContainer />
         <S.LeftSide2ecran>
           <S.ImgLeft2ecran src={img1} alt="" />
         </S.LeftSide2ecran>

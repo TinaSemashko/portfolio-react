@@ -404,18 +404,40 @@ export const LogoContainer = styled("div")`
 `;
 
 export const CatContainer = styled("div")`
+  padding-top: 6vh;
   position: absolute;
-  bottom: 4px;
   grid-row: 3;
   grid-column: 1 / span 2;
   align-self: end;
-  background-image: url(${img});
+  /* background-image: url(${img});
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
+  /* display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%; */
+  /* height: 80%; */
+  bottom: 0;
 
   @media (max-width: 760px) {
     height: 70%;
   }
+`;
+
+export const GridCatContainer = styled("div")`
+  grid-row: 1;
+  grid-column: 1;
+`;
+
+export const ImgCatContainer = styled("div")`
+  margin-top: -7vh;
+  grid-row: 1;
+  grid-column: 1 / span 2;
+  width: 100%;
+  z-index: 100;
+  height: 20vh;
+  background-image: url(${img});
+  background-size: cover;
+  background-repeat: no-repeat;
 `;
 
 export const GridContainer2ecran = styled("div")`
