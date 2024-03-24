@@ -214,8 +214,6 @@ export const Element = styled(ElAnimation)<{ index: number }>`
       ? `${index} / span 2`
       : `${index + (index - 2)} / span 2`};
 
-  position: relative;
-
   @media (max-width: 568px) {
     grid-row: ${({ index }) => (index < 5 ? 1 : 2)};
     grid-column: ${({ index }) =>
@@ -227,6 +225,7 @@ export const Element = styled(ElAnimation)<{ index: number }>`
         ? `${index - 4} / span 2`
         : `${index - 4 + (index - 6)} / span 2`};
   }
+  position: relative;
 `;
 
 export const ElImg = styled("img")`
@@ -274,67 +273,17 @@ export const ElImgHide = styled("img")`
 
 export const ElText = styled("div")<{ index: number }>`
   position: absolute;
-  top: 10vh;
-  right: ${({ index }) => (index === 1 || index === 8 ? "3.2vw" : "0.5vw")};
+  bottom: 5%;
+  right: ${({ index }) => (index === 1 || index === 8 ? "30%" : "10%")};
   color: ${({ index }) => (index > 3 ? "white" : "inherit")};
   writing-mode: vertical-lr;
   transform: scale(-1);
-  text-align: center;
   z-index: 100;
   cursor: pointer;
 
-  @media (max-width: 1500px) {
-    top: 8vh;
-  }
-
-  @media (max-width: 1350px) {
-    top: 7vh;
-  }
-
-  @media (max-width: 1300px) {
-    top: 5.5vh;
-  }
-
-  @media (max-width: 1200px) {
-    top: 6vh;
-    right: ${({ index }) => (index === 1 || index === 8 ? "3.5vw" : "0.5vw")};
-  }
-
-  @media (max-width: 1150px) {
-    top: 5vh;
-  }
-
-  @media (max-width: 1150px) {
-    top: 4vh;
-  }
-
-  @media (max-width: 960px) {
-    top: 5vh;
-    right: ${({ index }) => (index === 1 || index === 8 ? "3.5vw" : "0.5vw")};
-  }
-
-  @media (max-width: 850px) {
-    top: 4vh;
-  }
-
-  @media (max-width: 640px) {
-    top: 3.2vh;
-  }
-
   @media (max-width: 568px) {
-    top: 2.5rem;
     right: ${({ index }) =>
-      index === 1 || index === 4 || index === 5 || index === 8
-        ? "2rem"
-        : "1rem"};
-  }
-
-  @media (max-width: 400px) {
-    top: 1.5rem;
-    right: ${({ index }) =>
-      index === 1 || index === 4 || index === 5 || index === 8
-        ? "1.5rem"
-        : "0.6rem"};
+      index === 1 || index === 4 || index === 5 || index === 8 ? "30%" : "10%"};
   }
 `;
 
@@ -404,7 +353,7 @@ export const LogoContainer = styled("div")`
 `;
 
 export const CatContainer = styled("div")`
-  padding-top: 6vh;
+  /* padding-top: 6vh; */
   position: absolute;
   grid-row: 3;
   grid-column: 1 / span 2;
@@ -415,7 +364,7 @@ export const CatContainer = styled("div")`
   /* display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 100%; */
-  /* height: 80%; */
+  /* height: 100%; */
   bottom: 0;
 
   @media (max-width: 760px) {
@@ -423,12 +372,7 @@ export const CatContainer = styled("div")`
   }
 `;
 
-export const GridCatContainer = styled("div")`
-  grid-row: 1;
-  grid-column: 1;
-`;
-
-export const ImgCatContainer = styled("div")`
+export const ImgCloudContainer = styled("div")`
   margin-top: -7vh;
   grid-row: 1;
   grid-column: 1 / span 2;
@@ -447,7 +391,7 @@ export const GridContainer2ecran = styled("div")`
   grid-template-columns: 50% 50%;
 
   @media (max-width: 1200px) {
-    height: 70vh;
+    /* height: 70vh; */
   }
 `;
 

@@ -9,6 +9,10 @@ export const MainContainer = styled("div")<{ carouselWith: number }>`
   @media (max-width: 900px) {
     width: ${(props) => (props.carouselWith + 2) * 1.2}vw;
   }
+
+  @media (max-width: 568px) {
+    width: ${(props) => (props.carouselWith + 2) * 1.4}vw;
+  }
 `;
 
 export const CarouselContainer = styled("div")<{ isAnimationPaused: boolean }>`
@@ -59,7 +63,12 @@ export const Slide = styled("div")<{
       translateZ(${(props) => props.radius * 1.2}vw);
   }
 
-  @media (max-width: 550px) {
+  @media (max-width: 568px) {
+    width: ${(props) => props.carouselWith * 1.3}vw;
+    height: ${(props) => props.carouselWith * 0.6}vh;
+  }
+
+  @media (max-width: 300px) {
     height: ${(props) => props.carouselWith * 0.5}vh;
   }
 `;
@@ -70,7 +79,6 @@ export const Picture = styled("img")<{ carouselWith: number }>`
   border: 3px inset red;
   border-style: ridge;
 
-  /* border: 3px inset rgba(47, 115, 201, 0.75); */
   box-shadow: 0 0 15px 3px rgba(86, 6, 6, 0.9);
 
   grid-column: 1 / span 4;
@@ -82,8 +90,13 @@ export const Picture = styled("img")<{ carouselWith: number }>`
     height: ${(props) => props.carouselWith * 1.4 * 0.7}vh;
   }
 
-  @media (max-width: 550px) {
-    height: ${(props) => props.carouselWith * 0.5}vh;
+  @media (max-width: 568px) {
+    width: ${(props) => props.carouselWith * 1.2}vw;
+    height: ${(props) => props.carouselWith * 1.4 * 0.6}vh;
+  }
+
+  @media (max-width: 300px) {
+    height: ${(props) => props.carouselWith * 1.4 * 0.5}vh;
   }
 `;
 
@@ -97,29 +110,9 @@ export const TextContainer = styled("div")`
   text-align: left;
   margin-left: -1vw;
 
-  @media (max-width: 1400px) {
-    font-size: 1.5rem;
-  }
-
-  @media (max-width: 1200px) {
-    font-size: 1.3rem;
-  }
-
-  @media (max-width: 1100px) {
-    font-size: 1.1rem;
-  }
-
-  @media (max-width: 900px) {
-    font-size: 0.9rem;
-  }
-  @media (max-width: 750px) {
-    font-size: 0.8rem;
-  }
   @media (max-width: 550px) {
-    font-size: 0.6rem;
-  }
-  @media (max-width: 350px) {
-    font-size: 0.4rem;
+    margin-left: 1rem;
+    margin-right: 0.5rem;
   }
 `;
 
@@ -139,8 +132,13 @@ export const BorderLeft = styled("div")`
     height: 7vh;
   }
 
-  @media (max-width: 550px) {
-    top: 0;
+  @media (max-width: 568px) {
+    width: 80%;
+    height: 6vh;
+  }
+
+  @media (max-width: 300px) {
+    top: -1vh;
     height: 5vh;
   }
 `;
@@ -162,9 +160,15 @@ export const BorderRight = styled("div")<{ carouselWith: number }>`
     height: ${(props) => (props.carouselWith / 1.43) * 0.7}vh;
   }
 
-  @media (max-width: 550px) {
-    top: 0;
-    height: ${(props) => (props.carouselWith / 1.43) * 0.5}vh;
+  @media (max-width: 568px) {
+    width: 70%;
+    height: ${(props) => (props.carouselWith / 1.43) * 0.6}vh;
+  }
+
+  @media (max-width: 300px) {
+    width: 60%;
+    top: -1vh;
+    height: ${(props) => (props.carouselWith / 1.43) * 0.4}vh;
   }
 `;
 
@@ -223,8 +227,13 @@ export const ButtonMore = styled("button")`
     top: -1vh;
   }
 
-  @media (max-width: 550px) {
-    top: -3vh;
+  @media (max-width: 568px) {
+    width: 18vw;
+    left: -3vw;
+  }
+
+  @media (max-width: 300px) {
+    top: -1.5vh;
     left: -4.5vw;
   }
 `;

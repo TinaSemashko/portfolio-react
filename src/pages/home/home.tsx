@@ -153,11 +153,13 @@ const Home: React.FC = () => {
                   onClick={() => console.log("onClickText")}
                   sx={{
                     fontSize: {
+                      xxs: "0.7rem",
                       xs: "0.7rem",
                       sm: "0.8rem",
                       md: "1.1rem",
                       lg: "1.2rem",
-                      xl: "1.4rem",
+                      xl: "1.5rem",
+                      xxl: "1.8rem",
                     },
                   }}
                 >
@@ -172,7 +174,7 @@ const Home: React.FC = () => {
         </S.CatContainer>
       </S.GridContainer>
       <S.GridContainer2ecran>
-        <S.ImgCatContainer />
+        <S.ImgCloudContainer />
         <S.LeftSide2ecran>
           <S.ImgLeft2ecran src={img1} alt="" />
         </S.LeftSide2ecran>
