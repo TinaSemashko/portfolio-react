@@ -209,6 +209,7 @@ export const Experience = styled(ExperienceCommon)`
 
   @media (max-width: 1200px) {
     grid-column: 1;
+    padding-bottom: 4vh;
   }
 `;
 
@@ -264,13 +265,12 @@ export const SectionCompetances = styled(SectionAdditional)`
     margin-left: 0;
     margin-top: 0;
     padding-left: 10vw;
-    height: 80vh;
     padding-top: 2vh;
     padding-bottom: 2vw;
   }
 
   @media (max-width: 760px) {
-    height: 60vh;
+    height: 64vh;
   }
 `;
 
@@ -309,10 +309,6 @@ export const ExpTitle = styled("div")`
 
   grid-column: 1 / span 3;
   grid-row: 1;
-
-  @media (max-width: 1200px) {
-    margin-left: -8vw;
-  }
 `;
 
 export const ExpMain = styled("div")`
@@ -413,7 +409,7 @@ export const SectionHobby = styled("div")`
   }
 
   @media (max-width: 960px) {
-    width: 30vw;
+    width: 50vw;
   }
 `;
 
@@ -428,6 +424,10 @@ export const SectionHobby1 = styled(SectionHobby)`
   grid-row: 2;
   grid-column: 1;
   animation: floatAnimation 2s infinite;
+
+  @media (max-width: 960px) {
+    margin-left: 18vw;
+  }
 `;
 export const SectionHobby2 = styled(SectionHobby)`
   grid-row: 3;
@@ -443,6 +443,9 @@ export const SectionHobby4 = styled(SectionHobby)`
   grid-row: 5;
   grid-column: 4;
   animation: floatAnimation 3.5s infinite;
+  @media (max-width: 960px) {
+    margin-right: 20vw;
+  }
 `;
 
 export const SectionHobby5 = styled(SectionHobby)`
