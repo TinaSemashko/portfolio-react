@@ -6,10 +6,11 @@ import Slider from "react-slick";
 import { createGlobalStyle } from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Button, Typography } from "@mui/material";
+import { Button, Typography, useMediaQuery } from "@mui/material";
 import { Carousel3d, CarouselImg } from "../../types/projects";
 
 import * as S from "./carousel.styled";
+import { theme } from "../../app/app";
 
 interface ArrowProps {
   className?: string;
@@ -27,6 +28,16 @@ const GlobalStyles = createGlobalStyle`
             justify-content: space-evenly;
             bottom: 5vh;
             margin-left:-1.5vw;
+             @media (max-width: 1400px) {
+                 bottom: 7vh;
+              }
+            @media (max-width: 1200px) {
+                 bottom: 10vh;
+            }
+            @media (max-width: 960px) {
+                 bottom: 15vh;
+                 margin-left:-2vw;
+            }
         }
 `;
 
@@ -45,6 +56,7 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
   const [carouselImages, setCarouselImages] = useState<CarouselImg[]>([]);
   const [linkProject, setlinkProject] = useState<string | null>("");
   const [linkGit, setlinkGit] = useState<string | null>("");
+  const mediumScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   const SampleNextArrow = (props: ArrowProps) => {
     const { className, style, onClick } = props;
@@ -134,13 +146,13 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
             alt={alt}
             width="60vw"
             height="50vh"
-            style={{ border: "solid #a90b0b" }}
+            style={{ border: "solid #ffffff" }}
           />
         </a>
       );
     },
 
-    dots: true,
+    dots: mediumScreen ? false : true,
     dotsClass: "slick-dots slick-thumb",
     infinite: false,
     lazyLoad: true,
@@ -202,15 +214,18 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
         </S.SliderBox>
         <S.Description>
           <S.DiscriptionCarouselCont openABS={openFront}>
-            {/* <Typography variant="body1">
-              {carouselFront
-                ? imageMapFront && imageMapFront[imgIndex]?.description
-                : imageMapBack && imageMapBack[imgIndex]?.description}
-            </Typography> */}
+            <Typography
+              variant="h4"
+              textAlign="center"
+              sx={{ width: "80%", color: "#a1a1a1" }}
+            >
+              {project?.descriptions}
+            </Typography>
             <Button
               variant="text"
               onClick={() => openLink(linkProject ?? "")}
               disabled={!(project && project?.openProject)}
+              color="secondary"
               sx={{ cursor: "pointer" }}
             >
               <Typography variant="h4">
@@ -221,6 +236,7 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
               variant="text"
               onClick={() => openLink(linkGit ?? "")}
               disabled={!(project && project?.openGit)}
+              color="secondary"
               sx={{ cursor: "pointer" }}
             >
               <Typography variant="h4">{t("carousel2d.button_git")}</Typography>
@@ -229,6 +245,7 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
               variant="text"
               onClick={() => openVideo()}
               disabled={!(project && project?.openVideo)}
+              color="secondary"
               sx={{ cursor: "pointer" }}
             >
               <Typography variant="h4" sx={{ cursor: "pointer" }}>

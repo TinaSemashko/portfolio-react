@@ -11,7 +11,7 @@ export const CarouselContainer = styled("div")<{ showDescription: boolean }>`
   width: 100%;
   overflow-x: hidden;
 
-  @media (max-width: 750px) {
+  @media (max-width: 760px) {
     height: ${({ showDescription }) => (showDescription ? "" : "80vh")};
   }
 `;
@@ -26,7 +26,7 @@ export const FlexBox = styled("div")<{ showDescription: boolean }>`
   padding-right: 4vh;
   overflow-x: hidden;
 
-  @media (max-width: 750px) {
+  @media (max-width: 760px) {
     flex-direction: column;
     width: 100%;
     padding-right: 0;
@@ -46,10 +46,14 @@ export const ImgCarouselContainer = styled("div")<{ showDescription: boolean }>`
   justify-content: center;
   align-items: center;
 
-  padding-top: calc((80vh - (50vw / 1.5)) / 2);
-  padding-bottom: calc((80vh - 2vh - (50vw / 1.5)) / 2);
+  padding-top: calc((80vh - 50vw / 1.5) / 2 - 5vh);
+  padding-bottom: calc((80vh - 2vh - 50vw / 1.5) / 2 + 5vh);
   padding-left: 1vw;
   padding-right: 1vw;
+
+  @media (max-width: 760px) {
+    width: 100%;
+  }
 
   @media (max-width: 760px) {
     padding-top: 0;
@@ -63,7 +67,7 @@ export const SliderBox = styled("div")<{ showDescription: boolean }>`
   width: 50vw;
   box-shadow: 14px 14px 14px black;
 
-  @media (max-width: 750px) {
+  @media (max-width: 760px) {
     width: 100%;
   }
 `;
@@ -93,7 +97,7 @@ export const Description = styled("div")`
     width: 100%;
   }
 
-  @media (max-width: 750px) {
+  @media (max-width: 760px) {
     width: 100%;
     height: 35vh;
   }
@@ -120,7 +124,7 @@ export const DiscriptionCarouselCont = styled("div")<{ openABS: boolean }>`
   color: ${({ theme }) => theme.palette.secondary.main};
   border-left: ${({ openABS }) => (openABS ? "double white" : "solid white")};
 
-  @media (max-width: 750px) {
+  @media (max-width: 760px) {
     height: 60%;
   }
 `;
@@ -160,7 +164,7 @@ export const ArrowWrapper = styled("div")<{ showDescription: boolean }>`
   width: 6vw !important;
   height: 6vh !important;
 
-  @media (max-width: 750px) {
+  @media (max-width: 760px) {
     top: ${({ showDescription }) => showDescription && "30% !important"};
   }
 `;

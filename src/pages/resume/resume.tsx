@@ -17,19 +17,23 @@ import { theme } from "../../app/app";
 import * as S from "./resume.styled";
 
 const fontSizeH4 = {
+  xxs: "0.7rem",
   xs: "0.8rem",
   sm: "1.0rem",
   md: "1.2rem",
   lg: "1.4rem",
   xl: "1.6rem",
+  xxl: "1.6rem",
 };
 
 const fontSizeH6 = {
+  xxs: "0.5rem",
   xs: "0.5rem",
   sm: "0.8rem",
   md: "0.9rem",
   lg: "0.95rem",
   xl: "1rem",
+  xxl: "1rem",
 };
 
 const Resume: React.FC = () => {
