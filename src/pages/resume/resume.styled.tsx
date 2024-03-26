@@ -253,12 +253,12 @@ export const SectionAdditional = styled(BackgroundMain)`
 
 export const SectionCompetances = styled(SectionAdditional)`
   margin-top: 6vh;
-  margin-left: -6vh;
-  padding-top: 2vw;
-  padding-bottom: 2vw;
+  margin-left: -6vw;
+  padding-top: 4vh;
+  padding-bottom: 4vh;
   grid-column: 1;
   grid-row: 1;
-  height: 80vh;
+  /* height: 90vh; */
 
   @media (max-width: 1200px) {
     width: 95%;
@@ -266,11 +266,13 @@ export const SectionCompetances = styled(SectionAdditional)`
     margin-top: 0;
     padding-left: 10vw;
     padding-top: 2vh;
-    padding-bottom: 2vw;
+    padding-bottom: 2vh;
   }
 
   @media (max-width: 760px) {
-    height: 64vh;
+    /* height: 64vh; */
+    padding-top: 8vh;
+    padding-bottom: 8vh;
   }
 `;
 

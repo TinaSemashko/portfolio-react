@@ -7,10 +7,10 @@ import { createGlobalStyle } from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Button, Typography, useMediaQuery } from "@mui/material";
+import { theme } from "../../app/app";
 import { Carousel3d, CarouselImg } from "../../types/projects";
 
 import * as S from "./carousel.styled";
-import { theme } from "../../app/app";
 
 interface ArrowProps {
   className?: string;
@@ -26,16 +26,16 @@ const GlobalStyles = createGlobalStyle`
   .slick-dots {
             display: flex !important;
             justify-content: space-evenly;
-            bottom: 5vh;
+            bottom: 5vh !important;
             margin-left:-1.5vw;
              @media (max-width: 1400px) {
-                 bottom: 7vh;
+                 bottom: 7vh !important;
               }
             @media (max-width: 1200px) {
-                 bottom: 10vh;
+                 bottom: 10vh !important;
             }
             @media (max-width: 960px) {
-                 bottom: 15vh;
+                 bottom: 15vh !important;
                  margin-left:-2vw;
             }
         }
@@ -44,6 +44,16 @@ const GlobalStyles = createGlobalStyle`
 type Props = {
   carouselImagesProps?: CarouselImg[];
   project: Carousel3d | null;
+};
+
+const fontSizeH6 = {
+  xxs: "0.5rem",
+  xs: "0.5rem",
+  sm: "0.8rem",
+  md: "0.9rem",
+  lg: "0.95rem",
+  xl: "1rem",
+  xxl: "1rem",
 };
 
 const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
@@ -162,9 +172,6 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
     initialSlide: 0,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
-    beforeChange: (current: number, next: number) => {
-      // setImageIndex(next);
-    },
   };
 
   const changerFrontCode = () => {
@@ -217,7 +224,7 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
             <Typography
               variant="h4"
               textAlign="center"
-              sx={{ width: "80%", color: "#a1a1a1" }}
+              sx={{ width: "80%", color: "#a1a1a1", fontSize: fontSizeH6 }}
             >
               {project?.descriptions}
             </Typography>
