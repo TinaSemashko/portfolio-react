@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import Avatar from "../../images/avatar.jpg";
 import Divider from "@mui/material/Divider";
-import { List, ListItemText, Typography, useMediaQuery } from "@mui/material";
+import { List, ListItem, Typography, useMediaQuery } from "@mui/material";
 import Social from "../../shared/socialLinks";
 import parse from "html-react-parser";
 import {
@@ -150,11 +150,15 @@ const Resume: React.FC = () => {
               <S.ExpTitle>
                 <Typography variant="h3">{t("resume.competence")}</Typography>
               </S.ExpTitle>
-              {arrayCompetences.map((item) => (
-                <Typography variant="h5" lineHeight="1.7">
-                  <li>{t(`competences.${item}`)}</li>
-                </Typography>
-              ))}
+              <List sx={{ listStyleType: "disc" }}>
+                {arrayCompetences.map((item) => (
+                  <Typography variant="h5" lineHeight="1.7">
+                    <ListItem disablePadding sx={{ display: "list-item" }}>
+                      {t(`competences.${item}`)}
+                    </ListItem>
+                  </Typography>
+                ))}
+              </List>
             </S.SectionCompetances>
           )}
         </S.GridExpCompetences>
@@ -164,14 +168,16 @@ const Resume: React.FC = () => {
           <S.ExpTitle>
             <Typography variant="h3">{t("resume.competence")}</Typography>
           </S.ExpTitle>
-          <List>
+          <List sx={{ listStyleType: "disc" }}>
             {arrayCompetences.map((item) => (
               <Typography
                 variant="h5"
                 lineHeight="1.7"
                 sx={{ fontSize: fontSizeH4 }}
               >
-                <ListItemText>{t(`competences.${item}`)}</ListItemText>
+                <ListItem disablePadding sx={{ display: "list-item" }}>
+                  {t(`competences.${item}`)}
+                </ListItem>
               </Typography>
             ))}
           </List>
@@ -236,12 +242,20 @@ const Resume: React.FC = () => {
               <S.ExpTitle>
                 <Typography variant="h3">{t("resume.language")}</Typography>
               </S.ExpTitle>
-              <List>
+              <List sx={{ listStyleType: "disc" }}>
                 <Typography variant="h5" lineHeight="1.7">
-                  <li>{t("languages.en")}</li>
-                  <li>{t("languages.fr")}</li>
-                  <li>{t("languages.ukr")}</li>
-                  <li>{t("languages.ru")}</li>
+                  <ListItem disablePadding sx={{ display: "list-item" }}>
+                    {t("languages.en")}
+                  </ListItem>
+                  <ListItem disablePadding sx={{ display: "list-item" }}>
+                    {t("languages.fr")}
+                  </ListItem>
+                  <ListItem disablePadding sx={{ display: "list-item" }}>
+                    {t("languages.ukr")}
+                  </ListItem>
+                  <ListItem disablePadding sx={{ display: "list-item" }}>
+                    {t("languages.ru")}
+                  </ListItem>
                 </Typography>
               </List>
             </S.SectionLangueges>
@@ -253,16 +267,26 @@ const Resume: React.FC = () => {
           <S.ExpTitle>
             <Typography variant="h3">{t("resume.language")}</Typography>
           </S.ExpTitle>
-          <Typography
-            variant="h5"
-            lineHeight="1.7"
-            sx={{ fontSize: fontSizeH4 }}
-          >
-            <ListItemText>{t("languages.en")}</ListItemText>
-            <ListItemText>{t("languages.fr")}</ListItemText>
-            <ListItemText>{t("languages.ukr")}</ListItemText>
-            <ListItemText>{t("languages.ru")}</ListItemText>
-          </Typography>
+          <List sx={{ listStyleType: "disc" }}>
+            <Typography
+              variant="h5"
+              lineHeight="1.7"
+              sx={{ fontSize: fontSizeH4 }}
+            >
+              <ListItem disablePadding sx={{ display: "list-item" }}>
+                {t("languages.en")}
+              </ListItem>
+              <ListItem disablePadding sx={{ display: "list-item" }}>
+                {t("languages.fr")}
+              </ListItem>
+              <ListItem disablePadding sx={{ display: "list-item" }}>
+                {t("languages.ukr")}
+              </ListItem>
+              <ListItem disablePadding sx={{ display: "list-item" }}>
+                {t("languages.ru")}
+              </ListItem>
+            </Typography>
+          </List>
         </S.SectionLangueges>
       )}
       <S.Empty />
