@@ -16,7 +16,6 @@ export const BreadcrumbsContainer = styled("div")`
   margin-top: 2vh;
   padding-left: 2vw;
   font-style: italic;
-  z-index: 2000;
 `;
 
 export const FlexBoxMain = styled("div")`
