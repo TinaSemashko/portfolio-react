@@ -107,8 +107,8 @@ export const TextContainerShort1 = styled(TextContainerAbsolute)`
   color: red;
   background-color: #00000080;
   height: 10vh;
-  width: 30%;
-  left: 35%;
+  width: 50%;
+  left: 25%;
 `;
 
 export const TextContainer2 = styled(TextContainerBetween)`
@@ -125,8 +125,8 @@ export const TextContainerShort2 = styled(TextContainerAbsolute)`
   color: orange;
   background-color: #00000080;
   height: 10vh;
-  width: 30%;
-  left: 35%;
+  width: 50%;
+  left: 25%;
 `;
 
 export const TextContainer3 = styled(TextContainerBetween)`
@@ -143,8 +143,8 @@ export const TextContainerShort3 = styled(TextContainerAbsolute)`
   color: yellow;
   background-color: #00000080;
   height: 10vh;
-  width: 30%;
-  left: 35%;
+  width: 50%;
+  left: 25%;
 `;
 
 export const TextContainer4 = styled(TextContainerBetween)`
@@ -161,8 +161,8 @@ export const TextContainerShort4 = styled(TextContainerAbsolute)`
   color: green;
   background-color: #00000080;
   height: 10vh;
-  width: 30%;
-  left: 35%;
+  width: 50%;
+  left: 25%;
 `;
 
 export const TextContainer5 = styled(TextContainerBetween)`
@@ -179,8 +179,8 @@ export const TextContainerShort5 = styled(TextContainerAbsolute)`
   color: #0ca5e7;
   background-color: #00000080;
   height: 10vh;
-  width: 40%;
-  left: 30%;
+  width: 50%;
+  left: 25%;
 `;
 
 export const TextContainer6 = styled(TextContainerBetween)`
