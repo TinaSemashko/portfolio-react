@@ -32,17 +32,17 @@
     "subtitle2": "Et Dieu a créé le développeur...",
     "subtitle3": "Cette histoire a commencé il y a longtemps,  <br />lorsque les ordinateurs étaient grands et que les programmes étaient petits",
     "bible": "Au début, il y avait un mot, et le mot faisait 2 octets, mais il n'y avait rien d'autre.\n Et Dieu sépara un de zéro et vit que c'était bon.\n Et Dieu dit : qu'il y ait des données, et il en fut ainsi.\n Et Dieu dit : que chaque donnée soit collectée à sa place et créée disquettes, disques durs et CD.\n Et Dieu a dit : qu'il y ait des ordinateurs, pour qu'il y ait un endroit où mettre les disquettes, les disques durs et les CD, et il a créé les ordinateurs, et les a appelés durs, et a séparé le dur du logiciel.\n Il n'existait pas encore de logiciel, mais Dieu s'est rapidement corrigé et a créé des programmes petits et grands, et leur a dit : soyez féconds, multipliez-vous et remplissez toute la mémoire.\n Mais Il en avait assez de créer lui-même des programmes, et Dieu a dit : créons un programmeur à notre image et à notre ressemblance, et laissons-le régner sur les ordinateurs, les programmes et les données. Et Dieu a créé un développeur...",
-    "development": "IT - c'est ma vie. J'en suis tombé amoureux à l'âge de 16 ans. Depuis, j'ai travaillé comme administrateur système, analyste, développeur de bases de données, et maintenant je suis devenu développeur Web.",
-    "dev_short": "Je developpe",
+    "development": "IT - c'est ma vie. J'en suis tombée amoureuse à l'âge de 16 ans. Depuis, j'ai travaillé comme administrateur système, analyste, développeur de bases de données, et maintenant je suis devenue développeur Web.",
+    "dev_short": "Je développe",
     "yoga": "Mon yoga n'est pas une méditation à l'aube au bord de la mer. Il s'agit d'un ensemble de pratiques permettant de transformer sa vie selon ses propres désirs. Mon école est la Fédération Ukrainienne de yoga.",
     "yoga_short": "Je fais du yoga",
-    "traveling": "Les voyages sont une opportunité de sortir de l'ordinaire, de découvrir ce qui nous distingue et ce qui nous uni, de s'inspirer de modes de pensée et de visions du monde différent, et de briser les principes du béton...",
+    "traveling": "Les voyages sont une opportunités de sortir de l'ordinaire, de découvrir ce qui nous distingue et ce qui nous uni, de s'inspirer de modes de pensée et de vision du monde différent, et de briser les principes du béton...",
     "traveling_short": "Je voyage",
     "reading": "J'adore me plonger dans le monde des livres. Ce n'est pas du tout comme le cinéma, où tout est déjà mâché pour vous, et c'est la perspective du réalisateur, pas même celle de l'auteur. J'aime imaginer les événements par moi-même, les filtrer à travers le prisme de mon expérience, de mes associations et de ma vision.",
     "reading_short": "Je lis",
-    "handmade": "J'ai toujours aimé créer la beauté. Depuis l'enfance, je dessinais, brodais, créais des tableaux en pâte à modeler, puis les recouvrais de cuir, je tressais avec des perles... Une joie particulière pour moi a été la découverte des peintures vitrales transparentes avec des couleurs vives et pures.",
-    "handmade_short": "Je fais du handmade",
-    "war": "Le 24 février 2022, une guerre à grande échelle a éclaté en Ukraine. Les gens ont été dispersés à travers le monde comme des éclats... Nous avons fui, ne comprenant pas toujours où, mais sachant certainement d'où. Nous avons été remis à zéro. J'ai dû tout recommencer - la langue, la profession, les règles de vie. Mais je l'ai fait - j'ai suivi une formation en développement web en France, et je suis prête pour de nouveaux défis dans la vie, quoi qu'il arrive. Je suis très reconnaissante envers la France pour l'aide et le soutien, pour la possibilité de vivre et de poursuivre ma passion.",
+    "handmade": "J'ai toujours aimé créer la beauté. Depuis l'enfance, je dessinais, brodais, créais des tableaux en pâte à modeler, je tressais avec des perles... Une joie particulière pour moi a été la découverte des peintures vitrales transparentes avec des couleurs vives et pures.",
+    "handmade_short": "Je fabrique moi même",
+    "war": "Le 24 février 2022, une guerre à grande échelle a éclaté en Ukraine. Les gens ont été dispersés à travers le monde comme des éclats... Nous avons fui, ne comprenant pas toujours où nous attérions, mais sachant certainement d'où nous venions. Nous avons été remis à zéro. J'ai dû tout recommencer - la langue, la profession, les règles de vie. Mais je l'ai fait - j'ai suivi une formation en développement web en France, et je suis prête pour de nouveaux défis dans la vie, quoi qu'il arrive. Je suis très reconnaissante envers la France pour l'aide et le soutien, pour la possibilité de vivre et de poursuivre ma passion.",
     "beauty": "Je donne vie à la beauté"
   },
   "projects": {
@@ -50,7 +50,7 @@
     "message_private": "Désolé, mais ce dépôt Git est privé",
     "repeat": "Répéter la vidéo",
     "description": "Aller à la Description du projet",
-    "return": "Retour à mes projets"
+    "return": "Retour sur mes projets"
   },
   "resume": {
     "name": "Tina Semashko",

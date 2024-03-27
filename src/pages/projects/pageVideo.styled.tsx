@@ -55,7 +55,7 @@ export const VideoContainer = styled("div")`
 `;
 
 export const VideoProjects = styled("video")`
-  width: 70vw;
+  width: 60vw;
   margin-top: 2vh;
   text-align: center;
   object-fit: contain;

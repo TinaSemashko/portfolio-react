@@ -218,3 +218,11 @@ export const ButtonSwitchABS = styled(Button)`
     transition: 500ms;
   }
 `;
+
+export const FlexBoxButton = styled("div")`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+`;

@@ -18,7 +18,7 @@ export const BreadcrumbsContainer = styled("div")`
   font-style: italic;
 
   @media (max-width: 760px) {
-    margin-bottom: 12vh;
+    margin-bottom: 4vh;
   }
 `;
 
@@ -35,7 +35,7 @@ export const FlexBoxMain = styled("div")`
   position: relative;
 
   @media (max-width: 760px) {
-    margin-top: 12vh;
+    margin-top: 6vh;
   }
 `;
 

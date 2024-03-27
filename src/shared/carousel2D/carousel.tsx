@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Button, Typography, useMediaQuery } from "@mui/material";
 import { theme } from "../../app/app";
 import { Carousel3d, CarouselImg } from "../../types/projects";
+import AssignmentReturnIcon from "@mui/icons-material/AssignmentReturn";
 
 import * as S from "./carousel.styled";
 
@@ -268,6 +269,15 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
                 {t("carousel2d.button_video")}
               </Typography>
             </Button>
+            <S.FlexBoxButton
+              onClick={() => {
+                navigate(Routes.projects);
+              }}
+            >
+              <AssignmentReturnIcon />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <Typography variant="body1">{t("projects.return")}</Typography>
+            </S.FlexBoxButton>
           </S.DiscriptionCarouselCont>
           <S.ButtonSwitchABS
             onClick={changerFrontCode}

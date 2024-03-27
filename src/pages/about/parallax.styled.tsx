@@ -53,6 +53,11 @@ export const TextContainerAbsolute = styled("div")`
   top: 50%;
   width: 100%;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  mix-blend-mode: hard-light;
 `;
 
 export const TextContainerBetween = styled("div")`
@@ -75,6 +80,7 @@ export const ImgMainContainer = styled(ImgMain)`
 export const TextContainerShort0 = styled(TextContainerAbsolute)`
   color: #000;
   margin-top: -12vh;
+  background-color: transparent;
 
   @media (max-width: 1200px) {
     margin-top: -3vh;
@@ -99,6 +105,10 @@ export const TextContainerShort1 = styled(TextContainerAbsolute)`
   background-color: transparent;
   font-size: 25px;
   color: red;
+  background-color: #00000080;
+  height: 10vh;
+  width: 30%;
+  left: 35%;
 `;
 
 export const TextContainer2 = styled(TextContainerBetween)`
@@ -113,6 +123,10 @@ export const ImgContainer2 = styled(ImgMain)`
 
 export const TextContainerShort2 = styled(TextContainerAbsolute)`
   color: orange;
+  background-color: #00000080;
+  height: 10vh;
+  width: 30%;
+  left: 35%;
 `;
 
 export const TextContainer3 = styled(TextContainerBetween)`
@@ -127,6 +141,10 @@ export const ImgContainer3 = styled(ImgMain)`
 
 export const TextContainerShort3 = styled(TextContainerAbsolute)`
   color: yellow;
+  background-color: #00000080;
+  height: 10vh;
+  width: 30%;
+  left: 35%;
 `;
 
 export const TextContainer4 = styled(TextContainerBetween)`
@@ -141,6 +159,10 @@ export const ImgContainer4 = styled(ImgMain)`
 
 export const TextContainerShort4 = styled(TextContainerAbsolute)`
   color: green;
+  background-color: #00000080;
+  height: 10vh;
+  width: 30%;
+  left: 35%;
 `;
 
 export const TextContainer5 = styled(TextContainerBetween)`
@@ -154,7 +176,11 @@ export const ImgContainer5 = styled(ImgMain)`
 `;
 
 export const TextContainerShort5 = styled(TextContainerAbsolute)`
-  color: #5e01ff;
+  color: #0ca5e7;
+  background-color: #00000080;
+  height: 10vh;
+  width: 40%;
+  left: 30%;
 `;
 
 export const TextContainer6 = styled(TextContainerBetween)`
@@ -168,7 +194,11 @@ export const ImgContainer6 = styled(ImgMain)`
 `;
 
 export const TextContainerShort6 = styled(TextContainerAbsolute)`
-  color: #f902b3;
+  color: violet;
+  background-color: #000000bb;
+  height: 10vh;
+  width: 40%;
+  left: 30%;
 `;
 
 export const TextRainbow = styled("div")`
