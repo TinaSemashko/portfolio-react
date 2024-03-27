@@ -185,6 +185,7 @@ export const Puzzle = styled("div")`
   @media (max-width: 960px) {
     width: 112vw;
     margin-left: 28vw;
+    padding-top: 0;
   }
 
   @media (max-width: 760px) {
