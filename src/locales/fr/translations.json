@@ -46,7 +46,7 @@
     "beauty": "Je donne vie à la beauté"
   },
   "projects": {
-    "title": "Regardez à ce sur quoi j'ai travaillé !",
+    "title": "Mes travaux",
     "message_private": "Désolé, mais ce dépôt Git est privé",
     "repeat": "Répéter la vidéo",
     "description": "Aller à la Description du projet",
@@ -80,7 +80,7 @@
     "menu": "menu"
   },
   "footer": {
-    "work": "Demande du travail",
+    "work": "Proposition de travail",
     "work_sub": "travaillons ensemble",
     "contact": "Contactez moi",
     "rights": "© 2024 Akateria Web Studio. Tous Droits Réservés."

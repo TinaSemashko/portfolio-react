@@ -33,6 +33,10 @@ export const FlexBoxMain = styled("div")`
   margin-left: 2vw;
   margin-right: 2vw;
   position: relative;
+
+  @media (max-width: 760px) {
+    margin-top: 12vh;
+  }
 `;
 
 export const GridBox1Titre = styled("div")`

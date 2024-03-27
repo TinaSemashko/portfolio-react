@@ -157,6 +157,7 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
             width="50vw"
             height="50vh"
             style={{ border: "solid #ffffff" }}
+            loading="lazy"
           />
         </a>
       );
