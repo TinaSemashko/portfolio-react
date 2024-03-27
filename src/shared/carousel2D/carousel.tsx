@@ -28,7 +28,7 @@ const GlobalStyles = createGlobalStyle`
             justify-content: space-evenly;
             bottom: 5vh !important;
             margin-left:-1.5vw;
-             @media (max-width: 1400px) {
+            @media (max-width: 1400px) {
                  bottom: 7vh !important;
               }
             @media (max-width: 1200px) {
@@ -80,7 +80,7 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
         }}
         onClick={onClick}
       >
-        <S.ArrowRightIcon showDescription={true} />
+        <S.ArrowRightIcon />
       </S.ArrowWrapper>
     );
   };
@@ -97,7 +97,7 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
         }}
         onClick={onClick}
       >
-        <S.ArrowLeftIcon showDescription={true} />
+        <S.ArrowLeftIcon />
       </S.ArrowWrapper>
     );
   };
@@ -154,7 +154,7 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
           <img
             src={src}
             alt={alt}
-            width="60vw"
+            width="50vw"
             height="50vh"
             style={{ border: "solid #ffffff" }}
           />
@@ -195,15 +195,23 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
   return (
     <S.CarouselContainer showDescription={true}>
       <GlobalStyles />
-      <S.FlexBox showDescription={true}>
-        <S.SliderBox showDescription={true}>
+      <S.FlexBox>
+        <S.SliderBox>
           <Slider {...settings} className="Slider">
             {(carouselFront ? imageMapFront : imageMapBack)?.map(
               (item, index) => (
                 <S.ImgCarouselContainer
                   className="ImgCarouselContainer"
                   key={index}
-                  showDescription={true}
+                  slidesMoreOne={
+                    carouselFront
+                      ? imageMapFront
+                        ? imageMapFront?.length > 1
+                        : false
+                      : imageMapBack
+                      ? imageMapBack?.length > 1
+                      : false
+                  }
                 >
                   <img
                     src={`${

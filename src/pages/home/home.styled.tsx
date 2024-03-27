@@ -5,6 +5,7 @@ import img from "../../images/pont.png";
 export const MainContainer = styled("div")`
   width: 100%;
   overflow-x: hidden;
+
   @media (max-width: 750px) {
   }
 `;
@@ -167,9 +168,9 @@ export const Puzzle = styled("div")`
   grid-column: 1 / span 2;
   grid-row: 2;
   display: grid;
+  padding-top: 6vh;
 
   align-items: center;
-  color: #dedcdca9;
   align-self: center;
 
   width: 96vw;
@@ -288,13 +289,13 @@ export const ElText = styled("div")<{ index: number }>`
 `;
 
 export const TitleLeft1ecran = styled("div")`
-  margin-top: 10vh;
+  margin-top: 14vh;
   grid-column: 1 / span 2;
   grid-row: 1;
   text-align: center;
   align-self: center;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  color: #dedcdca9;
+  color: #828282;
 
   -webkit-animation: swirl-in-fwd 0.6s ease-out both;
   animation: swirl-in-fwd 0.6s ease-out both;
@@ -332,7 +333,7 @@ export const TitleLeft1ecran = styled("div")`
 `;
 
 export const TitleRight1ecran = styled("div")`
-  margin-top: 10vh;
+  margin-top: 14vh;
   grid-column: 1 / span 2;
   grid-row: 1;
   text-align: center;
@@ -353,18 +354,10 @@ export const LogoContainer = styled("div")`
 `;
 
 export const CatContainer = styled("div")`
-  /* padding-top: 6vh; */
   position: absolute;
   grid-row: 3;
   grid-column: 1 / span 2;
   align-self: end;
-  /* background-image: url(${img});
-  background-size: cover;
-  background-repeat: no-repeat; */
-  /* display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 100%; */
-  /* height: 100%; */
   bottom: 0;
 
   @media (max-width: 760px) {

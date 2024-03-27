@@ -16,6 +16,10 @@ export const BreadcrumbsContainer = styled("div")`
   margin-top: 2vh;
   padding-left: 2vw;
   font-style: italic;
+
+  @media (max-width: 760px) {
+    margin-bottom: 6vh;
+  }
 `;
 
 export const FlexBoxMain = styled("div")`

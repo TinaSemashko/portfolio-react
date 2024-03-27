@@ -1,6 +1,4 @@
 import { styled } from "@mui/material/styles";
-import ArrowLeft1 from "../../images/arrow_left_icon.png";
-import ArrowRight1 from "../../images/arrow_right_icon.png";
 import ArrowLeft2 from "../../images/3847915_arrow_back_icon.png";
 import ArrowRight2 from "../../images/3847912_arrow_next_right_icon.png";
 import { Button } from "@mui/material";
@@ -16,7 +14,7 @@ export const CarouselContainer = styled("div")<{ showDescription: boolean }>`
   }
 `;
 
-export const FlexBox = styled("div")<{ showDescription: boolean }>`
+export const FlexBox = styled("div")`
   display: flex;
   justify-content: space-evenly;
   height: 80vh;
@@ -35,7 +33,9 @@ export const FlexBox = styled("div")<{ showDescription: boolean }>`
   }
 `;
 
-export const ImgCarouselContainer = styled("div")<{ showDescription: boolean }>`
+export const ImgCarouselContainer = styled("div")<{ slidesMoreOne: boolean }>`
+  --dotsExist: calc(${({ slidesMoreOne }) => (slidesMoreOne ? "5" : "0")}vh);
+
   width: 50vw;
   box-shadow: 14px 14px 14px black;
   background-color: #8e2323;
@@ -46,8 +46,8 @@ export const ImgCarouselContainer = styled("div")<{ showDescription: boolean }>`
   justify-content: center;
   align-items: center;
 
-  padding-top: calc((80vh - 50vw / 1.5) / 2 - 5vh);
-  padding-bottom: calc((80vh - 2vh - 50vw / 1.5) / 2 + 5vh);
+  padding-top: calc((80vh - 50vw / 1.5) / 2 - var(--dotsExist));
+  padding-bottom: calc((80vh - 2vh - 50vw / 1.5) / 2 + var(--dotsExist));
   padding-left: 1vw;
   padding-right: 1vw;
 
@@ -63,7 +63,7 @@ export const ImgCarouselContainer = styled("div")<{ showDescription: boolean }>`
   }
 `;
 
-export const SliderBox = styled("div")<{ showDescription: boolean }>`
+export const SliderBox = styled("div")`
   width: 50vw;
   box-shadow: 14px 14px 14px black;
 
@@ -129,32 +129,20 @@ export const DiscriptionCarouselCont = styled("div")<{ openABS: boolean }>`
   }
 `;
 
-export const ArrowLeftIcon = styled("div")<{ showDescription: boolean }>`
+export const ArrowLeftIcon = styled("div")`
   height: 100%;
   border: none;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: ${({ showDescription }) => {
-    if (showDescription) {
-      return `url(${ArrowLeft2})`;
-    } else {
-      return `url(${ArrowLeft1})`;
-    }
-  }};
+  background-image: url(${ArrowLeft2});
 `;
 
-export const ArrowRightIcon = styled("div")<{ showDescription: boolean }>`
+export const ArrowRightIcon = styled("div")`
   height: 100%;
   border: none;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: ${({ showDescription }) => {
-    if (showDescription) {
-      return `url(${ArrowRight2})`;
-    } else {
-      return `url(${ArrowRight1})`;
-    }
-  }};
+  background-image: url(${ArrowRight2});
 `;
 
 export const ArrowWrapper = styled("div")<{ showDescription: boolean }>`

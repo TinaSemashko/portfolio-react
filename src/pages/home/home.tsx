@@ -60,7 +60,7 @@ const Home: React.FC = () => {
     sm: "1.3rem",
     md: "1.4rem",
     lg: "1.8rem",
-    xl: "2.2rem",
+    xl: "2rem",
   };
 
   return (
@@ -159,7 +159,7 @@ const Home: React.FC = () => {
                       md: "1.1rem",
                       lg: "1.2rem",
                       xl: "1.5rem",
-                      xxl: "1.8rem",
+                      xxl: "1.7rem",
                     },
                   }}
                 >
