@@ -84,7 +84,7 @@
     "work": "Пропозиція роботи",
     "work_sub": "давайте працювати разом",
     "contact": "Контактувати зі мною",
-    "rights": "© 2023 Akateria Web Studio. Всі права захищені."
+    "rights": "© 2024 Akateria Web Studio. Всі права захищені."
   },
   "not_found": {
     "title": "Oops!",
@@ -121,7 +121,7 @@
   },
   "education": {
     "dataEd1": "Лютий 2023-Березень 2024",
-    "nameEd1": "Full-stack WEB Developer(Node.js, react.js)",
+    "nameEd1": "Full-stack WEB Developer (Node.js, react.js)",
     "nameOrg1": "ASSOFAC, Франція",
     "dataEd2": "Вересень 2006-Серпень 2008",
     "nameEd2": "Програмне забезпечення автоматизованих систем",
@@ -133,7 +133,7 @@
     "cours1": "SheCodes Plus, Front-end",
     "cours2": "SheCodes Responsive",
     "cours3": "SheCodes React",
-    "cours4": "C# Beetrot Academy",
+    "cours4": "C# Beetroot Academy",
     "cours5": "Бази даних, Санкт-Петербурзький державний університет",
     "cours6": "Реляційні системи баз даних, Національний автономний університет Мексики"
   },

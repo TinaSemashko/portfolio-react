@@ -83,7 +83,7 @@
     "work": "Demande du travail",
     "work_sub": "travaillons ensemble",
     "contact": "Contactez moi",
-    "rights": "© 2023 Akateria Web Studio. Tous Droits Réservés."
+    "rights": "© 2024 Akateria Web Studio. Tous Droits Réservés."
   },
   "not_found": {
     "title": "Oops!",
@@ -115,12 +115,12 @@
     "exp3": " - Architecture, développement, support, mise à jour et extension d'une configuration de SGBD&quot;1C&quot;\n - Développement d'interface d'échange entre notre système interne et externe",
     "dataEx4": "Août 2005 - Décembre 2019",
     "post4": "Administrateur de système/analyste des ventes",
-    "nameOrg4": "Canditrade Ltd, Donetsk, Ukraine",
+    "nameOrg4": "Candytrade Ltd, Donetsk, Ukraine",
     "exp4": "- Maintenance du système de reporting des succursales.\n - Administration d'un réseau local.\n - Administration de bases de données côté client du SGBD Oracle. Travail à distance après 2014"
   },
   "education": {
     "dataEd1": "Février 2023 - Mars 2024",
-    "nameEd1": "Développeur WEB Full-stack(Node.js, react.js)",
+    "nameEd1": "Développeur WEB Full-stack (Node.js, react.js)",
     "nameOrg1": "ASSOFAC, France",
     "dataEd2": "Septembre 2006 - Août 2008",
     "nameEd2": "Master de Systèmes d’automatisation des logiciels",
@@ -132,7 +132,7 @@
     "cours1": "SheCodes Plus, Front-end",
     "cours2": "SheCodes Responsive",
     "cours3": "SheCodes React",
-    "cours4": "C# Beetrot Academy",
+    "cours4": "C# Beetroot Academy",
     "cours5": "Bases de données, St.Petersburg State University",
     "cours6": "Systèmes de bases de données relationnelles, Universidad Nacional Autónoma de México"
   },
