@@ -120,7 +120,7 @@ export const DiscriptionCarouselCont = styled("div")<{ openABS: boolean }>`
   align-items: center;
   padding: 1vw;
   padding-top: 10vh;
-  padding-bottom: 10vh;
+  padding-bottom: 12vh;
   color: ${({ theme }) => theme.palette.secondary.main};
   border-left: ${({ openABS }) => (openABS ? "double white" : "solid white")};
 

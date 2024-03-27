@@ -49,12 +49,22 @@ type Props = {
 
 const fontSizeH6 = {
   xxs: "0.5rem",
-  xs: "0.5rem",
+  xs: "0.7rem",
   sm: "0.8rem",
   md: "0.9rem",
   lg: "0.95rem",
   xl: "1rem",
   xxl: "1rem",
+};
+
+const fontSizeH4 = {
+  xxs: "0.6rem",
+  xs: "0.7rem",
+  sm: "1rem",
+  md: "1.2rem",
+  lg: "1.4rem",
+  xl: "1.8rem",
+  xxl: "2rem",
 };
 
 const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
@@ -245,7 +255,10 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
               color="secondary"
               sx={{ cursor: "pointer" }}
             >
-              <Typography variant="h4">
+              <Typography
+                variant="h4"
+                sx={{ cursor: "pointer", fontSize: fontSizeH4 }}
+              >
                 {t("carousel2d.button_project")}
               </Typography>
             </Button>
@@ -254,9 +267,13 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
               onClick={() => openLink(linkGit ?? "")}
               disabled={!(project && project?.openGit)}
               color="secondary"
-              sx={{ cursor: "pointer" }}
             >
-              <Typography variant="h4">{t("carousel2d.button_git")}</Typography>
+              <Typography
+                variant="h4"
+                sx={{ cursor: "pointer", fontSize: fontSizeH4 }}
+              >
+                {t("carousel2d.button_git")}
+              </Typography>
             </Button>
             <Button
               variant="text"
@@ -265,7 +282,10 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
               color="secondary"
               sx={{ cursor: "pointer" }}
             >
-              <Typography variant="h4" sx={{ cursor: "pointer" }}>
+              <Typography
+                variant="h4"
+                sx={{ cursor: "pointer", fontSize: fontSizeH4 }}
+              >
                 {t("carousel2d.button_video")}
               </Typography>
             </Button>
@@ -276,7 +296,9 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
             >
               <AssignmentReturnIcon />
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <Typography variant="body1">{t("projects.return")}</Typography>
+              <Typography variant="body1" sx={{ fontSize: fontSizeH6 }}>
+                {t("projects.return")}
+              </Typography>
             </S.FlexBoxButton>
           </S.DiscriptionCarouselCont>
           <S.ButtonSwitchABS
