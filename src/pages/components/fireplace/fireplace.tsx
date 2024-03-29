@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import { Button, Typography } from "@mui/material";
+import { Button, Typography, useMediaQuery } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
+import { Routes } from "../../../app/routes";
+import { theme } from "../../../app/app";
 import parse from "html-react-parser";
 import Video from "../../../images/production_id 4076130 (1080p).mp4";
 import Book from "./book";
@@ -10,13 +12,14 @@ import LangButton from "../../../shared/langButton";
 import useWindowSize from "../../../shared/useWindowSize/useWindowSize";
 
 import * as S from "./fireplace.styled";
-import { Routes } from "../../../app/routes";
 
 const About: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { width, height } = useWindowSize(true);
   const [heightVideo, setHeightVideo] = useState(height);
+
+  const MDScreen = useMediaQuery(theme.breakpoints.up("xxl"));
 
   useEffect(() => {
     const videoElement = document.getElementById("videoAccueil");
@@ -43,14 +46,15 @@ const About: React.FC = () => {
           {t("not_found.btn_go_home")}
         </Button>
       </S.Title>
-
       <S.CatContainer windowHeight={heightVideo}>
         <WalkingCat />
       </S.CatContainer>
-      <S.HistoryContainer windowWidth={width} windowHeight={height}>
-        <Typography variant="h3"> {parse(t("about.subtitle3"))}</Typography>
-        <Book />
-      </S.HistoryContainer>
+      {MDScreen && (
+        <S.HistoryContainer windowWidth={width} windowHeight={height}>
+          <Typography variant="h3"> {parse(t("about.subtitle3"))}</Typography>
+          <Book />
+        </S.HistoryContainer>
+      )}
     </S.MainContainer>
   );
 };
