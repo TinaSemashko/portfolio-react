@@ -22,6 +22,7 @@ const useWindowSize = (video: boolean) => {
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [video, window, videoElement]);
 
   return size;

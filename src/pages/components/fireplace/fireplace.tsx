@@ -1,40 +1,32 @@
 import { useEffect, useState } from "react";
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router";
 import parse from "html-react-parser";
-import Video from "../../images/production_id 4076130 (1080p).mp4";
-import flag from "../../images/Nuvola_France_Ukraine_flags.svg.png";
+import Video from "../../../images/production_id 4076130 (1080p).mp4";
 import Book from "./book";
 import WalkingCat from "../walkingCat";
 import LangButton from "../../../shared/langButton";
 import useWindowSize from "../../../shared/useWindowSize/useWindowSize";
 
 import * as S from "./fireplace.styled";
+import { Routes } from "../../../app/routes";
 
 const About: React.FC = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const { width, height } = useWindowSize(true);
-  const [widthVideo, setVidthVideo] = useState(width);
   const [heightVideo, setHeightVideo] = useState(height);
 
   useEffect(() => {
     const videoElement = document.getElementById("videoAccueil");
     setHeightVideo(videoElement?.offsetHeight ?? 0);
-    setVidthVideo(videoElement?.offsetWidth ?? 0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [window]);
-
-  // console.log(height);
-  // console.log(heightVideo);
 
   return (
     <S.MainContainer>
       <S.VideoAccueil id="videoAccueil" src={Video} autoPlay loop muted />
-      {/* <S.Line
-        windowWidth={width}
-        windowHeight={height}
-        videoWidth={widthVideo}
-        videoHeight={heightVideo}
-      /> */}
       <S.Langbt windowWidth={width} windowHeight={height}>
         <LangButton
           colorPrime={true}
@@ -44,11 +36,14 @@ const About: React.FC = () => {
       </S.Langbt>
       <S.Title windowWidth={width} windowHeight={height}>
         <S.TextRainbow>
-          <Typography variant="h2">
-            <img src={flag} width="40vw" /> {t("about.subtitle1")}
-          </Typography>
+          <Typography variant="h2">{t("not_found.title")}</Typography>
+          <Typography variant="h2">{t("not_found.description")}</Typography>
         </S.TextRainbow>
+        <Button variant="outlined" onClick={() => navigate(Routes.home)}>
+          {t("not_found.btn_go_home")}
+        </Button>
       </S.Title>
+
       <S.CatContainer windowHeight={heightVideo}>
         <WalkingCat />
       </S.CatContainer>
