@@ -37,7 +37,7 @@ export const Title = styled("div")<{
   animation: swirl-in-fwd 0.6s ease-out both;
 
   @media (max-width: 1500px) {
-    top: ${({ windowHeight }) => `calc(0.40 * ${windowHeight}px)`};
+    top: 30%;
     left: 0;
   }
 
