@@ -120,8 +120,8 @@ export const CatContainer = styled("div")<{
   position: absolute;
   bottom: ${({ windowHeight }) => `calc(520 * ${windowHeight}px/1080)`};
 
-  @media (max-width: 1500px) {
-    bottom: 0;
+  @media (max-width: 568px) {
+    bottom: 20%;
   }
 `;
 
