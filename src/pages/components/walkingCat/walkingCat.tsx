@@ -1,12 +1,12 @@
-import CanvasSpriteAnimator from "../../../shared/canvasSpriteAnimator/canvasSpriteAnimator";
-import { useMediaQuery } from "@mui/material";
-import { theme } from "../../../app/app";
-import img from "../../../images/spritesheet.png";
+import { useMediaQuery } from '@mui/material';
+import CanvasSpriteAnimator from '../../../shared/canvasSpriteAnimator/canvasSpriteAnimator';
+import { theme } from '../../../app/app';
+import img from '../../../images/spritesheet.png';
 
-import * as S from "./walkingCat.styled";
+import * as S from './walkingCat.styled';
 
 const WalkingCat: React.FC = () => {
-  const MDScreen = useMediaQuery(theme.breakpoints.down("md"));
+  const MDScreen = useMediaQuery(theme.breakpoints.down('md'));
   return (
     <S.MainContainer>
       <CanvasSpriteAnimator
@@ -16,7 +16,7 @@ const WalkingCat: React.FC = () => {
         frameHeight={110} // Высота одного кадра
         fps={4} // Частота кадров в секунду
         speed={6} // Скорость движения кота
-        widthPercentage={MDScreen ? "80%" : "100%"} // Процентное значение ширины канваса
+        widthPercentage={MDScreen ? '80%' : '100%'} // Процентное значение ширины канваса
       />
     </S.MainContainer>
   );

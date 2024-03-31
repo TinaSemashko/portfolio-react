@@ -1,42 +1,32 @@
-import { Typography } from "@mui/material";
-import { useState } from "react";
-import { useTranslation } from "react-i18next";
-import { Helmet } from "react-helmet";
-import WalkingCat from "../components/walkingCat";
-import img1 from "../../images/crown.png";
-import img2 from "../../images/puzzl.png";
+import { Typography } from '@mui/material';
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Helmet } from 'react-helmet';
+import WalkingCat from '../components/walkingCat';
+import img1 from '../../images/crown.png';
+import img2 from '../../images/puzzl.png';
 
-import * as S from "./home.styled";
+import * as S from './home.styled';
 
-const arrayTechnologies = [
-  "React.js",
-  "Node.js",
-  "SQL",
-  "Firebase",
-  "Postgres",
-  "MaterialUI",
-  "Typescript",
-  "GitHub",
-];
+const arrayTechnologies = ['React.js', 'Node.js', 'SQL', 'Firebase', 'Postgres', 'MaterialUI', 'Typescript', 'GitHub'];
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
 
   const showCardText = (ind: number): void => {
-    console.log("click");
     const card = document.querySelector(`#card${ind}`);
     const hideNode = document.querySelector(`#hide${ind}`);
     const text = document.querySelector(`#text${ind}`);
 
-    if (!open) {
-      card?.setAttribute("style", "display:none;");
-      text?.setAttribute("style", "display:none;");
-      hideNode?.setAttribute("style", "display:block;");
+    if (open) {
+      card?.setAttribute('style', 'display:block;');
+      text?.setAttribute('style', 'display:block;');
+      hideNode?.setAttribute('style', 'display:none;');
     } else {
-      card?.setAttribute("style", "display:block;");
-      text?.setAttribute("style", "display:block;");
-      hideNode?.setAttribute("style", "display:none;");
+      card?.setAttribute('style', 'display:none;');
+      text?.setAttribute('style', 'display:none;');
+      hideNode?.setAttribute('style', 'display:block;');
     }
   };
 
@@ -49,47 +39,35 @@ const Home: React.FC = () => {
   };
 
   const fontSizeTitle = {
-    xs: "1.6rem",
-    sm: "2rem",
-    md: "2.5rem",
-    lg: "3.4rem",
-    xl: "4rem",
+    xs: '1.6rem',
+    sm: '2rem',
+    md: '2.5rem',
+    lg: '3.4rem',
+    xl: '4rem',
   };
 
   const fontSizeSubTitle = {
-    xs: "1.2rem",
-    sm: "1.3rem",
-    md: "1.4rem",
-    lg: "1.8rem",
-    xl: "2rem",
+    xs: '1.2rem',
+    sm: '1.3rem',
+    md: '1.4rem',
+    lg: '1.8rem',
+    xl: '2rem',
   };
 
   return (
     <S.MainContainer>
       <Helmet>
         <title>Portfolio full stack développeur</title>
-        <meta
-          name="description"
-          content="Full-stack développeur web portfolio Il-de-France"
-        />
+        <meta name="description" content="Full-stack développeur web portfolio Il-de-France" />
         <meta
           name="keywords"
           content="Full-stack, développeur web, portfolio, développeur react, développeur node.js"
         />
         <meta name="twitter:title" content="Portfolio full stack développeur" />
-        <meta
-          name="twitter:description"
-          content="Full-stack développeur web portfolio Il-de-France"
-        />
+        <meta name="twitter:description" content="Full-stack développeur web portfolio Il-de-France" />
         <meta property="og:title" content="Portfolio full stack développeu" />
-        <meta
-          property="og:description"
-          content="Full-stack développeur web portfolio Il-de-France"
-        />
-        <meta
-          property="og:url"
-          content="https://tina-dev-portfolio.netlify.app/"
-        />
+        <meta property="og:description" content="Full-stack développeur web portfolio Il-de-France" />
+        <meta property="og:url" content="https://tina-dev-portfolio.netlify.app/" />
         <meta property="og:site_name" content="tina-dev-portfolio" />
         <meta property="og:locale" content="fr_FR" />
         <meta property="og:type" content="article" />
@@ -105,12 +83,11 @@ const Home: React.FC = () => {
                 px: pxValue,
                 fontSize: fontSizeTitle,
                 WebkitTextStroke: {
-                  xs: "1px rgba(0, 0, 0, .5)",
-                  md: "0",
+                  xs: '1px rgba(0, 0, 0, .5)',
+                  md: '0',
                 },
-              }}
-            >
-              {t("main.title")}
+              }}>
+              {t('main.title')}
             </Typography>
           </S.TitreColor>
           <br />
@@ -119,9 +96,8 @@ const Home: React.FC = () => {
             sx={{
               px: pxValue,
               fontSize: fontSizeSubTitle,
-            }}
-          >
-            {t("main.text")}
+            }}>
+            {t('main.text')}
           </Typography>
         </S.TitleLeft1ecran>
         <S.TitleRight1ecran>
@@ -131,9 +107,8 @@ const Home: React.FC = () => {
               sx={{
                 px: pxValue,
                 fontSize: fontSizeTitle,
-              }}
-            >
-              {t("main.title")}
+              }}>
+              {t('main.title')}
             </Typography>
           </S.TitreColor>
           <br />
@@ -142,9 +117,8 @@ const Home: React.FC = () => {
             sx={{
               px: pxValue,
               fontSize: fontSizeSubTitle,
-            }}
-          >
-            {t("main.text")}
+            }}>
+            {t('main.text')}
           </Typography>
         </S.TitleRight1ecran>
         <S.Puzzle>
@@ -154,13 +128,13 @@ const Home: React.FC = () => {
                 src={img2}
                 id={`card${index + 1}`}
                 className="card"
-                onClick={() => console.log(`card${index + 1}`)}
                 onMouseOver={() => showCardText(index + 1)}
                 onTouchStart={() => showCardText(index + 1)}
                 onMouseOut={() => setOpen(false)}
                 onTouchEnd={() => setOpen(true)}
               />
               <S.ElImgHide
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                 src={require(`../../images/${item}.png`)}
                 id={`hide${index + 1}`}
                 className="hide"
@@ -168,7 +142,6 @@ const Home: React.FC = () => {
                 onTouchStart={() => showCardText(index + 1)}
                 onMouseOut={() => setOpen(true)}
                 onTouchEnd={() => setOpen(true)}
-                onClick={() => console.log("onClickHidden")}
               />
               <S.ElText index={index + 1}>
                 <Typography
@@ -179,19 +152,18 @@ const Home: React.FC = () => {
                   onTouchStart={() => showCardText(index + 1)}
                   onMouseOut={() => setOpen(false)}
                   onTouchEnd={() => setOpen(true)}
-                  onClick={() => console.log("onClickText")}
+                  onClick={() => console.log('onClickText')}
                   sx={{
                     fontSize: {
-                      xxs: "0.7rem",
-                      xs: "0.7rem",
-                      sm: "0.8rem",
-                      md: "1.1rem",
-                      lg: "1.2rem",
-                      xl: "1.5rem",
-                      xxl: "1.7rem",
+                      xxs: '0.7rem',
+                      xs: '0.7rem',
+                      sm: '0.8rem',
+                      md: '1.1rem',
+                      lg: '1.2rem',
+                      xl: '1.5rem',
+                      xxl: '1.7rem',
                     },
-                  }}
-                >
+                  }}>
                   {item}
                 </Typography>
               </S.ElText>
@@ -214,32 +186,28 @@ const Home: React.FC = () => {
               variant="h2"
               sx={{
                 px: pxValue,
-              }}
-            >
-              {t("main.title2ecran")}
+              }}>
+              {t('main.title2ecran')}
             </Typography>
             <Typography
               variant="h2"
               sx={{
                 px: pxValue,
-              }}
-            >
-              {t("main.subtitle2ecran")}
+              }}>
+              {t('main.subtitle2ecran')}
             </Typography>
             <Typography
               variant="h2"
               sx={{
                 px: pxValue,
-              }}
-            >
-              {t("main.subtitle12ecran")}
+              }}>
+              {t('main.subtitle12ecran')}
               <Typography
                 variant="h2"
                 sx={{
                   px: pxValue,
-                }}
-              ></Typography>
-              {t("main.author2ecran")}
+                }}></Typography>
+              {t('main.author2ecran')}
             </Typography>
           </S.TitleLeft2ecran>
           <S.TitleRight2ecran>
@@ -247,32 +215,28 @@ const Home: React.FC = () => {
               variant="h2"
               sx={{
                 px: pxValue,
-              }}
-            >
-              {t("main.title2ecran")}
+              }}>
+              {t('main.title2ecran')}
             </Typography>
             <Typography
               variant="h2"
               sx={{
                 px: pxValue,
-              }}
-            >
-              {t("main.subtitle2ecran")}
+              }}>
+              {t('main.subtitle2ecran')}
             </Typography>
             <Typography
               variant="h2"
               sx={{
                 px: pxValue,
-              }}
-            >
-              {t("main.subtitle12ecran")}
+              }}>
+              {t('main.subtitle12ecran')}
               <Typography
                 variant="h2"
                 sx={{
                   px: pxValue,
-                }}
-              ></Typography>
-              {t("main.author2ecran")}
+                }}></Typography>
+              {t('main.author2ecran')}
             </Typography>
           </S.TitleRight2ecran>
         </S.Text2ecran>
