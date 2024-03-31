@@ -1,6 +1,6 @@
-import React, { useRef, useEffect } from "react";
-import useWindowSize from "../useWindowSize/useWindowSize";
-import styled from "styled-components";
+import React, { useRef, useEffect } from 'react';
+import useWindowSize from '../useWindowSize/useWindowSize';
+import styled from 'styled-components';
 
 interface CanvasSpriteAnimatorProps {
   spriteSheet: string;
@@ -13,7 +13,7 @@ interface CanvasSpriteAnimatorProps {
 }
 
 const ResponsiveCanvas = styled.canvas<{ widthPercentage?: string }>`
-  width: ${({ widthPercentage }) => widthPercentage || "100%"};
+  width: ${({ widthPercentage }) => widthPercentage || '100%'};
   max-width: 100%;
   object-fit: contain;
 `;
@@ -36,7 +36,7 @@ const CanvasSpriteAnimator: React.FC<CanvasSpriteAnimatorProps> = ({
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const context = canvas.getContext("2d");
+    const context = canvas.getContext('2d');
     if (!context) return;
 
     const spriteImage = new Image();
@@ -56,8 +56,10 @@ const CanvasSpriteAnimator: React.FC<CanvasSpriteAnimatorProps> = ({
 
         // Обновляем позицию кота и проверяем, не достиг ли он края канваса
         if (movingRight) {
+          // eslint-disable-next-line react-hooks/exhaustive-deps
           xPos += speed;
           if (xPos + frameWidth >= width) {
+            // eslint-disable-next-line react-hooks/exhaustive-deps
             movingRight = false;
           }
         } else {
@@ -80,7 +82,7 @@ const CanvasSpriteAnimator: React.FC<CanvasSpriteAnimatorProps> = ({
             -xPos - frameWidth,
             0,
             frameWidth,
-            frameHeight
+            frameHeight,
           );
           context.restore();
         } else {
@@ -93,7 +95,7 @@ const CanvasSpriteAnimator: React.FC<CanvasSpriteAnimatorProps> = ({
             xPos,
             0,
             frameWidth,
-            frameHeight
+            frameHeight,
           );
         }
 
@@ -113,14 +115,7 @@ const CanvasSpriteAnimator: React.FC<CanvasSpriteAnimatorProps> = ({
     };
   }, [spriteSheet, frameCount, frameWidth, frameHeight, fps, speed]);
 
-  return (
-    <ResponsiveCanvas
-      ref={canvasRef}
-      width={width}
-      height={frameHeight}
-      widthPercentage={widthPercentage}
-    />
-  );
+  return <ResponsiveCanvas ref={canvasRef} width={width} height={frameHeight} widthPercentage={widthPercentage} />;
 };
 
 export default CanvasSpriteAnimator;
