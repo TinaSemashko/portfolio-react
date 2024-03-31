@@ -1,6 +1,7 @@
 import { Typography } from "@mui/material";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet";
 import WalkingCat from "../components/walkingCat";
 import img1 from "../../images/crown.png";
 import img2 from "../../images/puzzl.png";
@@ -65,6 +66,34 @@ const Home: React.FC = () => {
 
   return (
     <S.MainContainer>
+      <Helmet>
+        <title>Portfolio full stack développeur</title>
+        <meta
+          name="description"
+          content="Full-stack développeur web portfolio Il-de-France"
+        />
+        <meta
+          name="keywords"
+          content="Full-stack, développeur web, portfolio, développeur react, développeur node.js"
+        />
+        <meta name="twitter:title" content="Portfolio full stack développeur" />
+        <meta
+          name="twitter:description"
+          content="Full-stack développeur web portfolio Il-de-France"
+        />
+        <meta property="og:title" content="Portfolio full stack développeu" />
+        <meta
+          property="og:description"
+          content="Full-stack développeur web portfolio Il-de-France"
+        />
+        <meta
+          property="og:url"
+          content="https://tina-dev-portfolio.netlify.app/"
+        />
+        <meta property="og:site_name" content="tina-dev-portfolio" />
+        <meta property="og:locale" content="fr_FR" />
+        <meta property="og:type" content="article" />
+      </Helmet>
       <S.GridContainer>
         <S.LeftSide1ecran></S.LeftSide1ecran>
         <S.RightSide1ecran></S.RightSide1ecran>
