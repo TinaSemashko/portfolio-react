@@ -26,6 +26,7 @@ export const dataLeather: string[] = [
   "Leather/img25.jpg",
   "Leather/img26.jpg",
   "Leather/img27.jpg",
+  "Leather/img28.jpg",
 ];
 
 export const dataBiser: string[] = [
@@ -54,6 +55,8 @@ export const dataBiser: string[] = [
   "Biser/img23.jpg",
   "Biser/img24.jpg",
   "Biser/img25.jpg",
+  "Biser/img26.jpg",
+  "Biser/img27.jpg",
 ];
 
 export const dataPaint: string[] = [
@@ -76,4 +79,31 @@ export const dataPaint: string[] = [
   "Paint/img17.jpg",
   "Paint/img18.jpg",
   "Paint/img19.jpg",
+  "Paint/img20.jpg",
+  "Paint/img21.jpg",
+  "Paint/img22.jpg",
+  "Paint/img23.jpg",
+  "Paint/img24.jpg",
+  "Paint/img25.jpg",
+  "Paint/img26.jpg",
+  "Paint/img27.jpg",
+  "Paint/img28.jpg",
+  "Paint/img29.jpg",
+];
+
+export const dataEmbroidery: string[] = [
+  "Embroidery/img1.jpg",
+  "Embroidery/img2.jpg",
+  "Embroidery/img3.jpg",
+  "Embroidery/img4.jpg",
+  "Embroidery/img5.jpg",
+  "Embroidery/img6.jpg",
+  "Embroidery/img7.jpg",
+];
+
+export const dataPlasticine: string[] = [
+  "Plasticine/img1.png",
+  "Plasticine/img2.png",
+  "Plasticine/img3.png",
+  "Plasticine/img4.png",
 ];

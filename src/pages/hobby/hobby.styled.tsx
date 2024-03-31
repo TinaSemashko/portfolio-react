@@ -113,7 +113,7 @@ export const ImgContainer = styled("div")`
 `;
 
 export const ImgContainer1 = styled(ImgContainer)`
-  animation: floatAnimation1 4s infinite;
+  animation: floatAnimation 4s infinite;
   place-self: center;
   grid-column: 3 / span 2;
   grid-row: 1;
@@ -123,12 +123,26 @@ export const ImgContainer2 = styled(ImgContainer)`
   animation: floatAnimation 4.5s infinite;
   place-self: center;
   grid-column: 4 / span 2;
-  grid-row: 2;
+  grid-row: 1 / span 2;
 `;
 
 export const ImgContainer3 = styled(ImgContainer)`
   animation: floatAnimation 5.5s infinite;
   place-self: center;
-  grid-column: 2 / span 2;
+  grid-column: 3 / span 2;
+  grid-row: 3;
+`;
+
+export const ImgContainer4 = styled(ImgContainer)`
+  animation: floatAnimation1 5s infinite;
+  place-self: center;
+  grid-column: 1 / span 2;
+  grid-row: 1;
+`;
+
+export const ImgContainer5 = styled(ImgContainer)`
+  animation: floatAnimation1 4.5s infinite;
+  place-self: center;
+  grid-column: 4 / span 2;
   grid-row: 3;
 `;

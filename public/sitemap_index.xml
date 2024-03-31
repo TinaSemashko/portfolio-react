@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" >
+<sitemap>
+  <loc>https://tina-dev-portfolio.netlify.app/</loc>
+</sitemap>
+<sitemap>
+<loc>https://tina-dev-portfolio.netlify.app/home</loc>
+</sitemap>
+<sitemap>
+<loc>https://tina-dev-portfolio.netlify.app/projects</loc>
+</sitemap>
+<sitemap>
+<loc>https://tina-dev-portfolio.netlify.app/about</loc>
+</sitemap>
+<sitemap>
+<loc>https://tina-dev-portfolio.netlify.app/contact</loc>
+</sitemap>
+<sitemap>
+<loc>https://tina-dev-portfolio.netlify.app/hobby</loc>
+</sitemap>
+<sitemap>
+<loc>https://tina-dev-portfolio.netlify.app/resume</loc>
+</sitemap>
+</sitemapindex>
