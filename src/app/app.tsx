@@ -1,12 +1,12 @@
-import React from "react";
-import { createTheme, responsiveFontSizes, ThemeProvider } from "@mui/material";
-import Topbar from "../shared/topbar/topbar";
-import { AppRoutes } from "./appRoutes";
-import Footer from "../shared/footer/footer";
+import React from 'react';
+import { createTheme, responsiveFontSizes, ThemeProvider } from '@mui/material';
+import Topbar from '../shared/topbar/topbar';
+import { AppRoutes } from './appRoutes';
+import Footer from '../shared/footer/footer';
 
-import "@mui/material";
+import '@mui/material';
 
-declare module "@mui/material/styles" {
+declare module '@mui/material/styles' {
   interface BreakpointOverrides {
     xxs: true;
     xs: true;
@@ -21,28 +21,28 @@ declare module "@mui/material/styles" {
 export let theme = createTheme({
   palette: {
     primary: {
-      main: "#ffe4c4",
+      main: '#ffe4c4',
     },
     secondary: {
-      main: "#ffffff",
+      main: '#ffffff',
     },
     colorBlack: {
-      main: "#000000",
+      main: '#000000',
     },
     colorRed: {
-      main: "#5f0101",
+      main: '#5f0101',
     },
     colorOrange: {
-      main: "#ff9d00",
+      main: '#ff9d00',
     },
     colorGreen: {
-      main: "#239705",
+      main: '#239705',
     },
     colorLightBlue: {
-      main: "#5986BC",
+      main: '#5986BC',
     },
     colorBlue: {
-      main: "#042D5E",
+      main: '#042D5E',
     },
   },
   typography: {
@@ -52,68 +52,31 @@ export let theme = createTheme({
       // fontFamily: "Cormorant Infant, serif";
       // fontFamily: "Rubik Marker Hatch, serif",
       // fontFamily: "Marck Script , cursive",
-      fontFamily: "Kurale , cursive",
-      // fontSize: "10rem",
+      fontFamily: 'Kurale , cursive',
     },
     h2: {
-      fontFamily: "Kurale , cursive",
-      // fontSize: "4rem",
+      fontFamily: 'Kurale , cursive',
     },
     h3: {
-      fontFamily: "Cormorant Infant, serif",
-      // fontSize: "5rem",
-      // "@media (max-width:750px)": {
-      //   fontSize: "3rem",
-      // },
-      // "@media (max-width:650px)": {
-      //   fontSize: "2.5rem",
-      // },
-      // "@media (max-width:550px)": {
-      //   fontSize: "2rem",
-      // },
+      fontFamily: 'Cormorant Infant, serif',
     },
     h4: {
-      fontFamily: "Kurale , cursive",
+      fontFamily: 'Kurale , cursive',
     },
     h5: {
-      fontFamily: "Kurale , cursive",
-      // fontSize: "4rem",
+      fontFamily: 'Kurale , cursive',
     },
     h6: {
-      fontFamily: "Kurale , cursive",
-      // fontSize: "1rem",
-      // "@media (max-width:960px)": {
-      //   fontSize: "0.9rem",
-      // },
-      // "@media (max-width:860px)": {
-      //   fontSize: "0.8rem",
-      // },
-      // "@media (max-width:760px)": {
-      //   fontSize: "0.7rem",
-      // },
-      // "@media (max-width:660px)": {
-      //   fontSize: "0.6rem",
-      // },
-      // "@media (max-width:560px)": {
-      //   fontSize: "0.5rem",
-      // },
-      // "@media (max-width:460px)": {
-      //   fontSize: "0.4rem",
-      // },
-      // "@media (max-width:360px)": {
-      //   fontSize: "0.3rem",
-      // },
+      fontFamily: 'Kurale , cursive',
     },
     body1: {
-      fontFamily: "Kurale , cursive",
-      // fontSize: "0.5rem",
+      fontFamily: 'Kurale , cursive',
     },
     body2: {
-      fontFamily: "Special Elite, cursive",
-      // fontSize: "0.6rem",
+      fontFamily: 'Special Elite, cursive',
     },
     subtitle1: {
-      fontFamily: "Times New Roman, serif",
+      fontFamily: 'Times New Roman, serif',
       // fontSize: "8rem",
       // "@media (max-width:750px)": {
       //   fontSize: "2.5rem",
@@ -124,7 +87,7 @@ export let theme = createTheme({
     },
   },
   breakpoints: {
-    keys: ["xxs", "xs", "sm", "md", "lg", "xl", "xxl"],
+    keys: ['xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl'],
     values: { xxs: 0, xs: 300, sm: 568, md: 760, lg: 960, xl: 1200, xxl: 1500 },
   },
 });
