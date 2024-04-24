@@ -37,8 +37,8 @@ const Contact: React.FC = () => {
         <S.LefttBackgroundContainer />
         <S.CardBox>
           <S.Card1>
-            <img src={email} alt="" width="50rem" />
-            <Button href="mailto:tina.semashko@gmail.com">
+            <Button href="mailto:tina.semashko@gmail.com" sx={{ display: 'flex', flexDirection: 'column' }}>
+              <img src={email} alt="email" width="50rem" />
               <Typography
                 variant="body2"
                 sx={{
@@ -52,8 +52,8 @@ const Contact: React.FC = () => {
           </S.Card1>
           <S.Card2 />
           <S.Card3>
-            <img src={linkedin} alt="" width="50rem" />
-            <Button href="https://www.linkedin.com/in/tina-semashko/">
+            <Button href="https://www.linkedin.com/in/tina-semashko/" sx={{ display: 'flex', flexDirection: 'column' }}>
+              <img src={linkedin} alt="linkedin" width="50rem" />
               <Typography
                 variant="body2"
                 sx={{
@@ -67,8 +67,8 @@ const Contact: React.FC = () => {
           </S.Card3>
           <S.Card4 />
           <S.Card5>
-            <img src={telegram} alt="" width="50rem" />
-            <Button href="https://t.me/SemashkoTina">
+            <Button href="https://t.me/SemashkoTina" sx={{ display: 'flex', flexDirection: 'column' }}>
+              <img src={telegram} alt="telegram" width="50rem" />
               <Typography
                 variant="body2"
                 sx={{

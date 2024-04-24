@@ -1,10 +1,10 @@
-import { styled } from "@mui/material/styles";
-import img1 from "../../images/web-dev.png";
-import img2 from "../../images/robot.png";
-import img3 from "../../images/robot2.png";
-import { Button } from "@mui/material";
+import { styled } from '@mui/material/styles';
+import img1 from '../../images/web-dev.png';
+import img2 from '../../images/robot.png';
+import img3 from '../../images/robot2.png';
+import { Button } from '@mui/material';
 
-export const MainContainer = styled("div")`
+export const MainContainer = styled('div')`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,7 +15,7 @@ export const MainContainer = styled("div")`
   }
 `;
 
-export const LeftContainer = styled("div")`
+export const LeftContainer = styled('div')`
   padding-top: 4vh;
   width: 50vw;
   display: flex;
@@ -28,7 +28,7 @@ export const LeftContainer = styled("div")`
   }
 `;
 
-export const RightContainer = styled("div")`
+export const RightContainer = styled('div')`
   width: 50vw;
   display: grid;
   grid-template-columns: 20% 80%;
@@ -44,7 +44,7 @@ export const RightContainer = styled("div")`
   }
 `;
 
-export const LefttBackgroundContainer = styled("div")`
+export const LefttBackgroundContainer = styled('div')`
   width: 100%;
   background-color: ${({ theme }) => theme.palette.secondary.main};
   grid-column: 1;
@@ -55,7 +55,7 @@ export const LefttBackgroundContainer = styled("div")`
   }
 `;
 
-export const RightBackgroundContainer = styled("div")`
+export const RightBackgroundContainer = styled('div')`
   background-color: ${({ theme }) => theme.palette.colorLightBlue.main};
   width: 100%;
   min-height: 100vh;
@@ -72,7 +72,7 @@ export const RightBackgroundContainer = styled("div")`
   }
 `;
 
-export const CardBox = styled("div")`
+export const CardBox = styled('div')`
   --h: 30vh;
   --w: 15vw;
   position: relative;
@@ -91,7 +91,7 @@ export const CardBox = styled("div")`
   }
 `;
 
-export const CardContainer = styled("div")`
+export const CardContainer = styled('div')`
   --h: 30vh;
   --w: 15vw;
   height: var(--h);
