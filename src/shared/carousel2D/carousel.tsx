@@ -1,17 +1,17 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
-import { Routes } from "../../app/routes";
-import { useTranslation } from "react-i18next";
-import Slider from "react-slick";
-import { createGlobalStyle } from "styled-components";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { Button, Typography, useMediaQuery } from "@mui/material";
-import { theme } from "../../app/app";
-import { Carousel3d, CarouselImg } from "../../types/projects";
-import AssignmentReturnIcon from "@mui/icons-material/AssignmentReturn";
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router';
+import { Routes } from '../../app/routes';
+import { useTranslation } from 'react-i18next';
+import Slider from 'react-slick';
+import { createGlobalStyle } from 'styled-components';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { Button, Typography, useMediaQuery } from '@mui/material';
+import { theme } from '../../app/app';
+import { Carousel3d, CarouselImg } from '../../types/projects';
+import AssignmentReturnIcon from '@mui/icons-material/AssignmentReturn';
 
-import * as S from "./carousel.styled";
+import * as S from './carousel.styled';
 
 interface ArrowProps {
   className?: string;
@@ -48,23 +48,23 @@ type Props = {
 };
 
 const fontSizeH6 = {
-  xxs: "0.5rem",
-  xs: "0.7rem",
-  sm: "0.8rem",
-  md: "0.9rem",
-  lg: "0.95rem",
-  xl: "1rem",
-  xxl: "1rem",
+  xxs: '0.5rem',
+  xs: '0.7rem',
+  sm: '0.8rem',
+  md: '0.9rem',
+  lg: '0.95rem',
+  xl: '1rem',
+  xxl: '1rem',
 };
 
 const fontSizeH4 = {
-  xxs: "0.6rem",
-  xs: "0.7rem",
-  sm: "1rem",
-  md: "1.2rem",
-  lg: "1.4rem",
-  xl: "1.8rem",
-  xxl: "2rem",
+  xxs: '0.6rem',
+  xs: '0.7rem',
+  sm: '1rem',
+  md: '1.2rem',
+  lg: '1.4rem',
+  xl: '1.8rem',
+  xxl: '2rem',
 };
 
 const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
@@ -75,9 +75,9 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
   const [carouselFront, setCarouselFront] = useState(true);
   const [openFront, setOpenFront] = useState(false);
   const [carouselImages, setCarouselImages] = useState<CarouselImg[]>([]);
-  const [linkProject, setlinkProject] = useState<string | null>("");
-  const [linkGit, setlinkGit] = useState<string | null>("");
-  const mediumScreen = useMediaQuery(theme.breakpoints.down("md"));
+  const [linkProject, setlinkProject] = useState<string | null>('');
+  const [linkGit, setlinkGit] = useState<string | null>('');
+  const mediumScreen = useMediaQuery(theme.breakpoints.down('md'));
 
   const SampleNextArrow = (props: ArrowProps) => {
     const { className, style, onClick } = props;
@@ -87,10 +87,9 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
         showDescription={true}
         style={{
           ...style,
-          right: "4vw",
+          right: '4vw',
         }}
-        onClick={onClick}
-      >
+        onClick={onClick}>
         <S.ArrowRightIcon />
       </S.ArrowWrapper>
     );
@@ -104,10 +103,9 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
         showDescription={true}
         style={{
           ...style,
-          left: "4vw",
+          left: '4vw',
         }}
-        onClick={onClick}
-      >
+        onClick={onClick}>
         <S.ArrowLeftIcon />
       </S.ArrowWrapper>
     );
@@ -140,7 +138,7 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
 
           return acc;
         },
-        [[], []]
+        [[], []],
       );
 
       setImageMapBack(updatedImageMapBack);
@@ -162,20 +160,13 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
       return (
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <a>
-          <img
-            src={src}
-            alt={alt}
-            width="50vw"
-            height="50vh"
-            style={{ border: "solid #ffffff" }}
-            loading="lazy"
-          />
+          <img src={src} alt={alt} width="50vw" height="50vh" style={{ border: 'solid #ffffff' }} loading="lazy" />
         </a>
       );
     },
 
     dots: mediumScreen ? false : true,
-    dotsClass: "slick-dots slick-thumb",
+    dotsClass: 'slick-dots slick-thumb',
     infinite: false,
     lazyLoad: true,
     speed: 500,
@@ -191,13 +182,12 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
   };
 
   const openLink = (link: string) => {
-    const newWindow = window.open(link, "_blank", "noopener,noreferrer");
+    const newWindow = window.open(link, '_blank', 'noopener,noreferrer');
     if (newWindow) newWindow.opener = null;
   };
 
   const openVideo = () => {
-    if (project && project?.projectName === "TeamChallenge")
-      openLink(project.linkVideo);
+    if (project && project?.projectName === 'TeamChallenge') openLink(project.linkVideo);
     else
       navigate(Routes.videopage, {
         state: { projectcard: { project } },
@@ -210,33 +200,26 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
       <S.FlexBox>
         <S.SliderBox>
           <Slider {...settings} className="Slider">
-            {(carouselFront ? imageMapFront : imageMapBack)?.map(
-              (item, index) => (
-                <S.ImgCarouselContainer
-                  className="ImgCarouselContainer"
-                  key={index}
-                  slidesMoreOne={
-                    carouselFront
-                      ? imageMapFront
-                        ? imageMapFront?.length > 1
-                        : false
-                      : imageMapBack
-                      ? imageMapBack?.length > 1
+            {(carouselFront ? imageMapFront : imageMapBack)?.map((item, index) => (
+              <S.ImgCarouselContainer
+                className="ImgCarouselContainer"
+                key={index}
+                slidesMoreOne={
+                  carouselFront
+                    ? imageMapFront
+                      ? imageMapFront?.length > 1
                       : false
-                  }
-                >
-                  <img
-                    src={`${
-                      item.src !== ""
-                        ? require(`../../images/MyProjects/${item.src}`)
-                        : project?.src
-                    }`}
-                    alt={item.alt}
-                    width="100%"
-                  />
-                </S.ImgCarouselContainer>
-              )
-            )}
+                    : imageMapBack
+                    ? imageMapBack?.length > 1
+                    : false
+                }>
+                <img
+                  src={`${item.src !== '' ? require(`../../images/MyProjects/${item.src}`) : project?.src}`}
+                  alt={item.alt}
+                  width="100%"
+                />
+              </S.ImgCarouselContainer>
+            ))}
           </Slider>
         </S.SliderBox>
         <S.Description>
@@ -244,35 +227,26 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
             <Typography
               variant="h4"
               textAlign="center"
-              sx={{ width: "80%", color: "#a1a1a1", fontSize: fontSizeH6 }}
-            >
+              sx={{ paddingTop: '2%', width: '90%', color: '#a1a1a1', fontSize: fontSizeH6 }}>
               {project?.descriptions}
             </Typography>
             <Button
               variant="text"
-              onClick={() => openLink(linkProject ?? "")}
+              onClick={() => openLink(linkProject ?? '')}
               disabled={!(project && project?.openProject)}
               color="secondary"
-              sx={{ cursor: "pointer" }}
-            >
-              <Typography
-                variant="h4"
-                sx={{ cursor: "pointer", fontSize: fontSizeH4 }}
-              >
-                {t("carousel2d.button_project")}
+              sx={{ cursor: 'pointer' }}>
+              <Typography variant="h4" sx={{ cursor: 'pointer', fontSize: fontSizeH4 }}>
+                {t('carousel2d.button_project')}
               </Typography>
             </Button>
             <Button
               variant="text"
-              onClick={() => openLink(linkGit ?? "")}
+              onClick={() => openLink(linkGit ?? '')}
               disabled={!(project && project?.openGit)}
-              color="secondary"
-            >
-              <Typography
-                variant="h4"
-                sx={{ cursor: "pointer", fontSize: fontSizeH4 }}
-              >
-                {t("carousel2d.button_git")}
+              color="secondary">
+              <Typography variant="h4" sx={{ cursor: 'pointer', fontSize: fontSizeH4 }}>
+                {t('carousel2d.button_git')}
               </Typography>
             </Button>
             <Button
@@ -280,37 +254,29 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
               onClick={() => openVideo()}
               disabled={!(project && project?.openVideo)}
               color="secondary"
-              sx={{ cursor: "pointer" }}
-            >
-              <Typography
-                variant="h4"
-                sx={{ cursor: "pointer", fontSize: fontSizeH4 }}
-              >
-                {t("carousel2d.button_video")}
+              sx={{ cursor: 'pointer' }}>
+              <Typography variant="h4" sx={{ cursor: 'pointer', fontSize: fontSizeH4 }}>
+                {t('carousel2d.button_video')}
               </Typography>
             </Button>
             <S.FlexBoxButton
               onClick={() => {
                 navigate(Routes.projects);
-              }}
-            >
+              }}>
               <AssignmentReturnIcon />
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <Typography variant="body1" sx={{ fontSize: fontSizeH6 }}>
-                {t("projects.return")}
+                {t('projects.return')}
               </Typography>
             </S.FlexBoxButton>
           </S.DiscriptionCarouselCont>
-          <S.ButtonSwitchABS
-            onClick={changerFrontCode}
-            disabled={carouselImagesProps?.length === 1}
-          >
+          <S.ButtonSwitchABS onClick={changerFrontCode} disabled={carouselImagesProps?.length === 1}>
             <Typography variant="h5">
               {carouselImagesProps?.length === 1
-                ? ""
+                ? ''
                 : openFront
-                ? t("carousel2d.button_front")
-                : t("carousel2d.button_code")}
+                ? t('carousel2d.button_front')
+                : t('carousel2d.button_code')}
             </Typography>
           </S.ButtonSwitchABS>
         </S.Description>
