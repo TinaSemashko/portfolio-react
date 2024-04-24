@@ -1,25 +1,34 @@
-import { Button, Typography, useMediaQuery } from "@mui/material";
-import { theme } from "../../app/app";
-import ContactForm from "./contactForm";
-import email from "../../images/email.png";
-import linkedin from "../../images/linkedin.png";
-import telegram from "../../images/telegram.png";
+import { Button, Typography, useMediaQuery } from '@mui/material';
+import { Helmet } from 'react-helmet';
+import { theme } from '../../app/app';
+import ContactForm from './contactForm';
+import email from '../../images/email.png';
+import linkedin from '../../images/linkedin.png';
+import telegram from '../../images/telegram.png';
 
-import * as S from "./contact.styled";
+import * as S from './contact.styled';
 
 const fontSizeContact = {
-  xs: "0.5rem",
-  sm: "0.8rem",
-  md: "0.9rem",
-  lg: "1rem",
-  xl: "1.2rem",
+  xs: '0.5rem',
+  sm: '0.8rem',
+  md: '0.9rem',
+  lg: '1rem',
+  xl: '1.2rem',
 };
 
 const Contact: React.FC = () => {
-  const mediumScreen = useMediaQuery(theme.breakpoints.down("lg"));
+  const mediumScreen = useMediaQuery(theme.breakpoints.down('lg'));
 
   return (
     <S.MainContainer>
+      <Helmet>
+        <title>Contacts full stack développeur</title>
+        <meta name="description" content="Contacts Full-stack développeur web portfolio Il-de-France" />
+        <meta
+          name="keywords"
+          content="Contacts, Full-stack, développeur web, portfolio, développeur react, développeur node.js"
+        />
+      </Helmet>
       <S.LeftContainer>
         <ContactForm />
       </S.LeftContainer>
@@ -33,11 +42,10 @@ const Contact: React.FC = () => {
               <Typography
                 variant="body2"
                 sx={{
-                  color: "colorBlue.main",
-                  textTransform: "none",
+                  color: 'colorBlue.main',
+                  textTransform: 'none',
                   fontSize: fontSizeContact,
-                }}
-              >
+                }}>
                 tina.semashko@ {mediumScreen && <br />}gmail.com
               </Typography>
             </Button>
@@ -49,11 +57,10 @@ const Contact: React.FC = () => {
               <Typography
                 variant="body2"
                 sx={{
-                  color: "colorBlue.main",
-                  textTransform: "none",
+                  color: 'colorBlue.main',
+                  textTransform: 'none',
                   fontSize: fontSizeContact,
-                }}
-              >
+                }}>
                 @tina-semashko
               </Typography>
             </Button>
@@ -65,17 +72,16 @@ const Contact: React.FC = () => {
               <Typography
                 variant="body2"
                 sx={{
-                  color: "colorBlue.main",
-                  textTransform: "none",
+                  color: 'colorBlue.main',
+                  textTransform: 'none',
                   fontSize: {
-                    xs: "0.5rem",
-                    sm: "0.8rem",
-                    md: "0.9rem",
-                    lg: "1rem",
-                    xl: "1.2rem",
+                    xs: '0.5rem',
+                    sm: '0.8rem',
+                    md: '0.9rem',
+                    lg: '1rem',
+                    xl: '1.2rem',
                   },
-                }}
-              >
+                }}>
                 @Semashko{mediumScreen && <br />}Tina
               </Typography>
             </Button>

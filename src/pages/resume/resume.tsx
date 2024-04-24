@@ -1,72 +1,69 @@
-import { useTranslation } from "react-i18next";
-import Avatar from "../../images/avatar.jpg";
-import Divider from "@mui/material/Divider";
-import { List, ListItem, Typography, useMediaQuery } from "@mui/material";
-import Social from "../../shared/socialLinks";
-import parse from "html-react-parser";
-import {
-  arrayExperiences,
-  arrayEducations,
-  arrayCompetences,
-  arrayResume,
-  arrayCourses,
-} from "./dataCV";
-import CV_PDF from "../../images/resume.pdf";
-import { theme } from "../../app/app";
+import { useTranslation } from 'react-i18next';
+import Avatar from '../../images/avatar.jpg';
+import { Helmet } from 'react-helmet';
+import Divider from '@mui/material/Divider';
+import { List, ListItem, Typography, useMediaQuery } from '@mui/material';
+import Social from '../../shared/socialLinks';
+import parse from 'html-react-parser';
+import { arrayExperiences, arrayEducations, arrayCompetences, arrayResume, arrayCourses } from './dataCV';
+import CV_PDF from '../../images/resume.pdf';
+import { theme } from '../../app/app';
 
-import * as S from "./resume.styled";
+import * as S from './resume.styled';
 
 const fontSizeH4 = {
-  xxs: "0.7rem",
-  xs: "0.8rem",
-  sm: "1.0rem",
-  md: "1.2rem",
-  lg: "1.4rem",
-  xl: "1.6rem",
-  xxl: "1.6rem",
+  xxs: '0.7rem',
+  xs: '0.8rem',
+  sm: '1.0rem',
+  md: '1.2rem',
+  lg: '1.4rem',
+  xl: '1.6rem',
+  xxl: '1.6rem',
 };
 
 const fontSizeH6 = {
-  xxs: "0.5rem",
-  xs: "0.5rem",
-  sm: "0.8rem",
-  md: "0.9rem",
-  lg: "0.95rem",
-  xl: "1rem",
-  xxl: "1rem",
+  xxs: '0.5rem',
+  xs: '0.5rem',
+  sm: '0.8rem',
+  md: '0.9rem',
+  lg: '0.95rem',
+  xl: '1rem',
+  xxl: '1rem',
 };
 
 const Resume: React.FC = () => {
   const { t } = useTranslation();
-  const mediumScreen = useMediaQuery(theme.breakpoints.down("xl"));
-  const largeScreen = useMediaQuery(theme.breakpoints.up("xl"));
+  const mediumScreen = useMediaQuery(theme.breakpoints.down('xl'));
+  const largeScreen = useMediaQuery(theme.breakpoints.up('xl'));
 
   return (
     <S.MainContainer>
+      <Helmet>
+        <title>CV full stack développeur</title>
+        <meta name="description" content="Mon CV Resume Full-stack développeur web portfolio Il-de-France" />
+        <meta
+          name="keywords"
+          content="Mon CV, Resume , Full-stack, développeur web, portfolio, développeur react, développeur node.js"
+        />
+      </Helmet>
       <S.MainGridContainer>
         <S.ResumeContainer>
           <S.PhotoBox>
             <S.Photo src={Avatar} alt="" />
           </S.PhotoBox>
           <S.Title>
-            <Typography
-              variant="h3"
-              textAlign="center"
-              sx={{ color: "#0ca5e7" }}
-            >
-              {t("resume.name")}
+            <Typography variant="h3" textAlign="center" sx={{ color: '#0ca5e7' }}>
+              {t('resume.name')}
             </Typography>
             <Typography
               variant="h3"
               textAlign="center"
               fontWeight="900"
               sx={{
-                color: "#0ca5e7",
-                textShadow:
-                  "  1px 1px 0 #05174b,1px -1px 0 #05174b,-1px 1px 0 #05174b,-1px -1px 0 #05174b",
-              }}
-            >
-              {t("resume.title")}
+                color: '#0ca5e7',
+                textShadow: '  1px 1px 0 #05174b,1px -1px 0 #05174b,-1px 1px 0 #05174b,-1px -1px 0 #05174b',
+              }}>
+              {t('resume.title')}
             </Typography>
           </S.Title>
           <S.ButtonCV variant="contained">
@@ -75,19 +72,18 @@ const Resume: React.FC = () => {
                 variant="h6"
                 textAlign="center"
                 sx={{
-                  zIndex: "100",
-                  position: "relative",
-                  color: "#daa06d ",
-                  textTransform: "capitalize",
+                  zIndex: '100',
+                  position: 'relative',
+                  color: '#daa06d ',
+                  textTransform: 'capitalize',
                   fontSize: fontSizeH6,
-                }}
-              >
-                {t("resume.download")}
+                }}>
+                {t('resume.download')}
               </Typography>
             </a>
           </S.ButtonCV>
           <S.TextBox>
-            {arrayResume.map((item) => (
+            {arrayResume.map(item => (
               <Typography sx={{ fontSize: fontSizeH6 }}>
                 <li>{t(`resume.${item}`)}</li>
               </Typography>
@@ -103,16 +99,12 @@ const Resume: React.FC = () => {
         <S.GridExpCompetences>
           <S.Experience>
             <S.ExpTitle>
-              <Typography variant="h3">{t("resume.experience")}</Typography>
+              <Typography variant="h3">{t('resume.experience')}</Typography>
             </S.ExpTitle>
-            {arrayExperiences.map((item) => (
+            {arrayExperiences.map(item => (
               <S.ExpMain>
                 <S.SectionDates>
-                  <Typography
-                    variant="h4"
-                    fontWeight="900"
-                    sx={{ fontSize: fontSizeH4 }}
-                  >
+                  <Typography variant="h4" fontWeight="900" sx={{ fontSize: fontSizeH4 }}>
                     {t(item.dateEx)}
                   </Typography>
                   <br />
@@ -125,16 +117,13 @@ const Resume: React.FC = () => {
                   <Divider
                     orientation="vertical"
                     sx={{
-                      borderColor: "black",
+                      borderColor: 'black',
                       mt: -3,
                     }}
                   />
                 </S.SectionPoint>
                 <S.SectionOrganisation>
-                  <Typography
-                    variant="h4"
-                    sx={{ fontSize: fontSizeH4, fontWeight: "700" }}
-                  >
+                  <Typography variant="h4" sx={{ fontSize: fontSizeH4, fontWeight: '700' }}>
                     {t(item.nameOrg)}
                   </Typography>
                   {largeScreen && <br />}
@@ -148,12 +137,12 @@ const Resume: React.FC = () => {
           {largeScreen && (
             <S.SectionCompetances>
               <S.ExpTitle>
-                <Typography variant="h3">{t("resume.competence")}</Typography>
+                <Typography variant="h3">{t('resume.competence')}</Typography>
               </S.ExpTitle>
-              <List sx={{ listStyleType: "disc" }}>
-                {arrayCompetences.map((item) => (
+              <List sx={{ listStyleType: 'disc' }}>
+                {arrayCompetences.map(item => (
                   <Typography variant="h5" lineHeight="1.7">
-                    <ListItem disablePadding sx={{ display: "list-item" }}>
+                    <ListItem disablePadding sx={{ display: 'list-item' }}>
                       {t(`competences.${item}`)}
                     </ListItem>
                   </Typography>
@@ -166,16 +155,12 @@ const Resume: React.FC = () => {
       {mediumScreen && (
         <S.SectionCompetances>
           <S.ExpTitle>
-            <Typography variant="h3">{t("resume.competence")}</Typography>
+            <Typography variant="h3">{t('resume.competence')}</Typography>
           </S.ExpTitle>
-          <List sx={{ listStyleType: "disc" }}>
-            {arrayCompetences.map((item) => (
-              <Typography
-                variant="h5"
-                lineHeight="1.7"
-                sx={{ fontSize: fontSizeH4 }}
-              >
-                <ListItem disablePadding sx={{ display: "list-item" }}>
+          <List sx={{ listStyleType: 'disc' }}>
+            {arrayCompetences.map(item => (
+              <Typography variant="h5" lineHeight="1.7" sx={{ fontSize: fontSizeH4 }}>
+                <ListItem disablePadding sx={{ display: 'list-item' }}>
                   {t(`competences.${item}`)}
                 </ListItem>
               </Typography>
@@ -189,16 +174,12 @@ const Resume: React.FC = () => {
         <S.GridEducLangueges>
           <S.Education>
             <S.ExpTitle>
-              <Typography variant="h3">{t("resume.education")}</Typography>
+              <Typography variant="h3">{t('resume.education')}</Typography>
             </S.ExpTitle>
-            {arrayEducations.map((item) => (
+            {arrayEducations.map(item => (
               <S.EducMain>
                 <S.SectionDates>
-                  <Typography
-                    variant="h4"
-                    fontWeight="900"
-                    sx={{ fontSize: fontSizeH4 }}
-                  >
+                  <Typography variant="h4" fontWeight="900" sx={{ fontSize: fontSizeH4 }}>
                     {t(item.dataEd)}
                   </Typography>
                   <br />
@@ -211,26 +192,23 @@ const Resume: React.FC = () => {
                   <Divider
                     orientation="vertical"
                     sx={{
-                      borderColor: "black",
+                      borderColor: 'black',
                       mt: -3,
                     }}
                   />
                 </S.SectionPoint>
                 <S.SectionOrganisation>
-                  <Typography
-                    variant="h4"
-                    sx={{ fontSize: fontSizeH4, fontWeight: "700" }}
-                  >
+                  <Typography variant="h4" sx={{ fontSize: fontSizeH4, fontWeight: '700' }}>
                     {t(item.nameEd)}
                   </Typography>
                 </S.SectionOrganisation>
               </S.EducMain>
             ))}
             <S.CoursesTitle>
-              <Typography variant="h3">{t("education.courses")}</Typography>
+              <Typography variant="h3">{t('education.courses')}</Typography>
             </S.CoursesTitle>
             <S.Courses>
-              {arrayCourses.map((item) => (
+              {arrayCourses.map(item => (
                 <Typography variant="h4" sx={{ fontSize: fontSizeH4 }}>
                   <li>{t(`education.${item}`)}</li>
                 </Typography>
@@ -240,21 +218,21 @@ const Resume: React.FC = () => {
           {largeScreen && (
             <S.SectionLangueges>
               <S.ExpTitle>
-                <Typography variant="h3">{t("resume.language")}</Typography>
+                <Typography variant="h3">{t('resume.language')}</Typography>
               </S.ExpTitle>
-              <List sx={{ listStyleType: "disc" }}>
+              <List sx={{ listStyleType: 'disc' }}>
                 <Typography variant="h5" lineHeight="1.7">
-                  <ListItem disablePadding sx={{ display: "list-item" }}>
-                    {t("languages.en")}
+                  <ListItem disablePadding sx={{ display: 'list-item' }}>
+                    {t('languages.en')}
                   </ListItem>
-                  <ListItem disablePadding sx={{ display: "list-item" }}>
-                    {t("languages.fr")}
+                  <ListItem disablePadding sx={{ display: 'list-item' }}>
+                    {t('languages.fr')}
                   </ListItem>
-                  <ListItem disablePadding sx={{ display: "list-item" }}>
-                    {t("languages.ukr")}
+                  <ListItem disablePadding sx={{ display: 'list-item' }}>
+                    {t('languages.ukr')}
                   </ListItem>
-                  <ListItem disablePadding sx={{ display: "list-item" }}>
-                    {t("languages.ru")}
+                  <ListItem disablePadding sx={{ display: 'list-item' }}>
+                    {t('languages.ru')}
                   </ListItem>
                 </Typography>
               </List>
@@ -265,25 +243,21 @@ const Resume: React.FC = () => {
       {mediumScreen && (
         <S.SectionLangueges>
           <S.ExpTitle>
-            <Typography variant="h3">{t("resume.language")}</Typography>
+            <Typography variant="h3">{t('resume.language')}</Typography>
           </S.ExpTitle>
-          <List sx={{ listStyleType: "disc" }}>
-            <Typography
-              variant="h5"
-              lineHeight="1.7"
-              sx={{ fontSize: fontSizeH4 }}
-            >
-              <ListItem disablePadding sx={{ display: "list-item" }}>
-                {t("languages.en")}
+          <List sx={{ listStyleType: 'disc' }}>
+            <Typography variant="h5" lineHeight="1.7" sx={{ fontSize: fontSizeH4 }}>
+              <ListItem disablePadding sx={{ display: 'list-item' }}>
+                {t('languages.en')}
               </ListItem>
-              <ListItem disablePadding sx={{ display: "list-item" }}>
-                {t("languages.fr")}
+              <ListItem disablePadding sx={{ display: 'list-item' }}>
+                {t('languages.fr')}
               </ListItem>
-              <ListItem disablePadding sx={{ display: "list-item" }}>
-                {t("languages.ukr")}
+              <ListItem disablePadding sx={{ display: 'list-item' }}>
+                {t('languages.ukr')}
               </ListItem>
-              <ListItem disablePadding sx={{ display: "list-item" }}>
-                {t("languages.ru")}
+              <ListItem disablePadding sx={{ display: 'list-item' }}>
+                {t('languages.ru')}
               </ListItem>
             </Typography>
           </List>
@@ -292,22 +266,22 @@ const Resume: React.FC = () => {
       <S.Empty />
       <S.Hobby>
         <S.TitleHobby>
-          <Typography variant="h3">{t("resume.hobby")}</Typography>
+          <Typography variant="h3">{t('resume.hobby')}</Typography>
         </S.TitleHobby>
         <S.SectionHobby1>
-          <Typography variant="h4">{t("hobby.voyages")}</Typography>
+          <Typography variant="h4">{t('hobby.voyages')}</Typography>
         </S.SectionHobby1>
         <S.SectionHobby2>
-          <Typography variant="h4">{t("hobby.yoga")}</Typography>
+          <Typography variant="h4">{t('hobby.yoga')}</Typography>
         </S.SectionHobby2>
         <S.SectionHobby3>
-          <Typography variant="h4">{t("hobby.bricolage")}</Typography>
+          <Typography variant="h4">{t('hobby.bricolage')}</Typography>
         </S.SectionHobby3>
         <S.SectionHobby4>
-          <Typography variant="h4">{t("hobby.lecture")}</Typography>
+          <Typography variant="h4">{t('hobby.lecture')}</Typography>
         </S.SectionHobby4>
         <S.SectionHobby5>
-          <Typography variant="h4">{t("hobby.guitare")}</Typography>
+          <Typography variant="h4">{t('hobby.guitare')}</Typography>
         </S.SectionHobby5>
       </S.Hobby>
     </S.MainContainer>

@@ -38,7 +38,6 @@ export const Picture = styled('img')`
   border: 3px inset red;
   border-style: ridge;
   box-shadow: 0 0 15px 3px rgba(86, 6, 6, 0.9);
-
   width: 100%;
 
   grid-column: 1;
@@ -49,7 +48,7 @@ export const ButtonMore = styled('button')`
   grid-column: 1;
   grid-row: 1;
   position: absolute;
-  top: 84%;
+  top: 76%;
   left: 54%;
   letter-spacing: 0.06em;
   overflow: hidden;
@@ -96,5 +95,9 @@ export const ButtonMore = styled('button')`
   }
   &:hover:before {
     transform: translateX(15em);
+  }
+
+  @media (max-width: 350px) {
+    top: 66%;
   }
 `;

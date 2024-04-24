@@ -1,5 +1,6 @@
 import { Typography, useMediaQuery } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import { Helmet } from 'react-helmet';
 import Carousel from '../../shared/carousel3D/carousel3d';
 import { theme } from '../../app/app';
 import ProjectsMobile from './projectsMobile';
@@ -13,6 +14,14 @@ const Projects: React.FC = () => {
 
   return (
     <S.MainContainer>
+      <Helmet>
+        <title>Projets full stack développeur</title>
+        <meta name="description" content="Mes projects Full-stack développeur web portfolio Il-de-France" />
+        <meta
+          name="keywords"
+          content="Mes projects, Full-stack, développeur web, portfolio, développeur react, développeur node.js"
+        />
+      </Helmet>
       <Typography
         variant="h1"
         sx={{

@@ -49,6 +49,7 @@ const ProjectsMobile: React.FC = () => {
               {t('carousel3d.button_project')}
             </Typography>
           </S.ButtonMore>
+          *
         </S.PictureContainer>
       ))}
     </S.MobileContainer>
