@@ -4,11 +4,19 @@ import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
 import WalkingCat from '../components/walkingCat';
 import img1 from '../../images/crown.png';
-import img2 from '../../images/puzzl.png';
 
 import * as S from './home.styled';
 
-const arrayTechnologies = ['React.js', 'Node.js', 'SQL', 'Firebase', 'Postgres', 'MaterialUI', 'Typescript', 'GitHub'];
+const arrayTechnologies = [
+  'React.js',
+  'Node.js',
+  'SQL',
+  'PostgreSQL',
+  'Firebase',
+  'MaterialUI',
+  'Typescript',
+  'GitHub',
+];
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
@@ -129,48 +137,20 @@ const Home: React.FC = () => {
               onMouseOver={() => showCardText(index + 1)}
               onTouchStart={() => showCardText(index + 1)}>
               <S.ElImg
-                src={img2}
+                src={require(`../../images/${item}.png`)}
                 id={`card${index + 1}`}
                 className="card"
-                // onMouseOver={() => showCardText(index + 1)}
-                // onTouchStart={() => showCardText(index + 1)}
                 onMouseOut={() => setOpen(false)}
                 onTouchEnd={() => setOpen(false)}
               />
               <S.ElImgHide
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-                src={require(`../../images/${item}.png`)}
+                src={require(`../../images/${item}1.png`)}
                 id={`hide${index + 1}`}
                 className="hide"
-                // onMouseOver={() => showCardText(index + 1)}
-                // onTouchStart={() => showCardText(index + 1)}
                 onMouseOut={() => setOpen(true)}
                 onTouchEnd={() => setOpen(true)}
               />
-              <S.ElText index={index + 1}>
-                <Typography
-                  variant="h5"
-                  id={`text${index + 1}`}
-                  color="colorBlack.main"
-                  onMouseOver={() => showCardText(index + 1)}
-                  onTouchStart={() => showCardText(index + 1)}
-                  onMouseOut={() => setOpen(false)}
-                  onTouchEnd={() => setOpen(true)}
-                  onClick={() => console.log('onClickText')}
-                  sx={{
-                    fontSize: {
-                      xxs: '0.7rem',
-                      xs: '0.7rem',
-                      sm: '0.8rem',
-                      md: '1.1rem',
-                      lg: '1.2rem',
-                      xl: '1.5rem',
-                      xxl: '1.7rem',
-                    },
-                  }}>
-                  {item}
-                </Typography>
-              </S.ElText>
             </S.Element>
           ))}
         </S.Puzzle>

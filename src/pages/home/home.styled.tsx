@@ -251,7 +251,7 @@ export const ElText = styled('div')<{ index: number }>`
   writing-mode: vertical-lr;
   transform: scale(-1);
   z-index: 100;
-  cursor: pointer;
+  cursor: default;
 
   @media (max-width: 568px) {
     right: ${({ index }) => (index === 1 || index === 4 || index === 5 || index === 8 ? '30%' : '10%')};
