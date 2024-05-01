@@ -1,8 +1,8 @@
-import { styled } from "@mui/material/styles";
-import img1 from "../../images/2ecran.png";
-import img from "../../images/pont.png";
+import { styled } from '@mui/material/styles';
+import img1 from '../../images/2ecran.png';
+import img from '../../images/pont.png';
 
-export const MainContainer = styled("div")`
+export const MainContainer = styled('div')`
   width: 100%;
   overflow-x: hidden;
 
@@ -10,20 +10,13 @@ export const MainContainer = styled("div")`
   }
 `;
 
-export const TitreColor = styled("div")`
+export const TitreColor = styled('div')`
   transition: 500ms;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; //dedcdca9
   background-clip: text;
 
-  background: linear-gradient(
-    45deg,
-    #ffffff,
-    #a1a1a1,
-    #ffffff,
-    #a1a1a1,
-    #ffffff
-  );
+  background: linear-gradient(45deg, #ffffff, #a1a1a1, #ffffff, #a1a1a1, #ffffff);
 
   background-size: 3200px 200px;
   animation: gradient 15s linear infinite;
@@ -43,7 +36,7 @@ export const TitreColor = styled("div")`
   }
 `;
 
-export const GridContainer = styled("div")`
+export const GridContainer = styled('div')`
   width: 100%;
   height: 100vh;
   display: grid;
@@ -65,7 +58,7 @@ export const GridContainer = styled("div")`
   }
 `;
 
-export const Side = styled("div")`
+export const Side = styled('div')`
   text-align: center;
   transition: transform 0.3s ease-in-out;
 `;
@@ -88,18 +81,16 @@ export const RightSide1ecran = styled(Side)`
   color: ${({ theme }) => theme.palette.secondary.main};
 `;
 
-export const ElAnimation = styled("div")`
+export const ElAnimation = styled('div')`
   &:hover .hide {
     animation: none;
-    -webkit-animation: flip-in-hor-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-      both;
+    -webkit-animation: flip-in-hor-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     animation: flip-in-hor-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
 
   &:hover .card {
     animation: none;
-    -webkit-animation: flip-in-hor-bottom 0.5s
-      cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    -webkit-animation: flip-in-hor-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     animation: flip-in-hor-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
 
@@ -164,7 +155,7 @@ export const ElAnimation = styled("div")`
   }
 `;
 
-export const Puzzle = styled("div")`
+export const Puzzle = styled('div')`
   grid-column: 1 / span 2;
   grid-row: 2;
   display: grid;
@@ -177,20 +168,10 @@ export const Puzzle = styled("div")`
   margin-left: 24vw;
   grid-template-columns: 9.375% 3.125% 6.25% 3.125% 6.25% 3.125% 6.25% 3.125% 6.25% 3.125% 6.25% 3.125% 6.25% 3.125% 9.375%;
 
-  @media (max-width: 1200px) {
-    width: 96vw;
-    margin-left: 24vw;
-  }
-
   @media (max-width: 960px) {
     width: 112vw;
     margin-left: 28vw;
     padding-top: 0;
-  }
-
-  @media (max-width: 760px) {
-    width: 112vw;
-    margin-left: 28vw;
   }
 
   @media (max-width: 568px) {
@@ -211,10 +192,7 @@ export const Puzzle = styled("div")`
 
 export const Element = styled(ElAnimation)<{ index: number }>`
   grid-row: 1;
-  grid-column: ${({ index }) =>
-    index === 1 || index === 2
-      ? `${index} / span 2`
-      : `${index + (index - 2)} / span 2`};
+  grid-column: ${({ index }) => (index === 1 || index === 2 ? `${index} / span 2` : `${index + (index - 2)} / span 2`)};
 
   @media (max-width: 568px) {
     grid-row: ${({ index }) => (index < 5 ? 1 : 2)};
@@ -230,15 +208,11 @@ export const Element = styled(ElAnimation)<{ index: number }>`
   position: relative;
 `;
 
-export const ElImg = styled("img")`
+export const ElImg = styled('img')`
   grid-row: 2;
   width: 12vw;
   display: block;
 
-  @media (max-width: 1200px) {
-    width: 12vw;
-  }
-
   @media (max-width: 960px) {
     width: 14vw;
   }
@@ -252,14 +226,10 @@ export const ElImg = styled("img")`
   }
 `;
 
-export const ElImgHide = styled("img")`
+export const ElImgHide = styled('img')`
   width: 12vw;
   display: none;
 
-  @media (max-width: 1200px) {
-    width: 12vw;
-  }
-
   @media (max-width: 960px) {
     width: 14vw;
   }
@@ -273,23 +243,22 @@ export const ElImgHide = styled("img")`
   }
 `;
 
-export const ElText = styled("div")<{ index: number }>`
+export const ElText = styled('div')<{ index: number }>`
   position: absolute;
   bottom: 5%;
-  right: ${({ index }) => (index === 1 || index === 8 ? "30%" : "10%")};
-  color: ${({ index }) => (index > 3 ? "white" : "inherit")};
+  right: ${({ index }) => (index === 1 || index === 8 ? '30%' : '10%')};
+  color: ${({ index }) => (index > 3 ? 'white' : 'inherit')};
   writing-mode: vertical-lr;
   transform: scale(-1);
   z-index: 100;
   cursor: pointer;
 
   @media (max-width: 568px) {
-    right: ${({ index }) =>
-      index === 1 || index === 4 || index === 5 || index === 8 ? "30%" : "10%"};
+    right: ${({ index }) => (index === 1 || index === 4 || index === 5 || index === 8 ? '30%' : '10%')};
   }
 `;
 
-export const TitleLeft1ecran = styled("div")`
+export const TitleLeft1ecran = styled('div')`
   margin-top: 14vh;
   grid-column: 1 / span 2;
   grid-row: 1;
@@ -333,7 +302,7 @@ export const TitleLeft1ecran = styled("div")`
   }
 `;
 
-export const TitleRight1ecran = styled("div")`
+export const TitleRight1ecran = styled('div')`
   margin-top: 14vh;
   grid-column: 1 / span 2;
   grid-row: 1;
@@ -349,12 +318,12 @@ export const TitleRight1ecran = styled("div")`
   }
 `;
 
-export const LogoContainer = styled("div")`
+export const LogoContainer = styled('div')`
   text-align: center;
   padding-top: 20vh;
 `;
 
-export const CatContainer = styled("div")`
+export const CatContainer = styled('div')`
   position: absolute;
   grid-row: 3;
   grid-column: 1 / span 2;
@@ -366,7 +335,7 @@ export const CatContainer = styled("div")`
   }
 `;
 
-export const ImgCloudContainer = styled("div")`
+export const ImgCloudContainer = styled('div')`
   margin-top: -7vh;
   grid-row: 1;
   grid-column: 1 / span 2;
@@ -378,15 +347,11 @@ export const ImgCloudContainer = styled("div")`
   background-repeat: no-repeat;
 `;
 
-export const GridContainer2ecran = styled("div")`
+export const GridContainer2ecran = styled('div')`
   width: 100%;
   height: 98vh;
   display: grid;
   grid-template-columns: 50% 50%;
-
-  @media (max-width: 1200px) {
-    /* height: 70vh; */
-  }
 `;
 
 export const LeftSide2ecran = styled(Side)`
@@ -407,7 +372,7 @@ export const RightSide2ecran = styled(Side)`
   color: ${({ theme }) => theme.palette.secondary.main};
 `;
 
-export const ImgLeft2ecran = styled("img")`
+export const ImgLeft2ecran = styled('img')`
   width: 90%;
   margin-top: 10vh;
   padding-right: 12%;
@@ -419,7 +384,7 @@ export const ImgLeft2ecran = styled("img")`
   }
 `;
 
-export const TitleLeft2ecran = styled("div")`
+export const TitleLeft2ecran = styled('div')`
   grid-column: 1;
   grid-row: 1;
   text-align: center;
@@ -432,7 +397,7 @@ export const TitleLeft2ecran = styled("div")`
   }
 `;
 
-export const TitleRight2ecran = styled("div")`
+export const TitleRight2ecran = styled('div')`
   grid-column: 1;
   grid-row: 1;
   text-align: center;
@@ -445,7 +410,7 @@ export const TitleRight2ecran = styled("div")`
   }
 `;
 
-export const Text2ecran = styled("div")`
+export const Text2ecran = styled('div')`
   grid-column: 1 / span 2;
   grid-row: 1;
   place-self: center;

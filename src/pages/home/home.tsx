@@ -123,23 +123,27 @@ const Home: React.FC = () => {
         </S.TitleRight1ecran>
         <S.Puzzle>
           {arrayTechnologies.map((item, index) => (
-            <S.Element index={index + 1} key={item}>
+            <S.Element
+              index={index + 1}
+              key={item}
+              onMouseOver={() => showCardText(index + 1)}
+              onTouchStart={() => showCardText(index + 1)}>
               <S.ElImg
                 src={img2}
                 id={`card${index + 1}`}
                 className="card"
-                onMouseOver={() => showCardText(index + 1)}
-                onTouchStart={() => showCardText(index + 1)}
+                // onMouseOver={() => showCardText(index + 1)}
+                // onTouchStart={() => showCardText(index + 1)}
                 onMouseOut={() => setOpen(false)}
-                onTouchEnd={() => setOpen(true)}
+                onTouchEnd={() => setOpen(false)}
               />
               <S.ElImgHide
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                 src={require(`../../images/${item}.png`)}
                 id={`hide${index + 1}`}
                 className="hide"
-                onMouseOver={() => showCardText(index + 1)}
-                onTouchStart={() => showCardText(index + 1)}
+                // onMouseOver={() => showCardText(index + 1)}
+                // onTouchStart={() => showCardText(index + 1)}
                 onMouseOut={() => setOpen(true)}
                 onTouchEnd={() => setOpen(true)}
               />
