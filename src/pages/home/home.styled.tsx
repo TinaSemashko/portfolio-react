@@ -243,21 +243,6 @@ export const ElImgHide = styled('img')`
   }
 `;
 
-export const ElText = styled('div')<{ index: number }>`
-  position: absolute;
-  bottom: 5%;
-  right: ${({ index }) => (index === 1 || index === 8 ? '30%' : '10%')};
-  color: ${({ index }) => (index > 3 ? 'white' : 'inherit')};
-  writing-mode: vertical-lr;
-  transform: scale(-1);
-  z-index: 100;
-  cursor: default;
-
-  @media (max-width: 568px) {
-    right: ${({ index }) => (index === 1 || index === 4 || index === 5 || index === 8 ? '30%' : '10%')};
-  }
-`;
-
 export const TitleLeft1ecran = styled('div')`
   margin-top: 14vh;
   grid-column: 1 / span 2;

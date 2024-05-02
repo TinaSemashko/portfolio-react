@@ -1,28 +1,28 @@
-import { useState } from "react";
-import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
-import Divider from "@mui/material/Divider";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import MenuIcon from "@mui/icons-material/Menu";
-import { useTranslation } from "react-i18next";
-import { AppBar, Toolbar, Drawer, IconButton, Typography } from "@mui/material";
-import logo from "../../images/logo.png";
-import { useLocation, useNavigate } from "react-router";
-import { Routes } from "../../app/routes";
-import CloseIcon from "@mui/icons-material/Close";
-import { MenuItems } from "../../constants/menuItems";
-import LangButton from "../langButton";
-import CottageIcon from "@mui/icons-material/Cottage";
-import LaptopChromebookIcon from "@mui/icons-material/LaptopChromebook";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import SailingIcon from "@mui/icons-material/Sailing";
-import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact";
-import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
-import SocialLinks from "../socialLinks";
+import { useState } from 'react';
+import Box from '@mui/material/Box';
+import CssBaseline from '@mui/material/CssBaseline';
+import Divider from '@mui/material/Divider';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import MenuIcon from '@mui/icons-material/Menu';
+import { useTranslation } from 'react-i18next';
+import { AppBar, Toolbar, Drawer, IconButton, Typography } from '@mui/material';
+import logo from '../../images/logo.png';
+import { useLocation, useNavigate } from 'react-router';
+import { Routes } from '../../app/routes';
+import CloseIcon from '@mui/icons-material/Close';
+import { MenuItems } from '../../constants/menuItems';
+import LangButton from '../langButton';
+import CottageIcon from '@mui/icons-material/Cottage';
+import LaptopChromebookIcon from '@mui/icons-material/LaptopChromebook';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import SailingIcon from '@mui/icons-material/Sailing';
+import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
+import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
+import SocialLinks from '../socialLinks';
 
-import * as S from "./topbar.styled";
+import * as S from './topbar.styled';
 
 const menuItemsArray = Object.values(MenuItems);
 const menuIconsArray = [
@@ -43,56 +43,52 @@ const TopBar: React.FC = () => {
   const isSelected = (item: string): boolean => pathname.includes(item);
 
   const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
+    setMobileOpen(prevState => !prevState);
   };
 
   const drawer = (
     <Box
       onClick={handleDrawerToggle}
       sx={{
-        textAlign: "center",
-        // background: "linear-gradient(180deg, #c3afa3 10%, #bc572cc3 100%)",
-        backgroundColor: "colorBlack.main",
-        color: "primary.main",
-        height: "100%",
-      }}
-    >
+        textAlign: 'center',
+        backgroundColor: 'colorBlack.main',
+        color: 'primary.main',
+        height: '100%',
+      }}>
       <S.CloseIconStyle>
         <Typography variant="h5" className="close">
-          {t("menu.close")}
+          {t('menu.close')}
         </Typography>
-        <CloseIcon sx={{ fontSize: "2rem" }} />
+        <CloseIcon sx={{ fontSize: '2rem' }} />
       </S.CloseIconStyle>
 
       <List
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-around",
-        }}
-      >
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-around',
+        }}>
         {menuItemsArray.map((item, index) => (
           <ListItem key={item} disablePadding>
-            <S.StyledListItemButton selected={isSelected(item)}>
+            <S.StyledListItemButton
+              selected={isSelected(item)}
+              sx={{ '&::first-letter': { textTransform: 'uppercase' } }}>
               <S.Dot>{menuIconsArray[index]}</S.Dot>
               <ListItemText
-                primary={item}
+                primary={t(`menu.${item}`)}
                 onClick={() => navigate(Routes[item as keyof typeof Routes])}
                 primaryTypographyProps={{
-                  fontSize: "3rem",
-                  textTransform: "capitalize",
+                  fontSize: '3rem',
                   pl: 4,
-                  color: "primary.main",
-                }}
-              />
+                  color: 'primary.main',
+                }}>
+                <Typography sx={{ '&::first-letter': { textTransform: 'uppercase' } }}>{t(`menu.${item}`)}</Typography>
+              </ListItemText>
             </S.StyledListItemButton>
           </ListItem>
         ))}
       </List>
-      <Divider
-        variant="middle"
-        sx={{ backgroundColor: "primary.main", marginTop: "10vh" }}
-      />
+      <Divider variant="middle" sx={{ backgroundColor: 'primary.main', marginTop: '10vh' }} />
       <S.Social>
         <SocialLinks />
       </S.Social>
@@ -102,25 +98,22 @@ const TopBar: React.FC = () => {
   return (
     <Box
       sx={{
-        display: "flex",
-        backgroundColor: "transparent",
-      }}
-    >
+        display: 'flex',
+        backgroundColor: 'transparent',
+      }}>
       <CssBaseline />
       <AppBar
         component="nav"
         position="absolute"
         sx={{
-          backgroundColor: "#ffe4c43f",
-        }}
-      >
+          backgroundColor: '#ffe4c43f',
+        }}>
         <Toolbar
           sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            width: "100%",
-          }}
-        >
+            display: 'flex',
+            justifyContent: 'space-between',
+            width: '100%',
+          }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -128,38 +121,28 @@ const TopBar: React.FC = () => {
             onClick={handleDrawerToggle}
             sx={{
               mr: 2,
-              display: { lg: "none" },
-            }}
-          >
+              display: { lg: 'none' },
+            }}>
             <MenuIcon />
           </IconButton>
           <S.FlexBox>
-            <img
-              src={logo}
-              alt="logo"
-              width="40vw"
-              onClick={() => navigate(Routes.home)}
-            />
+            <img src={logo} alt="logo" width="40vw" onClick={() => navigate(Routes.home)} />
             <S.ListBox>
               <List
                 sx={{
                   display: {
-                    xxs: "none",
-                    xs: "none",
-                    sm: "none",
-                    md: "none",
-                    lg: "flex",
+                    xxs: 'none',
+                    xs: 'none',
+                    sm: 'none',
+                    md: 'none',
+                    lg: 'flex',
                   },
-                }}
-              >
+                }}>
                 {menuItemsArray.map((item, index) => (
                   <ListItem key={index} disablePadding>
                     <S.StyledListItemButton
                       selected={isSelected(item)}
-                      onClick={() =>
-                        navigate(Routes[item as keyof typeof Routes])
-                      }
-                    >
+                      onClick={() => navigate(Routes[item as keyof typeof Routes])}>
                       <Typography variant="h6" fontWeight="900">
                         {t(`menu.${item}`)}
                       </Typography>
@@ -169,11 +152,7 @@ const TopBar: React.FC = () => {
               </List>
             </S.ListBox>
 
-            <LangButton
-              colorPrime={false}
-              iconWithoutSlash={false}
-              selectMode={true}
-            />
+            <LangButton colorPrime={false} iconWithoutSlash={false} selectMode={true} />
           </S.FlexBox>
         </Toolbar>
       </AppBar>
@@ -188,18 +167,17 @@ const TopBar: React.FC = () => {
           }}
           sx={{
             display: {
-              xxs: "block",
-              xs: "block",
-              sm: "block",
-              md: "block",
-              lg: "none",
+              xxs: 'block',
+              xs: 'block',
+              sm: 'block',
+              md: 'block',
+              lg: 'none',
             },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: { xxs: "100%", xs: "100%", sm: "60%" },
+            '& .MuiDrawer-paper': {
+              boxSizing: 'border-box',
+              width: { xxs: '100%', xs: '100%', sm: '60%' },
             },
-          }}
-        >
+          }}>
           {drawer}
         </Drawer>
       </Box>
