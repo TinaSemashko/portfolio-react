@@ -62,6 +62,11 @@ export const Title = styled('div')<{
       opacity: 1;
     }
   }
+
+  @media (max-width: 1500px) {
+    width: 95%;
+    left: ${({ windowWidth }) => `calc(0.05px * ${windowWidth})`};
+  }
 `;
 
 export const TextRainbow = styled('div')`

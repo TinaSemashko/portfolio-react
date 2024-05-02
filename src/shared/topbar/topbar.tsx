@@ -45,10 +45,10 @@ const fontSizeMenu = {
 };
 
 const topMargin = {
-  xxs: '47vh',
-  xs: '40vh',
-  sm: '32vh',
-  md: '27vh',
+  xxs: '30vh',
+  xs: '25vh',
+  sm: '30vh',
+  md: '32vh',
   lg: '20vh',
   xl: '10vh',
   xxl: '5vh',
