@@ -34,6 +34,26 @@ const menuIconsArray = [
   <ConnectWithoutContactIcon />,
 ];
 
+const fontSizeMenu = {
+  xxs: '1.2rem',
+  xs: '1.6rem',
+  sm: '2rem',
+  md: '2.3rem',
+  lg: '2.4rem',
+  xl: '2.7rem',
+  xxl: '3rem',
+};
+
+const topMargin = {
+  xxs: '47vh',
+  xs: '40vh',
+  sm: '32vh',
+  md: '27vh',
+  lg: '20vh',
+  xl: '10vh',
+  xxl: '5vh',
+};
+
 const TopBar: React.FC = () => {
   const { t } = useTranslation();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -70,25 +90,22 @@ const TopBar: React.FC = () => {
         }}>
         {menuItemsArray.map((item, index) => (
           <ListItem key={item} disablePadding>
-            <S.StyledListItemButton
-              selected={isSelected(item)}
-              sx={{ '&::first-letter': { textTransform: 'uppercase' } }}>
+            <S.StyledListItemButton selected={isSelected(item)}>
               <S.Dot>{menuIconsArray[index]}</S.Dot>
               <ListItemText
                 primary={t(`menu.${item}`)}
                 onClick={() => navigate(Routes[item as keyof typeof Routes])}
                 primaryTypographyProps={{
-                  fontSize: '3rem',
+                  fontSize: fontSizeMenu,
                   pl: 4,
                   color: 'primary.main',
-                }}>
-                <Typography sx={{ '&::first-letter': { textTransform: 'uppercase' } }}>{t(`menu.${item}`)}</Typography>
-              </ListItemText>
+                }}
+              />
             </S.StyledListItemButton>
           </ListItem>
         ))}
       </List>
-      <Divider variant="middle" sx={{ backgroundColor: 'primary.main', marginTop: '10vh' }} />
+      <Divider variant="middle" sx={{ backgroundColor: 'primary.main', marginTop: topMargin }} />
       <S.Social>
         <SocialLinks />
       </S.Social>
