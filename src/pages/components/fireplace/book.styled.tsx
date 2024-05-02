@@ -1,14 +1,11 @@
-import { styled } from "@mui/material/styles";
-import paper1 from "../../../images/paper.png";
+import { styled } from '@mui/material/styles';
+import paper1 from '../../../images/paper.png';
 
-export const MainContainer = styled("div")`
+export const MainContainer = styled('div')`
   position: relative;
-  color: red;
-  @media (max-width: 750px) {
-  }
 `;
 
-export const CardContainer = styled("div")<{
+export const CardContainer = styled('div')<{
   windowWidth: number;
   windowHeight: number;
 }>`
@@ -16,7 +13,7 @@ export const CardContainer = styled("div")<{
   height: ${({ windowHeight }) => `calc(0.27px * ${windowHeight})`};
   position: absolute;
   top: ${({ windowHeight }) => `calc(0.32 * ${windowHeight}px)`};
-  left: ${({ windowWidth }) => `calc(0.25 * ${windowWidth}px)`};
+  left: ${({ windowWidth }) => `calc(0.30 * ${windowWidth}px)`};
 
   perspective: 2000px;
   transform: rotateX(50deg) skewX(20deg) translate(-50px, -400px);
@@ -29,14 +26,14 @@ export const CardContainer = styled("div")<{
   }
 `;
 
-export const ImgContainer = styled("div")`
+export const ImgContainer = styled('div')`
   width: 100%;
   height: 100%;
   position: relative;
   transform-origin: left;
 `;
 
-export const TextContainer = styled("div")<{
+export const TextContainer = styled('div')<{
   windowWidth: number;
   windowHeight: number;
 }>`
@@ -55,7 +52,7 @@ export const TextContainer = styled("div")<{
   }
 `;
 
-export const ImgVert = styled("img")`
+export const ImgVert = styled('img')`
   height: 100%;
   width: 100%;
 `;

@@ -1,5 +1,7 @@
 import { styled } from '@mui/material/styles';
 
 export const MainContainer = styled('div')`
-  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

@@ -74,6 +74,8 @@ const TopBar: React.FC = () => {
         backgroundColor: 'colorBlack.main',
         color: 'primary.main',
         height: '100%',
+        border: 'solid 1.2rem',
+        borderColor: '#82828269',
       }}>
       <S.CloseIconStyle>
         <Typography variant="h5" className="close">
@@ -90,7 +92,7 @@ const TopBar: React.FC = () => {
         }}>
         {menuItemsArray.map((item, index) => (
           <ListItem key={item} disablePadding>
-            <S.StyledListItemButton selected={isSelected(item)}>
+            <S.StyledListItemButton selected={isSelected(item)} sx={{ textShadow: '0.1em 0.1em 0.2em white' }}>
               <S.Dot>{menuIconsArray[index]}</S.Dot>
               <ListItemText
                 primary={t(`menu.${item}`)}

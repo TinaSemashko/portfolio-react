@@ -1,17 +1,13 @@
-import { styled } from "@mui/material/styles";
+import { styled } from '@mui/material/styles';
 
-export const MainContainer = styled("div")`
+export const MainContainer = styled('div')`
   width: 100vw;
   height: 100vh;
   max-height: 100vh;
   position: relative;
-
-  @media (max-width: 1500px) {
-    /* height: 50vh; */
-  }
 `;
 
-export const VideoAccueil = styled("video")`
+export const VideoAccueil = styled('video')`
   width: 100%;
   object-fit: cover;
   text-align: center;
@@ -23,14 +19,15 @@ export const VideoAccueil = styled("video")`
   }
 `;
 
-export const Title = styled("div")<{
+export const Title = styled('div')<{
   //top 20%
   windowWidth: number;
   windowHeight: number;
 }>`
   position: absolute;
+  width: 90%;
   top: ${({ windowHeight }) => `calc(0.20 * ${windowHeight}px)`};
-  left: ${({ windowWidth }) => `calc(0.15 * ${windowWidth}px)`};
+  left: ${({ windowWidth }) => `calc(0.03 * ${windowWidth}px)`};
   text-align: center;
   color: ${({ theme }) => theme.palette.primary.main};
   -webkit-animation: swirl-in-fwd 0.6s ease-out both;
@@ -67,20 +64,11 @@ export const Title = styled("div")<{
   }
 `;
 
-export const TextRainbow = styled("div")`
+export const TextRainbow = styled('div')`
   width: 100%;
   height: 100%;
   text-align: center;
-  background: linear-gradient(
-    to right,
-    red,
-    orange,
-    yellow,
-    green,
-    cyan,
-    blue,
-    violet
-  );
+  background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet);
   background-size: 400% 400%;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -113,7 +101,7 @@ export const TextRainbow = styled("div")`
   }
 `;
 
-export const CatContainer = styled("div")<{
+export const CatContainer = styled('div')<{
   //top 33%
   windowHeight: number;
 }>`
@@ -125,45 +113,23 @@ export const CatContainer = styled("div")<{
   }
 `;
 
-export const HistoryContainer = styled("div")<{
+export const HistoryContainer = styled('div')<{
   //top 55%
   windowWidth: number;
   windowHeight: number;
 }>`
   position: absolute;
   top: ${({ windowHeight }) => `calc(0.55px * ${windowHeight})`};
-  left: ${({ windowWidth }) => `calc(0.33px * ${windowWidth})`};
+  left: ${({ windowWidth }) => `calc(0.23px * ${windowWidth})`};
   color: ${({ theme }) => theme.palette.primary.main};
   text-align: center;
-
-  @media (max-width: 750px) {
-  }
 `;
 
-export const LogoContainer = styled("div")`
-  text-align: center;
-  padding-top: 20vh;
-`;
-
-export const Line = styled("hr")<{
-  windowWidth: number;
-  windowHeight: number;
-  videoWidth: number;
-  videoHeight: number;
-}>`
-  color: yellow;
-  width: 100%;
-  position: absolute;
-  /* top: ${({ windowHeight }) => `calc(520 * ${windowHeight}px/1080)`}; */
-  top: ${({ videoHeight }) => `calc(520 * ${videoHeight}px/1080)`};
-`;
-export const Langbt = styled("div")<{
+export const Langbt = styled('div')<{
   //top 0
   windowWidth: number;
   windowHeight: number;
 }>`
-  /* position: absolute;
-  top: 0; */
   left: ${({ windowWidth }) => `calc(0.40px * ${windowWidth})`};
   height: ${({ windowHeight }) => `calc(0.5px * ${windowHeight})`};
   color: ${({ theme }) => theme.palette.colorBlack.main};

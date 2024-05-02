@@ -1,17 +1,13 @@
-import { ListItemButton } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import { ListItemButton } from '@mui/material';
+import { styled } from '@mui/material/styles';
 
-export const MainContainer = styled("div")`
+export const MainContainer = styled('div')`
   width: 100%;
   height: 100vh;
-  background: linear-gradient(
-    315deg,
-    var(--primary-color-opacity),
-    var(--secondary-color-opacity)
-  );
+  background: linear-gradient(315deg, var(--primary-color-opacity), var(--secondary-color-opacity));
 `;
 
-export const CloseIconStyle = styled("div")`
+export const CloseIconStyle = styled('div')`
   display: flex;
   justify-content: end;
   align-items: center;
@@ -61,7 +57,7 @@ export const CloseIconStyle = styled("div")`
   }
 `;
 
-export const ListBox = styled("div")`
+export const ListBox = styled('div')`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -81,14 +77,11 @@ export const StyledListItemButton = styled(ListItemButton)`
 
   color: #0000;
   padding-block: var(--b);
-  background: linear-gradient(var(--c) 50%, var(--c1) 0) 0%
-      calc(100% - var(--_p, 0%)) / 100% 200%,
-    linear-gradient(var(--c) 0 0) 0% var(--_p, 0%) / var(--_p, 0%) var(--b)
-      no-repeat;
+  background: linear-gradient(var(--c) 50%, var(--c1) 0) 0% calc(100% - var(--_p, 0%)) / 100% 200%,
+    linear-gradient(var(--c) 0 0) 0% var(--_p, 0%) / var(--_p, 0%) var(--b) no-repeat;
   -webkit-background-clip: text, padding-box;
   background-clip: text, padding-box;
-  transition: 0.3s var(--_s, 0s) linear,
-    background-size 0.3s calc(0.3s - var(--_s, 0s));
+  transition: 0.3s var(--_s, 0s) linear, background-size 0.3s calc(0.3s - var(--_s, 0s));
 
   &.Mui-selected {
     color: ${({ theme }) => theme.palette.colorBlack.main};
