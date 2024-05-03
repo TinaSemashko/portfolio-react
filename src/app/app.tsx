@@ -53,30 +53,39 @@ export let theme = createTheme({
       // fontFamily: "Rubik Marker Hatch, serif",
       // fontFamily: "Marck Script , cursive",
       fontFamily: 'Kurale , cursive',
+      fontDisplay: 'optional',
     },
     h2: {
       fontFamily: 'Kurale , cursive',
+      fontDisplay: 'optional',
     },
     h3: {
       fontFamily: 'Cormorant Infant, serif',
+      fontDisplay: 'optional',
     },
     h4: {
       fontFamily: 'Kurale , cursive',
+      fontDisplay: 'optional',
     },
     h5: {
       fontFamily: 'Kurale , cursive',
+      fontDisplay: 'optional',
     },
     h6: {
       fontFamily: 'Kurale , cursive',
+      fontDisplay: 'optional',
     },
     body1: {
       fontFamily: 'Kurale , cursive',
+      fontDisplay: 'optional',
     },
     body2: {
       fontFamily: 'Special Elite, cursive',
+      fontDisplay: 'optional',
     },
     subtitle1: {
       fontFamily: 'Times New Roman, serif',
+      fontDisplay: 'optional',
       // fontSize: "8rem",
       // "@media (max-width:750px)": {
       //   fontSize: "2.5rem",

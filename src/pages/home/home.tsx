@@ -138,6 +138,8 @@ const Home: React.FC = () => {
               onTouchStart={() => showCardText(index + 1)}>
               <S.ElImg
                 src={require(`../../images/${item}.webp`)}
+                height="auto"
+                width="100%"
                 alt={item}
                 id={`card${index + 1}`}
                 className="card"
@@ -147,6 +149,8 @@ const Home: React.FC = () => {
               <S.ElImgHide
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                 src={require(`../../images/${item}1.webp`)}
+                height="auto"
+                width="100%"
                 alt={`logo${item}`}
                 id={`hide${index + 1}`}
                 className="hide"
@@ -163,7 +167,7 @@ const Home: React.FC = () => {
       <S.GridContainer2ecran>
         <S.ImgCloudContainer />
         <S.LeftSide2ecran>
-          <S.ImgLeft2ecran src={img1} alt="" />
+          <S.ImgLeft2ecran src={img1} alt="" height="auto" width="100%" />
         </S.LeftSide2ecran>
         <S.RightSide2ecran></S.RightSide2ecran>
         <S.Text2ecran>
