@@ -1,8 +1,8 @@
 import { styled } from '@mui/material/styles';
-import img1 from '../../images/web-dev.png';
-import img2 from '../../images/robot.png';
-import img3 from '../../images/robot2.png';
 import { Button } from '@mui/material';
+import img1 from '../../images/web-dev1.webp';
+import img2 from '../../images/robot.webp';
+import img3 from '../../images/robot2.webp';
 
 export const MainContainer = styled('div')`
   display: flex;

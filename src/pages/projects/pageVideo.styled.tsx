@@ -1,8 +1,8 @@
-import { styled } from "@mui/material/styles";
-import img from "../../images/fon_footer.jpg";
-import { Button } from "@mui/material";
+import { styled } from '@mui/material/styles';
+import img from '../../images/fon_footer.webp';
+import { Button } from '@mui/material';
 
-export const MainContainer = styled("div")`
+export const MainContainer = styled('div')`
   text-align: center;
   padding-top: 10vh;
   display: flex;
@@ -18,7 +18,7 @@ export const MainContainer = styled("div")`
   }
 `;
 
-export const VideoContainer = styled("div")`
+export const VideoContainer = styled('div')`
   width: 90%;
   height: 90vh;
   overflow: hidden;
@@ -29,8 +29,8 @@ export const VideoContainer = styled("div")`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   background-color: ${({ theme }) => theme.palette.secondary.main};
 
   @media (max-width: 1200px) {
@@ -54,13 +54,12 @@ export const VideoContainer = styled("div")`
   }
 `;
 
-export const VideoProjects = styled("video")`
+export const VideoProjects = styled('video')`
   width: 60vw;
   margin-top: 2vh;
   text-align: center;
   object-fit: contain;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
-    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 
   @media (max-width: 1200px) {
     width: 80vw;
@@ -75,7 +74,7 @@ export const VideoProjects = styled("video")`
   }
 `;
 
-export const ButtonsContainer = styled("div")`
+export const ButtonsContainer = styled('div')`
   padding-bottom: 1rem;
   padding-top: 1rem;
   color: ${({ theme }) => theme.palette.colorRed.main};
@@ -102,7 +101,7 @@ export const ButtonVideo = styled(Button)`
   }
 `;
 
-export const FlexBox = styled("div")`
+export const FlexBox = styled('div')`
   width: 100%;
   display: flex;
   justify-content: space-between;

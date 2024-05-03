@@ -1,13 +1,13 @@
-import { styled } from "@mui/material/styles";
-import img1 from "../../images/itworld1.jpg";
-import img2 from "../../images/web-dev.jpg";
-import img3 from "../../images/yoga.jpg";
-import img4 from "../../images/travel.jpg";
-import img5 from "../../images/reading.jpg";
-import img6 from "../../images/busi.jpg";
-import img7 from "../../images/paris1.jpg";
+import { styled } from '@mui/material/styles';
+import img1 from '../../images/itworld1.webp';
+import img2 from '../../images/web-dev.webp';
+import img3 from '../../images/yoga.webp';
+import img4 from '../../images/travel.webp';
+import img5 from '../../images/reading.webp';
+import img6 from '../../images/busi.webp';
+import img7 from '../../images/paris1.webp';
 
-export const MainContainer = styled("div")`
+export const MainContainer = styled('div')`
   width: 100%;
   position: relative;
   margin-bottom: 40vh;
@@ -20,7 +20,7 @@ export const MainContainer = styled("div")`
   }
 `;
 
-export const VideoParallax = styled("video")`
+export const VideoParallax = styled('video')`
   margin: 0 auto;
   min-width: 100%;
   min-height: 100%;
@@ -31,7 +31,7 @@ export const VideoParallax = styled("video")`
   transition: 1s opacity;
 `;
 
-export const ImgMain = styled("div")`
+export const ImgMain = styled('div')`
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -47,7 +47,7 @@ export const ImgMain = styled("div")`
   }
 `;
 
-export const TextContainerAbsolute = styled("div")`
+export const TextContainerAbsolute = styled('div')`
   position: absolute;
   left: 0;
   top: 50%;
@@ -60,7 +60,7 @@ export const TextContainerAbsolute = styled("div")`
   mix-blend-mode: hard-light;
 `;
 
-export const TextContainerBetween = styled("div")`
+export const TextContainerBetween = styled('div')`
   position: relative;
   display: flex;
   justify-content: center;
@@ -201,20 +201,11 @@ export const TextContainerShort6 = styled(TextContainerAbsolute)`
   left: 30%;
 `;
 
-export const TextRainbow = styled("div")`
+export const TextRainbow = styled('div')`
   width: 100%;
   height: 100%;
   text-align: center;
-  background: linear-gradient(
-    to right,
-    red,
-    orange,
-    yellow,
-    green,
-    cyan,
-    blue,
-    violet
-  );
+  background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet);
   background-size: 400% 400%;
   background-clip: text;
   -webkit-text-fill-color: transparent;

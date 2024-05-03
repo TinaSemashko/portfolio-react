@@ -1,8 +1,8 @@
-import { Button } from "@mui/material";
-import { styled } from "@mui/material/styles";
-import img from "../../images/fonCV.jpg";
+import { Button } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import img from '../../images/fonCV.webp';
 
-export const MainContainer = styled("div")`
+export const MainContainer = styled('div')`
   padding-top: 10vh;
   min-height: 100vh;
   width: 100%;
@@ -20,11 +20,10 @@ export const MainContainer = styled("div")`
   }
 `;
 
-export const BackgroundMain = styled("div")`
+export const BackgroundMain = styled('div')`
   background-color: ${({ theme }) => theme.palette.primary.main};
   border: solid;
-  box-shadow: -1px -5px 15px #41465b, 5px 5px 15px #41465b,
-    inset 5px 5px 10px #212121, inset -5px -5px 10px #212121;
+  box-shadow: -1px -5px 15px #41465b, 5px 5px 15px #41465b, inset 5px 5px 10px #212121, inset -5px -5px 10px #212121;
 `;
 
 export const MainGridContainer = styled(BackgroundMain)`
@@ -39,7 +38,7 @@ export const MainGridContainer = styled(BackgroundMain)`
   }
 `;
 
-export const ResumeContainer = styled("div")`
+export const ResumeContainer = styled('div')`
   width: 100%;
   display: grid;
   grid-template-columns: 25% 60% 15%;
@@ -51,24 +50,23 @@ export const ResumeContainer = styled("div")`
   }
 `;
 
-export const PhotoBox = styled("div")`
+export const PhotoBox = styled('div')`
   grid-column: 1;
   grid-row: 1 / span 2;
   text-align: center;
 `;
 
-export const Photo = styled("img")`
+export const Photo = styled('img')`
   width: 15vw;
   padding: 0.5rem;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
-    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 
   @media (max-width: 1200px) {
     width: 20vw;
   }
 `;
 
-export const Title = styled("div")`
+export const Title = styled('div')`
   grid-column: 2;
   grid-row: 1;
   padding-left: 6vh;
@@ -88,7 +86,7 @@ export const ButtonCV = styled(Button)`
   }
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -144,7 +142,7 @@ export const ButtonCV = styled(Button)`
   }
 `;
 
-export const TextBox = styled("div")`
+export const TextBox = styled('div')`
   grid-column: 2 / span 2;
   grid-row: 2;
   padding-left: 10vh;
@@ -184,12 +182,12 @@ export const Line = styled(BackgroundMain)`
   }
 `;
 
-export const Empty = styled("div")`
+export const Empty = styled('div')`
   width: 100%;
   height: 5vh;
 `;
 
-export const ExperienceCommon = styled("div")`
+export const ExperienceCommon = styled('div')`
   padding-top: 5vh;
   padding-bottom: 10vh;
   padding-right: 4vw;
@@ -218,7 +216,7 @@ export const Education = styled(ExperienceCommon)`
   grid-row: 1;
 `;
 
-export const GridExpCompetences = styled("div")`
+export const GridExpCompetences = styled('div')`
   display: grid;
   grid-template-columns: 30% 70%;
   grid-template-rows: 100%;
@@ -230,7 +228,7 @@ export const GridExpCompetences = styled("div")`
   }
 `;
 
-export const GridEducLangueges = styled("div")`
+export const GridEducLangueges = styled('div')`
   display: grid;
   grid-template-columns: 80% 20%;
   grid-template-rows: 100%;
@@ -299,21 +297,20 @@ export const SectionLangueges = styled(SectionAdditional)`
   }
 `;
 
-export const ExpTitle = styled("div")`
+export const ExpTitle = styled('div')`
   padding-bottom: 3vh;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   color: #0ca5e7;
-  text-shadow: 1px 1px 0 #05174b, 1px -1px 0 #05174b, -1px 1px 0 #05174b,
-    -1px -1px 0 #05174b;
+  text-shadow: 1px 1px 0 #05174b, 1px -1px 0 #05174b, -1px 1px 0 #05174b, -1px -1px 0 #05174b;
 
   grid-column: 1 / span 3;
   grid-row: 1;
 `;
 
-export const ExpMain = styled("div")`
+export const ExpMain = styled('div')`
   display: grid;
   grid-template-columns: 45% 10% 45%;
   align-items: center;
@@ -326,7 +323,7 @@ export const EducMain = styled(ExpMain)`
   grid-column: 1 / span 3;
 `;
 
-export const SectionDates = styled("div")`
+export const SectionDates = styled('div')`
   grid-column: 1;
   text-align: right;
 
@@ -335,7 +332,7 @@ export const SectionDates = styled("div")`
   }
 `;
 
-export const SectionPoint = styled("div")`
+export const SectionPoint = styled('div')`
   grid-column: 2;
   height: 30vh;
   margin-top: -2vh;
@@ -350,26 +347,26 @@ export const SectionPoint = styled("div")`
   }
 `;
 
-export const SectionOrganisation = styled("div")`
+export const SectionOrganisation = styled('div')`
   grid-column: 3;
   text-align: left;
   white-space: pre-line;
 `;
 
-export const CoursesTitle = styled("div")`
+export const CoursesTitle = styled('div')`
   margin-top: 8vh;
   grid-column: 1 / span 3;
   text-align: center;
   color: #0ca5e7;
 `;
 
-export const Courses = styled("ul")`
+export const Courses = styled('ul')`
   grid-column: 1 / span 3;
   text-align: left;
   padding-left: 10vw;
 `;
 
-export const Hobby = styled("div")`
+export const Hobby = styled('div')`
   min-height: 30vh;
   width: 80%;
   display: grid;
@@ -382,7 +379,7 @@ export const Hobby = styled("div")`
   padding-right: 8vw;
 `;
 
-export const SectionHobby = styled("div")`
+export const SectionHobby = styled('div')`
   background-color: #05174baf;
   width: 20vw;
   padding-top: 1vh;
@@ -393,8 +390,7 @@ export const SectionHobby = styled("div")`
   justify-content: center;
   align-items: center;
 
-  box-shadow: -1px -5px 15px #41465b, 5px 5px 15px #41465b,
-    inset 5px 5px 10px #212121, inset -5px -5px 10px #212121;
+  box-shadow: -1px -5px 15px #41465b, 5px 5px 15px #41465b, inset 5px 5px 10px #212121, inset -5px -5px 10px #212121;
 
   @keyframes floatAnimation {
     0%,

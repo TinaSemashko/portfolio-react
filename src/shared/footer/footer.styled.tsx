@@ -1,9 +1,9 @@
-import { styled } from "@mui/material/styles";
-import img from "../../images/fon_footer.jpg";
-import { Button } from "@mui/material";
+import { styled } from '@mui/material/styles';
+import img from '../../images/fon_footer.webp';
+import { Button } from '@mui/material';
 
-export const MainContainer = styled("div")<{ isParallax: boolean }>`
-  position: ${({ isParallax }) => (isParallax ? "fixed" : "inherit")};
+export const MainContainer = styled('div')<{ isParallax: boolean }>`
+  position: ${({ isParallax }) => (isParallax ? 'fixed' : 'inherit')};
   bottom: 0;
   left: 0;
   width: 100%;
@@ -28,7 +28,7 @@ export const MainContainer = styled("div")<{ isParallax: boolean }>`
   }
 `;
 
-export const WorkInquiryBox = styled("div")`
+export const WorkInquiryBox = styled('div')`
   margin-top: 2vh;
   width: 60%;
   background: #ffe4c42a;
@@ -42,7 +42,7 @@ export const WorkInquiryBox = styled("div")`
   }
 `;
 
-export const SocialLinks = styled("div")`
+export const SocialLinks = styled('div')`
   display: flex;
 `;
 
@@ -51,7 +51,7 @@ export const ButtonWork = styled(Button)`
   border-image: linear-gradient(45deg, black, rgb(224, 220, 220)) 1;
 `;
 
-export const FlexBox = styled("div")`
+export const FlexBox = styled('div')`
   display: flex;
   justify-content: space-between;
   align-items: center;

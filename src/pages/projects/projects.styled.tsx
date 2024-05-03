@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import img from '../../images/fon_projects1.jpg';
+import img from '../../images/fon_projects1.webp';
 
 export const MainContainer = styled('div')`
   text-align: center;

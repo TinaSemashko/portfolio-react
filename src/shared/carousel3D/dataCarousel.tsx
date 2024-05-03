@@ -2,7 +2,7 @@ import { Carousel3d } from '../../types/projects';
 
 export const imagesCarousel: Carousel3d[] = [
   {
-    imageName: 'img1.png', //teamchallenge
+    imageName: 'img1.webp', //teamchallenge
     descriptions: 'React|Styled-components|Typecript|Mui-material|PostgreSQL|GitHub|Work in the team',
     linkGit: 'private',
     linkProject: 'https://teamchallenge.io/',
@@ -16,7 +16,7 @@ export const imagesCarousel: Carousel3d[] = [
     openVideo: true,
   },
   {
-    imageName: 'img2.png', //diamondCollection
+    imageName: 'img2.webp', //diamondCollection
     descriptions: 'HTML|CSS|Javascript|Local storage for Basket|GitHub',
     linkGit: 'https://github.com/TinaSemashko/ProjetJavascriptAssofac',
     linkProject: 'https://loquacious-empanada-12b1c9.netlify.app/',
@@ -30,7 +30,7 @@ export const imagesCarousel: Carousel3d[] = [
     openVideo: false,
   },
   {
-    imageName: 'img3.png', //dictionary
+    imageName: 'img3.webp', //dictionary
     descriptions: 'HTML|CSS|React|Bootstrap|API|GitHub',
     linkGit: 'https://github.com/TinaSemashko/dictionary_react',
     linkProject: 'https://effortless-sunburst-a3a68f.netlify.app/',
@@ -44,7 +44,7 @@ export const imagesCarousel: Carousel3d[] = [
     openVideo: false,
   },
   {
-    imageName: 'img4.png', //ekea
+    imageName: 'img4.webp', //ekea
     descriptions: 'HTML|CSS|Javascript|Bootstrap|JSON|Local storage for Basket|GitHub',
     linkGit: 'https://github.com/Kaiju971/PROJET-NIVEAU-II',
     linkProject: 'https://magical-cocada-6863e7.netlify.app/',
@@ -58,7 +58,7 @@ export const imagesCarousel: Carousel3d[] = [
     openVideo: false,
   },
   {
-    imageName: 'img5.png', //casinoGame
+    imageName: 'img5.webp', //casinoGame
     descriptions: 'HTML|CSS|Javascript|Bootstrap|GitHub',
     linkGit: 'https://github.com/TinaSemashko/AssofacCasinoGame',
     linkProject: 'https://aquamarine-gnome-52ee5d.netlify.app/',
@@ -72,7 +72,7 @@ export const imagesCarousel: Carousel3d[] = [
     openVideo: false,
   },
   {
-    imageName: 'img6.png', //garage
+    imageName: 'img6.webp', //garage
     descriptions: 'React|Styled-components|Typecript|Mui-material|PostgreSQL|GitHub|CRUD',
     linkGit: 'https://github.com/TinaSemashko/garage',
     linkProject: 'https://www.tina-space.fr',
@@ -86,7 +86,7 @@ export const imagesCarousel: Carousel3d[] = [
     openVideo: false,
   },
   {
-    imageName: 'img7.png', //Weather
+    imageName: 'img7.webp', //Weather
     descriptions: 'HTML|CSS|Javascript|Bootstrap|API|GitHub',
     linkGit: 'https://github.com/TinaSemashko/Weather',
     linkProject: 'https://incandescent-cuchufli-36fc65.netlify.app/',
@@ -100,7 +100,7 @@ export const imagesCarousel: Carousel3d[] = [
     openVideo: false,
   },
   {
-    imageName: 'img8.png', //weather_react
+    imageName: 'img8.webp', //weather_react
     descriptions: 'HTML|CSS|React|Bootstrap|API|GitHub',
     linkGit: 'https://github.com/TinaSemashko/weather_react',
     linkProject: 'https://stately-sopapillas-d6d214.netlify.app/',
@@ -114,7 +114,7 @@ export const imagesCarousel: Carousel3d[] = [
     openVideo: false,
   },
   {
-    imageName: 'img9.png', //SeaLife
+    imageName: 'img9.webp', //SeaLife
     descriptions: 'React|Styled-components|Typecript|Mui-material|PostgreSQL|GitHub|RestAPI|CRUD',
     linkGit: 'https://github.com/TinaSemashko/sealifeapi',
     linkProject: '',
@@ -128,7 +128,7 @@ export const imagesCarousel: Carousel3d[] = [
     openVideo: true,
   },
   {
-    imageName: 'img10.png', //connectify
+    imageName: 'img10.webp', //connectify
     descriptions: 'React|Styled-components|Typecript|Mui-material|PostgreSQL|GitHub|CRUD',
     linkGit: 'https://github.com/TinaSemashko/connectify-plus',
     linkProject: '',
@@ -142,7 +142,7 @@ export const imagesCarousel: Carousel3d[] = [
     openVideo: false,
   },
   {
-    imageName: 'img11.png', //assoFacTory
+    imageName: 'img11.webp', //assoFacTory
     descriptions: 'React|Styled-components|Javascript|Mui-material|PostgreSQL|GitHub|Work in the team|CRUD',
     linkGit: 'https://github.com/TinaSemashko/AssoFacTorySQL',
     linkProject: '',
@@ -156,7 +156,7 @@ export const imagesCarousel: Carousel3d[] = [
     openVideo: true,
   },
   {
-    imageName: 'img12.png', //ABS
+    imageName: 'img12.webp', //ABS
     descriptions: 'React|Styled-components|Typecript|Mui-material|PostgreSQL|GitHub|Work in the team|CRUD',
     linkGit: 'private',
     linkProject: 'https://www.abs-couverture.fr',

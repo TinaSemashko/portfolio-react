@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles';
-import img1 from '../../images/2ecran.png';
-import img from '../../images/pont.png';
+import img1 from '../../images/2ecran.webp';
+import img from '../../images/pont.webp';
 
 export const MainContainer = styled('div')`
   width: 100%;

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
 import WalkingCat from '../components/walkingCat';
-import img1 from '../../images/crown.png';
+import img1 from '../../images/crown.webp';
 
 import * as S from './home.styled';
 
@@ -137,7 +137,8 @@ const Home: React.FC = () => {
               onMouseOver={() => showCardText(index + 1)}
               onTouchStart={() => showCardText(index + 1)}>
               <S.ElImg
-                src={require(`../../images/${item}.png`)}
+                src={require(`../../images/${item}.webp`)}
+                alt={item}
                 id={`card${index + 1}`}
                 className="card"
                 onMouseOut={() => setOpen(false)}
@@ -145,7 +146,8 @@ const Home: React.FC = () => {
               />
               <S.ElImgHide
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-                src={require(`../../images/${item}1.png`)}
+                src={require(`../../images/${item}1.webp`)}
+                alt={`logo${item}`}
                 id={`hide${index + 1}`}
                 className="hide"
                 onMouseOut={() => setOpen(true)}

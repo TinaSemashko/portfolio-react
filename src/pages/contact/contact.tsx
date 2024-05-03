@@ -2,9 +2,9 @@ import { Button, Typography, useMediaQuery } from '@mui/material';
 import { Helmet } from 'react-helmet';
 import { theme } from '../../app/app';
 import ContactForm from './contactForm';
-import email from '../../images/email.png';
-import linkedin from '../../images/linkedin.png';
-import telegram from '../../images/telegram.png';
+import email from '../../images/email.webp';
+import linkedin from '../../images/linkedin.webp';
+import telegram from '../../images/telegram.webp';
 
 import * as S from './contact.styled';
 

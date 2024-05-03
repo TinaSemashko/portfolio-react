@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import paper1 from '../../../images/paper.png';
+import paper1 from '../../../images/paper.webp';
 
 export const MainContainer = styled('div')`
   position: relative;
