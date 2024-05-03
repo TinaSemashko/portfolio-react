@@ -167,7 +167,7 @@ const Home: React.FC = () => {
       <S.GridContainer2ecran>
         <S.ImgCloudContainer />
         <S.LeftSide2ecran>
-          <S.ImgLeft2ecran src={img1} alt="" height="auto" width="600" />
+          <S.ImgLeft2ecran src={img1} alt="crown" height="auto" width="50vw" />
         </S.LeftSide2ecran>
         <S.RightSide2ecran></S.RightSide2ecran>
         <S.Text2ecran>

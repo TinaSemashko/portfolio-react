@@ -358,13 +358,15 @@ export const RightSide2ecran = styled(Side)`
 `;
 
 export const ImgLeft2ecran = styled('img')`
-  width: 90%;
+  width: 50vw;
+  height: auto;
   margin-top: 10vh;
   padding-right: 12%;
   opacity: 0.7;
 
   @media (max-width: 568px) {
     width: 80vw;
+    height: auto;
     color: ${({ theme }) => theme.palette.colorBlack.main};
   }
 `;
