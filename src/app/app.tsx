@@ -47,44 +47,39 @@ export let theme = createTheme({
   },
   typography: {
     h1: {
-      // fontFamily: "Neucha, serif",
-      // fontFamily: "Comforter, cursive";
-      // fontFamily: "Cormorant Infant, serif";
-      // fontFamily: "Rubik Marker Hatch, serif",
-      // fontFamily: "Marck Script , cursive",
-      fontFamily: 'Kurale , cursive',
+      fontFamily: 'Kurale , cursive, Arial',
       fontDisplay: 'optional',
     },
     h2: {
-      fontFamily: 'Kurale , cursive',
+      fontFamily: 'Kurale , cursive, Arial',
       fontDisplay: 'optional',
     },
     h3: {
-      fontFamily: 'Cormorant Infant, serif',
+      fontFamily: 'Cormorant Infant, serif, Arial',
       fontDisplay: 'optional',
     },
     h4: {
-      fontFamily: 'Kurale , cursive',
+      fontFamily: 'Kurale , cursive, Arial',
       fontDisplay: 'optional',
     },
     h5: {
-      fontFamily: 'Kurale , cursive',
+      fontFamily: 'Kurale , cursive, Arial',
       fontDisplay: 'optional',
     },
     h6: {
-      fontFamily: 'Kurale , cursive',
+      fontFamily: 'Kurale , cursive, Arial',
       fontDisplay: 'optional',
     },
     body1: {
-      fontFamily: 'Kurale , cursive',
+      fontFamily: 'Kurale , cursive, Arial',
       fontDisplay: 'optional',
     },
     body2: {
-      fontFamily: 'Special Elite, cursive',
+      fontFamily: 'Special Elite, cursive, Arial',
       fontDisplay: 'optional',
     },
     subtitle1: {
-      fontFamily: 'Times New Roman, serif',
+      fontFamily: 'Times New Roman, serif, Arial',
       fontDisplay: 'optional',
       // fontSize: "8rem",
       // "@media (max-width:750px)": {
