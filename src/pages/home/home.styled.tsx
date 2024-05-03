@@ -360,6 +360,7 @@ export const RightSide2ecran = styled(Side)`
 export const ImgLeft2ecran = styled('img')`
   width: 50vw;
   height: auto;
+  aspect-ratio: 1.72/1;
   margin-top: 10vh;
   padding-right: 12%;
   opacity: 0.7;
