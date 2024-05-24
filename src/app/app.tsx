@@ -46,48 +46,42 @@ export let theme = createTheme({
     },
   },
   typography: {
+    fontFamily: ['Helvetica', 'Arial', 'Roboto', 'sans-serif'].join(','),
     h1: {
-      fontFamily: 'Kurale , cursive, Arial',
+      fontFamily: 'Kurale , sans-serif, Arial',
       fontDisplay: 'optional',
     },
     h2: {
-      fontFamily: 'Kurale , cursive, Arial',
+      fontFamily: 'Kurale , sans-serif, Arial',
       fontDisplay: 'optional',
     },
     h3: {
-      fontFamily: 'Kurale , cursive, Arial',
+      fontFamily: 'Kurale , sans-serif, Arial',
       fontDisplay: 'optional',
     },
     h4: {
-      fontFamily: 'Kurale , cursive, Arial',
+      fontFamily: 'Kurale , sans-serif, Arial',
       fontDisplay: 'optional',
     },
     h5: {
-      fontFamily: 'Kurale , cursive, Arial',
+      fontFamily: 'Kurale , sans-serif, Helvetica',
       fontDisplay: 'optional',
     },
     h6: {
-      fontFamily: 'Kurale , cursive, Arial',
+      fontFamily: 'Kurale , sans-serif, Helvetica',
       fontDisplay: 'optional',
     },
     body1: {
-      fontFamily: 'Kurale , cursive, Arial',
+      fontFamily: 'Kurale , sans-serif, Helvetica',
       fontDisplay: 'optional',
     },
     body2: {
-      fontFamily: 'Special Elite, cursive, Arial',
+      fontFamily: 'Special Elite, sans-serif, Arial',
       fontDisplay: 'optional',
     },
     subtitle1: {
-      fontFamily: 'Times New Roman, serif, Arial',
+      fontFamily: 'Helvetica, serif, Arial',
       fontDisplay: 'optional',
-      // fontSize: "8rem",
-      // "@media (max-width:750px)": {
-      //   fontSize: "2.5rem",
-      // },
-      // "@media (max-width:350px)": {
-      //   fontSize: "2rem",
-      // },
     },
   },
   breakpoints: {
