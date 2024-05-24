@@ -25,15 +25,12 @@ const Home: React.FC = () => {
   const showCardText = (ind: number): void => {
     const card = document.querySelector(`#card${ind}`);
     const hideNode = document.querySelector(`#hide${ind}`);
-    const text = document.querySelector(`#text${ind}`);
 
     if (open) {
       card?.setAttribute('style', 'display:block;');
-      text?.setAttribute('style', 'display:block;');
       hideNode?.setAttribute('style', 'display:none;');
     } else {
       card?.setAttribute('style', 'display:none;');
-      text?.setAttribute('style', 'display:none;');
       hideNode?.setAttribute('style', 'display:block;');
     }
   };

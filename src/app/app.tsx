@@ -55,7 +55,7 @@ export let theme = createTheme({
       fontDisplay: 'optional',
     },
     h3: {
-      fontFamily: 'Cormorant Infant, serif, Arial',
+      fontFamily: 'Kurale , cursive, Arial',
       fontDisplay: 'optional',
     },
     h4: {
