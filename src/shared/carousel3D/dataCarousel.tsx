@@ -86,17 +86,17 @@ export const imagesCarousel: Carousel3d[] = [
     openVideo: false,
   },
   {
-    imageName: 'img7.webp', //Weather
-    descriptions: 'HTML|CSS|Javascript|Bootstrap|API|GitHub',
-    linkGit: 'https://github.com/TinaSemashko/Weather',
-    linkProject: 'https://incandescent-cuchufli-36fc65.netlify.app/',
+    imageName: 'img7.webp', //Karamon video
+    descriptions: 'React|Styled-components|Typescript|Mui-material|GitHub',
+    linkGit: 'private',
+    linkProject: 'https://karamon-video.netlify.app/',
     linkVideo: '',
     src: '',
     degY: 0,
     alt: '',
-    projectName: 'Weather',
+    projectName: 'Karamon video',
     openProject: true,
-    openGit: true,
+    openGit: false,
     openVideo: false,
   },
   {
