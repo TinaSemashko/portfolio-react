@@ -99,6 +99,14 @@ export const dataEmbroidery: string[] = [
   'Embroidery/img5.webp',
   'Embroidery/img6.webp',
   'Embroidery/img7.webp',
+  'Embroidery/img8.webp',
+  'Embroidery/img9.webp',
+  'Embroidery/img10.webp',
+  'Embroidery/img11.webp',
+  'Embroidery/img12.webp',
+  'Embroidery/img13.webp',
+  'Embroidery/img14.webp',
+  'Embroidery/img15.webp',
 ];
 
 export const dataPlasticine: string[] = [
