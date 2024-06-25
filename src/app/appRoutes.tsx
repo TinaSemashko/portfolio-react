@@ -1,18 +1,19 @@
-import React, { lazy } from "react";
-import { Routes as Router, Route } from "react-router";
-import { Routes } from "./routes";
-import withSuspense from "../hoc/withSuspense";
-import NotFound from "../pages/notFound/notFound";
+import React, { lazy } from 'react';
+import { Routes as Router, Route } from 'react-router';
+import { Routes } from './routes';
+import withSuspense from '../hoc/withSuspense';
+import NotFound from '../pages/notFound/notFound';
 
-const Home = lazy(() => import("../pages/home"));
-const About = lazy(() => import("../pages/about"));
-const Projects = lazy(() => import("../pages/projects"));
-const Resume = lazy(() => import("../pages/resume"));
-const Hobby = lazy(() => import("../pages/hobby"));
-const Contact = lazy(() => import("../pages/contact"));
-const Galery = lazy(() => import("../pages/hobby/galery"));
-const Videopage = lazy(() => import("../pages/projects/pageVideo"));
-const CartProject = lazy(() => import("../pages/descriptionProjects"));
+const Home = lazy(() => import('../pages/home'));
+const About = lazy(() => import('../pages/about'));
+const Projects = lazy(() => import('../pages/projects'));
+const Resume = lazy(() => import('../pages/resume'));
+const Hobby = lazy(() => import('../pages/hobby'));
+const Contact = lazy(() => import('../pages/contact'));
+const Galery = lazy(() => import('../pages/hobby/galery'));
+const Videopage = lazy(() => import('../pages/projects/pageVideo'));
+const CartProject = lazy(() => import('../pages/descriptionProjects'));
+const Conditions = lazy(() => import('../pages/conditions'));
 
 export const AppRoutes: React.FunctionComponent = () => (
   <Router>
@@ -25,6 +26,7 @@ export const AppRoutes: React.FunctionComponent = () => (
     <Route path={Routes.galery} element={withSuspense(Galery)} />
     <Route path={Routes.videopage} element={withSuspense(Videopage)} />
     <Route path={Routes.cartproject} element={withSuspense(CartProject)} />
+    <Route path={Routes.conditions} element={withSuspense(Conditions)} />
 
     <Route path="*" element={<NotFound />} />
   </Router>
