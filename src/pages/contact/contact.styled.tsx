@@ -8,6 +8,7 @@ export const MainContainer = styled('div')`
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: ${({ theme }) => theme.palette.primary.main};
 
   @media (max-width: 750px) {
     flex-direction: column;
@@ -22,6 +23,7 @@ export const LeftContainer = styled('div')`
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  background-color: ${({ theme }) => theme.palette.primary.main};
 
   @media (max-width: 750px) {
     width: 100%;
@@ -34,6 +36,7 @@ export const RightContainer = styled('div')`
   grid-template-columns: 20% 80%;
   grid-template-rows: 100%;
   align-items: center;
+  z-index: 100;
 
   @media (max-width: 750px) {
     margin-top: -4vh;
@@ -46,7 +49,7 @@ export const RightContainer = styled('div')`
 
 export const LefttBackgroundContainer = styled('div')`
   width: 100%;
-  background-color: ${({ theme }) => theme.palette.secondary.main};
+  background-color: ${({ theme }) => theme.palette.primary.main};
   grid-column: 1;
   grid-row: 1;
 
@@ -56,7 +59,7 @@ export const LefttBackgroundContainer = styled('div')`
 `;
 
 export const RightBackgroundContainer = styled('div')`
-  background-color: ${({ theme }) => theme.palette.colorLightBlue.main};
+  background-color: ${({ theme }) => theme.palette.secondary.main};
   width: 100%;
   min-height: 100vh;
   text-align: right;
@@ -98,7 +101,7 @@ export const CardContainer = styled('div')`
   width: var(--w);
   position: absolute;
   border-radius: 4px;
-  border-color: ${({ theme }) => theme.palette.colorBlue.main};
+  background-color: ${({ theme }) => theme.palette.secondary.main};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -120,7 +123,7 @@ export const CardContainer = styled('div')`
 export const Card1 = styled(CardContainer)`
   top: 0;
   left: 0;
-  background-color: ${({ theme }) => theme.palette.secondary.main};
+  background-color: ${({ theme }) => theme.palette.primary.main};
   border: 4px solid;
 `;
 
@@ -138,7 +141,7 @@ export const Card2 = styled(CardContainer)`
 export const Card3 = styled(CardContainer)`
   top: 0;
   left: 30vw;
-  background-color: ${({ theme }) => theme.palette.secondary.main};
+  background-color: ${({ theme }) => theme.palette.primary.main};
   border: 4px solid;
 
   @media (max-width: 750px) {
@@ -150,7 +153,7 @@ export const Card4 = styled(CardContainer)`
   top: 30vh;
   left: 0;
   background-image: url(${img3});
-  background-color: ${({ theme }) => theme.palette.colorLightBlue.main};
+  background-color: ${({ theme }) => theme.palette.secondary.main};
   border-left: 4px solid;
   border-bottom: 4px solid;
 
@@ -166,7 +169,7 @@ export const Card4 = styled(CardContainer)`
 export const Card5 = styled(CardContainer)`
   top: 30vh;
   left: 15vw;
-  background-color: ${({ theme }) => theme.palette.secondary.main};
+  background-color: ${({ theme }) => theme.palette.primary.main};
   border: 4px solid;
 
   @media (max-width: 1100px) {
@@ -201,7 +204,7 @@ export const BtnSubmit = styled(Button)`
   padding: 20px 30px;
   margin-bottom: 1.5rem;
   text-decoration: none;
-  background-color: ${({ theme }) => theme.palette.colorLightBlue.main};
+  background-color: ${({ theme }) => theme.palette.secondary.main};
   border: 4px solid;
   border-radius: 4px;
   border-color: ${({ theme }) => theme.palette.colorBlue.main};

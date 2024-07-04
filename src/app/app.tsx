@@ -21,7 +21,7 @@ declare module '@mui/material/styles' {
 export let theme = createTheme({
   palette: {
     primary: {
-      main: '#ffe4c4',
+      main: '#dedcdc',
     },
     secondary: {
       main: '#ffffff',
@@ -43,6 +43,9 @@ export let theme = createTheme({
     },
     colorBlue: {
       main: '#042D5E',
+    },
+    colorBrightBlue: {
+      main: '#00f7ff',
     },
   },
   typography: {

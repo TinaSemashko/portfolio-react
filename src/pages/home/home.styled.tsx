@@ -1,6 +1,7 @@
 import { styled } from '@mui/material/styles';
 import img1 from '../../images/2ecran.webp';
 import img from '../../images/pont.webp';
+import img2 from '../../images/fon_home.png';
 
 export const MainContainer = styled('div')`
   width: 100%;
@@ -37,6 +38,7 @@ export const TitreColor = styled('div')`
 `;
 
 export const GridContainer = styled('div')`
+  background-image: url(${img2});
   width: 100%;
   height: 100vh;
   display: grid;
@@ -63,7 +65,20 @@ export const Side = styled('div')`
   transition: transform 0.3s ease-in-out;
 `;
 
+// export const LeftText = styled('div')`
+//   text-align: left;
+//   margin-left: 8%;
+//   width: 90%;
+// `;
+
+// export const RightText = styled('div')`
+//   color: ${({ theme }) => theme.palette.colorBlack.main};
+//   text-align: left;
+//   width: 50%;
+// `;
+
 export const LeftSide1ecran = styled(Side)`
+  background-image: url(${img2});
   grid-row: 1 / span 3;
   grid-column: 1;
   width: 100%;
@@ -73,11 +88,12 @@ export const LeftSide1ecran = styled(Side)`
 `;
 
 export const RightSide1ecran = styled(Side)`
+  background-image: url(${img2});
   grid-row: 1 / span 3;
   grid-column: 2;
   width: 100%;
   text-align: center;
-  background-color: #dedcdc;
+  background-color: ${({ theme }) => theme.palette.primary.main};
   color: ${({ theme }) => theme.palette.secondary.main};
 `;
 
@@ -245,12 +261,14 @@ export const ElImgHide = styled('img')`
 
 export const TitleLeft1ecran = styled('div')`
   margin-top: 14vh;
+  margin-left: 6%;
+  margin-right: 6%;
   grid-column: 1 / span 2;
   grid-row: 1;
   text-align: center;
   align-self: center;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  color: #828282;
+  color: ${({ theme }) => theme.palette.colorBlack.main};
 
   -webkit-animation: swirl-in-fwd 0.6s ease-out both;
   animation: swirl-in-fwd 0.6s ease-out both;
@@ -289,11 +307,13 @@ export const TitleLeft1ecran = styled('div')`
 
 export const TitleRight1ecran = styled('div')`
   margin-top: 14vh;
+  margin-left: 6%;
+  margin-right: 6%;
   grid-column: 1 / span 2;
   grid-row: 1;
   text-align: center;
   align-self: center;
-  color: ${({ theme }) => theme.palette.secondary.main};
+  color: ${({ theme }) => theme.palette.colorBlack.main};
   clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
 
   @media (max-width: 568px) {

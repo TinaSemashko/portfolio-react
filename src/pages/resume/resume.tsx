@@ -52,7 +52,7 @@ const Resume: React.FC = () => {
             <S.Photo src={Avatar} alt="" />
           </S.PhotoBox>
           <S.Title>
-            <Typography variant="h3" textAlign="center" sx={{ color: '#0ca5e7' }}>
+            <Typography variant="h3" textAlign="center" sx={{ color: 'colorBlue.main' }}>
               {t('resume.name')}
             </Typography>
             <Typography
@@ -60,7 +60,7 @@ const Resume: React.FC = () => {
               textAlign="center"
               fontWeight="900"
               sx={{
-                color: '#0ca5e7',
+                color: 'colorBrightBlue.main',
                 textShadow: '  1px 1px 0 #05174b,1px -1px 0 #05174b,-1px 1px 0 #05174b,-1px -1px 0 #05174b',
               }}>
               {t('resume.title')}

@@ -44,19 +44,23 @@ const Home: React.FC = () => {
   };
 
   const fontSizeTitle = {
-    xs: '1.6rem',
-    sm: '2rem',
-    md: '2.5rem',
-    lg: '3.4rem',
-    xl: '4rem',
+    xxs: '1rem',
+    xs: '1.2rem',
+    sm: '1.5rem',
+    md: '2rem',
+    lg: '2.2rem',
+    xl: '2.4rem',
+    xxl: '2.6rem',
   };
 
   const fontSizeSubTitle = {
-    xs: '1.2rem',
-    sm: '1.3rem',
-    md: '1.4rem',
-    lg: '1.8rem',
-    xl: '2rem',
+    xxs: '0.5rem',
+    xs: '0.5rem',
+    sm: '0.6rem',
+    md: '0.7rem',
+    lg: '0.8rem',
+    xl: '1rem',
+    xxl: '2rem',
   };
 
   return (
@@ -83,7 +87,7 @@ const Home: React.FC = () => {
         <S.TitleLeft1ecran>
           <S.TitreColor>
             <Typography
-              variant="h1"
+              variant="h2"
               sx={{
                 px: pxValue,
                 fontSize: fontSizeTitle,
@@ -94,37 +98,57 @@ const Home: React.FC = () => {
               }}>
               {t('main.title')}
             </Typography>
+
+            <br />
+            <Typography
+              variant="h3"
+              sx={{
+                px: pxValue,
+                fontSize: fontSizeSubTitle,
+              }}>
+              {t('main.subtitle1')}
+            </Typography>
+            <br />
+            <Typography
+              variant="h3"
+              sx={{
+                px: pxValue,
+                fontSize: fontSizeSubTitle,
+              }}>
+              {t('main.subtitle2')}
+            </Typography>
           </S.TitreColor>
-          <br />
-          <Typography
-            variant="h3"
-            sx={{
-              px: pxValue,
-              fontSize: fontSizeSubTitle,
-            }}>
-            {t('main.text')}
-          </Typography>
         </S.TitleLeft1ecran>
         <S.TitleRight1ecran>
           <S.TitreColor>
             <Typography
-              variant="h1"
+              variant="h2"
               sx={{
                 px: pxValue,
                 fontSize: fontSizeTitle,
               }}>
               {t('main.title')}
             </Typography>
+
+            <br />
+            <Typography
+              variant="h3"
+              sx={{
+                px: pxValue,
+                fontSize: fontSizeSubTitle,
+              }}>
+              {t('main.subtitle1')}
+            </Typography>
+            <br />
+            <Typography
+              variant="h3"
+              sx={{
+                px: pxValue,
+                fontSize: fontSizeSubTitle,
+              }}>
+              {t('main.subtitle2')}
+            </Typography>
           </S.TitreColor>
-          <br />
-          <Typography
-            variant="h3"
-            sx={{
-              px: pxValue,
-              fontSize: fontSizeSubTitle,
-            }}>
-            {t('main.text')}
-          </Typography>
         </S.TitleRight1ecran>
         <S.Puzzle>
           {arrayTechnologies.map((item, index) => (

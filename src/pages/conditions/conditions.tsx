@@ -5,19 +5,13 @@ import * as S from './conditions.styled';
 
 const Conditions: React.FC = () => {
   const fontSizeTitle = {
-    xs: '1.6rem',
-    sm: '2rem',
-    md: '2.5rem',
-    lg: '3.4rem',
-    xl: '4rem',
-  };
-
-  const fontSizeSubTitle = {
+    xxs: '1rem',
     xs: '1.2rem',
-    sm: '1.3rem',
-    md: '1.4rem',
-    lg: '1.8rem',
-    xl: '2rem',
+    sm: '1.4rem',
+    md: '2rem',
+    lg: '2.4rem',
+    xl: '2.6rem',
+    xxl: '2.7rem',
   };
 
   return (
@@ -25,11 +19,15 @@ const Conditions: React.FC = () => {
       <S.Title>
         <S.FlexBox>
           <img src={Logo} alt="Logo" width="40vw" height="40vh" />
-          <Typography variant="h4">Akateria Web Studio</Typography>
+          <Typography variant="h4" sx={{ fontSize: fontSizeTitle }}>
+            Akateria Web Studio
+          </Typography>
         </S.FlexBox>
 
         <Typography variant="h1">CGV site Web</Typography>
-        <Typography variant="h3">Conditions générales de vente : Développement de site Web / Extranet</Typography>
+        <Typography variant="h3" sx={{ fontSize: fontSizeTitle, textAlign: 'center' }}>
+          Conditions générales de vente : Développement de site Web / Extranet
+        </Typography>
       </S.Title>
 
       <S.BodyBox>
@@ -51,6 +49,7 @@ const Conditions: React.FC = () => {
         <S.ParagraphContainer variant="body1">Types de services fournis par le Développeur: </S.ParagraphContainer>
         <S.ParagraphContainer variant="body1">
           <List>
+            <ListItem>Création de sites Web et d'applications mobiles</ListItem>
             <ListItem>Consultations sur le lancement de programmes d'affiliation pour des biens/services.</ListItem>
             <ListItem>
               Consultations sur la stratégie marketing dans le lancement/promotion de biens et services sur Internet.

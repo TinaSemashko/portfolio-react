@@ -171,7 +171,7 @@ export const FlexInformationContainer = styled(BackgroundMain)`
 export const Line = styled(BackgroundMain)`
   width: 62.5%;
   height: 10vh;
-  background-color: #05174b;
+  background-color: ${({ theme }) => theme.palette.colorBlue.main};
   text-align: center;
   display: flex;
   justify-content: space-evenly;
@@ -256,7 +256,6 @@ export const SectionCompetances = styled(SectionAdditional)`
   padding-bottom: 4vh;
   grid-column: 1;
   grid-row: 1;
-  /* height: 90vh; */
 
   @media (max-width: 1200px) {
     width: 95%;
@@ -268,7 +267,6 @@ export const SectionCompetances = styled(SectionAdditional)`
   }
 
   @media (max-width: 760px) {
-    /* height: 64vh; */
     padding-top: 8vh;
     padding-bottom: 8vh;
   }
@@ -303,7 +301,7 @@ export const ExpTitle = styled('div')`
   justify-content: center;
   align-items: center;
   width: 100%;
-  color: #0ca5e7;
+  color: ${({ theme }) => theme.palette.colorBrightBlue.main};
   text-shadow: 1px 1px 0 #05174b, 1px -1px 0 #05174b, -1px 1px 0 #05174b, -1px -1px 0 #05174b;
 
   grid-column: 1 / span 3;
@@ -357,7 +355,7 @@ export const CoursesTitle = styled('div')`
   margin-top: 8vh;
   grid-column: 1 / span 3;
   text-align: center;
-  color: #0ca5e7;
+  color: ${({ theme }) => theme.palette.colorBrightBlue.main};
 `;
 
 export const Courses = styled('ul')`
@@ -384,7 +382,7 @@ export const SectionHobby = styled('div')`
   width: 20vw;
   padding-top: 1vh;
   padding-bottom: 1vh;
-  color: #ff9a01;
+  color: ${({ theme }) => theme.palette.primary.main};
 
   display: flex;
   justify-content: center;

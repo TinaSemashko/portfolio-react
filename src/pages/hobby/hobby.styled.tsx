@@ -1,23 +1,23 @@
-import { styled } from "@mui/material/styles";
+import { styled } from '@mui/material/styles';
 
-export const MainContainer = styled("div")`
+export const MainContainer = styled('div')`
   position: relative;
   height: 100vh;
   /* background-color: ${({ theme }) => theme.palette.colorBlack.main}; */
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 100%;
-  /* margin-bottom: 19vh; */
+  margin-bottom: 19vh;
 `;
 
-export const BackgroundContainer = styled("div")`
+export const BackgroundContainer = styled('div')`
   z-index: -2;
   background-color: ${({ theme }) => theme.palette.colorBlack.main};
   grid-column: 1;
   grid-row: 1;
 `;
 
-export const VideoAccueil = styled("video")`
+export const VideoAccueil = styled('video')`
   grid-column: 1;
   grid-row: 1;
 
@@ -35,7 +35,7 @@ export const VideoAccueil = styled("video")`
   }
 `;
 
-export const GridContainer = styled("div")`
+export const GridContainer = styled('div')`
   grid-column: 1;
   grid-row: 1;
   padding-top: 10vh;
@@ -54,7 +54,7 @@ export const GridContainer = styled("div")`
   }
 `;
 
-export const StyledImg = styled("img")`
+export const StyledImg = styled('img')`
   width: 40%;
   text-align: center;
   grid-row: 1;
@@ -74,18 +74,18 @@ export const StyledImg = styled("img")`
   }
 `;
 
-export const StyleText = styled("div")`
+export const StyleText = styled('div')`
   width: 50%;
   text-align: center;
   grid-row: 1;
   grid-column: 1;
-  color: red;
+  color: ${({ theme }) => theme.palette.colorBrightBlue.main};
   cursor: pointer;
   z-index: 10;
   place-self: center;
 `;
 
-export const ImgContainer = styled("div")`
+export const ImgContainer = styled('div')`
   text-align: center;
   display: grid;
   grid-template-columns: 100%;
