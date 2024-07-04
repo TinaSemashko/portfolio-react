@@ -1,21 +1,21 @@
-import { styled } from "@mui/material/styles";
+import { styled } from '@mui/material/styles';
 
-export const MainContainer = styled("div")<{ carouselWith: number }>`
+export const MainContainer = styled('div')<{ carouselWith: number }>`
   position: relative;
-  width: ${(props) => props.carouselWith + 2}vw;
+  width: ${props => props.carouselWith + 2}vw;
   margin: 2vw auto 0 auto;
   perspective: 1000px;
 
   @media (max-width: 900px) {
-    width: ${(props) => (props.carouselWith + 2) * 1.2}vw;
+    width: ${props => (props.carouselWith + 2) * 1.2}vw;
   }
 
   @media (max-width: 568px) {
-    width: ${(props) => (props.carouselWith + 2) * 1.4}vw;
+    width: ${props => (props.carouselWith + 2) * 1.4}vw;
   }
 `;
 
-export const CarouselContainer = styled("div")<{ isAnimationPaused: boolean }>`
+export const CarouselContainer = styled('div')<{ isAnimationPaused: boolean }>`
   position: absolute;
   width: 100%;
   height: 100%;
@@ -23,8 +23,7 @@ export const CarouselContainer = styled("div")<{ isAnimationPaused: boolean }>`
 
   /* transform: rotateY(-360deg) translateZ(-412px); add reverse transformation from the slides */
 
-  animation: ${({ isAnimationPaused }) =>
-    isAnimationPaused ? "none" : "swirl 40s steps(10000, end) infinite"};
+  animation: ${({ isAnimationPaused }) => (isAnimationPaused ? 'none' : 'swirl 40s steps(10000, end) infinite')};
 
   @keyframes swirl {
     from {
@@ -36,7 +35,7 @@ export const CarouselContainer = styled("div")<{ isAnimationPaused: boolean }>`
   }
 `;
 
-export const Slide = styled("div")<{
+export const Slide = styled('div')<{
   degY: number;
   radius: number;
   carouselWith: number;
@@ -44,10 +43,9 @@ export const Slide = styled("div")<{
   position: absolute;
   top: 10px;
   left: 10px;
-  width: ${(props) => props.carouselWith}vw;
-  height: ${(props) => props.carouselWith}vh;
-  transform: rotateY(${(props) => props.degY}deg)
-    translateZ(${(props) => props.radius}vw);
+  width: ${props => props.carouselWith}vw;
+  height: ${props => props.carouselWith}vh;
+  transform: rotateY(${props => props.degY}deg) translateZ(${props => props.radius}vw);
 
   display: grid;
   grid-template-columns: 33% 33% 33%;
@@ -57,25 +55,24 @@ export const Slide = styled("div")<{
   justify-items: center;
 
   @media (max-width: 900px) {
-    width: ${(props) => props.carouselWith * 1.2}vw;
-    height: ${(props) => props.carouselWith * 0.7}vh;
-    transform: rotateY(${(props) => props.degY}deg)
-      translateZ(${(props) => props.radius * 1.2}vw);
+    width: ${props => props.carouselWith * 1.2}vw;
+    height: ${props => props.carouselWith * 0.7}vh;
+    transform: rotateY(${props => props.degY}deg) translateZ(${props => props.radius * 1.2}vw);
   }
 
   @media (max-width: 568px) {
-    width: ${(props) => props.carouselWith * 1.3}vw;
-    height: ${(props) => props.carouselWith * 0.6}vh;
+    width: ${props => props.carouselWith * 1.3}vw;
+    height: ${props => props.carouselWith * 0.6}vh;
   }
 
   @media (max-width: 300px) {
-    height: ${(props) => props.carouselWith * 0.5}vh;
+    height: ${props => props.carouselWith * 0.5}vh;
   }
 `;
 
-export const Picture = styled("img")<{ carouselWith: number }>`
-  width: ${(props) => props.carouselWith}vw;
-  height: ${(props) => props.carouselWith * 1.4}vh;
+export const Picture = styled('img')<{ carouselWith: number }>`
+  width: ${props => props.carouselWith}vw;
+  height: ${props => props.carouselWith * 1.4}vh;
   border: 3px inset red;
   border-style: ridge;
 
@@ -86,93 +83,21 @@ export const Picture = styled("img")<{ carouselWith: number }>`
   position: relative;
 
   @media (max-width: 900px) {
-    width: ${(props) => props.carouselWith * 1.2}vw;
-    height: ${(props) => props.carouselWith * 1.4 * 0.7}vh;
+    width: ${props => props.carouselWith * 1.2}vw;
+    height: ${props => props.carouselWith * 1.4 * 0.7}vh;
   }
 
   @media (max-width: 568px) {
-    width: ${(props) => props.carouselWith * 1.2}vw;
-    height: ${(props) => props.carouselWith * 1.4 * 0.6}vh;
+    width: ${props => props.carouselWith * 1.2}vw;
+    height: ${props => props.carouselWith * 1.4 * 0.6}vh;
   }
 
   @media (max-width: 300px) {
-    height: ${(props) => props.carouselWith * 1.4 * 0.5}vh;
+    height: ${props => props.carouselWith * 1.4 * 0.5}vh;
   }
 `;
 
-export const TextContainer = styled("div")`
-  position: absolute;
-  grid-column: 1 / span 3;
-  grid-row: 3/3;
-  color: yellow;
-  z-index: 10;
-  max-width: 80%;
-  text-align: left;
-  margin-left: -1vw;
-
-  @media (max-width: 550px) {
-    margin-left: 1rem;
-    margin-right: 0.5rem;
-  }
-`;
-
-export const BorderLeft = styled("div")`
-  position: absolute;
-  top: -2vh;
-  width: 90%;
-  height: 10vh;
-  grid-column: 1 / span 4;
-  grid-row: 1 / span 3;
-  border: 2px solid red;
-  z-index: 10;
-  border-right: none;
-  border-bottom: none;
-
-  @media (max-width: 900px) {
-    height: 7vh;
-  }
-
-  @media (max-width: 568px) {
-    width: 80%;
-    height: 6vh;
-  }
-
-  @media (max-width: 300px) {
-    top: -1vh;
-    height: 5vh;
-  }
-`;
-
-export const BorderRight = styled("div")<{ carouselWith: number }>`
-  position: absolute;
-  top: -2vh;
-  width: 90%;
-  height: ${(props) => props.carouselWith / 1.43}vh;
-  grid-column: 3;
-  grid-row: 1 / span 4;
-  border: 2px solid red;
-  border-left: none;
-  border-top: none;
-  margin-right: 10%;
-  z-index: 10;
-
-  @media (max-width: 900px) {
-    height: ${(props) => (props.carouselWith / 1.43) * 0.7}vh;
-  }
-
-  @media (max-width: 568px) {
-    width: 70%;
-    height: ${(props) => (props.carouselWith / 1.43) * 0.6}vh;
-  }
-
-  @media (max-width: 300px) {
-    width: 60%;
-    top: -1vh;
-    height: ${(props) => (props.carouselWith / 1.43) * 0.4}vh;
-  }
-`;
-
-export const ButtonMore = styled("button")`
+export const ButtonMore = styled('button')`
   letter-spacing: 0.06em;
   position: relative;
   overflow: hidden;
@@ -185,8 +110,7 @@ export const ButtonMore = styled("button")`
     rgba(97, 6, 6, 0.7) 100%
   );
   color: #950101;
-  box-shadow: inset 0 0 10px rgba(253, 27, 27, 0.4),
-    0 0 9px 3px rgba(253, 27, 27, 0.1);
+  box-shadow: inset 0 0 10px rgba(253, 27, 27, 0.4), 0 0 9px 3px rgba(253, 27, 27, 0.1);
   border: 3px inset red;
   border-style: ridge;
   width: 8vw;
@@ -198,7 +122,7 @@ export const ButtonMore = styled("button")`
   align-items: center;
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     left: -4em;
     width: 4em;
@@ -215,7 +139,7 @@ export const ButtonMore = styled("button")`
   }
 
   &:hover {
-    color: #f9f905;
+    color: ${({ theme }) => theme.palette.colorBrightBlue.main};
     box-shadow: inset 0 0 10px rgba(245, 41, 41), 0 0 9px 3px rgba(126, 21, 21);
   }
   &:hover:before {
