@@ -74,7 +74,7 @@ const Resume: React.FC = () => {
                 sx={{
                   zIndex: '100',
                   position: 'relative',
-                  color: 'coffee.main',
+                  color: 'colorGrey.main',
                   textTransform: 'capitalize',
                   fontSize: fontSizeH6,
                 }}>

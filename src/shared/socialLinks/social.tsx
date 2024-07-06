@@ -9,13 +9,13 @@ const Social: React.FC = () => {
   return (
     <S.SocialLinks>
       <IconButton href="https://github.com/TinaSemashko" target="_blank" rel="noopener">
-        <GitHubIcon color="primary" />
+        <GitHubIcon color="secondary" />
       </IconButton>
       <IconButton href="https://www.linkedin.com/in/tina-semashko/" target="_blank" rel="noopener">
-        <LinkedInIcon color="primary" />
+        <LinkedInIcon color="secondary" />
       </IconButton>
       <IconButton href="https://www.facebook.com/akateria/" target="_blank" rel="noopener">
-        <FacebookIcon color="primary" />
+        <FacebookIcon color="secondary" />
       </IconButton>
     </S.SocialLinks>
   );

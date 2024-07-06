@@ -350,12 +350,12 @@ export const CatContainer = styled('div')`
 `;
 
 export const ImgCloudContainer = styled('div')`
-  margin-top: -7vh;
+  margin-top: -1vh;
   grid-row: 1;
   grid-column: 1 / span 2;
   width: 100%;
   z-index: 100;
-  height: 20vh;
+  height: 4vh;
   background-image: url(${img});
   background-size: cover;
   background-repeat: no-repeat;
@@ -405,7 +405,7 @@ export const TitleLeft2ecran = styled('div')`
   grid-column: 1;
   grid-row: 1;
   text-align: center;
-  color: #dedcdca9;
+  color: ${({ theme }) => theme.palette.primary.main};
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   z-index: 10;
 

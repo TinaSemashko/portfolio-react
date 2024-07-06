@@ -17,7 +17,7 @@ export const MainContainer = styled('div')`
 `;
 
 export const BackgroundMain = styled('div')`
-  background-color: ${({ theme }) => theme.palette.primary.main};
+  background-color: ${({ theme }) => theme.palette.secondary.main};
   border: solid;
   box-shadow: -1px -5px 15px #41465b, 5px 5px 15px #41465b, inset 5px 5px 10px #212121, inset -5px -5px 10px #212121;
 `;
@@ -91,7 +91,7 @@ export const ButtonCV = styled(Button)`
     width: 100%;
     height: inherit;
     border-radius: inherit;
-    background: linear-gradient(82.3deg, #a47551 10.8%, #d0b49f 94.3%);
+    background: linear-gradient(82.3deg, #7c3b30 10.8%, #e5dee5 94.3%);
     transition: all 0.475s;
   }
 
@@ -103,13 +103,13 @@ export const ButtonCV = styled(Button)`
   border: 2px dashed;
   border-color: ${({ theme }) => theme.palette.chocolate.main};
   border-radius: 15px;
-  background-color: ${({ theme }) => theme.palette.primary.main};
-  box-shadow: 0 0 0 4px #a47551, 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
+  background-color: ${({ theme }) => theme.palette.coffee.main};
+  box-shadow: 0 0 0 4px #7c3b30, 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
   transition: 0.1s ease-in-out, 0.4s color;
 
   &:active {
     transform: translateX(0.1em) translateY(0.1em);
-    box-shadow: 0 0 0 4px #a47551, 1.5px 1.5px 2.5px 1.5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 4px #7c3b30, 1.5px 1.5px 2.5px 1.5px rgba(0, 0, 0, 0.5);
   }
 
   &.MuiButton-root {
@@ -168,7 +168,7 @@ export const FlexInformationContainer = styled(BackgroundMain)`
 export const Line = styled(BackgroundMain)`
   width: 62.5%;
   height: 10vh;
-  background-color: #a475519a;
+  background-color: ${({ theme }) => theme.palette.coffee.main};
   text-align: center;
   display: flex;
   justify-content: space-evenly;
@@ -375,11 +375,11 @@ export const Hobby = styled('div')`
 `;
 
 export const SectionHobby = styled('div')`
-  background-color: #a475519a;
+  background-color: #98716a89;
   width: 20vw;
   padding-top: 1vh;
   padding-bottom: 1vh;
-  color: ${({ theme }) => theme.palette.primary.main};
+  color: ${({ theme }) => theme.palette.colorGrey.main};
 
   display: flex;
   justify-content: center;

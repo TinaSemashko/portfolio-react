@@ -21,19 +21,19 @@ declare module '@mui/material/styles' {
 export let theme = createTheme({
   palette: {
     primary: {
-      main: '#dfdcdd',
+      main: '#816c6e',
     },
     secondary: {
-      main: '#ffffff',
+      main: '#e5dee5',
     },
     colorBlack: {
       main: '#000000',
     },
     coffee: {
-      main: '#D1AB7D',
+      main: '#98716a',
     },
     chocolate: {
-      main: '#96785B',
+      main: '#7c3b30',
     },
     colorRed: {
       main: '#5f0101',
