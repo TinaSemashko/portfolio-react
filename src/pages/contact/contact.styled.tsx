@@ -66,7 +66,7 @@ export const RightBackgroundContainer = styled('div')`
   grid-row: 1;
 
   @media (max-width: 750px) {
-    min-height: 130%;
+    min-height: 100%;
     width: 100%;
     grid-column: 1;
     justify-self: end;
@@ -210,6 +210,9 @@ export const BtnSubmit = styled(Button)`
 
   &:hover {
     background: linear-gradient(315deg, #5986bc, #ffffff);
-    /* color: ${({ theme }) => theme.palette.colorBlue.main}; */
+  }
+
+  @media (max-width: 750px) {
+    margin-bottom: 3rem;
   }
 `;
