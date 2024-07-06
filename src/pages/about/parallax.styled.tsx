@@ -20,17 +20,6 @@ export const MainContainer = styled('div')`
   }
 `;
 
-export const VideoParallax = styled('video')`
-  margin: 0 auto;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -100;
-  background-size: cover;
-  transition: 1s opacity;
-`;
-
 export const ImgMain = styled('div')`
   background-attachment: fixed;
   background-position: center;
@@ -75,12 +64,18 @@ export const TextContainerBetween = styled('div')`
 export const ImgMainContainer = styled(ImgMain)`
   background-image: url(${img1});
   min-height: 100vh;
+
+  @media (max-width: 568px) {
+    min-height: 50vh;
+  }
 `;
 
 export const TextContainerShort0 = styled(TextContainerAbsolute)`
   color: #000;
   margin-top: -12vh;
   background-color: transparent;
+  left: -25%;
+  top: 30%;
 
   @media (max-width: 1200px) {
     margin-top: -3vh;
@@ -88,6 +83,7 @@ export const TextContainerShort0 = styled(TextContainerAbsolute)`
 
   @media (max-width: 568px) {
     margin-top: -4vh;
+    left: 0;
   }
 `;
 

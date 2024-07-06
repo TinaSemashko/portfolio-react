@@ -167,7 +167,7 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
 
     dots: mediumScreen ? false : true,
     dotsClass: 'slick-dots slick-thumb',
-    infinite: false,
+    infinite: true,
     lazyLoad: true,
     speed: 500,
     slidesToShow: 1,

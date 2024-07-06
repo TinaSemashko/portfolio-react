@@ -63,7 +63,7 @@ const ContactForm: React.FC = () => {
         alignItems: 'center',
         textAlign: 'center',
       }}>
-      <Typography variant="h4" sx={{ color: 'colorBlue.main ', fontWeight: '700' }}>
+      <Typography variant="h4" sx={{ color: 'chocolate.main ', fontWeight: '700' }}>
         {t('general.contact_us')}
       </Typography>
 
@@ -72,8 +72,14 @@ const ContactForm: React.FC = () => {
           width: '100%',
           marginTop: '1.5rem',
           border: 'solid',
-          borderColor: 'colorBlue.main ',
-          backgroundColor: 'secondary.main',
+          backgroundColor: 'primary.main',
+          '& .MuiInputBase-root.MuiOutlinedInput-root': {
+            fontSize: '1rem',
+            color: 'primary.main',
+          },
+          '& .MuiFormLabel-root': {
+            color: 'primary.main',
+          },
         }}
         id="filled-size-small prenom"
         label="Email"
@@ -101,8 +107,14 @@ const ContactForm: React.FC = () => {
           width: '100%',
           marginTop: '1.5rem',
           border: 'solid ',
-          borderColor: 'colorBlue.main ',
-          backgroundColor: 'secondary.main',
+          backgroundColor: 'primary.main',
+          '& .MuiInputBase-root.MuiOutlinedInput-root': {
+            fontSize: '1rem',
+            color: 'primary.main',
+          },
+          '& .MuiFormLabel-root': {
+            color: 'primary.main',
+          },
         }}
         id="filled-size-small nom"
         label={t('contact.name')}
@@ -130,10 +142,13 @@ const ContactForm: React.FC = () => {
           width: '100%',
           marginTop: '1.2rem',
           border: 'solid ',
-          borderColor: 'colorBlue.main ',
-          backgroundColor: 'secondary.main',
+          backgroundColor: 'primary.main',
           '& .MuiInputBase-root.MuiOutlinedInput-root': {
             fontSize: '1rem',
+            color: 'primary.main',
+          },
+          '& .MuiFormLabel-root': {
+            color: 'primary.main',
           },
         }}
         id="filled-multiline-static message"
@@ -153,7 +168,6 @@ const ContactForm: React.FC = () => {
           textAlign: 'center',
           alignItems: 'center',
           marginTop: '2rem',
-          color: 'white',
         }}>
         <S.BtnSubmit type="submit" disabled={isButtonDisabled}>
           {t('contact.submit')}

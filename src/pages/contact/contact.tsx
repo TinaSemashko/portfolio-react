@@ -42,7 +42,7 @@ const Contact: React.FC = () => {
               <Typography
                 variant="body2"
                 sx={{
-                  color: 'colorBlue.main',
+                  color: 'chocolate.main',
                   textTransform: 'none',
                   fontSize: fontSizeContact,
                 }}>
@@ -57,7 +57,7 @@ const Contact: React.FC = () => {
               <Typography
                 variant="body2"
                 sx={{
-                  color: 'colorBlue.main',
+                  color: 'chocolate.main',
                   textTransform: 'none',
                   fontSize: fontSizeContact,
                 }}>
@@ -72,7 +72,7 @@ const Contact: React.FC = () => {
               <Typography
                 variant="body2"
                 sx={{
-                  color: 'colorBlue.main',
+                  color: 'chocolate.main',
                   textTransform: 'none',
                   fontSize: {
                     xs: '0.5rem',

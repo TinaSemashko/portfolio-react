@@ -1,13 +1,34 @@
 import { styled } from '@mui/material/styles';
 import img1 from '../../images/2ecran.webp';
 import img from '../../images/pont.webp';
-import img2 from '../../images/fon_home.png';
 
 export const MainContainer = styled('div')`
   width: 100%;
   overflow-x: hidden;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
 
   @media (max-width: 750px) {
+  }
+`;
+
+export const VideoContainer = styled('div')`
+  grid-row: 1;
+  grid-column: 1;
+  position: relative;
+  width: 100%;
+  padding-top: 75%;
+
+  video {
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100vh;
+    transform: translate(-50%, -50%); // centre video
+    min-height: 100%;
   }
 `;
 
@@ -17,7 +38,7 @@ export const TitreColor = styled('div')`
   -webkit-text-fill-color: transparent; //dedcdca9
   background-clip: text;
 
-  background: linear-gradient(45deg, #ffffff, #a1a1a1, #ffffff, #a1a1a1, #ffffff);
+  background: linear-gradient(45deg, #ffffff, #444444, #ffffff, #444444, #ffffff);
 
   background-size: 3200px 200px;
   animation: gradient 15s linear infinite;
@@ -38,7 +59,9 @@ export const TitreColor = styled('div')`
 `;
 
 export const GridContainer = styled('div')`
-  background-image: url(${img2});
+  grid-row: 1;
+  grid-column: 1;
+  z-index: 10;
   width: 100%;
   height: 100vh;
   display: grid;
@@ -65,20 +88,7 @@ export const Side = styled('div')`
   transition: transform 0.3s ease-in-out;
 `;
 
-// export const LeftText = styled('div')`
-//   text-align: left;
-//   margin-left: 8%;
-//   width: 90%;
-// `;
-
-// export const RightText = styled('div')`
-//   color: ${({ theme }) => theme.palette.colorBlack.main};
-//   text-align: left;
-//   width: 50%;
-// `;
-
 export const LeftSide1ecran = styled(Side)`
-  background-image: url(${img2});
   grid-row: 1 / span 3;
   grid-column: 1;
   width: 100%;
@@ -88,7 +98,6 @@ export const LeftSide1ecran = styled(Side)`
 `;
 
 export const RightSide1ecran = styled(Side)`
-  background-image: url(${img2});
   grid-row: 1 / span 3;
   grid-column: 2;
   width: 100%;

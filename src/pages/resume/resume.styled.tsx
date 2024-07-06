@@ -1,6 +1,6 @@
 import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import img from '../../images/fonCV.webp';
+import img from '../../images/fonCV.jpg';
 
 export const MainContainer = styled('div')`
   padding-top: 10vh;
@@ -14,10 +14,6 @@ export const MainContainer = styled('div')`
   background-size: cover;
   background-attachment: fixed;
   position: relative;
-
-  @media (max-width: 1200px) {
-    /* padding-top: 6vh; */
-  }
 `;
 
 export const BackgroundMain = styled('div')`
@@ -95,24 +91,25 @@ export const ButtonCV = styled(Button)`
     width: 100%;
     height: inherit;
     border-radius: inherit;
-    background: linear-gradient(82.3deg, #05174b 10.8%, #0ca5e7 94.3%);
+    background: linear-gradient(82.3deg, #a47551 10.8%, #d0b49f 94.3%);
     transition: all 0.475s;
   }
 
   outline: none;
-  color: #daa06d;
+  color: ${({ theme }) => theme.palette.chocolate.main};
   padding: 1em;
   padding-left: 3em;
   padding-right: 3em;
-  border: 2px dashed #daa06d;
+  border: 2px dashed;
+  border-color: ${({ theme }) => theme.palette.chocolate.main};
   border-radius: 15px;
-  background-color: #eaddca;
-  box-shadow: 0 0 0 4px #eaddca, 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
+  background-color: ${({ theme }) => theme.palette.primary.main};
+  box-shadow: 0 0 0 4px #a47551, 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
   transition: 0.1s ease-in-out, 0.4s color;
 
   &:active {
     transform: translateX(0.1em) translateY(0.1em);
-    box-shadow: 0 0 0 4px #eaddca, 1.5px 1.5px 2.5px 1.5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 4px #a47551, 1.5px 1.5px 2.5px 1.5px rgba(0, 0, 0, 0.5);
   }
 
   &.MuiButton-root {
@@ -171,7 +168,7 @@ export const FlexInformationContainer = styled(BackgroundMain)`
 export const Line = styled(BackgroundMain)`
   width: 62.5%;
   height: 10vh;
-  background-color: ${({ theme }) => theme.palette.colorBlue.main};
+  background-color: #a475519a;
   text-align: center;
   display: flex;
   justify-content: space-evenly;
@@ -355,7 +352,7 @@ export const CoursesTitle = styled('div')`
   margin-top: 8vh;
   grid-column: 1 / span 3;
   text-align: center;
-  color: ${({ theme }) => theme.palette.colorBrightBlue.main};
+  color: ${({ theme }) => theme.palette.coffee.main};
 `;
 
 export const Courses = styled('ul')`
@@ -378,7 +375,7 @@ export const Hobby = styled('div')`
 `;
 
 export const SectionHobby = styled('div')`
-  background-color: #05174baf;
+  background-color: #a475519a;
   width: 20vw;
   padding-top: 1vh;
   padding-bottom: 1vh;
