@@ -125,7 +125,7 @@ const TopBar: React.FC = () => {
         component="nav"
         position="absolute"
         sx={{
-          backgroundColor: '#e5dee5',
+          backgroundColor: 'secondary.main',
         }}>
         <Toolbar
           sx={{
