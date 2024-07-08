@@ -5,31 +5,6 @@ import img from '../../images/pont.webp';
 export const MainContainer = styled('div')`
   width: 100%;
   overflow-x: hidden;
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 100%;
-
-  @media (max-width: 750px) {
-  }
-`;
-
-export const VideoContainer = styled('div')`
-  grid-row: 1;
-  grid-column: 1;
-  position: relative;
-  width: 100%;
-  padding-top: 75%;
-
-  video {
-    z-index: -1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100vh;
-    transform: translate(-50%, -50%); // centre video
-    min-height: 100%;
-  }
 `;
 
 export const TitreColor = styled('div')`
@@ -59,8 +34,6 @@ export const TitreColor = styled('div')`
 `;
 
 export const GridContainer = styled('div')`
-  grid-row: 1;
-  grid-column: 1;
   z-index: 10;
   width: 100%;
   height: 100vh;
@@ -399,11 +372,10 @@ export const NestedGridContainer2ecran = styled('div')`
   grid-template-rows: 2% 98%;
   align-items: center;
 
-  /* padding-bottom: 40vh; */
+  padding-bottom: 10%;
 
   @media (max-width: 760px) {
     grid-template-rows: 2% 39% 59%;
-    padding-bottom: 10%;
   }
 `;
 
@@ -423,10 +395,8 @@ export const ImgCloudContainer = styled('div')`
   }
 
   @media (max-width: 568px) {
-    /* margin-top: -6vh; */
-    margin-top: 0;
-    height: 1vh;
-    background-size: contain;
+    margin-top: -6vh;
+    height: 2vh;
   }
 `;
 
