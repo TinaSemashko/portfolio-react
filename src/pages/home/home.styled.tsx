@@ -351,10 +351,14 @@ export const CatContainer = styled('div')`
 
 export const GridContainer2ecran = styled('div')`
   width: 100%;
-
+  height: 98vh;
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 100%;
+
+  @media (max-width: 760px) {
+    height: auto;
+  }
 `;
 
 export const LeftSide2ecran = styled(Side)`
