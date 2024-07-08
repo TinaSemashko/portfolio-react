@@ -380,7 +380,6 @@ export const NestedGridContainer2ecran = styled('div')`
 `;
 
 export const ImgCloudContainer = styled('div')`
-  margin-top: -0.5vh;
   grid-row: 1;
   grid-column: 1;
   width: 100%;
