@@ -197,9 +197,9 @@ const Home: React.FC = () => {
       <S.GridContainer2ecran>
         <S.LeftSide2ecran />
         <S.RightSide2ecran />
-        {/* <S.NestedGridContainer2ecran>
+        <S.NestedGridContainer2ecran>
           <S.ImgCloudContainer />
-          <S.ImgLeft2ecran src={img1} alt="crown" height="auto" width="50vw" />
+          {/* <S.ImgLeft2ecran src={img1} alt="crown" height="auto" width="50vw" />
           <S.Text2ecran>
             <S.TitleLeft2ecran>
               <Typography
@@ -267,8 +267,8 @@ const Home: React.FC = () => {
                 {t('main.author2ecran')}
               </Typography>
             </S.TitleRight2ecran>
-          </S.Text2ecran>
-        </S.NestedGridContainer2ecran> */}
+          </S.Text2ecran> */}
+        </S.NestedGridContainer2ecran>
       </S.GridContainer2ecran>
     </S.MainContainer>
   );

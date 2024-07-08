@@ -364,6 +364,7 @@ export const GridContainer2ecran = styled('div')`
 export const LeftSide2ecran = styled(Side)`
   grid-row: 1;
   grid-column: 1;
+
   text-align: center;
   background-color: ${({ theme }) => theme.palette.secondary.main};
   color: #dedcdca9;
@@ -376,6 +377,7 @@ export const LeftSide2ecran = styled(Side)`
 export const RightSide2ecran = styled(Side)`
   grid-row: 1;
   grid-column: 2;
+
   text-align: center;
   background-color: #dedcdca9;
   background: url(${img1}) no-repeat;
@@ -397,7 +399,7 @@ export const NestedGridContainer2ecran = styled('div')`
   grid-template-rows: 2% 98%;
   align-items: center;
 
-  padding-bottom: 40vh;
+  /* padding-bottom: 40vh; */
 
   @media (max-width: 760px) {
     grid-template-rows: 2% 39% 59%;
