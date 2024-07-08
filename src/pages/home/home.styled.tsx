@@ -424,6 +424,7 @@ export const ImgCloudContainer = styled('div')`
 
   @media (max-width: 568px) {
     /* margin-top: -6vh; */
+    height: 1vh;
   }
 `;
 
