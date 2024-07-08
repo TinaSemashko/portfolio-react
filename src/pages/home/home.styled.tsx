@@ -436,7 +436,7 @@ export const ImgLeft2ecran = styled('img')`
   opacity: 0.7;
 
   @media (max-width: 760px) {
-    padding-top: 10vh;
+    /* padding-top: 10vh; */
     width: 80vw;
   }
 `;
