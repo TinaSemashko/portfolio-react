@@ -63,6 +63,16 @@ const Home: React.FC = () => {
     xxl: '2rem',
   };
 
+  const fontSize2ScreenTitle = {
+    xxs: '0.8rem',
+    xs: '1.4rem',
+    sm: '1.6rem',
+    md: '1.4rem',
+    lg: '1.8rem',
+    xl: '2rem',
+    xxl: '2.4rem',
+  };
+
   return (
     <S.MainContainer>
       <Helmet>
@@ -98,7 +108,6 @@ const Home: React.FC = () => {
               }}>
               {t('main.title')}
             </Typography>
-
             <br />
             <Typography
               variant="h3"
@@ -186,71 +195,80 @@ const Home: React.FC = () => {
         </S.CatContainer>
       </S.GridContainer>
       <S.GridContainer2ecran>
-        <S.ImgCloudContainer />
-        {/* <S.LeftSide2ecran>
+        <S.LeftSide2ecran />
+        <S.RightSide2ecran />
+        <S.NestedGridContainer2ecran>
+          <S.ImgCloudContainer />
           <S.ImgLeft2ecran src={img1} alt="crown" height="auto" width="50vw" />
-        </S.LeftSide2ecran> */}
-        {/* <S.RightSide2ecran></S.RightSide2ecran> */}
-        {/* <S.Text2ecran>
-          <S.TitleLeft2ecran>
-            <Typography
-              variant="h2"
-              sx={{
-                px: pxValue,
-              }}>
-              {t('main.title2ecran')}
-            </Typography>
-            <Typography
-              variant="h2"
-              sx={{
-                px: pxValue,
-              }}>
-              {t('main.subtitle2ecran')}
-            </Typography>
-            <Typography
-              variant="h2"
-              sx={{
-                px: pxValue,
-              }}>
-              {t('main.subtitle12ecran')}
+          <S.Text2ecran>
+            <S.TitleLeft2ecran>
               <Typography
                 variant="h2"
                 sx={{
                   px: pxValue,
-                }}></Typography>
-              {t('main.author2ecran')}
-            </Typography>
-          </S.TitleLeft2ecran>
-          <S.TitleRight2ecran>
-            <Typography
-              variant="h2"
-              sx={{
-                px: pxValue,
-              }}>
-              {t('main.title2ecran')}
-            </Typography>
-            <Typography
-              variant="h2"
-              sx={{
-                px: pxValue,
-              }}>
-              {t('main.subtitle2ecran')}
-            </Typography>
-            <Typography
-              variant="h2"
-              sx={{
-                px: pxValue,
-              }}>
-              {t('main.subtitle12ecran')}
+                  fontSize: fontSize2ScreenTitle,
+                }}>
+                {t('main.title2ecran')}
+              </Typography>
               <Typography
                 variant="h2"
                 sx={{
                   px: pxValue,
-                }}></Typography>
-              {t('main.author2ecran')}
-            </Typography>
-          </S.TitleRight2ecran>
-        </S.Text2ecran> */}
+                  fontSize: fontSize2ScreenTitle,
+                }}>
+                {t('main.subtitle2ecran')}
+              </Typography>
+              <Typography
+                variant="h2"
+                sx={{
+                  px: pxValue,
+                  fontSize: fontSize2ScreenTitle,
+                }}>
+                {t('main.subtitle12ecran')}
+                <Typography
+                  variant="h2"
+                  sx={{
+                    px: pxValue,
+                    fontSize: fontSize2ScreenTitle,
+                  }}></Typography>
+                {t('main.author2ecran')}
+              </Typography>
+            </S.TitleLeft2ecran>
+            <S.TitleRight2ecran>
+              <Typography
+                variant="h2"
+                sx={{
+                  px: pxValue,
+                  fontSize: fontSize2ScreenTitle,
+                }}>
+                {t('main.title2ecran')}
+              </Typography>
+              <Typography
+                variant="h2"
+                sx={{
+                  px: pxValue,
+                  fontSize: fontSize2ScreenTitle,
+                }}>
+                {t('main.subtitle2ecran')}
+              </Typography>
+              <Typography
+                variant="h2"
+                sx={{
+                  px: pxValue,
+                  fontSize: fontSize2ScreenTitle,
+                }}>
+                {t('main.subtitle12ecran')}
+                <Typography
+                  variant="h2"
+                  sx={{
+                    px: pxValue,
+                    fontSize: fontSize2ScreenTitle,
+                  }}></Typography>
+                {t('main.author2ecran')}
+              </Typography>
+            </S.TitleRight2ecran>
+          </S.Text2ecran>
+        </S.NestedGridContainer2ecran>
       </S.GridContainer2ecran>
     </S.MainContainer>
   );
