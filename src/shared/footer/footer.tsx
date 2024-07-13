@@ -48,13 +48,13 @@ const Home: React.FC = () => {
             }}>
             {t('footer.work')}
           </Typography>
-          <Typography variant="h6" textAlign="center" sx={{ fontSize: fontSizeFooter, color: '#008388' }}>
+          <Typography variant="h5" textAlign="center" sx={{ fontSize: fontSizeFooter, color: '#008388' }}>
             {t('footer.work_sub')}
           </Typography>
         </div>
         <S.ButtonWork onClick={() => navigate(Routes.contact)}>
           <Typography
-            variant="h6"
+            variant="h5"
             textAlign="center"
             sx={{
               fontSize: fontSizeFooter,

@@ -5,6 +5,7 @@ import { AppRoutes } from './appRoutes';
 import Footer from '../shared/footer/footer';
 
 import '@mui/material';
+import Scroll from '../shared/scrollToTop';
 
 declare module '@mui/material/styles' {
   interface BreakpointOverrides {
@@ -105,6 +106,7 @@ const App: React.FC = () => (
   <ThemeProvider theme={responsiveFontSizes(theme)}>
     <Topbar />
     <AppRoutes />
+    <Scroll showBelow={250} />
     <Footer />
   </ThemeProvider>
 );

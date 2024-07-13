@@ -1,5 +1,15 @@
 import React, { useState } from 'react';
-import { Box, Button, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, Typography } from '@mui/material';
+import {
+  Box,
+  Button,
+  FormControl,
+  InputLabel,
+  List,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+  Typography,
+} from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import lamp1 from '../../images/lamp.webp';
 
@@ -37,7 +47,6 @@ export const LangButton: React.FC<Props> = ({ colorPrime, iconWithoutSlash = fal
 
   const handleLanguageChange = (event: SelectChangeEvent) => {
     const newLanguage = event.target.value;
-    console.log(newLanguage);
     setSelectedLang(event.target.value as string);
     changeCurrentLanguage(newLanguage);
   };
@@ -59,13 +68,15 @@ export const LangButton: React.FC<Props> = ({ colorPrime, iconWithoutSlash = fal
               sx={{
                 '&.MuiOutlinedInput-root': { fontSize: '1rem' },
               }}>
-              {languages.map((item, index) => (
-                <MenuItem value={item} key={item}>
-                  <Typography variant="body1" color={colorPrime ? 'secondary' : 'colorBlack'}>
-                    {langAlias[index]}
-                  </Typography>
-                </MenuItem>
-              ))}
+              <List>
+                {languages.map((item, index) => (
+                  <MenuItem value={item} key={item}>
+                    <Typography variant="body1" color={colorPrime ? 'secondary' : 'colorBlack'}>
+                      {langAlias[index]}
+                    </Typography>
+                  </MenuItem>
+                ))}
+              </List>
             </Select>
           </FormControl>
         </Box>
