@@ -38,17 +38,26 @@ const Scroll: React.FC<Props> = ({ showBelow }) => {
         <IconButton
           onClick={handleClick}
           sx={{
-            // width: '10%',
-            height: '20vh',
+            height: '18vh',
             display: 'flex',
             justifyContent: 'space-around',
             alignItems: 'center',
             flexDirection: 'column',
             position: 'fixed',
             bottom: '10vh',
+
+            '&:hover': {
+              backgroundColor: 'inherit',
+            },
+
+            '&:hover *': {
+              color: 'chocolate.main',
+              backgroundColor: 'transparent',
+              transition: '0.5s',
+            },
           }}>
           <NavigationIcon color="secondary" />
-          <Typography variant="body2" color="secondary" sx={{ transform: 'rotate(90deg)', width: '15vh' }}>
+          <Typography variant="body2" color="secondary" sx={{ transform: 'rotate(90deg)', py: 4 }}>
             {t('main.backToTop')}
           </Typography>
         </IconButton>
