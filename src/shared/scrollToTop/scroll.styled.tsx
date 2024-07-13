@@ -5,9 +5,4 @@ export const MainContainer = styled('div')`
   display: flex;
   justify-content: end;
   align-items: center;
-
-  /* & :hover {
-    color: ${({ theme }) => theme.palette.chocolate.main};
-    transition: 0.5s;
-  } */
 `;

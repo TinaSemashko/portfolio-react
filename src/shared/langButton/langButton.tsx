@@ -1,15 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Box,
-  Button,
-  FormControl,
-  InputLabel,
-  List,
-  MenuItem,
-  Select,
-  SelectChangeEvent,
-  Typography,
-} from '@mui/material';
+import { Box, Button, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import lamp1 from '../../images/lamp.webp';
 
@@ -57,7 +47,7 @@ export const LangButton: React.FC<Props> = ({ colorPrime, iconWithoutSlash = fal
         <Box sx={{ width: 120 }}>
           <FormControl fullWidth>
             <InputLabel id="select-label">
-              <Typography variant="h6">{t('main.lang')} </Typography>
+              <Typography variant="h6">{t('main.lang')}</Typography>
             </InputLabel>
             <Select
               labelId="select-label"
@@ -68,15 +58,13 @@ export const LangButton: React.FC<Props> = ({ colorPrime, iconWithoutSlash = fal
               sx={{
                 '&.MuiOutlinedInput-root': { fontSize: '1rem' },
               }}>
-              <List>
-                {languages.map((item, index) => (
-                  <MenuItem value={item} key={item}>
-                    <Typography variant="body1" color={colorPrime ? 'secondary' : 'colorBlack'}>
-                      {langAlias[index]}
-                    </Typography>
-                  </MenuItem>
-                ))}
-              </List>
+              {languages.map((item, index) => (
+                <MenuItem value={item} key={item}>
+                  <Typography variant="body1" color="textPrimary">
+                    {langAlias[index]}
+                  </Typography>
+                </MenuItem>
+              ))}
             </Select>
           </FormControl>
         </Box>

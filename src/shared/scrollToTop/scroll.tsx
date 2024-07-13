@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 
 import * as S from './scroll.styled';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router';
+import { Routes } from '../../app/routes';
 
 type Props = {
   showBelow: number;
@@ -11,6 +13,7 @@ type Props = {
 
 const Scroll: React.FC<Props> = ({ showBelow }) => {
   const { t } = useTranslation();
+  const { pathname } = useLocation();
   const [show, setShow] = useState(showBelow ? false : true);
 
   const handleClick = () => {
@@ -56,8 +59,11 @@ const Scroll: React.FC<Props> = ({ showBelow }) => {
               transition: '0.5s',
             },
           }}>
-          <NavigationIcon color="secondary" />
-          <Typography variant="body2" color="secondary" sx={{ transform: 'rotate(90deg)', py: 4 }}>
+          <NavigationIcon color={pathname === Routes.resume ? 'primary' : 'secondary'} />
+          <Typography
+            variant="body2"
+            color={pathname === Routes.resume ? 'primary' : 'secondary'}
+            sx={{ transform: 'rotate(90deg)', py: 4 }}>
             {t('main.backToTop')}
           </Typography>
         </IconButton>
