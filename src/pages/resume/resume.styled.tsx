@@ -1,6 +1,6 @@
 import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import img from '../../images/fonCV.jpg';
+import img from '../../images/fonCV.webp';
 
 export const MainContainer = styled('div')`
   padding-top: 10vh;
