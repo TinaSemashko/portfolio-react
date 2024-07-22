@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
-import { CircularProgress, Typography, useMediaQuery } from "@mui/material";
-import { useTranslation } from "react-i18next";
-import { Carousel3d } from "../../types/projects";
-import { imagesCarousel } from "./dataCarousel";
-import { useNavigate } from "react-router";
-import { Routes } from "../../app/routes";
-import { theme } from "../../app/app";
+import { useEffect, useState } from 'react';
+import { CircularProgress, Typography, useMediaQuery } from '@mui/material';
+import { useTranslation } from 'react-i18next';
+import { Carousel3d } from '../../types/projects';
+import { imagesCarousel } from './dataCarousel';
+import { useNavigate } from 'react-router';
+import { Routes } from '../../app/routes';
+import { theme } from '../../app/app';
 
-import * as S from "./carousel3d.styled";
+import * as S from './carousel3d.styled';
 
 interface CarouselParams {
   sidesQuantity: number;
@@ -17,35 +17,38 @@ interface CarouselParams {
 }
 
 const fontSizeBody1 = {
-  xxs: "0.5rem",
-  xs: "0.5rem",
-  sm: "0.5rem",
-  md: "0.6rem",
-  lg: "0.7rem",
-  xl: "1rem",
-  xxl: "1.2rem",
+  xxs: '0.5rem',
+  xs: '0.5rem',
+  sm: '0.5rem',
+  md: '0.6rem',
+  lg: '0.7rem',
+  xl: '1rem',
+  xxl: '1.2rem',
 };
 
 const Carousel: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [animationPause, setAnimationPause] = useState(false);
-  const [indexState, setIndexState] = useState("");
+  const [indexState, setIndexState] = useState('');
   const [carouselParams, setCarouselParams] = useState<CarouselParams>();
   const [imageMap, setImageMap] = useState<Carousel3d[]>([]);
-  const mediumScreen = useMediaQuery(theme.breakpoints.down("md"));
-  const smallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const mediumScreen = useMediaQuery(theme.breakpoints.down('md'));
+  const smallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const koeff = mediumScreen ? (smallScreen ? 1.3 : 1.2) : 1;
   const radius = 28 * koeff;
 
   const makeCarousel = (carouselParams: CarouselParams) => {
-    imagesCarousel.map((el, index) => {
-      el.src = require(`../../images/${el.imageName}`);
-      el.alt = `Image ${index + 1}`;
-      el.degY = index * carouselParams.degKey;
-      return el;
+    const tempCar = imagesCarousel.map((el, index) => {
+      return {
+        ...el,
+        src: require(`../../images/${el.imageName}`),
+        alt: `Image ${index + 1}`,
+        degY: index * carouselParams.degKey,
+      };
     });
-    setImageMap(imagesCarousel);
+
+    setImageMap(tempCar);
   };
 
   useEffect(() => {
@@ -62,7 +65,7 @@ const Carousel: React.FC = () => {
   }, [radius]);
 
   const sortCarousel = (numberFirstEl: string) => {
-    if (numberFirstEl !== "0") {
+    if (numberFirstEl !== '0') {
       let indexEOnChange =
         Number(numberFirstEl) >= (carouselParams?.sidesQuantity ?? 0)
           ? Number(numberFirstEl) - (carouselParams?.sidesQuantity ?? 0)
@@ -78,7 +81,7 @@ const Carousel: React.FC = () => {
   };
 
   const handleClick = (event: React.MouseEvent<HTMLImageElement>) => {
-    setAnimationPause((prev) => !prev);
+    setAnimationPause(prev => !prev);
     let indexElForChange = indexState;
 
     if (!animationPause) {
@@ -105,8 +108,7 @@ const Carousel: React.FC = () => {
               key={index}
               degY={item.degY}
               radius={carouselParams?.radius ?? 0}
-              carouselWith={carouselParams?.cellsize ?? 0}
-            >
+              carouselWith={carouselParams?.cellsize ?? 0}>
               <S.Picture
                 carouselWith={carouselParams?.cellsize ?? 0}
                 src={item.src}
@@ -120,9 +122,8 @@ const Carousel: React.FC = () => {
                   variant="body1"
                   textAlign="left"
                   sx={{ fontSize: fontSizeBody1 }}
-                  onClick={() => openDescription(item)}
-                >
-                  {t("carousel3d.button_project")}
+                  onClick={() => openDescription(item)}>
+                  {t('carousel3d.button_project')}
                 </Typography>
               </S.ButtonMore>
             </S.Slide>
