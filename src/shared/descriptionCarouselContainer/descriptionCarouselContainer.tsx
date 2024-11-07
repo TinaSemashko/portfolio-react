@@ -63,7 +63,6 @@ const DescriptionCarouselContainer: React.FC<Props> = ({ project, onCloseDescrip
         sx={{
           fontSize: '2rem',
           display: { xxs: 'flex', xs: 'flex', sm: 'none', md: 'none' },
-          color: 'colorLightYellow.main',
         }}
         onClick={handleCloseFlip}
       />
@@ -75,7 +74,7 @@ const DescriptionCarouselContainer: React.FC<Props> = ({ project, onCloseDescrip
             pt: '2%',
             pb: '2%',
             width: '90%',
-            color: 'colorRed.main',
+            color: 'secondary.main',
             fontSize: fontSizeH4,
           }}>
           {project?.projectTitre}
@@ -87,7 +86,7 @@ const DescriptionCarouselContainer: React.FC<Props> = ({ project, onCloseDescrip
             pt: '2%',
             pb: '2%',
             width: '90%',
-            color: 'colorRed.main',
+            color: 'secondary.main',
             fontSize: fontSizeH4,
           }}>
           {t(`projects.${project?.projectName}`)}
@@ -97,7 +96,7 @@ const DescriptionCarouselContainer: React.FC<Props> = ({ project, onCloseDescrip
           onClick={() => openLink(linkProject ?? '')}
           disabled={!(project && project?.openProject)}
           sx={{ cursor: 'pointer' }}>
-          <Typography variant="h4" sx={{ cursor: 'pointer', fontSize: fontSizeH4, pb: '2%', color: 'colorRed.main' }}>
+          <Typography variant="h4" sx={{ cursor: 'pointer', fontSize: fontSizeH4, pb: '2%', color: 'secondary.main' }}>
             {t('carousel2d.button_project')}
           </Typography>
         </Button>
@@ -109,7 +108,7 @@ const DescriptionCarouselContainer: React.FC<Props> = ({ project, onCloseDescrip
             cursor: 'pointer',
             display: { xxs: 'flex', xs: 'flex', sm: 'flex', md: 'none' },
             pb: '2%',
-            color: 'colorRed.main',
+            color: 'secondary.main',
           }}>
           <Typography variant="h4" sx={{ cursor: 'pointer', fontSize: fontSizeH4 }}>
             {t('carousel2d.button_screenshots')}
@@ -126,7 +125,7 @@ const DescriptionCarouselContainer: React.FC<Props> = ({ project, onCloseDescrip
             cursor: 'pointer',
             display: { xxs: 'flex', xs: 'flex', sm: 'flex', md: 'none' },
             pb: '2%',
-            color: 'colorRed.main',
+            color: 'secondary.main',
           }}>
           <Typography variant="h4" sx={{ cursor: 'pointer', fontSize: fontSizeH4 }}>
             {t('carousel2d.button_screenshots_back')}
@@ -135,7 +134,7 @@ const DescriptionCarouselContainer: React.FC<Props> = ({ project, onCloseDescrip
         <Typography
           variant="h4"
           textAlign="center"
-          sx={{ paddingTop: '2%', width: '90%', color: 'colorRed.main', fontSize: fontSizeH6 }}>
+          sx={{ paddingTop: '2%', width: '90%', color: 'secondary.main', fontSize: fontSizeH6 }}>
           {project?.descriptions}
         </Typography>
       </S.DiscriptionCarouselCont>
