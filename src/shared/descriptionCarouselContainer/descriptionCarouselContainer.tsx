@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { Button, Dialog, Typography } from '@mui/material';
 import { Carousel3d } from '../../types/projects';
 import CloseIcon from '@mui/icons-material/Close';
+import Carousel from '../../pages/projects/carousel';
 
 import * as S from './descriptionCarouselContainer.styled';
-import Carousel from '../../pages/projects/carousel';
 
 type Props = {
   project: Carousel3d | null;
