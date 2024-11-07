@@ -12,7 +12,8 @@ export const CarouselContainer = styled('div')`
   justify-content: center;
   position: relative;
   background-image: url(${fon2});
-  background-size: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
 `;
 
 export const CloseIconStyle = styled(Box)`
