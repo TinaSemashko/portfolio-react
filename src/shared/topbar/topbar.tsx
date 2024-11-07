@@ -21,6 +21,7 @@ import SailingIcon from '@mui/icons-material/Sailing';
 import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import SocialLinks from '../socialLinks';
+import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
 
 import * as S from './topbar.styled';
 
@@ -31,6 +32,7 @@ const menuIconsArray = [
   <AccountCircleIcon />,
   <PictureAsPdfIcon />,
   <SailingIcon />,
+  <HistoryEduIcon />,
   <ConnectWithoutContactIcon />,
 ];
 
