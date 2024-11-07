@@ -8,8 +8,10 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Button, Typography, useMediaQuery } from '@mui/material';
 import { theme } from '../../app/app';
-import { Carousel3d, CarouselImg } from '../../types/projects';
+import { Carousel3d } from '../../types/projects';
 import AssignmentReturnIcon from '@mui/icons-material/AssignmentReturn';
+import { DataCarousel2D } from '../../pages/descriptionProjects/dataCarousel2D';
+import { DataCarousel2DBack } from '../../pages/descriptionProjects/dataCarousel2Dback';
 
 import * as S from './carousel.styled';
 
@@ -43,7 +45,6 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 type Props = {
-  carouselImagesProps?: CarouselImg[];
   project: Carousel3d | null;
 };
 
@@ -67,17 +68,13 @@ const fontSizeH4 = {
   xxl: '2rem',
 };
 
-const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
+const Carousel: React.FC<Props> = ({ project }) => {
   const navigate = useNavigate();
   const { t } = useTranslation();
-  const [imageMapFront, setImageMapFront] = useState<CarouselImg[]>();
-  const [imageMapBack, setImageMapBack] = useState<CarouselImg[]>();
-  const [carouselFront, setCarouselFront] = useState(true);
-  const [openFront, setOpenFront] = useState(false);
-  const [carouselImages, setCarouselImages] = useState<CarouselImg[]>([]);
   const [linkProject, setlinkProject] = useState<string | null>('');
   const [linkGit, setlinkGit] = useState<string | null>('');
   const mediumScreen = useMediaQuery(theme.breakpoints.down('md'));
+  const [carouselBack, setCarouselBack] = useState(false);
 
   const SampleNextArrow = (props: ArrowProps) => {
     const { className, style, onClick } = props;
@@ -112,60 +109,27 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
   };
 
   useEffect(() => {
-    if (carouselImagesProps) {
-      setCarouselImages(carouselImagesProps);
+    if (project) {
       setlinkProject(project && project.linkProject);
       setlinkGit(project && project?.linkGit);
     }
-  }, [carouselImagesProps, project]);
-
-  useEffect(() => {
-    if (carouselImages) {
-      const [updatedImageMapBack, updatedImageMapFront] = carouselImages.reduce(
-        (acc: [CarouselImg[], CarouselImg[]], item: CarouselImg) => {
-          const newItem: CarouselImg = {
-            src: item.src,
-            alt: `Image ${item.alt}`,
-            description: item.description,
-            general: item.general,
-          };
-
-          if (item.general) {
-            acc[1].push(newItem);
-          } else {
-            acc[0].push(newItem);
-          }
-
-          return acc;
-        },
-        [[], []],
-      );
-
-      setImageMapBack(updatedImageMapBack);
-      setImageMapFront(updatedImageMapFront);
-    }
-  }, [carouselImages]);
-
-  const changeCarousel = (status: boolean) => {
-    setCarouselFront(status);
-    setOpenFront(carouselFront !== status ? !openFront : openFront);
-  };
+  }, [project]);
 
   const settings = {
-    customPaging: function (i: number) {
-      const imageMap = carouselFront ? imageMapFront : imageMapBack;
-      const selectedImage = imageMap && (imageMap[i] || imageMap[0]);
-      const src = `${require(`../../images/MyProjects/${selectedImage?.src}`)}`;
-      const alt = selectedImage?.alt;
-      return (
-        // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <a>
-          <img src={src} alt={alt} width="50vw" height="50vh" style={{ border: 'solid #ffffff' }} loading="lazy" />
-        </a>
-      );
-    },
+    // customPaging: function (i: number) {
+    //   const imageMap = carouselBack ? DataCarousel2DBack : DataCarousel2D;
+    //   const selectedImage = imageMap && (imageMap[i] || imageMap[0]);
+    //   const src = `${require(`../../images/MyProjects/${selectedImage?.src}`)}`;
+    //   const alt = selectedImage?.alt;
+    //   return (
+    //     // eslint-disable-next-line jsx-a11y/anchor-is-valid
+    //     <a>
+    //       <img src={src} alt={alt} width="50vw" height="50vh" style={{ border: 'solid #ffffff' }} loading="lazy" />
+    //     </a>
+    //   );
+    // },
 
-    dots: mediumScreen ? false : true,
+    dots: mediumScreen ? false : false,
     dotsClass: 'slick-dots slick-thumb',
     infinite: true,
     lazyLoad: true,
@@ -178,7 +142,7 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
   };
 
   const changerFrontCode = () => {
-    changeCarousel(openFront);
+    setCarouselBack(!carouselBack);
   };
 
   const openLink = (link: string) => {
@@ -200,36 +164,33 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
       <S.FlexBox>
         <S.SliderBox>
           <Slider {...settings} className="Slider">
-            {(carouselFront ? imageMapFront : imageMapBack)?.map((item, index) => (
-              <S.ImgCarouselContainer
-                className="ImgCarouselContainer"
-                key={index}
-                slidesMoreOne={
-                  carouselFront
-                    ? imageMapFront
-                      ? imageMapFront?.length > 1
-                      : false
-                    : imageMapBack
-                    ? imageMapBack?.length > 1
-                    : false
-                }>
-                <img
-                  src={`${item.src !== '' ? require(`../../images/MyProjects/${item.src}`) : project?.src}`}
-                  alt={item.alt}
-                  width="100%"
-                />
-              </S.ImgCarouselContainer>
-            ))}
+            {carouselBack
+              ? DataCarousel2DBack?.filter(el => el.projectName === project?.projectName).map((item, index) => (
+                  <S.ImgCarouselContainer slidesMoreOne={true} className="ImgCarouselContainer" key={index}>
+                    <img src={require(`../../images/MyProjects/Back/${item.src}`)} alt={item.alt} width="100%" />
+                  </S.ImgCarouselContainer>
+                ))
+              : DataCarousel2D?.filter(el => el.projectName === project?.projectName).map((item, index) => (
+                  <S.ImgCarouselContainer slidesMoreOne={true} className="ImgCarouselContainer" key={index}>
+                    <img src={require(`../../images/MyProjects/Front/${item.src}`)} alt={item.alt} width="100%" />
+                  </S.ImgCarouselContainer>
+                ))}
           </Slider>
         </S.SliderBox>
         <S.Description>
-          <S.DiscriptionCarouselCont openABS={openFront}>
+          <S.DiscriptionCarouselCont openABS={!carouselBack}>
             <Typography
               variant="h4"
               textAlign="center"
-              sx={{ paddingTop: '2%', width: '90%', color: '#a1a1a1', fontSize: fontSizeH6 }}>
-              {project?.descriptions}
+              sx={{
+                pt: '2%',
+                pb: '2%',
+                width: '90%',
+                fontSize: fontSizeH6,
+              }}>
+              {t(`projects.${project?.projectName}`)}
             </Typography>
+
             <Button
               variant="text"
               onClick={() => openLink(linkProject ?? '')}
@@ -259,6 +220,7 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
                 {t('carousel2d.button_video')}
               </Typography>
             </Button>
+
             <S.FlexBoxButton
               onClick={() => {
                 navigate(Routes.projects);
@@ -269,14 +231,16 @@ const Carousel: React.FC<Props> = ({ carouselImagesProps, project }) => {
                 {t('projects.return')}
               </Typography>
             </S.FlexBoxButton>
+            <Typography
+              variant="h4"
+              textAlign="center"
+              sx={{ paddingTop: '5%', width: '90%', color: '#a1a1a1', fontSize: fontSizeH6 }}>
+              {project?.descriptions}
+            </Typography>
           </S.DiscriptionCarouselCont>
-          <S.ButtonSwitchABS onClick={changerFrontCode} disabled={carouselImagesProps?.length === 1}>
+          <S.ButtonSwitchABS onClick={changerFrontCode}>
             <Typography variant="h5">
-              {carouselImagesProps?.length === 1
-                ? ''
-                : openFront
-                ? t('carousel2d.button_front')
-                : t('carousel2d.button_code')}
+              {carouselBack ? t('carousel2d.button_front') : t('carousel2d.button_code')}
             </Typography>
           </S.ButtonSwitchABS>
         </S.Description>

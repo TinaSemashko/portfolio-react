@@ -4,5 +4,6 @@ export enum MenuItems {
   ABOUT = 'about',
   RESUME = 'resume',
   HOBBY = 'hobby',
+  SERTIFICATS = 'sertificats',
   CONTACT = 'contact',
 }

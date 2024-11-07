@@ -14,6 +14,7 @@ const Galery = lazy(() => import('../pages/hobby/galery'));
 const Videopage = lazy(() => import('../pages/projects/pageVideo'));
 const CartProject = lazy(() => import('../pages/descriptionProjects'));
 const Conditions = lazy(() => import('../pages/conditions'));
+const Sertificats = lazy(() => import('../pages/sertificats'));
 
 export const AppRoutes: React.FunctionComponent = () => (
   <Router>
@@ -27,6 +28,7 @@ export const AppRoutes: React.FunctionComponent = () => (
     <Route path={Routes.videopage} element={withSuspense(Videopage)} />
     <Route path={Routes.cartproject} element={withSuspense(CartProject)} />
     <Route path={Routes.conditions} element={withSuspense(Conditions)} />
+    <Route path={Routes.sertificats} element={withSuspense(Sertificats)} />
 
     <Route path="*" element={<NotFound />} />
   </Router>

@@ -52,7 +52,19 @@
     "message_private": "I'm sorry, but this repository is private",
     "repeat": "Repeat the video",
     "description": "Go to the project description",
-    "return": "Back to my projects"
+    "return": "Back to my projects",
+    "carousel": "Show as a carousel",
+    "list": "Show as table",
+    "teamChallenge": "Web platform for juniors that assembles a cross-functional team for the first pet project",
+    "karamonVideo": "Business card website for a video engineer",
+    "ABS": "E-commerce website for a construction company with a database, admin page and storage of photos on a third-party service",
+    "dictionary": "Application using dictionary API",
+    "ekea": "E-commerce website for a furniture company (training project)",
+    "casinoGame": "The Dice Game",
+    "weatherReact": "An application that uses API to display the weather forecast for a selected city",
+    "nastyaPhoto": "Business card website for a photographer",
+    "diamondCollection": "Website of an online store for a jewelry company (training project)",
+    "portfolio": "Portfolio for the clients"
   },
   "resume": {
     "name": "Tina Semashko",
@@ -80,7 +92,8 @@
     "contact": "contacts",
     "close": "close",
     "menu": "menu",
-    "conditions": "GTC"
+    "conditions": "GTC",
+    "sertificats": "my certificates"
   },
   "footer": {
     "work": "Work inquiry",
@@ -102,7 +115,9 @@
     "button_project": "Open the project",
     "button_video": "Watch the video",
     "button_code": "Watch the project code",
-    "button_front": "Watch the project user interface"
+    "button_front": "Watch the project user interface",
+    "button_screenshots": "Watch the screenshots of the site",
+    "button_screenshots_back": "Watch the screenshots of the code"
   },
   "experience": {
     "dataEx1": "August 2022 - until now",

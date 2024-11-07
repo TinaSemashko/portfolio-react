@@ -92,6 +92,10 @@ export let theme = createTheme({
     subtitle1: {
       fontFamily: 'Helvetica, serif, Arial',
       fontDisplay: 'optional',
+      fontSize: '0.8rem',
+      '@media (max-width:750px)': {
+        fontSize: '0.5rem',
+      },
     },
   },
   breakpoints: {

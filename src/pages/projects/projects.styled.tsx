@@ -7,6 +7,10 @@ export const MainContainer = styled('div')`
   min-height: 100vh;
   background-image: url(${img});
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
   margin-bottom: 40vh;
 
   @media (max-width: 1200px) {

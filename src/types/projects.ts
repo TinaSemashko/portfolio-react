@@ -8,6 +8,7 @@ export type Carousel3d = {
   degY: number;
   alt: string;
   projectName: string;
+  projectTitre: string;
   openProject: boolean;
   openGit: boolean;
   openVideo: boolean;
