@@ -64,7 +64,8 @@
     "weatherReact": "Une application qui utilise une API pour afficher les prévisions météo d'une ville sélectionnée",
     "nastyaPhoto": "Site-vitrine pour une photographe",
     "diamondCollection": "Site e-commerce pour la société de bijoux (projet de formation)",
-    "portfolio": "Portfolio pour des clients"
+    "portfolio": "Portfolio pour des clients",
+    "myGIT": "Ouvrir mon GitHUB "
   },
   "resume": {
     "name": "Tina Semashko",

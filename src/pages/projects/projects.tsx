@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Button, ImageList, ImageListItem, ImageListItemBar, Typography, useMediaQuery } from '@mui/material';
+import { Button, ImageList, ImageListItem, ImageListItemBar, Link, Typography, useMediaQuery } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
 import { Carousel3d } from '../../types/projects';
@@ -61,6 +61,16 @@ const Projects: React.FC = () => {
         }}>
         {t('projects.title')}
       </Typography>
+
+      <Link
+        underline="hover"
+        variant="h6"
+        target="_blank"
+        rel="noreferrer"
+        href="https://github.com/TinaSemashko"
+        sx={{ color: 'colorRed.main', pb: 4 }}>
+        {t('projects.myGIT')}
+      </Link>
 
       {smScreen ? (
         <ProjectsMobile />
